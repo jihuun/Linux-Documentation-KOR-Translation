@@ -1,16 +1,15 @@
 Intel(R) TXT Overview:
 =====================
 
-Intel's technology for safer computing, Intel(R) Trusted Execution
-Technology (Intel(R) TXT), defines platform-level enhancements that
-provide the building blocks for creating trusted platforms.
+인텔의 안전한 컴퓨팅을 위한 기술 Intel(R) TXT (Trusted Execution Technology)
+는 플랫폼 레벨에서 building block을 제공하여 신뢰할수 있는 플랫폼을 제공합니다.
 
-Intel TXT was formerly known by the code name LaGrande Technology (LT).
+Intel TXT 는 과거엔 코드네임 LaGrande Technology (LT) 로 알려져 있었습니다.
 
-Intel TXT in Brief:
-o  Provides dynamic root of trust for measurement (DRTM)
-o  Data protection in case of improper shutdown
-o  Measurement and verification of launched environment
+Intel TXT 간단 정리:
+o  dynamic root of trust for measurement (DRTM) 제공
+o  부적절한 종료시 데이터 보호
+o  실행환경 검증 및 평가
 
 Intel TXT is part of the vPro(TM) brand and is also available some
 non-vPro systems.  It is currently available on desktop systems
