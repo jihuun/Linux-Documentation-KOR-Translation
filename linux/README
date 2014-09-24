@@ -35,12 +35,19 @@ WHAT IS LINUX?
 
 
 ON WHAT HARDWARE DOES IT RUN?
+리눅스는 어떤 하드웨어에서 동작하는가?
 
   Although originally developed first for 32-bit x86-based PCs (386 or higher),
   today Linux also runs on (at least) the Compaq Alpha AXP, Sun SPARC and
   UltraSPARC, Motorola 68000, PowerPC, PowerPC64, ARM, Hitachi SuperH, Cell,
   IBM S/390, MIPS, HP PA-RISC, Intel IA-64, DEC VAX, AMD x86-64, AXIS CRIS,
   Xtensa, Tilera TILE, AVR32 and Renesas M32R architectures.
+
+  비록 리눅스는 처음에 32bit x86 PC기반으로 개발되었지만, 이제는 다음의 아키텍쳐
+  에서도 동작한다. the Compaq Alpha AXP, Sun SPARC, UltraSPARC, Motorola 68000,
+  PowerPC, PowerPC64, ARM, Hitachi SuperH, Cell, IBM S/390, MIPS, HP PA-RISC,
+  Intel IA-64, DEC VAX, AMD x86-64, AXIS CRIS, Xtensa, Tilera TILE, AVR32,
+  Renesas M32R.
 
   Linux is easily portable to most general-purpose 32- or 64-bit architectures
   as long as they have a paged memory management unit (PMMU) and a port of the
@@ -49,6 +56,14 @@ ON WHAT HARDWARE DOES IT RUN?
   functionality is then obviously somewhat limited.
   Linux has also been ported to itself. You can now run the kernel as a
   userspace application - this is called UserMode Linux (UML).
+
+  타겟이 다음을 지원하는 한 리눅스는 32,64bit 아키텍쳐에서 모두 쉽게 포팅이
+  가능하다. PMMU(paged memory management unit), GCC(GNU C compiler). 리눅스는
+  또한 PMMU가 없는 수많은 아키텍쳐에도 포팅이 가능하다. (다만 기능,성능의
+  제약이 있음). 리눅스는 또한 그 자체로도 포팅이 될 수 있다. 리눅스 커널을
+  응용프로그램 처럼 실행 시키는것도 가능하다. (이것을 UserMode Linux (UML)
+  라고 부른다)
+
 
 DOCUMENTATION:
 
