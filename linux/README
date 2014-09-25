@@ -3,7 +3,6 @@
 These are the release notes for Linux version 3.  Read them carefully,
 as they tell you what this is all about, explain how to install the
 kernel, and what to do if something goes wrong. 
-
 이 문서는 Linux version 3.에 관한 문서이다. 문서에는 Kernel의 설치 방법과
 무언가 잘못 되었을 때 조치 방법이 설명되어 있다. 
 
@@ -13,7 +12,6 @@ WHAT IS LINUX?
   Linux is a clone of the operating system Unix, written from scratch by
   Linus Torvalds with assistance from a loosely-knit team of hackers across
   the Net. It aims towards POSIX and Single UNIX Specification compliance.
-
   리눅스는 Unix운영체제 에서 파생되었다. 인터넷 상의 loosely-knit 해커팀의
   도움과 함께 Linus Tovalds가 만들었다. 리눅스는 POSIX표준과 단일 유닉스
   규격(Single UNIX Specification)을 따른다.
@@ -22,7 +20,6 @@ WHAT IS LINUX?
   including true multitasking, virtual memory, shared libraries, demand
   loading, shared copy-on-write executables, proper memory management,
   and multistack networking including IPv4 and IPv6.
-
   리눅스는 현대의 완전한 UNIX운영체제에서 볼 수 있는 다음의 특징들을
   모두 포함하고 있다. 완벽한 멀티태스킹(multitasking), 가상 메모리(virtual
   memory), 공유 라이브러리(shared libraries), 실시간 페이지 적재기능
@@ -33,7 +30,6 @@ WHAT IS LINUX?
 
   It is distributed under the GNU General Public License - see the
   accompanying COPYING file for more details. 
-
   리눅스는 GPL 라이센스(GNU General Public License) 하에 배포된다.
   - COPYING파일 참고.
 
@@ -70,7 +66,6 @@ ON WHAT HARDWARE DOES IT RUN?
 
 
 DOCUMENTATION:
-/documentation 문서:
 
  - There is a lot of documentation available both in electronic form on
    the Internet and in books, both Linux-specific and pertaining to
@@ -79,11 +74,6 @@ DOCUMENTATION:
    Project) books.  This README is not meant to be documentation on the
    system: there are much better sources available.
 
- - 리눅스에 특화되어있거나 일반적인 UNIX에 관련된 수 많은 문서들이 인터넷과
-   책의 형태로 존재 한다. 리눅스 FTP 사이트나 LDP(Linux Documentation
-   project) book에 있는 Documentation 디렉터리 내부의 내용을  살펴보기를
-   추천한다. 
-
  - There are various README files in the Documentation/ subdirectory:
    these typically contain kernel-specific installation notes for some 
    drivers for example. See Documentation/00-INDEX for a list of what
@@ -91,23 +81,11 @@ DOCUMENTATION:
    contains information about the problems, which may result by upgrading
    your kernel.
 
- - Documentation/ 하위 디렉터리에는 다양한정 driver를 위한 커널 설치에 관련된
-   메모등이 포함 되어있다. Documentation/00-INDEX 파일을 참고하면 각각의 파일에
-   어떤 내용이 포함되어 있는지 에 대한 리스트가 있다. Changes 파일에는 커널
-   업그레이드가 필요할 수 있는 문제에 대한 정보가 포함 되어 있다.
-
  - The Documentation/DocBook/ subdirectory contains several guides for
    kernel developers and users.  These guides can be rendered in a
    number of formats:  PostScript (.ps), PDF, HTML, & man-pages, among others.
    After installation, "make psdocs", "make pdfdocs", "make htmldocs",
    or "make mandocs" will render the documentation in the requested format.
-
- - Documentation/DocBook/ 의 하위 디렉터리에는 커널 개발자와 사용자를 위한
-   여러가지의 설명서가 있다. 이런 설명서는 다음의 포맷으로 제공될 수 있다. 
-   PostScript (.ps), PDF, HTML, & man-pages. 설치 후에는 "make psdocs",
-   "make pdfdocs", "make htmldocs", "make mandocs"의 명령으로 원하는 문서
-   포맷으로 변환 시킬 수 있다. 
- 
 
 INSTALLING the kernel source:
 
