@@ -2,10 +2,10 @@
 
 These are the release notes for Linux version 3.  Read them carefully,
 as they tell you what this is all about, explain how to install the
-kernel, and what to do if something goes wrong. 
+kernel, and what to do if something goes wrong.
 
 이 문서는 Linux version 3.에 관한 문서이다. 문서에는 Kernel의 설치 방법과
-무언가 잘못 되었을 때 조치 방법이 설명되어 있다. 
+무언가 잘못 되었을 때 조치 방법이 설명되어 있다.
 
 WHAT IS LINUX?
 리눅스란 무엇인가?
@@ -32,7 +32,7 @@ WHAT IS LINUX?
 
 
   It is distributed under the GNU General Public License - see the
-  accompanying COPYING file for more details. 
+  accompanying COPYING file for more details.
 
   리눅스는 GPL 라이센스(GNU General Public License) 하에 배포된다.
   - COPYING파일 참고.
@@ -82,10 +82,10 @@ DOCUMENTATION:
  - 리눅스에 특화되어있거나 일반적인 UNIX에 관련된 수 많은 문서들이 인터넷과
    책의 형태로 존재 한다. 리눅스 FTP 사이트나 LDP(Linux Documentation
    project) book에 있는 Documentation 디렉터리 내부의 내용을  살펴보기를
-   추천한다. 
+   추천한다.
 
  - There are various README files in the Documentation/ subdirectory:
-   these typically contain kernel-specific installation notes for some 
+   these typically contain kernel-specific installation notes for some
    drivers for example. See Documentation/00-INDEX for a list of what
    is contained in each file.  Please read the Changes file, as it
    contains information about the problems, which may result by upgrading
@@ -103,13 +103,14 @@ DOCUMENTATION:
    or "make mandocs" will render the documentation in the requested format.
 
  - Documentation/DocBook/ 의 하위 디렉터리에는 커널 개발자와 사용자를 위한
-   여러가지의 설명서가 있다. 이런 설명서는 다음의 포맷으로 제공될 수 있다. 
+   여러가지의 설명서가 있다. 이런 설명서는 다음의 포맷으로 제공될 수 있다.
    PostScript (.ps), PDF, HTML, & man-pages. 설치 후에는 "make psdocs",
    "make pdfdocs", "make htmldocs", "make mandocs"의 명령으로 원하는 문서
-   포맷으로 변환 시킬 수 있다. 
- 
+   포맷으로 변환 시킬 수 있다.
+
 
 INSTALLING the kernel source:
+커널 소스 설치 하기:
 
  - If you install the full sources, put the kernel tarball in a
    directory where you have permissions (eg. your home directory) and
@@ -128,14 +129,33 @@ INSTALLING the kernel source:
    files.  They should match the library, and not get messed up by
    whatever the kernel-du-jour happens to be.
 
+ - 전체 소스를 설치하려면 커널 압축 파일을 권한이 있는 디렉터리에(ex home
+   디렉터리) 포함 시키고 압축을 푼다:
+
+     gzip -cd linux-3.X.tar.gz | tar xvf -
+
+   또는
+
+     bzip2 -dc linux-3.X.tar.bz2 | tar xvf -
+
+   "X" 는 최신 커널 버전으로 변경
+
+   /usr/src/linux 영역은 사용하지 말것. 이 영역은 라이브러리 헤더파일이
+   존재하는 커널 헤더로 구성 되어 있다. 이 영역은 라이브러리와 일치 해야
+   하며, 무엇이든간에 변경되면 안된다.
+
  - You can also upgrade between 3.x releases by patching.  Patches are
    distributed in the traditional gzip and the newer bzip2 format.  To
    install by patching, get all the newer patch files, enter the
    top level directory of the kernel source (linux-3.X) and execute:
+   또한 패치를 이용해서 3.x 버전으로 업그레이드가 가능하다. 패치는 기존의 gzip
+   과 새로운 포맷인 bzip2의 형태로 배포된다. 패치를 이용해 설치하기 위해서는
+   모든 새로운 패치파일을 얻고 커널 소스의 최상위 디렉터리로 이동한뒤
+   다음의 명령어를 실행 한다:
 
      gzip -cd ../patch-3.x.gz | patch -p1
 
-   or
+   또는
 
      bzip2 -dc ../patch-3.x.bz2 | patch -p1
 
@@ -144,6 +164,10 @@ INSTALLING the kernel source:
    the backup files (some-file-name~ or some-file-name.orig), and make sure
    that there are no failed patches (some-file-name# or some-file-name.rej).
    If there are, either you or I have made a mistake.
+   "x" 는 현재 커널 소스 트리의 버전보다 높은 버전으로 변경. (some-file-name~
+   또는 some-file-name.orig) 형태의 백업파일을 지우고 싶어할 수도 있다. 그리고
+   어떠한 결함이 있는 패치(some-file-name# or some-file-name.rej)가 있어서는
+   안된다. 만약 그러한 패치가 존재한다면 문제가 생길것 이다.
 
    Unlike patches for the 3.x kernels, patches for the 3.x.y kernels
    (also known as the -stable kernels) are not incremental but instead apply
@@ -153,16 +177,28 @@ INSTALLING the kernel source:
    want to jump to 3.0.3, you must first reverse the 3.0.2 patch (that is,
    patch -R) _before_ applying the 3.0.3 patch. You can read more on this in
    Documentation/applying-patches.txt
+   3.x 커널 패치와는 다르게, stable 커널 버전인 3.x.y 커널 패치는 incremental
+   하지 않고, 대신에 3.x 커널 베이스로 직접 적용해야 한다. 예를 들면, 만약
+   당신의 베이스 커널 버전이 3.0 인데 3.0.3 버전 패치를 적용하고자 한다면,
+   처음에 3.0.1 과 3.0.2버전 부터 패치를 적용하면 안된다. 비슷하게, 현재 구동
+   되는 커널 버전이 3.0.2 버전이고 3.0.3버전으로 업그레이드 하고 싶다면,
+   첫번째로 3.0.2버전 패치를 되돌리고(patch -R) 3.0.3 버전 패치를 적용 하면
+   된다. 보다 자세한 내용은 Documentation/applying-patches.txt 참고.
 
    Alternatively, the script patch-kernel can be used to automate this
    process.  It determines the current kernel version and applies any
    patches found.
+   대안으로, 다음의 patch-kernel 스크립트를 사용하면 위의 과정을 자동으로
+   진행할 수 있다. 이 스크립트는 현재의 커널 버전을 결정하고 어떠한 패치도
+   적용 가능하다.
 
      linux/scripts/patch-kernel linux
 
    The first argument in the command above is the location of the
    kernel source.  Patches are applied from the current directory, but
    an alternative directory can be specified as the second argument.
+   명령어의 첫번째 인자는 커널소스의 경로이다. 패치는 현재 디렉터리에서 부터
+   적용될 것이다. 다른 디렉터리는 두번째 인자로 지정될 수 있다.
 
  - Make sure you have no stale .o files and dependencies lying around:
 
@@ -337,7 +373,7 @@ COMPILING the kernel:
    To have the build system also tell the reason for the rebuild of each
    target, use "V=2".  The default is "V=0".
 
- - Keep a backup kernel handy in case something goes wrong.  This is 
+ - Keep a backup kernel handy in case something goes wrong.  This is
    especially true for the development releases, since each new release
    contains new code which has not been debugged.  Make sure you keep a
    backup of the modules corresponding to that kernel, as well.  If you
@@ -351,7 +387,7 @@ COMPILING the kernel:
 
  - In order to boot your new kernel, you'll need to copy the kernel
    image (e.g. .../linux/arch/i386/boot/bzImage after compilation)
-   to the place where your regular bootable kernel is found. 
+   to the place where your regular bootable kernel is found.
 
  - Booting a kernel directly from a floppy without the assistance of a
    bootloader such as LILO, is no longer supported.
@@ -364,10 +400,10 @@ COMPILING the kernel:
    to update the loading map!! If you don't, you won't be able to boot
    the new kernel image.
 
-   Reinstalling LILO is usually a matter of running /sbin/lilo. 
+   Reinstalling LILO is usually a matter of running /sbin/lilo.
    You may wish to edit /etc/lilo.conf to specify an entry for your
    old kernel image (say, /vmlinux.old) in case the new one does not
-   work.  See the LILO docs for more information. 
+   work.  See the LILO docs for more information.
 
    After reinstalling LILO, you should be all set.  Shutdown the system,
    reboot, and enjoy!
@@ -375,9 +411,9 @@ COMPILING the kernel:
    If you ever need to change the default root device, video mode,
    ramdisk size, etc.  in the kernel image, use the 'rdev' program (or
    alternatively the LILO boot options when appropriate).  No need to
-   recompile the kernel to change these parameters. 
+   recompile the kernel to change these parameters.
 
- - Reboot with the new kernel and enjoy. 
+ - Reboot with the new kernel and enjoy.
 
 IF SOMETHING GOES WRONG:
 
@@ -444,7 +480,7 @@ IF SOMETHING GOES WRONG:
    is followed by a function with a higher address you will find the one
    you want.  In fact, it may be a good idea to include a bit of
    "context" in your problem report, giving a few lines around the
-   interesting one. 
+   interesting one.
 
    If you for some reason cannot do the above (you have a pre-compiled
    kernel image or similar), telling me as much about your setup as
