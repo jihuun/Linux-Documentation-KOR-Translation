@@ -208,6 +208,7 @@ INSTALLING the kernel source:
    You should now have the sources correctly installed.
 
 SOFTWARE REQUIREMENTS
+소프트웨어 요구사항
 
    Compiling and running the 3.x kernels requires up-to-date
    versions of various software packages.  Consult
@@ -217,8 +218,15 @@ SOFTWARE REQUIREMENTS
    errors that are very difficult to track down, so don't assume that
    you can just update packages when obvious problems arise during
    build or operation.
+   3.x 커널을 컴파일 하거나 실행 시키기 위해서는 최신 버전의 여러 소프트웨어
+   패키지가 필요하다.  Documentation/Changes 파일을 참고하면 최소한의 버전과
+   패키지 업데이트 방법을 확인 할 수 있다. 지나치게 오래된 패키지의 버전은
+   추적하기 어려운 간접적인 에러의 원인이 될 수 있다. 따라서 따라서 빌드나
+   작업시 명백한 문제점이 등장했을 때 업데이트 하면 될 것 이라고 생각하면
+   안된다.
 
 BUILD directory for the kernel:
+커널 빌드 디렉터리:
 
    When compiling the kernel, all output files will per default be
    stored together with the kernel source code.
@@ -229,7 +237,15 @@ BUILD directory for the kernel:
      kernel source code: /usr/src/linux-3.X
      build directory:    /home/name/build/kernel
 
+   커널을 컴파일 할때, 모든 아웃풋 파일들은 기본적으로 커널 소스코드와 함께
+   저장이 될 것이다. "make O=output/dir" 옵션을 이용하면 아래와 같이  아웃풋
+   파일(.config 포함)을 다른 경로로 위치 시키는것이 가능하다.
+
+     커널 소스 코드:	/usr/src/linux-3.X
+     빌드 디렉터리:	/home/name/build/kernel
+
    To configure and build the kernel, use:
+   커널 빌드를 설정 하기 위해 다음을 이용하면 된다.
 
      cd /usr/src/linux-3.X
      make O=/home/name/build/kernel menuconfig
@@ -238,6 +254,8 @@ BUILD directory for the kernel:
 
    Please note: If the 'O=output/dir' option is used, then it must be
    used for all invocations of make.
+   다음 사항을 주의 하라: 만약 'O=output/dir' 옵션이 사용되면 make 
+   호출에 사용된다.
 
 CONFIGURING the kernel:
 
