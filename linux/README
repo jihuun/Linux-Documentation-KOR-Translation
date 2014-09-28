@@ -258,6 +258,7 @@ BUILD directory for the kernel:
    호출에 사용된다.
 
 CONFIGURING the kernel:
+커널 설정:
 
    Do not skip this step even if you are only upgrading one minor
    version.  New configuration options are added in each release, and
@@ -265,6 +266,12 @@ CONFIGURING the kernel:
    as expected.  If you want to carry your existing configuration to a
    new version with minimal work, use "make oldconfig", which will
    only ask you for the answers to new questions.
+
+   이번 단계를 절대 빠트리면 안된다. 단순한 업그레이드를 할지라도 새로운
+   configuration 옵션이 각 릴리즈에 추가되어있는데 만약 configuration 파일이
+   설정 되어 있지않다면 문제가 발생할것이다. 만약 작업내용이 많지 않아서 현재
+   가지고 있는 configuration 파일을 유지하고 싶다면, "make oldconfig" 옵션을
+   사용하라. 새로운 질문에 대한 답변만 요구할것이다
 
  - Alternative configuration commands are:
 
