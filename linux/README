@@ -1,4 +1,4 @@
-        Linux kernel release 3.x <http://kernel.org/>
+﻿        Linux kernel release 3.x <http://kernel.org/>
 
 These are the release notes for Linux version 3.  Read them carefully,
 as they tell you what this is all about, explain how to install the
@@ -271,37 +271,53 @@ CONFIGURING the kernel:
    configuration 옵션이 각 릴리즈에 추가되어있는데 만약 configuration 파일이
    설정 되어 있지않다면 문제가 발생할것이다. 만약 작업내용이 많지 않아서 현재
    가지고 있는 configuration 파일을 유지하고 싶다면, "make oldconfig" 옵션을
-   사용하라. 새로운 질문에 대한 답변만 요구할것이다
+   사용하라. 새로운 질문에 대한 답변만 요구할것이다.
 
  - Alternative configuration commands are:
+ - 또 다른 configuration 명령어들:
 
      "make config"      Plain text interface.
+			평범한 텍스트 인터페이스.
 
      "make menuconfig"  Text based color menus, radiolists & dialogs.
+			텍스트 기반의 컬러 메뉴, radiolists 와 다이얼로그.
 
      "make nconfig"     Enhanced text based color menus.
+			향상된 텍스트 기반의 컬러 메뉴.
 
      "make xconfig"     X windows (Qt) based configuration tool.
+			X윈도우(QT) 기반의 구성 도구
 
      "make gconfig"     X windows (Gtk) based configuration tool.
+			X윈도우(GTK) 기반의 구성 도구
 
      "make oldconfig"   Default all questions based on the contents of
                         your existing ./.config file and asking about
                         new config symbols.
+			현재 가지고있는 .config 파일을 유지하며 사용, 새로운
+			설정 대상에 대해서 질문함.
 
      "make silentoldconfig"
                         Like above, but avoids cluttering the screen
                         with questions already answered.
                         Additionally updates the dependencies.
+			위와 유사함. 그러나 이미 답변한 질문들과 함께 어지렵혀진
+			화면을 피함. 그리고 의존성들을 갱신함.
 
      "make olddefconfig"
                         Like above, but sets new symbols to their default
                         values without prompting.
+			위와 유사함. prompting 없이 새로운 symbol들을 디폴트 값
+			으로 설정함.
 
      "make defconfig"   Create a ./.config file by using the default
                         symbol values from either arch/$ARCH/defconfig
                         or arch/$ARCH/configs/${PLATFORM}_defconfig,
                         depending on the architecture.
+
+			아키텍쳐 종속적인 파일인 arch/$ARCH/defconfig 이나 
+			arch/$ARCH/configs/${PLATFORM}_defconfig 파일로 부터
+			디폴트 값을 이용하여 ./.config 파일을 생성.
 
      "make ${PLATFORM}_defconfig"
                         Create a ./.config file by using the default
@@ -310,19 +326,26 @@ CONFIGURING the kernel:
                         Use "make help" to get a list of all available
                         platforms of your architecture.
 
+			arch/$ARCH/configs/${PLATFORM}_defconfig 파일로 부터 
+			디폴트 값을 이용하여 ./.config 파일을 생성.
+
      "make allyesconfig"
                         Create a ./.config file by setting symbol
                         values to 'y' as much as possible.
+			가능한한 'y'값으로 ./.config 파일을 생성.
 
      "make allmodconfig"
                         Create a ./.config file by setting symbol
                         values to 'm' as much as possible.
+			가능한한 'm'값으로 ./.config 파일을 생성.
 
      "make allnoconfig" Create a ./.config file by setting symbol
                         values to 'n' as much as possible.
+			가능한한 'n'값으로 ./.config 파일을 생성.
 
      "make randconfig"  Create a ./.config file by setting symbol
                         values to random values.
+			무작위 값으로 ./.config 파일을 생성.
 
      "make localmodconfig" Create a config based on current config and
                            loaded modules (lsmod). Disables any module
@@ -332,18 +355,29 @@ CONFIGURING the kernel:
                            store the lsmod of that machine into a file
                            and pass it in as a LSMOD parameter.
 
+			   lsmod를 통해 loaded 된 모듈과 현재 config 파일을
+			   기반으로 생성. 다른 종류의 기기를 위한
+			   localmodconfig를 생성하기 위해서기기의 lsmod를 저장.
+			   그리고 LSMOD 파라미터로 떠 넘긴다.
+
                    target$ lsmod > /tmp/mylsmod
                    target$ scp /tmp/mylsmod host:/tmp
 
                    host$ make LSMOD=/tmp/mylsmod localmodconfig
 
                            The above also works when cross compiling.
+			   또한 위의 내용은 크로스 컴파일 할때 동작한다.
 
      "make localyesconfig" Similar to localmodconfig, except it will convert
                            all module options to built in (=y) options.
-
+			   모든 모듈 옵션이 (=y)로 변경되는 것 말고는
+			   localmodconfig 와 비슷함. 
+				
    You can find more information on using the Linux kernel config tools
    in Documentation/kbuild/kconfig.txt.
+   리눅스 커널의 config tool에 대한 보다 자세한 정보는
+   Documentation/kbuild/kconfig.txt 를 참고하라.
+
 
  - NOTES on "make config":
 
