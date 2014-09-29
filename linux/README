@@ -1,45 +1,45 @@
-        Linux kernel release 3.x <http://kernel.org/>
+ï»¿        Linux kernel release 3.x <http://kernel.org/>
 
 These are the release notes for Linux version 3.  Read them carefully,
 as they tell you what this is all about, explain how to install the
 kernel, and what to do if something goes wrong.
 
-ÀÌ ¹®¼­´Â Linux version 3.¿¡ °üÇÑ ¹®¼­ÀÌ´Ù. ¹®¼­¿¡´Â KernelÀÇ ¼³Ä¡ ¹æ¹ı°ú
-¹«¾ğ°¡ Àß¸ø µÇ¾úÀ» ¶§ Á¶Ä¡ ¹æ¹ıÀÌ ¼³¸íµÇ¾î ÀÖ´Ù.
+ì´ ë¬¸ì„œëŠ” Linux version 3.ì— ê´€í•œ ë¬¸ì„œì´ë‹¤. ë¬¸ì„œì—ëŠ” Kernelì˜ ì„¤ì¹˜ ë°©ë²•ê³¼
+ë¬´ì–¸ê°€ ì˜ëª» ë˜ì—ˆì„ ë•Œ ì¡°ì¹˜ ë°©ë²•ì´ ì„¤ëª…ë˜ì–´ ìˆë‹¤.
 
 WHAT IS LINUX?
-¸®´ª½º¶õ ¹«¾ùÀÎ°¡?
+ë¦¬ëˆ…ìŠ¤ë€ ë¬´ì—‡ì¸ê°€?
 
   Linux is a clone of the operating system Unix, written from scratch by
   Linus Torvalds with assistance from a loosely-knit team of hackers across
   the Net. It aims towards POSIX and Single UNIX Specification compliance.
 
-  ¸®´ª½º´Â Unix¿î¿µÃ¼Á¦ ¿¡¼­ ÆÄ»ıµÇ¾ú´Ù. ÀÎÅÍ³İ »óÀÇ loosely-knit ÇØÄ¿ÆÀÀÇ
-  µµ¿ò°ú ÇÔ²² Linus Tovalds°¡ ¸¸µé¾ú´Ù. ¸®´ª½º´Â POSIXÇ¥ÁØ°ú ´ÜÀÏ À¯´Ğ½º
-  ±Ô°İ(Single UNIX Specification)À» µû¸¥´Ù.
+  ë¦¬ëˆ…ìŠ¤ëŠ” Unixìš´ì˜ì²´ì œ ì—ì„œ íŒŒìƒë˜ì—ˆë‹¤. ì¸í„°ë„· ìƒì˜ loosely-knit í•´ì»¤íŒ€ì˜
+  ë„ì›€ê³¼ í•¨ê»˜ Linus Tovaldsê°€ ë§Œë“¤ì—ˆë‹¤. ë¦¬ëˆ…ìŠ¤ëŠ” POSIXí‘œì¤€ê³¼ ë‹¨ì¼ ìœ ë‹‰ìŠ¤
+  ê·œê²©(Single UNIX Specification)ì„ ë”°ë¥¸ë‹¤.
 
   It has all the features you would expect in a modern fully-fledged Unix,
   including true multitasking, virtual memory, shared libraries, demand
   loading, shared copy-on-write executables, proper memory management,
   and multistack networking including IPv4 and IPv6.
 
-  ¸®´ª½º´Â Çö´ëÀÇ ¿ÏÀüÇÑ UNIX¿î¿µÃ¼Á¦¿¡¼­ º¼ ¼ö ÀÖ´Â ´ÙÀ½ÀÇ Æ¯Â¡µéÀ»
-  ¸ğµÎ Æ÷ÇÔÇÏ°í ÀÖ´Ù. ¿Ïº®ÇÑ ¸ÖÆ¼ÅÂ½ºÅ·(multitasking), °¡»ó ¸Ş¸ğ¸®(virtual
-  memory), °øÀ¯ ¶óÀÌºê·¯¸®(shared libraries), ½Ç½Ã°£ ÆäÀÌÁö ÀûÀç±â´É
+  ë¦¬ëˆ…ìŠ¤ëŠ” í˜„ëŒ€ì˜ ì™„ì „í•œ UNIXìš´ì˜ì²´ì œì—ì„œ ë³¼ ìˆ˜ ìˆëŠ” ë‹¤ìŒì˜ íŠ¹ì§•ë“¤ì„
+  ëª¨ë‘ í¬í•¨í•˜ê³  ìˆë‹¤. ì™„ë²½í•œ ë©€í‹°íƒœìŠ¤í‚¹(multitasking), ê°€ìƒ ë©”ëª¨ë¦¬(virtual
+  memory), ê³µìœ  ë¼ì´ë¸ŒëŸ¬ë¦¬(shared libraries), ì‹¤ì‹œê°„ í˜ì´ì§€ ì ì¬ê¸°ëŠ¥
   (demand loading executables), shared copy-on-write executables,
-  ÀûÀıÇÑ ¸Ş¸ğ¸® °ü¸®(memory management), IPv4¿Í IPv6¸¦ Æ÷ÇÔÇÑ ¸ÖÆ¼½ºÅÃ
-  ³×Æ®¿öÅ·(multistack networking)
+  ì ì ˆí•œ ë©”ëª¨ë¦¬ ê´€ë¦¬(memory management), IPv4ì™€ IPv6ë¥¼ í¬í•¨í•œ ë©€í‹°ìŠ¤íƒ
+  ë„¤íŠ¸ì›Œí‚¹(multistack networking)
 
 
   It is distributed under the GNU General Public License - see the
   accompanying COPYING file for more details.
 
-  ¸®´ª½º´Â GPL ¶óÀÌ¼¾½º(GNU General Public License) ÇÏ¿¡ ¹èÆ÷µÈ´Ù.
-  - COPYINGÆÄÀÏ Âü°í.
+  ë¦¬ëˆ…ìŠ¤ëŠ” GPL ë¼ì´ì„¼ìŠ¤(GNU General Public License) í•˜ì— ë°°í¬ëœë‹¤.
+  - COPYINGíŒŒì¼ ì°¸ê³ .
 
 
 ON WHAT HARDWARE DOES IT RUN?
-¸®´ª½º´Â ¾î¶² ÇÏµå¿ş¾î¿¡¼­ µ¿ÀÛÇÏ´Â°¡?
+ë¦¬ëˆ…ìŠ¤ëŠ” ì–´ë–¤ í•˜ë“œì›¨ì–´ì—ì„œ ë™ì‘í•˜ëŠ”ê°€?
 
   Although originally developed first for 32-bit x86-based PCs (386 or higher),
   today Linux also runs on (at least) the Compaq Alpha AXP, Sun SPARC and
@@ -47,8 +47,8 @@ ON WHAT HARDWARE DOES IT RUN?
   IBM S/390, MIPS, HP PA-RISC, Intel IA-64, DEC VAX, AMD x86-64, AXIS CRIS,
   Xtensa, Tilera TILE, AVR32 and Renesas M32R architectures.
 
-  ºñ·Ï ¸®´ª½º´Â Ã³À½¿¡ 32bit x86 PC±â¹İÀ¸·Î °³¹ßµÇ¾úÁö¸¸, ÀÌÁ¦´Â ´ÙÀ½ÀÇ ¾ÆÅ°ÅØÃÄ
-  ¿¡¼­µµ µ¿ÀÛÇÑ´Ù. the Compaq Alpha AXP, Sun SPARC, UltraSPARC, Motorola 68000,
+  ë¹„ë¡ ë¦¬ëˆ…ìŠ¤ëŠ” ì²˜ìŒì— 32bit x86 PCê¸°ë°˜ìœ¼ë¡œ ê°œë°œë˜ì—ˆì§€ë§Œ, ì´ì œëŠ” ë‹¤ìŒì˜ ì•„í‚¤í…ì³
+  ì—ì„œë„ ë™ì‘í•œë‹¤. the Compaq Alpha AXP, Sun SPARC, UltraSPARC, Motorola 68000,
   PowerPC, PowerPC64, ARM, Hitachi SuperH, Cell, IBM S/390, MIPS, HP PA-RISC,
   Intel IA-64, DEC VAX, AMD x86-64, AXIS CRIS, Xtensa, Tilera TILE, AVR32,
   Renesas M32R.
@@ -61,16 +61,16 @@ ON WHAT HARDWARE DOES IT RUN?
   Linux has also been ported to itself. You can now run the kernel as a
   userspace application - this is called UserMode Linux (UML).
 
-  Å¸°ÙÀÌ ´ÙÀ½À» Áö¿øÇÏ´Â ÇÑ ¸®´ª½º´Â 32,64bit ¾ÆÅ°ÅØÃÄ¿¡¼­ ¸ğµÎ ½±°Ô Æ÷ÆÃÀÌ
-  °¡´ÉÇÏ´Ù. PMMU(paged memory management unit), GCC(GNU C compiler). ¸®´ª½º´Â
-  ¶ÇÇÑ PMMU°¡ ¾ø´Â ¼ö¸¹Àº ¾ÆÅ°ÅØÃÄ¿¡µµ Æ÷ÆÃÀÌ °¡´ÉÇÏ´Ù. (´Ù¸¸ ±â´É,¼º´ÉÀÇ
-  Á¦¾àÀÌ ÀÖÀ½). ¸®´ª½º´Â ¶ÇÇÑ ±× ÀÚÃ¼·Îµµ Æ÷ÆÃÀÌ µÉ ¼ö ÀÖ´Ù. ¸®´ª½º Ä¿³ÎÀ»
-  ÀÀ¿ëÇÁ·Î±×·¥ Ã³·³ ½ÇÇà ½ÃÅ°´Â°Íµµ °¡´ÉÇÏ´Ù. (ÀÌ°ÍÀ» UserMode Linux (UML)
-  ¶ó°í ºÎ¸¥´Ù)
+  íƒ€ê²Ÿì´ ë‹¤ìŒì„ ì§€ì›í•˜ëŠ” í•œ ë¦¬ëˆ…ìŠ¤ëŠ” 32,64bit ì•„í‚¤í…ì³ì—ì„œ ëª¨ë‘ ì‰½ê²Œ í¬íŒ…ì´
+  ê°€ëŠ¥í•˜ë‹¤. PMMU(paged memory management unit), GCC(GNU C compiler). ë¦¬ëˆ…ìŠ¤ëŠ”
+  ë˜í•œ PMMUê°€ ì—†ëŠ” ìˆ˜ë§ì€ ì•„í‚¤í…ì³ì—ë„ í¬íŒ…ì´ ê°€ëŠ¥í•˜ë‹¤. (ë‹¤ë§Œ ê¸°ëŠ¥,ì„±ëŠ¥ì˜
+  ì œì•½ì´ ìˆìŒ). ë¦¬ëˆ…ìŠ¤ëŠ” ë˜í•œ ê·¸ ìì²´ë¡œë„ í¬íŒ…ì´ ë  ìˆ˜ ìˆë‹¤. ë¦¬ëˆ…ìŠ¤ ì»¤ë„ì„
+  ì‘ìš©í”„ë¡œê·¸ë¨ ì²˜ëŸ¼ ì‹¤í–‰ ì‹œí‚¤ëŠ”ê²ƒë„ ê°€ëŠ¥í•˜ë‹¤. (ì´ê²ƒì„ UserMode Linux (UML)
+  ë¼ê³  ë¶€ë¥¸ë‹¤)
 
 
 DOCUMENTATION:
-/documentation ¹®¼­:
+/documentation ë¬¸ì„œ:
 
  - There is a lot of documentation available both in electronic form on
    the Internet and in books, both Linux-specific and pertaining to
@@ -79,10 +79,10 @@ DOCUMENTATION:
    Project) books.  This README is not meant to be documentation on the
    system: there are much better sources available.
 
- - ¸®´ª½º¿¡ Æ¯È­µÇ¾îÀÖ°Å³ª ÀÏ¹İÀûÀÎ UNIX¿¡ °ü·ÃµÈ ¼ö ¸¹Àº ¹®¼­µéÀÌ ÀÎÅÍ³İ°ú
-   Ã¥ÀÇ ÇüÅÂ·Î Á¸Àç ÇÑ´Ù. ¸®´ª½º FTP »çÀÌÆ®³ª LDP(Linux Documentation
-   project) book¿¡ ÀÖ´Â Documentation µğ·ºÅÍ¸® ³»ºÎÀÇ ³»¿ëÀ»  »ìÆìº¸±â¸¦
-   ÃßÃµÇÑ´Ù.
+ - ë¦¬ëˆ…ìŠ¤ì— íŠ¹í™”ë˜ì–´ìˆê±°ë‚˜ ì¼ë°˜ì ì¸ UNIXì— ê´€ë ¨ëœ ìˆ˜ ë§ì€ ë¬¸ì„œë“¤ì´ ì¸í„°ë„·ê³¼
+   ì±…ì˜ í˜•íƒœë¡œ ì¡´ì¬ í•œë‹¤. ë¦¬ëˆ…ìŠ¤ FTP ì‚¬ì´íŠ¸ë‚˜ LDP(Linux Documentation
+   project) bookì— ìˆëŠ” Documentation ë””ë ‰í„°ë¦¬ ë‚´ë¶€ì˜ ë‚´ìš©ì„  ì‚´í´ë³´ê¸°ë¥¼
+   ì¶”ì²œí•œë‹¤.
 
  - There are various README files in the Documentation/ subdirectory:
    these typically contain kernel-specific installation notes for some
@@ -91,10 +91,10 @@ DOCUMENTATION:
    contains information about the problems, which may result by upgrading
    your kernel.
 
- - Documentation/ ÇÏÀ§ µğ·ºÅÍ¸®¿¡´Â ´Ù¾çÇÑÁ¤ driver¸¦ À§ÇÑ Ä¿³Î ¼³Ä¡¿¡ °ü·ÃµÈ
-   ¸Ş¸ğµîÀÌ Æ÷ÇÔ µÇ¾îÀÖ´Ù. Documentation/00-INDEX ÆÄÀÏÀ» Âü°íÇÏ¸é °¢°¢ÀÇ ÆÄÀÏ¿¡
-   ¾î¶² ³»¿ëÀÌ Æ÷ÇÔµÇ¾î ÀÖ´ÂÁö ¿¡ ´ëÇÑ ¸®½ºÆ®°¡ ÀÖ´Ù. Changes ÆÄÀÏ¿¡´Â Ä¿³Î
-   ¾÷±×·¹ÀÌµå°¡ ÇÊ¿äÇÒ ¼ö ÀÖ´Â ¹®Á¦¿¡ ´ëÇÑ Á¤º¸°¡ Æ÷ÇÔ µÇ¾î ÀÖ´Ù.
+ - Documentation/ í•˜ìœ„ ë””ë ‰í„°ë¦¬ì—ëŠ” ë‹¤ì–‘í•œì • driverë¥¼ ìœ„í•œ ì»¤ë„ ì„¤ì¹˜ì— ê´€ë ¨ëœ
+   ë©”ëª¨ë“±ì´ í¬í•¨ ë˜ì–´ìˆë‹¤. Documentation/00-INDEX íŒŒì¼ì„ ì°¸ê³ í•˜ë©´ ê°ê°ì˜ íŒŒì¼ì—
+   ì–´ë–¤ ë‚´ìš©ì´ í¬í•¨ë˜ì–´ ìˆëŠ”ì§€ ì— ëŒ€í•œ ë¦¬ìŠ¤íŠ¸ê°€ ìˆë‹¤. Changes íŒŒì¼ì—ëŠ” ì»¤ë„
+   ì—…ê·¸ë ˆì´ë“œê°€ í•„ìš”í•  ìˆ˜ ìˆëŠ” ë¬¸ì œì— ëŒ€í•œ ì •ë³´ê°€ í¬í•¨ ë˜ì–´ ìˆë‹¤.
 
  - The Documentation/DocBook/ subdirectory contains several guides for
    kernel developers and users.  These guides can be rendered in a
@@ -102,15 +102,15 @@ DOCUMENTATION:
    After installation, "make psdocs", "make pdfdocs", "make htmldocs",
    or "make mandocs" will render the documentation in the requested format.
 
- - Documentation/DocBook/ ÀÇ ÇÏÀ§ µğ·ºÅÍ¸®¿¡´Â Ä¿³Î °³¹ßÀÚ¿Í »ç¿ëÀÚ¸¦ À§ÇÑ
-   ¿©·¯°¡ÁöÀÇ ¼³¸í¼­°¡ ÀÖ´Ù. ÀÌ·± ¼³¸í¼­´Â ´ÙÀ½ÀÇ Æ÷¸ËÀ¸·Î Á¦°øµÉ ¼ö ÀÖ´Ù.
-   PostScript (.ps), PDF, HTML, & man-pages. ¼³Ä¡ ÈÄ¿¡´Â "make psdocs",
-   "make pdfdocs", "make htmldocs", "make mandocs"ÀÇ ¸í·ÉÀ¸·Î ¿øÇÏ´Â ¹®¼­
-   Æ÷¸ËÀ¸·Î º¯È¯ ½ÃÅ³ ¼ö ÀÖ´Ù.
+ - Documentation/DocBook/ ì˜ í•˜ìœ„ ë””ë ‰í„°ë¦¬ì—ëŠ” ì»¤ë„ ê°œë°œìì™€ ì‚¬ìš©ìë¥¼ ìœ„í•œ
+   ì—¬ëŸ¬ê°€ì§€ì˜ ì„¤ëª…ì„œê°€ ìˆë‹¤. ì´ëŸ° ì„¤ëª…ì„œëŠ” ë‹¤ìŒì˜ í¬ë§·ìœ¼ë¡œ ì œê³µë  ìˆ˜ ìˆë‹¤.
+   PostScript (.ps), PDF, HTML, & man-pages. ì„¤ì¹˜ í›„ì—ëŠ” "make psdocs",
+   "make pdfdocs", "make htmldocs", "make mandocs"ì˜ ëª…ë ¹ìœ¼ë¡œ ì›í•˜ëŠ” ë¬¸ì„œ
+   í¬ë§·ìœ¼ë¡œ ë³€í™˜ ì‹œí‚¬ ìˆ˜ ìˆë‹¤.
 
 
 INSTALLING the kernel source:
-Ä¿³Î ¼Ò½º ¼³Ä¡ ÇÏ±â:
+ì»¤ë„ ì†ŒìŠ¤ ì„¤ì¹˜ í•˜ê¸°:
 
  - If you install the full sources, put the kernel tarball in a
    directory where you have permissions (eg. your home directory) and
@@ -129,33 +129,33 @@ INSTALLING the kernel source:
    files.  They should match the library, and not get messed up by
    whatever the kernel-du-jour happens to be.
 
- - ÀüÃ¼ ¼Ò½º¸¦ ¼³Ä¡ÇÏ·Á¸é Ä¿³Î ¾ĞÃà ÆÄÀÏÀ» ±ÇÇÑÀÌ ÀÖ´Â µğ·ºÅÍ¸®¿¡(ex home
-   µğ·ºÅÍ¸®) Æ÷ÇÔ ½ÃÅ°°í ¾ĞÃàÀ» Ç¬´Ù:
+ - ì „ì²´ ì†ŒìŠ¤ë¥¼ ì„¤ì¹˜í•˜ë ¤ë©´ ì»¤ë„ ì••ì¶• íŒŒì¼ì„ ê¶Œí•œì´ ìˆëŠ” ë””ë ‰í„°ë¦¬ì—(ex home
+   ë””ë ‰í„°ë¦¬) í¬í•¨ ì‹œí‚¤ê³  ì••ì¶•ì„ í‘¼ë‹¤:
 
      gzip -cd linux-3.X.tar.gz | tar xvf -
 
-   ¶Ç´Â
+   ë˜ëŠ”
 
      bzip2 -dc linux-3.X.tar.bz2 | tar xvf -
 
-   "X" ´Â ÃÖ½Å Ä¿³Î ¹öÀüÀ¸·Î º¯°æ
+   "X" ëŠ” ìµœì‹  ì»¤ë„ ë²„ì „ìœ¼ë¡œ ë³€ê²½
 
-   /usr/src/linux ¿µ¿ªÀº »ç¿ëÇÏÁö ¸»°Í. ÀÌ ¿µ¿ªÀº ¶óÀÌºê·¯¸® Çì´õÆÄÀÏÀÌ
-   Á¸ÀçÇÏ´Â Ä¿³Î Çì´õ·Î ±¸¼º µÇ¾î ÀÖ´Ù. ÀÌ ¿µ¿ªÀº ¶óÀÌºê·¯¸®¿Í ÀÏÄ¡ ÇØ¾ß
-   ÇÏ¸ç, ¹«¾ùÀÌµç°£¿¡ º¯°æµÇ¸é ¾ÈµÈ´Ù.
+   /usr/src/linux ì˜ì—­ì€ ì‚¬ìš©í•˜ì§€ ë§ê²ƒ. ì´ ì˜ì—­ì€ ë¼ì´ë¸ŒëŸ¬ë¦¬ í—¤ë”íŒŒì¼ì´
+   ì¡´ì¬í•˜ëŠ” ì»¤ë„ í—¤ë”ë¡œ êµ¬ì„± ë˜ì–´ ìˆë‹¤. ì´ ì˜ì—­ì€ ë¼ì´ë¸ŒëŸ¬ë¦¬ì™€ ì¼ì¹˜ í•´ì•¼
+   í•˜ë©°, ë¬´ì—‡ì´ë“ ê°„ì— ë³€ê²½ë˜ë©´ ì•ˆëœë‹¤.
 
  - You can also upgrade between 3.x releases by patching.  Patches are
    distributed in the traditional gzip and the newer bzip2 format.  To
    install by patching, get all the newer patch files, enter the
    top level directory of the kernel source (linux-3.X) and execute:
-   ¶ÇÇÑ ÆĞÄ¡¸¦ ÀÌ¿ëÇØ¼­ 3.x ¹öÀüÀ¸·Î ¾÷±×·¹ÀÌµå°¡ °¡´ÉÇÏ´Ù. ÆĞÄ¡´Â ±âÁ¸ÀÇ gzip
-   °ú »õ·Î¿î Æ÷¸ËÀÎ bzip2ÀÇ ÇüÅÂ·Î ¹èÆ÷µÈ´Ù. ÆĞÄ¡¸¦ ÀÌ¿ëÇØ ¼³Ä¡ÇÏ±â À§ÇØ¼­´Â
-   ¸ğµç »õ·Î¿î ÆĞÄ¡ÆÄÀÏÀ» ¾ò°í Ä¿³Î ¼Ò½ºÀÇ ÃÖ»óÀ§ µğ·ºÅÍ¸®·Î ÀÌµ¿ÇÑµÚ
-   ´ÙÀ½ÀÇ ¸í·É¾î¸¦ ½ÇÇà ÇÑ´Ù:
+   ë˜í•œ íŒ¨ì¹˜ë¥¼ ì´ìš©í•´ì„œ 3.x ë²„ì „ìœ¼ë¡œ ì—…ê·¸ë ˆì´ë“œê°€ ê°€ëŠ¥í•˜ë‹¤. íŒ¨ì¹˜ëŠ” ê¸°ì¡´ì˜ gzip
+   ê³¼ ìƒˆë¡œìš´ í¬ë§·ì¸ bzip2ì˜ í˜•íƒœë¡œ ë°°í¬ëœë‹¤. íŒ¨ì¹˜ë¥¼ ì´ìš©í•´ ì„¤ì¹˜í•˜ê¸° ìœ„í•´ì„œëŠ”
+   ëª¨ë“  ìƒˆë¡œìš´ íŒ¨ì¹˜íŒŒì¼ì„ ì–»ê³  ì»¤ë„ ì†ŒìŠ¤ì˜ ìµœìƒìœ„ ë””ë ‰í„°ë¦¬ë¡œ ì´ë™í•œë’¤
+   ë‹¤ìŒì˜ ëª…ë ¹ì–´ë¥¼ ì‹¤í–‰ í•œë‹¤:
 
      gzip -cd ../patch-3.x.gz | patch -p1
 
-   ¶Ç´Â
+   ë˜ëŠ”
 
      bzip2 -dc ../patch-3.x.bz2 | patch -p1
 
@@ -164,10 +164,10 @@ INSTALLING the kernel source:
    the backup files (some-file-name~ or some-file-name.orig), and make sure
    that there are no failed patches (some-file-name# or some-file-name.rej).
    If there are, either you or I have made a mistake.
-   "x" ´Â ÇöÀç Ä¿³Î ¼Ò½º Æ®¸®ÀÇ ¹öÀüº¸´Ù ³ôÀº ¹öÀüÀ¸·Î º¯°æ. (some-file-name~
-   ¶Ç´Â some-file-name.orig) ÇüÅÂÀÇ ¹é¾÷ÆÄÀÏÀ» Áö¿ì°í ½Í¾îÇÒ ¼öµµ ÀÖ´Ù. ±×¸®°í
-   ¾î¶°ÇÑ °áÇÔÀÌ ÀÖ´Â ÆĞÄ¡(some-file-name# or some-file-name.rej)°¡ ÀÖ¾î¼­´Â
-   ¾ÈµÈ´Ù. ¸¸¾à ±×·¯ÇÑ ÆĞÄ¡°¡ Á¸ÀçÇÑ´Ù¸é ¹®Á¦°¡ »ı±æ°Í ÀÌ´Ù.
+   "x" ëŠ” í˜„ì¬ ì»¤ë„ ì†ŒìŠ¤ íŠ¸ë¦¬ì˜ ë²„ì „ë³´ë‹¤ ë†’ì€ ë²„ì „ìœ¼ë¡œ ë³€ê²½. (some-file-name~
+   ë˜ëŠ” some-file-name.orig) í˜•íƒœì˜ ë°±ì—…íŒŒì¼ì„ ì§€ìš°ê³  ì‹¶ì–´í•  ìˆ˜ë„ ìˆë‹¤. ê·¸ë¦¬ê³ 
+   ì–´ë– í•œ ê²°í•¨ì´ ìˆëŠ” íŒ¨ì¹˜(some-file-name# or some-file-name.rej)ê°€ ìˆì–´ì„œëŠ”
+   ì•ˆëœë‹¤. ë§Œì•½ ê·¸ëŸ¬í•œ íŒ¨ì¹˜ê°€ ì¡´ì¬í•œë‹¤ë©´ ë¬¸ì œê°€ ìƒê¸¸ê²ƒ ì´ë‹¤.
 
    Unlike patches for the 3.x kernels, patches for the 3.x.y kernels
    (also known as the -stable kernels) are not incremental but instead apply
@@ -177,28 +177,28 @@ INSTALLING the kernel source:
    want to jump to 3.0.3, you must first reverse the 3.0.2 patch (that is,
    patch -R) _before_ applying the 3.0.3 patch. You can read more on this in
    Documentation/applying-patches.txt
-   3.x Ä¿³Î ÆĞÄ¡¿Í´Â ´Ù¸£°Ô, stable Ä¿³Î ¹öÀüÀÎ 3.x.y Ä¿³Î ÆĞÄ¡´Â incremental
-   ÇÏÁö ¾Ê°í, ´ë½Å¿¡ 3.x Ä¿³Î º£ÀÌ½º·Î Á÷Á¢ Àû¿ëÇØ¾ß ÇÑ´Ù. ¿¹¸¦ µé¸é, ¸¸¾à
-   ´ç½ÅÀÇ º£ÀÌ½º Ä¿³Î ¹öÀüÀÌ 3.0 ÀÎµ¥ 3.0.3 ¹öÀü ÆĞÄ¡¸¦ Àû¿ëÇÏ°íÀÚ ÇÑ´Ù¸é,
-   Ã³À½¿¡ 3.0.1 °ú 3.0.2¹öÀü ºÎÅÍ ÆĞÄ¡¸¦ Àû¿ëÇÏ¸é ¾ÈµÈ´Ù. ºñ½ÁÇÏ°Ô, ÇöÀç ±¸µ¿
-   µÇ´Â Ä¿³Î ¹öÀüÀÌ 3.0.2 ¹öÀüÀÌ°í 3.0.3¹öÀüÀ¸·Î ¾÷±×·¹ÀÌµå ÇÏ°í ½Í´Ù¸é,
-   Ã¹¹øÂ°·Î 3.0.2¹öÀü ÆĞÄ¡¸¦ µÇµ¹¸®°í(patch -R) 3.0.3 ¹öÀü ÆĞÄ¡¸¦ Àû¿ë ÇÏ¸é
-   µÈ´Ù. º¸´Ù ÀÚ¼¼ÇÑ ³»¿ëÀº Documentation/applying-patches.txt Âü°í.
+   3.x ì»¤ë„ íŒ¨ì¹˜ì™€ëŠ” ë‹¤ë¥´ê²Œ, stable ì»¤ë„ ë²„ì „ì¸ 3.x.y ì»¤ë„ íŒ¨ì¹˜ëŠ” incremental
+   í•˜ì§€ ì•Šê³ , ëŒ€ì‹ ì— 3.x ì»¤ë„ ë² ì´ìŠ¤ë¡œ ì§ì ‘ ì ìš©í•´ì•¼ í•œë‹¤. ì˜ˆë¥¼ ë“¤ë©´, ë§Œì•½
+   ë‹¹ì‹ ì˜ ë² ì´ìŠ¤ ì»¤ë„ ë²„ì „ì´ 3.0 ì¸ë° 3.0.3 ë²„ì „ íŒ¨ì¹˜ë¥¼ ì ìš©í•˜ê³ ì í•œë‹¤ë©´,
+   ì²˜ìŒì— 3.0.1 ê³¼ 3.0.2ë²„ì „ ë¶€í„° íŒ¨ì¹˜ë¥¼ ì ìš©í•˜ë©´ ì•ˆëœë‹¤. ë¹„ìŠ·í•˜ê²Œ, í˜„ì¬ êµ¬ë™
+   ë˜ëŠ” ì»¤ë„ ë²„ì „ì´ 3.0.2 ë²„ì „ì´ê³  3.0.3ë²„ì „ìœ¼ë¡œ ì—…ê·¸ë ˆì´ë“œ í•˜ê³  ì‹¶ë‹¤ë©´,
+   ì²«ë²ˆì§¸ë¡œ 3.0.2ë²„ì „ íŒ¨ì¹˜ë¥¼ ë˜ëŒë¦¬ê³ (patch -R) 3.0.3 ë²„ì „ íŒ¨ì¹˜ë¥¼ ì ìš© í•˜ë©´
+   ëœë‹¤. ë³´ë‹¤ ìì„¸í•œ ë‚´ìš©ì€ Documentation/applying-patches.txt ì°¸ê³ .
 
    Alternatively, the script patch-kernel can be used to automate this
    process.  It determines the current kernel version and applies any
    patches found.
-   ´ë¾ÈÀ¸·Î, ´ÙÀ½ÀÇ patch-kernel ½ºÅ©¸³Æ®¸¦ »ç¿ëÇÏ¸é À§ÀÇ °úÁ¤À» ÀÚµ¿À¸·Î
-   ÁøÇàÇÒ ¼ö ÀÖ´Ù. ÀÌ ½ºÅ©¸³Æ®´Â ÇöÀçÀÇ Ä¿³Î ¹öÀüÀ» °áÁ¤ÇÏ°í ¾î¶°ÇÑ ÆĞÄ¡µµ
-   Àû¿ë °¡´ÉÇÏ´Ù.
+   ëŒ€ì•ˆìœ¼ë¡œ, ë‹¤ìŒì˜ patch-kernel ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì‚¬ìš©í•˜ë©´ ìœ„ì˜ ê³¼ì •ì„ ìë™ìœ¼ë¡œ
+   ì§„í–‰í•  ìˆ˜ ìˆë‹¤. ì´ ìŠ¤í¬ë¦½íŠ¸ëŠ” í˜„ì¬ì˜ ì»¤ë„ ë²„ì „ì„ ê²°ì •í•˜ê³  ì–´ë– í•œ íŒ¨ì¹˜ë„
+   ì ìš© ê°€ëŠ¥í•˜ë‹¤.
 
      linux/scripts/patch-kernel linux
 
    The first argument in the command above is the location of the
    kernel source.  Patches are applied from the current directory, but
    an alternative directory can be specified as the second argument.
-   ¸í·É¾îÀÇ Ã¹¹øÂ° ÀÎÀÚ´Â Ä¿³Î¼Ò½ºÀÇ °æ·ÎÀÌ´Ù. ÆĞÄ¡´Â ÇöÀç µğ·ºÅÍ¸®¿¡¼­ ºÎÅÍ
-   Àû¿ëµÉ °ÍÀÌ´Ù. ´Ù¸¥ µğ·ºÅÍ¸®´Â µÎ¹øÂ° ÀÎÀÚ·Î ÁöÁ¤µÉ ¼ö ÀÖ´Ù.
+   ëª…ë ¹ì–´ì˜ ì²«ë²ˆì§¸ ì¸ìëŠ” ì»¤ë„ì†ŒìŠ¤ì˜ ê²½ë¡œì´ë‹¤. íŒ¨ì¹˜ëŠ” í˜„ì¬ ë””ë ‰í„°ë¦¬ì—ì„œ ë¶€í„°
+   ì ìš©ë  ê²ƒì´ë‹¤. ë‹¤ë¥¸ ë””ë ‰í„°ë¦¬ëŠ” ë‘ë²ˆì§¸ ì¸ìë¡œ ì§€ì •ë  ìˆ˜ ìˆë‹¤.
 
  - Make sure you have no stale .o files and dependencies lying around:
 
@@ -208,7 +208,7 @@ INSTALLING the kernel source:
    You should now have the sources correctly installed.
 
 SOFTWARE REQUIREMENTS
-¼ÒÇÁÆ®¿ş¾î ¿ä±¸»çÇ×
+ì†Œí”„íŠ¸ì›¨ì–´ ìš”êµ¬ì‚¬í•­
 
    Compiling and running the 3.x kernels requires up-to-date
    versions of various software packages.  Consult
@@ -218,15 +218,15 @@ SOFTWARE REQUIREMENTS
    errors that are very difficult to track down, so don't assume that
    you can just update packages when obvious problems arise during
    build or operation.
-   3.x Ä¿³ÎÀ» ÄÄÆÄÀÏ ÇÏ°Å³ª ½ÇÇà ½ÃÅ°±â À§ÇØ¼­´Â ÃÖ½Å ¹öÀüÀÇ ¿©·¯ ¼ÒÇÁÆ®¿ş¾î
-   ÆĞÅ°Áö°¡ ÇÊ¿äÇÏ´Ù.  Documentation/Changes ÆÄÀÏÀ» Âü°íÇÏ¸é ÃÖ¼ÒÇÑÀÇ ¹öÀü°ú
-   ÆĞÅ°Áö ¾÷µ¥ÀÌÆ® ¹æ¹ıÀ» È®ÀÎ ÇÒ ¼ö ÀÖ´Ù. Áö³ªÄ¡°Ô ¿À·¡µÈ ÆĞÅ°ÁöÀÇ ¹öÀüÀº
-   ÃßÀûÇÏ±â ¾î·Á¿î °£Á¢ÀûÀÎ ¿¡·¯ÀÇ ¿øÀÎÀÌ µÉ ¼ö ÀÖ´Ù. µû¶ó¼­ µû¶ó¼­ ºôµå³ª
-   ÀÛ¾÷½Ã ¸í¹éÇÑ ¹®Á¦Á¡ÀÌ µîÀåÇßÀ» ¶§ ¾÷µ¥ÀÌÆ® ÇÏ¸é µÉ °Í ÀÌ¶ó°í »ı°¢ÇÏ¸é
-   ¾ÈµÈ´Ù.
+   3.x ì»¤ë„ì„ ì»´íŒŒì¼ í•˜ê±°ë‚˜ ì‹¤í–‰ ì‹œí‚¤ê¸° ìœ„í•´ì„œëŠ” ìµœì‹  ë²„ì „ì˜ ì—¬ëŸ¬ ì†Œí”„íŠ¸ì›¨ì–´
+   íŒ¨í‚¤ì§€ê°€ í•„ìš”í•˜ë‹¤.  Documentation/Changes íŒŒì¼ì„ ì°¸ê³ í•˜ë©´ ìµœì†Œí•œì˜ ë²„ì „ê³¼
+   íŒ¨í‚¤ì§€ ì—…ë°ì´íŠ¸ ë°©ë²•ì„ í™•ì¸ í•  ìˆ˜ ìˆë‹¤. ì§€ë‚˜ì¹˜ê²Œ ì˜¤ë˜ëœ íŒ¨í‚¤ì§€ì˜ ë²„ì „ì€
+   ì¶”ì í•˜ê¸° ì–´ë ¤ìš´ ê°„ì ‘ì ì¸ ì—ëŸ¬ì˜ ì›ì¸ì´ ë  ìˆ˜ ìˆë‹¤. ë”°ë¼ì„œ ë”°ë¼ì„œ ë¹Œë“œë‚˜
+   ì‘ì—…ì‹œ ëª…ë°±í•œ ë¬¸ì œì ì´ ë“±ì¥í–ˆì„ ë•Œ ì—…ë°ì´íŠ¸ í•˜ë©´ ë  ê²ƒ ì´ë¼ê³  ìƒê°í•˜ë©´
+   ì•ˆëœë‹¤.
 
 BUILD directory for the kernel:
-Ä¿³Î ºôµå µğ·ºÅÍ¸®:
+ì»¤ë„ ë¹Œë“œ ë””ë ‰í„°ë¦¬:
 
    When compiling the kernel, all output files will per default be
    stored together with the kernel source code.
@@ -237,15 +237,15 @@ BUILD directory for the kernel:
      kernel source code: /usr/src/linux-3.X
      build directory:    /home/name/build/kernel
 
-   Ä¿³ÎÀ» ÄÄÆÄÀÏ ÇÒ¶§, ¸ğµç ¾Æ¿ôÇ² ÆÄÀÏµéÀº ±âº»ÀûÀ¸·Î Ä¿³Î ¼Ò½ºÄÚµå¿Í ÇÔ²²
-   ÀúÀåÀÌ µÉ °ÍÀÌ´Ù. "make O=output/dir" ¿É¼ÇÀ» ÀÌ¿ëÇÏ¸é ¾Æ·¡¿Í °°ÀÌ  ¾Æ¿ôÇ²
-   ÆÄÀÏ(.config Æ÷ÇÔ)À» ´Ù¸¥ °æ·Î·Î À§Ä¡ ½ÃÅ°´Â°ÍÀÌ °¡´ÉÇÏ´Ù.
+   ì»¤ë„ì„ ì»´íŒŒì¼ í• ë•Œ, ëª¨ë“  ì•„ì›ƒí’‹ íŒŒì¼ë“¤ì€ ê¸°ë³¸ì ìœ¼ë¡œ ì»¤ë„ ì†ŒìŠ¤ì½”ë“œì™€ í•¨ê»˜
+   ì €ì¥ì´ ë  ê²ƒì´ë‹¤. "make O=output/dir" ì˜µì…˜ì„ ì´ìš©í•˜ë©´ ì•„ë˜ì™€ ê°™ì´  ì•„ì›ƒí’‹
+   íŒŒì¼(.config í¬í•¨)ì„ ë‹¤ë¥¸ ê²½ë¡œë¡œ ìœ„ì¹˜ ì‹œí‚¤ëŠ”ê²ƒì´ ê°€ëŠ¥í•˜ë‹¤.
 
-     Ä¿³Î ¼Ò½º ÄÚµå:	/usr/src/linux-3.X
-     ºôµå µğ·ºÅÍ¸®:	/home/name/build/kernel
+     ì»¤ë„ ì†ŒìŠ¤ ì½”ë“œ:	/usr/src/linux-3.X
+     ë¹Œë“œ ë””ë ‰í„°ë¦¬:	/home/name/build/kernel
 
    To configure and build the kernel, use:
-   Ä¿³Î ºôµå¸¦ ¼³Á¤ ÇÏ±â À§ÇØ ´ÙÀ½À» ÀÌ¿ëÇÏ¸é µÈ´Ù.
+   ì»¤ë„ ë¹Œë“œë¥¼ ì„¤ì • í•˜ê¸° ìœ„í•´ ë‹¤ìŒì„ ì´ìš©í•˜ë©´ ëœë‹¤.
 
      cd /usr/src/linux-3.X
      make O=/home/name/build/kernel menuconfig
@@ -254,11 +254,11 @@ BUILD directory for the kernel:
 
    Please note: If the 'O=output/dir' option is used, then it must be
    used for all invocations of make.
-   ´ÙÀ½ »çÇ×À» ÁÖÀÇ ÇÏ¶ó: ¸¸¾à 'O=output/dir' ¿É¼ÇÀÌ »ç¿ëµÇ¸é make 
-   È£Ãâ¿¡ »ç¿ëµÈ´Ù.
+   ë‹¤ìŒ ì‚¬í•­ì„ ì£¼ì˜ í•˜ë¼: ë§Œì•½ 'O=output/dir' ì˜µì…˜ì´ ì‚¬ìš©ë˜ë©´ make 
+   í˜¸ì¶œì— ì‚¬ìš©ëœë‹¤.
 
 CONFIGURING the kernel:
-Ä¿³Î ¼³Á¤:
+ì»¤ë„ ì„¤ì •:
 
    Do not skip this step even if you are only upgrading one minor
    version.  New configuration options are added in each release, and
@@ -267,41 +267,57 @@ CONFIGURING the kernel:
    new version with minimal work, use "make oldconfig", which will
    only ask you for the answers to new questions.
 
-   ÀÌ¹ø ´Ü°è¸¦ Àı´ë ºüÆ®¸®¸é ¾ÈµÈ´Ù. ´Ü¼øÇÑ ¾÷±×·¹ÀÌµå¸¦ ÇÒÁö¶óµµ »õ·Î¿î
-   configuration ¿É¼ÇÀÌ °¢ ¸±¸®Áî¿¡ Ãß°¡µÇ¾îÀÖ´Âµ¥ ¸¸¾à configuration ÆÄÀÏÀÌ
-   ¼³Á¤ µÇ¾î ÀÖÁö¾Ê´Ù¸é ¹®Á¦°¡ ¹ß»ıÇÒ°ÍÀÌ´Ù. ¸¸¾à ÀÛ¾÷³»¿ëÀÌ ¸¹Áö ¾Ê¾Æ¼­ ÇöÀç
-   °¡Áö°í ÀÖ´Â configuration ÆÄÀÏÀ» À¯ÁöÇÏ°í ½Í´Ù¸é, "make oldconfig" ¿É¼ÇÀ»
-   »ç¿ëÇÏ¶ó. »õ·Î¿î Áú¹®¿¡ ´ëÇÑ ´äº¯¸¸ ¿ä±¸ÇÒ°ÍÀÌ´Ù
+   ì´ë²ˆ ë‹¨ê³„ë¥¼ ì ˆëŒ€ ë¹ íŠ¸ë¦¬ë©´ ì•ˆëœë‹¤. ë‹¨ìˆœí•œ ì—…ê·¸ë ˆì´ë“œë¥¼ í• ì§€ë¼ë„ ìƒˆë¡œìš´
+   configuration ì˜µì…˜ì´ ê° ë¦´ë¦¬ì¦ˆì— ì¶”ê°€ë˜ì–´ìˆëŠ”ë° ë§Œì•½ configuration íŒŒì¼ì´
+   ì„¤ì • ë˜ì–´ ìˆì§€ì•Šë‹¤ë©´ ë¬¸ì œê°€ ë°œìƒí• ê²ƒì´ë‹¤. ë§Œì•½ ì‘ì—…ë‚´ìš©ì´ ë§ì§€ ì•Šì•„ì„œ í˜„ì¬
+   ê°€ì§€ê³  ìˆëŠ” configuration íŒŒì¼ì„ ìœ ì§€í•˜ê³  ì‹¶ë‹¤ë©´, "make oldconfig" ì˜µì…˜ì„
+   ì‚¬ìš©í•˜ë¼. ìƒˆë¡œìš´ ì§ˆë¬¸ì— ëŒ€í•œ ë‹µë³€ë§Œ ìš”êµ¬í• ê²ƒì´ë‹¤.
 
  - Alternative configuration commands are:
+ - ë˜ ë‹¤ë¥¸ configuration ëª…ë ¹ì–´ë“¤:
 
      "make config"      Plain text interface.
+			í‰ë²”í•œ í…ìŠ¤íŠ¸ ì¸í„°í˜ì´ìŠ¤.
 
      "make menuconfig"  Text based color menus, radiolists & dialogs.
+			í…ìŠ¤íŠ¸ ê¸°ë°˜ì˜ ì»¬ëŸ¬ ë©”ë‰´, radiolists ì™€ ë‹¤ì´ì–¼ë¡œê·¸.
 
      "make nconfig"     Enhanced text based color menus.
+			í–¥ìƒëœ í…ìŠ¤íŠ¸ ê¸°ë°˜ì˜ ì»¬ëŸ¬ ë©”ë‰´.
 
      "make xconfig"     X windows (Qt) based configuration tool.
+			Xìœˆë„ìš°(QT) ê¸°ë°˜ì˜ êµ¬ì„± ë„êµ¬
 
      "make gconfig"     X windows (Gtk) based configuration tool.
+			Xìœˆë„ìš°(GTK) ê¸°ë°˜ì˜ êµ¬ì„± ë„êµ¬
 
      "make oldconfig"   Default all questions based on the contents of
                         your existing ./.config file and asking about
                         new config symbols.
+			í˜„ì¬ ê°€ì§€ê³ ìˆëŠ” .config íŒŒì¼ì„ ìœ ì§€í•˜ë©° ì‚¬ìš©, ìƒˆë¡œìš´
+			ì„¤ì • ëŒ€ìƒì— ëŒ€í•´ì„œ ì§ˆë¬¸í•¨.
 
      "make silentoldconfig"
                         Like above, but avoids cluttering the screen
                         with questions already answered.
                         Additionally updates the dependencies.
+			ìœ„ì™€ ìœ ì‚¬í•¨. ê·¸ëŸ¬ë‚˜ ì´ë¯¸ ë‹µë³€í•œ ì§ˆë¬¸ë“¤ê³¼ í•¨ê»˜ ì–´ì§€ë µí˜€ì§„
+			í™”ë©´ì„ í”¼í•¨. ê·¸ë¦¬ê³  ì˜ì¡´ì„±ë“¤ì„ ê°±ì‹ í•¨.
 
      "make olddefconfig"
                         Like above, but sets new symbols to their default
                         values without prompting.
+			ìœ„ì™€ ìœ ì‚¬í•¨. prompting ì—†ì´ ìƒˆë¡œìš´ symbolë“¤ì„ ë””í´íŠ¸ ê°’
+			ìœ¼ë¡œ ì„¤ì •í•¨.
 
      "make defconfig"   Create a ./.config file by using the default
                         symbol values from either arch/$ARCH/defconfig
                         or arch/$ARCH/configs/${PLATFORM}_defconfig,
                         depending on the architecture.
+
+			ì•„í‚¤í…ì³ ì¢…ì†ì ì¸ íŒŒì¼ì¸ arch/$ARCH/defconfig ì´ë‚˜ 
+			arch/$ARCH/configs/${PLATFORM}_defconfig íŒŒì¼ë¡œ ë¶€í„°
+			ë””í´íŠ¸ ê°’ì„ ì´ìš©í•˜ì—¬ ./.config íŒŒì¼ì„ ìƒì„±.
 
      "make ${PLATFORM}_defconfig"
                         Create a ./.config file by using the default
@@ -310,19 +326,26 @@ CONFIGURING the kernel:
                         Use "make help" to get a list of all available
                         platforms of your architecture.
 
+			arch/$ARCH/configs/${PLATFORM}_defconfig íŒŒì¼ë¡œ ë¶€í„° 
+			ë””í´íŠ¸ ê°’ì„ ì´ìš©í•˜ì—¬ ./.config íŒŒì¼ì„ ìƒì„±.
+
      "make allyesconfig"
                         Create a ./.config file by setting symbol
                         values to 'y' as much as possible.
+			ê°€ëŠ¥í•œí•œ 'y'ê°’ìœ¼ë¡œ ./.config íŒŒì¼ì„ ìƒì„±.
 
      "make allmodconfig"
                         Create a ./.config file by setting symbol
                         values to 'm' as much as possible.
+			ê°€ëŠ¥í•œí•œ 'm'ê°’ìœ¼ë¡œ ./.config íŒŒì¼ì„ ìƒì„±.
 
      "make allnoconfig" Create a ./.config file by setting symbol
                         values to 'n' as much as possible.
+			ê°€ëŠ¥í•œí•œ 'n'ê°’ìœ¼ë¡œ ./.config íŒŒì¼ì„ ìƒì„±.
 
      "make randconfig"  Create a ./.config file by setting symbol
                         values to random values.
+			ë¬´ì‘ìœ„ ê°’ìœ¼ë¡œ ./.config íŒŒì¼ì„ ìƒì„±.
 
      "make localmodconfig" Create a config based on current config and
                            loaded modules (lsmod). Disables any module
@@ -332,18 +355,29 @@ CONFIGURING the kernel:
                            store the lsmod of that machine into a file
                            and pass it in as a LSMOD parameter.
 
+			   lsmodë¥¼ í†µí•´ loaded ëœ ëª¨ë“ˆê³¼ í˜„ì¬ config íŒŒì¼ì„
+			   ê¸°ë°˜ìœ¼ë¡œ ìƒì„±. ë‹¤ë¥¸ ì¢…ë¥˜ì˜ ê¸°ê¸°ë¥¼ ìœ„í•œ
+			   localmodconfigë¥¼ ìƒì„±í•˜ê¸° ìœ„í•´ì„œê¸°ê¸°ì˜ lsmodë¥¼ ì €ì¥.
+			   ê·¸ë¦¬ê³  LSMOD íŒŒë¼ë¯¸í„°ë¡œ ë–  ë„˜ê¸´ë‹¤.
+
                    target$ lsmod > /tmp/mylsmod
                    target$ scp /tmp/mylsmod host:/tmp
 
                    host$ make LSMOD=/tmp/mylsmod localmodconfig
 
                            The above also works when cross compiling.
+			   ë˜í•œ ìœ„ì˜ ë‚´ìš©ì€ í¬ë¡œìŠ¤ ì»´íŒŒì¼ í• ë•Œ ë™ì‘í•œë‹¤.
 
      "make localyesconfig" Similar to localmodconfig, except it will convert
                            all module options to built in (=y) options.
-
+			   ëª¨ë“  ëª¨ë“ˆ ì˜µì…˜ì´ (=y)ë¡œ ë³€ê²½ë˜ëŠ” ê²ƒ ë§ê³ ëŠ”
+			   localmodconfig ì™€ ë¹„ìŠ·í•¨. 
+				
    You can find more information on using the Linux kernel config tools
    in Documentation/kbuild/kconfig.txt.
+   ë¦¬ëˆ…ìŠ¤ ì»¤ë„ì˜ config toolì— ëŒ€í•œ ë³´ë‹¤ ìì„¸í•œ ì •ë³´ëŠ”
+   Documentation/kbuild/kconfig.txt ë¥¼ ì°¸ê³ í•˜ë¼.
+
 
  - NOTES on "make config":
 
@@ -479,6 +513,13 @@ IF SOMETHING GOES WRONG:
    This utility can be downloaded from
    ftp://ftp.<country>.kernel.org/pub/linux/utils/kernel/ksymoops/ .
    Alternatively, you can do the dump lookup by hand:
+ - CONFIG_KALLSYMSë¡œ ì»¤ë„ì„ ì»´íŒŒì¼í•˜ëŠ” ê²½ìš°ì— ìˆëŠ” ê·¸ëŒ€ë¡œ ë¤í”„ë¥¼ ë³´ë‚¼ ìˆ˜ ìˆë‹¤. 
+   ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ ë¤í”„ë¥¼ ì´í•´í•˜ê¸° ì‰½ê²Œ ë§Œë“¤ê¸° ìœ„í•´ "ksymoops" í”„ë¡œê·¸ë¨ì„ ì‚¬ìš©í•´ì•¼í•œë‹¤ 
+   (ê·¸ëŸ¬ë‚˜ CONFIG_KALLSYMSë¡œ ì»´íŒŒì¼í•˜ëŠ” ê²ƒì´ ì¼ë°˜ì ìœ¼ë¡œ ë°”ëŒì§í•˜ë‹¤). 
+   ì´ ìœ í‹¸ë¦¬í‹°ëŠ” ë‹¤ìŒ ì£¼ì†Œì—ì„œ ë‹¤ìš´ë¡œë“œ í•  ìˆ˜ ìˆë‹¤ 
+   ftp://ftp.<country>.kernel.org/pub/linux/utils/kernel/ksymoops/ . 
+   ë‹¤ë¥¸ ë°©ë²•ìœ¼ë¡œëŠ” ì†ìœ¼ë¡œ ì¼ì¼ì´ ë¤í”„ ì¡°íšŒë¥¼ ìˆ˜í–‰ í•  ìˆ˜ ìˆë‹¤.
+ 
 
  - In debugging dumps like the above, it helps enormously if you can
    look up what the EIP value means.  The hex value as such doesn't help
