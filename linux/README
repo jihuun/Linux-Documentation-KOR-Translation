@@ -418,11 +418,16 @@ CONFIGURING the kernel:
       위한 질문에는 'n'으로 답변 하는것이 좋다.
 
 COMPILING the kernel:
+커널 컴파일 하기:
 
  - Make sure you have at least gcc 3.2 available.
    For more information, refer to Documentation/Changes.
 
    Please note that you can still run a.out user programs with this kernel.
+ - gcc 버전이 최소 3.2 이상인지 확인하라. 
+   자세한 내용은 Documentation/Changes 참고.
+
+   a.out의 응용 프로그램이 커널에서 동작하는지 확인 하라.
 
  - Do a "make" to create a compressed kernel image. It is also
    possible to do "make install" if you have lilo installed to suit the
@@ -430,9 +435,17 @@ COMPILING the kernel:
 
    To do the actual install, you have to be root, but none of the normal
    build should require that. Don't take the name of root in vain.
+ - 압축된 커널 이미지를 만들기 위하여 "make"를 실행하라. 만약 커널 makefile에
+   적합하게 설치된 lilo가 있다면 "make install" 명령어도 사용이 가능하다. 그러나
+   먼저 특정한 lilo 설정을 확인 하기를 원할 것이다.
+   
+   실제 설치를 하기 위해서는 root권한으로 해야한다. 그러나 정상적인 빌드라면 
+   이런 부분이 필요하지는 않는다. 헛되히 root의 이름을 사용하지 말아라.
 
  - If you configured any of the parts of the kernel as `modules', you
    will also have to do "make modules_install".
+ - 만약 커널의 어떠한 부분을 모듈로 구성했다면, "make module_install"을 사용
+   해야 할 것이다.
 
  - Verbose kernel compile/build output:
 
@@ -446,6 +459,17 @@ COMPILING the kernel:
 
    To have the build system also tell the reason for the rebuild of each
    target, use "V=2".  The default is "V=0".
+ - 장황한 커널 컴파일/빌드 산출물:
+
+   보통 커널의 빌드 시스템은 꽤 조용하게 구동 된다. (완전 조용한 것은 아님)
+   그러나 때때로 당신 이나 다른 커널 개발자들은 컴파일,링크,혹은 다른 명령들이
+   정확히 어떻게 실행 되고 있는지  확인 하고 싶어한다. 이것을 위해서 "verbose"
+   빌드 모드를 사용해라. "make" 명령에서 "V=1"를 삽입하면 된다. 예를 들면,
+
+     make V=1 all
+
+   이 빌드 시스템을 갖는것은 "V=2"를 사용함으로서 각각의 타겟을 다시 빌드함
+   으로서의 요인도 된다. 기본값은 "V=0" 이다.
 
  - Keep a backup kernel handy in case something goes wrong.  This is
    especially true for the development releases, since each new release
