@@ -418,11 +418,16 @@ CONFIGURING the kernel:
       위한 질문에는 'n'으로 답변 하는것이 좋다.
 
 COMPILING the kernel:
+커널 컴파일 하기:
 
  - Make sure you have at least gcc 3.2 available.
    For more information, refer to Documentation/Changes.
 
    Please note that you can still run a.out user programs with this kernel.
+ - gcc 버전이 최소 3.2 이상인지 확인하라. 
+   자세한 내용은 Documentation/Changes 참고.
+
+   a.out의 응용 프로그램이 커널에서 동작하는지 확인 하라.
 
  - Do a "make" to create a compressed kernel image. It is also
    possible to do "make install" if you have lilo installed to suit the
@@ -430,9 +435,19 @@ COMPILING the kernel:
 
    To do the actual install, you have to be root, but none of the normal
    build should require that. Don't take the name of root in vain.
+ - 압축된 커널 이미지를 만들기 위하여 "make"를 실행하라. 만약 커널 makefile에
+   적합하게 설치된 lilo가 있다면 "make install" 명령어도 사용이 가능하다. 그러나
+   먼저 특정한 lilo 설정을 확인 하기를 원할 것이다.
+   
+   실제 설치를 하기 위해서는 root권한으로 해야한다. 그러나 정상적인 빌드라면 
+   이런 부분이 필요하지는 않는다. 헛되히 root의 이름을 사용하지 말아라.
+   
+   LILO : (LInux LOader, 리눅스 로더) 리눅스를 위한 부트 로더
 
  - If you configured any of the parts of the kernel as `modules', you
    will also have to do "make modules_install".
+ - 만약 커널의 어떠한 부분을 모듈로 구성했다면, "make module_install"을 사용
+   해야 할 것이다.
 
  - Verbose kernel compile/build output:
 
@@ -446,6 +461,17 @@ COMPILING the kernel:
 
    To have the build system also tell the reason for the rebuild of each
    target, use "V=2".  The default is "V=0".
+ - 장황한 커널 컴파일/빌드 산출물:
+
+   보통 커널의 빌드 시스템은 꽤 조용하게 구동 된다. (완전 조용한 것은 아님)
+   그러나 때때로 당신 이나 다른 커널 개발자들은 컴파일,링크,혹은 다른 명령들이
+   정확히 어떻게 실행 되고 있는지  확인 하고 싶어한다. 이것을 위해서 "verbose"
+   빌드 모드를 사용해라. "make" 명령에서 "V=1"를 삽입하면 된다. 예를 들면,
+
+     make V=1 all
+
+   이 빌드 시스템을 갖는것은 "V=2"를 사용함으로서 각각의 타겟을 다시 빌드함
+   으로서의 요인도 된다. 기본값은 "V=0" 이다.
 
  - Keep a backup kernel handy in case something goes wrong.  This is
    especially true for the development releases, since each new release
@@ -454,17 +480,30 @@ COMPILING the kernel:
    are installing a new kernel with the same version number as your
    working kernel, make a backup of your modules directory before you
    do a "make modules_install".
+   문제 상황에 대비해서 커널을 백업 해라. 이것은 특별히 개발 출시에 있어서 필요
+   하다. 디버깅이 되지 않은 코드들이 래 릴리즈 버전에 포함 되어있다. 또한 커널에
+   상응하는 모듈도 백업해야 한다. 만약 현재 동작하는 커널과 같은 버전의 커널을
+   설치하고자 한다면 "make module_install" 을 하기 전에 모듈 디렉터리를 백업
+   해라.
 
    Alternatively, before compiling, use the kernel config option
    "LOCALVERSION" to append a unique suffix to the regular kernel version.
    LOCALVERSION can be set in the "General Setup" menu.
+   컴파일을 진행하기 이전에 "LOCALVERSION" config 옵션을 사용하면, 정규 커널
+   버전에 고유의 접미사를 붙일 수 있다. LOCALVERSION 은 "General Setup" 메뉴
+   에서 설정할 수 있다.
 
  - In order to boot your new kernel, you'll need to copy the kernel
    image (e.g. .../linux/arch/i386/boot/bzImage after compilation)
    to the place where your regular bootable kernel is found.
+ - 새로운 커널로 부팅을 하기 위해서는 커널 이미지를
+   (예를 들면 .../linux/arch/i386/boot/bzImage after compilation) 원래 부팅이
+   가능한 커널이 있는 위치에 복사 하는 작업이 필요 하다.
 
  - Booting a kernel directly from a floppy without the assistance of a
    bootloader such as LILO, is no longer supported.
+ - LILO과 같은 부트로더의 도움 없이 플로피 디스크로 직접 커널을 부팅하는 것은
+   더이상 지원 되지 않는다.
 
    If you boot Linux from the hard drive, chances are you use LILO, which
    uses the kernel image as specified in the file /etc/lilo.conf.  The
@@ -473,21 +512,39 @@ COMPILING the kernel:
    and copy the new image over the old one.  Then, you MUST RERUN LILO
    to update the loading map!! If you don't, you won't be able to boot
    the new kernel image.
+   하드디스크를 통해 리눅스를 부팅 시킨다면, 아마 당신은 /etc/lilo.conf 파일에
+   기술되어 있는대로 커널 이미지를 사용하는 LILO를 사용할 것이다. 커널 이미지
+   파일은 보통 다음과 같다. /vmlinuz, /boot/vmlinuz, /bzImage
+   /boot/bzImage. 새 커널을 사용하기 위해서, 예전 이미지 복사본과 이전 것과
+   관련된 새 이미지 복사본을 저장하라. 그리고 loading map을 갱신 하기 위해서
+   LILO를 재시작 해야 한다. 이렇게 하지 않는다면 새 커널 이미지가 부팅
+   되지 않을 것이다.    
 
    Reinstalling LILO is usually a matter of running /sbin/lilo.
    You may wish to edit /etc/lilo.conf to specify an entry for your
    old kernel image (say, /vmlinux.old) in case the new one does not
    work.  See the LILO docs for more information.
+   LILO를 재 설치 하는것은 보통 /sbin/lilo의 실행에 관련된 문제이다.
+   새 커널이 동작하지 않는 상황에 대비하여 예전 커널 이미지
+   (가령, /vmlinux.old) 목록을 기술 하기 위해서 /etc/lilo.conf 파일을 수정해도
+   좋다. 보다 자세한 내용은 LILO 문서 참고.
 
    After reinstalling LILO, you should be all set.  Shutdown the system,
    reboot, and enjoy!
+   LILO를 재설치 하면 모든 설정이 끝난다. 시스템을 종료 하고 재 부팅 하면
+   된다. 
 
    If you ever need to change the default root device, video mode,
    ramdisk size, etc.  in the kernel image, use the 'rdev' program (or
    alternatively the LILO boot options when appropriate).  No need to
    recompile the kernel to change these parameters.
+   만약 기본 root 기기에서 커널 이미지의 비디오 모드나 ramdisk 크기 등과 같은
+   것들을 변경 하는것이 필요 하다면, 'rdev' 프로그램을 사용해라. (또는 그
+   대신에 적당한 LILO 부트 옵션도 가능). 이런 파라미터의 변경을 위해서 커널을
+   재 컴파일 할 필요는 없다. 
 
  - Reboot with the new kernel and enjoy.
+ - 새로운 커널과 함께 즐거운 시간을 갖기를.
 
 IF SOMETHING GOES WRONG:
 
