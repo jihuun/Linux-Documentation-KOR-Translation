@@ -547,6 +547,7 @@ COMPILING the kernel:
  - 새로운 커널과 함께 즐거운 시간을 갖기를.
 
 IF SOMETHING GOES WRONG:
+뭔가 잘못되면:
 
  - If you have problems that seem to be due to kernel bugs, please check
    the file MAINTAINERS to see if there is a particular person associated
@@ -554,11 +555,20 @@ IF SOMETHING GOES WRONG:
    isn't anyone listed there, then the second best thing is to mail
    them to me (torvalds@linux-foundation.org), and possibly to any other
    relevant mailing-list or to the newsgroup.
+ - 커널 버그로 부터 기인하는 문제가 생겼을때, 커널에서 그 문제의 해당하는 부분과
+   연관되어 있는 사람을 찾기 위해서 MAINTAINERS 파일을 찾아보면 된다. 만약 그
+   리스트에서 아무도 찾을 수 없었다면, 나에게 (torvalds@linux-foundation.org)
+   또는, 관계가 있는 메일링리스트나 뉴스그룹에게 메일을 보내는 것이 두번째 좋은
+   방법이 될 것이다.
 
  - In all bug-reports, *please* tell what kernel you are talking about,
    how to duplicate the problem, and what your setup is (use your common
    sense).  If the problem is new, tell me so, and if the problem is
    old, please try to tell me when you first noticed it.
+ - 모든 버그-리포트 에서는 말하려는 대상이 어떤 커널인지 어떻게 문제를 재현
+   시키는지 문제 발생시 설정이 어떠했는지 등을 말해야 한다. 만약 새로 발견된
+   문제 였다면, 나게에 말해라. 그리고 문제가 예전 문제라면, 언제 공지 되었었는지
+   말해 달라.
 
  - If the bug results in a message like
 
