@@ -5,7 +5,7 @@ This project is translation works For Korean Kernel Newbies.
 Anyone can participate in this project even if you don't have
 any idea of linux kernel contribution.
 
-__이 프로젝트는 리눅스 커널 소스코드의 Documentation/의 문서를 공동번역하는__	
+__이 프로젝트는 리눅스 커널 소스코드의 Documentation/의 문서를 공동번역하는__   
 __프로젝트 입니다.__			
 
 Documentation/의 도움이 될 만한 _모든_ 문서를 번역하는 것을 목표로 하여	
@@ -29,28 +29,22 @@ _기여하는 또 하나의 방법입니다._
 [@jungwoos](github.com/jungwoos)    
 
 ### Others Works	
-이미 여러 선배 개발자들이 번역을 완료한 document 들이 있습니다.	
+이미 여러 선배 개발자들을 통해서 번역이 완료 되어진 문서들이 있습니다.	
 본 프로젝트에서는 이미 잘 번역되어진 아래의 문서 _이외의_ 문서들을 번역합니다.	
 
-Documentation/HOWTO 	
-https://wiki.kldp.org/wiki.php/HOWTO	
-Documentation/CodingStyle 	
-https://wiki.kldp.org/wiki.php/LinuxKernelCodingStyle	
-Documentation/SubmittingPatches 	
-https://wiki.kldp.org/wiki.php/SubmittingPatches	
-Documentation/stable_api_nonsense	
-https://wiki.kldp.org/wiki.php/stable_api_nonsense.txt	
-Documentation/sched-design 	
-https://wiki.kldp.org/wiki.php/sched-design.txt		
-Documentation/oops-tracing 		
-https://wiki.kldp.org/wiki.php/oops-tracing.txt		
+[Documentation/HOWTO](https://wiki.kldp.org/wiki.php/HOWTO)     
+[Documentation/CodingStyle](https://wiki.kldp.org/wiki.php/LinuxKernelCodingStyle)      
+[Documentation/SubmittingPatches](https://wiki.kldp.org/wiki.php/SubmittingPatches)	        
+[Documentation/stable_api_nonsense](https://wiki.kldp.org/wiki.php/stable_api_nonsense.txt)	    
+[Documentation/sched-design](https://wiki.kldp.org/wiki.php/sched-design.txt)		    
+[Documentation/oops-tracing](https://wiki.kldp.org/wiki.php/oops-tracing.txt)		    
 
-### Rules	
-리눅스 커널 소스 내의 번역 하고자 하는 document가 있다면 본 프로젝트에	
-파일 또는 디렉터리을 추가 시켜 주세요. 그리고 번역을 시작하면 됩니다. 	
- 
 ### Current Works   
-현재 번역이 진행 되고 있는 document 입니다. 
+현재 번역이 진행 되고 있는 Document 입니다. 
 
 +[linux/README](https://github.com/jihuun/Linux-Documentation-KOR-Translation/blob/master/linux/README)     
 
+### HOWTO 
+리눅스 커널 소스 내의 번역 하고자 하는 Documentation 문서가 있다면 본 프로젝트에	
+파일 또는 디렉터리을 추가 시켜 주세요. 그리고 번역을 시작하면 됩니다. 	
+ 
