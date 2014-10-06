@@ -618,7 +618,12 @@ IF SOMETHING GOES WRONG:
    binary associated with the kernel that exhibited the symptom.  This is
    the file 'linux/vmlinux'.  To extract the namelist and match it against
    the EIP from the kernel crash, do:
-
+   
+     nm vmlinux | sort | less
+   커널 함수 이름을 확인하려면, 그 잘못된 증상을 나타내는 커널과 관련된
+   시스템 바이너리를 찾을 필요가있다. 이것이 'linux/vmlinux' 파일이다.
+   name list를 추출하고 커널 충돌시 EIP와 대조해 보기 위해 다음 명령어를 실행하라.
+   
      nm vmlinux | sort | less
 
    This will give you a list of kernel addresses sorted in ascending
@@ -633,21 +638,42 @@ IF SOMETHING GOES WRONG:
    you want.  In fact, it may be a good idea to include a bit of
    "context" in your problem report, giving a few lines around the
    interesting one.
+   이렇게 하면오름차순으로 정렬된 커널 주소의 목록을 제공하여
+   잘못된 주소를 포함하는 함수를 찾기가 쉬워진다. 
+   커널 디버깅 메시지에 의해 주어진 주소가 함수 주소와 정확히
+   일치하기 어렵기 때문에 grep 명령어를 이용해야 할수도 있다.
+   (목록에 주어진 각 커널 함수의 시작점은 당신이 찾는 함수보다
+   낮은 주소를 가지지만 바로 뒤에 당신이 찾는 높은 주소의 함수가
+   주어지므로 쉽게 찾을 것이다.) problem report를 작성할때 
+   약간의 앞뒤 문맥을 포함하는 것도 좋은 생각이다.
 
    If you for some reason cannot do the above (you have a pre-compiled
    kernel image or similar), telling me as much about your setup as
    possible will help.  Please read the REPORTING-BUGS document for details.
+   만약 위 설명을 따라할수 없는 상황이라면 (미리 컴파일 된 커널 이미지 등)
+   저자에게 당신의 설정이나 환경에 대해 가능한 한 많이 이야기 해주는 것이 도움이 된다.
+   관련된 자세한 내용은 REPORTING-BUGS 문서를 읽어 보기 바람.
 
  - Alternatively, you can use gdb on a running kernel. (read-only; i.e. you
    cannot change values or set break points.) To do this, first compile the
    kernel with -g; edit arch/i386/Makefile appropriately, then do a "make
    clean". You'll also need to enable CONFIG_PROC_FS (via "make config").
+   또는, 실행중인 커널에 GDB를 사용할 수 있다. (읽기 전용, 즉 당신은 
+   값이나 브레이크 포인트를 변경할 수 없다) 이 작업을 수행하려면, 
+   먼저 arch/i386/Makefile을 수정하여 -g 옵션으로 커널을 컴파일 한뒤,
+   "make clean" 을 수행한다. 이 과정에서 ("make config" 이용) 
+   CONFIG_PROC_FS도 enable 해야함.
 
    After you've rebooted with the new kernel, do "gdb vmlinux /proc/kcore".
    You can now use all the usual gdb commands. The command to look up the
    point where your system crashed is "l *0xXXXXXXXX". (Replace the XXXes
    with the EIP value.)
+   새 커널로 부팅 한 후, "gdb vmlinux /proc/kcore" 명령을 수행하면 
+   모든 GDB 명령을 사용할 수 있게 된다. 시스템이 크래시된 포인트를 찾으려면
+   "l *0xXXXXXXXX"(XXX는 EIP의 값) 명령을 수행하면 됨.
 
    gdb'ing a non-running kernel currently fails because gdb (wrongly)
    disregards the starting offset for which the kernel is compiled.
+   현재 실행중이지 않은 커널을 gdb로 디버깅 하는 것은 실패한다. 왜냐하면
+   gdb가 커널이 컴파일되는 시작 오프셋을무시하기 때문이다.
 
