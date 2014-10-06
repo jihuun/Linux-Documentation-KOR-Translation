@@ -24,8 +24,8 @@ _기여하는 또 하나의 방법입니다._
 
 ### Contributor	
 현재 이 프로젝트에 참여하고 있는 분들입니다.		
-[@jihuun](github.com/jihuun)    
-[@jungwoos](github.com/jungwoos)    
+[@jihuun](https://github.com/jihuun)    
+[@jungwoos](https://github.com/jungwoos)    
 
 ### Others Works	
 이미 여러 선배 개발자들을 통해서 번역이 완료 되어진 Document 들이 있습니다.     
