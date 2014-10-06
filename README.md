@@ -23,20 +23,20 @@ _기여하는 또 하나의 방법입니다._
 도움이 되었으면 좋겠습니다.	
 
 ### Contributor	
-    현재 이 프로젝트에 참여하고 있는 분들입니다.		
-    [@jihuun](github.com/jihuun)    
-    [@jungwoos](github.com/jungwoos)    
+현재 이 프로젝트에 참여하고 있는 분들입니다.		
+[@jihuun](github.com/jihuun)    
+[@jungwoos](github.com/jungwoos)    
 
 ### Others Works	
-    이미 여러 선배 개발자들을 통해서 번역이 완료 되어진 문서들이 있습니다.	
-    본 프로젝트에서는 이미 잘 번역되어진 아래의 문서 _이외의_ 문서들을 번역합니다.	
-    
-    [Documentation/HOWTO](https://wiki.kldp.org/wiki.php/HOWTO)     
-    [Documentation/CodingStyle](https://wiki.kldp.org/wiki.php/LinuxKernelCodingStyle)      
-    [Documentation/SubmittingPatches](https://wiki.kldp.org/wiki.php/SubmittingPatches)	        
-    [Documentation/stable_api_nonsense](https://wiki.kldp.org/wiki.php/stable_api_nonsense.txt)	    
-    [Documentation/sched-design](https://wiki.kldp.org/wiki.php/sched-design.txt)		    
-    [Documentation/oops-tracing](https://wiki.kldp.org/wiki.php/oops-tracing.txt)		    
+이미 여러 선배 개발자들을 통해서 번역이 완료 되어진 문서들이 있습니다.	
+본 프로젝트에서는 이미 잘 번역되어진 아래의 문서 _이외의_ 문서들을 번역합니다.	
+
+[Documentation/HOWTO](https://wiki.kldp.org/wiki.php/HOWTO)     
+[Documentation/CodingStyle](https://wiki.kldp.org/wiki.php/LinuxKernelCodingStyle)      
+[Documentation/SubmittingPatches](https://wiki.kldp.org/wiki.php/SubmittingPatches)	        
+[Documentation/stable_api_nonsense](https://wiki.kldp.org/wiki.php/stable_api_nonsense.txt)	    
+[Documentation/sched-design](https://wiki.kldp.org/wiki.php/sched-design.txt)		    
+[Documentation/oops-tracing](https://wiki.kldp.org/wiki.php/oops-tracing.txt)		    
 
 ### Current Works   
 현재 번역이 진행 되고 있는 Document 입니다. 
