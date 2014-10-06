@@ -28,7 +28,7 @@ _기여하는 또 하나의 방법입니다._
 [@jungwoos](github.com/jungwoos)    
 
 ### Others Works	
-이미 여러 선배 개발자들을 통해서 번역이 완료 되어진 문서들이 있습니다.	
+이미 여러 선배 개발자들을 통해서 번역이 완료 되어진 Document 들이 있습니다.	
 본 프로젝트에서는 이미 잘 번역되어진 아래의 문서 _이외의_ 문서들을 번역합니다.	
 
 [Documentation/HOWTO](https://wiki.kldp.org/wiki.php/HOWTO)     
@@ -41,9 +41,18 @@ _기여하는 또 하나의 방법입니다._
 ### Current Works   
 현재 번역이 진행 되고 있는 Document 입니다. 
 
-+[linux/README](https://github.com/jihuun/Linux-Documentation-KOR-Translation/blob/master/linux/README)     
+[linux/README](https://github.com/jihuun/Linux-Documentation-KOR-Translation/blob/master/linux/README)     
+
+### Upcoming Works  
+앞으로 번역 하고자 하는 Document 입니다. 이 프로젝트의 초기 목표는 리눅스 커널  
+개발에 처음 참여 하고자 하는 분들에게 도움이 될 수 있는 문서들을 우선 번역하는  
+것 입니다.       
++[linux/Documentation/development-process](https://github.com/jihuun/Linux-Documentation-KOR-Translation/tree/master/linux/Documentation/development-process)    
 
 ### HOWTO 
 리눅스 커널 소스 내의 번역 하고자 하는 Documentation 문서가 있다면 본 프로젝트에	
-파일 또는 디렉터리을 추가 시켜 주세요. 그리고 번역을 시작하면 됩니다. 	
+파일 또는 디렉터리을 추가 시켜 주세요. 그리고 번역을 시작하면 됩니다.   
+
+하나의 파일이 번역이 끝나기 전까지는 영어 문단을 지우지 않고 그 아래에 번역 
+내용을 기술 합니다. (어색한 문장을 계속 해서 고쳐 나가기 위함 입니다.) 
  
