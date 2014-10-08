@@ -571,6 +571,7 @@ IF SOMETHING GOES WRONG:
    말해 달라.
 
  - If the bug results in a message like
+ - 버그가 다음의 결과를 보여준다면
 
      unable to handle kernel paging request at address C0000010
      Oops: 0002
@@ -588,6 +589,11 @@ IF SOMETHING GOES WRONG:
    important: it tells something about why the kernel dumped code (in
    the above example, it's due to a bad kernel pointer). More information
    on making sense of the dump is in Documentation/oops-tracing.txt
+   아니면, 비슷하게 화면에 커널 디버깅 정보나 시스템 로그를 정확히 복사해라.
+   그 정보는 이해하기 어려울 수도 있지만, 문제를 디버깅하는데 도움을 줄 수 있는
+   정보를 포함 하고 있다. 또한 덤프의 텍스트도 중요하다. 왜 커널이 코드를 덤프
+   하는지에 대한 내용을 말해준다. (예를 들어, 잘못된 커널 포인터에서 기인한)
+   덤프에대한 보다 자세한 정보는 Documentation/oops-tracing.txt를 참고.
 
  - If you compiled the kernel with CONFIG_KALLSYMS you can send the dump
    as is, otherwise you will have to use the "ksymoops" program to make
