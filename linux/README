@@ -23,7 +23,7 @@ WHAT IS LINUX?
   loading, shared copy-on-write executables, proper memory management,
   and multistack networking including IPv4 and IPv6.
 
-  리눅스는 현대의 완전한 UNIX운영체제에서 기대할 수 있는 다음의 특징들을
+  리눅스는 현대의 UNIX운영체제에서 기대할 수 있는 다음의 특징들을
   모두 포함하고 있다. 완벽한 멀티태스킹(multitasking), 가상 메모리(virtual
   memory), 공유 라이브러리(shared libraries), 실시간 페이지 적재기능
   (demand loading executables), shared copy-on-write executables,
@@ -35,7 +35,7 @@ WHAT IS LINUX?
   accompanying COPYING file for more details.
 
   리눅스는 GPL 라이센스(GNU General Public License) 하에 배포된다.
-  - COPYING파일 참고.
+  보다 자세한 내용은 COPYING 파일 참고.
 
 
 ON WHAT HARDWARE DOES IT RUN?
@@ -61,9 +61,9 @@ ON WHAT HARDWARE DOES IT RUN?
   Linux has also been ported to itself. You can now run the kernel as a
   userspace application - this is called UserMode Linux (UML).
 
-  타겟이 다음을 지원하는 한 리눅스는 32,64bit 아키텍쳐에서 모두 쉽게 포팅이
+  타겟이 다음을 지원하는 한 리눅스는 32bit 와 64bit 아키텍쳐에서 모두 쉽게 포팅이
   가능하다. PMMU(paged memory management unit), GCC(GNU C compiler). 리눅스는
-  또한 PMMU가 없는 수많은 아키텍쳐에도 포팅이 가능하다. (다만 기능,성능의
+  또한 PMMU가 없는 수많은 아키텍쳐에도 포팅이 가능하다. (다만 기능, 성능의
   제약이 있음). 리눅스는 또한 그 자체로도 포팅이 될 수 있다. 리눅스 커널을
   응용프로그램 처럼 실행 시키는것도 가능하다. (이것을 UserMode Linux (UML)
   라고 부른다)
@@ -91,10 +91,12 @@ DOCUMENTATION:
    contains information about the problems, which may result by upgrading
    your kernel.
 
- - Documentation/ 하위 디렉터리에는 다양한정 driver를 위한 커널 설치에 관련된
-   메모등이 포함 되어있다. Documentation/00-INDEX 파일을 참고하면 각각의 파일에
-   어떤 내용이 포함되어 있는지 에 대한 리스트가 있다. Changes 파일에는 커널
-   업그레이드가 필요할 수 있는 문제에 대한 정보가 포함 되어 있다.
+ - Documentation/ 하위 디렉터리에는 다양한 README 파일이 존재 한다. 이
+   파일에는 몇몇의 driver를 위한 커널 설치에 관련된 설명 등이 포함 되어 있다. 
+   Documentation/00-INDEX 파일을 참고하면 각각의 파일에 어떤 내용이 포함되어
+   있는지에 대한 리스트가 있다. Changes 파일에는 커널 업그레이드가 필요할 수
+   있는 문제에 대한 정보가 포함 되어 있다.
+
 
  - The Documentation/DocBook/ subdirectory contains several guides for
    kernel developers and users.  These guides can be rendered in a
@@ -142,7 +144,7 @@ INSTALLING the kernel source:
 
    /usr/src/linux 영역은 사용하지 말것. 이 영역은 라이브러리 헤더파일이
    존재하는 커널 헤더로 구성 되어 있다. 이 영역은 라이브러리와 일치 해야
-   하며, 무엇이든간에 변경되면 안된다.
+   하며, 무엇이든 간에 변경되면 안된다.
 
  - You can also upgrade between 3.x releases by patching.  Patches are
    distributed in the traditional gzip and the newer bzip2 format.  To
@@ -164,10 +166,10 @@ INSTALLING the kernel source:
    the backup files (some-file-name~ or some-file-name.orig), and make sure
    that there are no failed patches (some-file-name# or some-file-name.rej).
    If there are, either you or I have made a mistake.
-   "x" 는 현재 커널 소스 트리의 버전보다 높은 버전으로 변경. (some-file-name~
+   "x" 는 현재 커널 소스 트리의 버전보다 높은 버전으로 변경 한다. (some-file-name~
    또는 some-file-name.orig) 형태의 백업파일을 지우고 싶어할 수도 있다. 그리고
    어떠한 결함이 있는 패치(some-file-name# or some-file-name.rej)가 있어서는
-   안된다. 만약 그러한 패치가 존재한다면 문제가 생길것 이다.
+   안된다. 만약 그러한 패치가 존재한다면 문제가 생길 것이다.
 
    Unlike patches for the 3.x kernels, patches for the 3.x.y kernels
    (also known as the -stable kernels) are not incremental but instead apply
