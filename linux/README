@@ -223,8 +223,8 @@ SOFTWARE REQUIREMENTS
    3.x 커널을 컴파일 하거나 실행 시키기 위해서는 최신 버전의 여러 소프트웨어
    패키지가 필요하다.  Documentation/Changes 파일을 참고하면 최소한의 버전과
    패키지 업데이트 방법을 확인 할 수 있다. 지나치게 오래된 패키지의 버전은
-   추적하기 어려운 간접적인 에러의 원인이 될 수 있다. 따라서 따라서 빌드나
-   작업시 명백한 문제점이 등장했을 때 업데이트 하면 될 것 이라고 생각하면
+   추적하기 어려운 간접적인 에러의 원인이 될 수 있다. 따라서 따라서 빌드 혹은
+   기타 작업시 명백한 문제점이 등장했을 때에만 업데이트 하면 될 것 이라고 생각하면
    안된다.
 
 BUILD directory for the kernel:
@@ -240,7 +240,7 @@ BUILD directory for the kernel:
      build directory:    /home/name/build/kernel
 
    커널을 컴파일 할때, 모든 아웃풋 파일들은 기본적으로 커널 소스코드와 함께
-   저장이 될 것이다. "make O=output/dir" 옵션을 이용하면 아래와 같이  아웃풋
+   저장이 될 것이다. "make O=output/dir" 옵션을 이용하면 아래와 같이 아웃풋
    파일(.config 포함)을 다른 경로로 위치 시키는것이 가능하다.
 
      커널 소스 코드:	/usr/src/linux-3.X
@@ -270,8 +270,8 @@ CONFIGURING the kernel:
    only ask you for the answers to new questions.
 
    이번 단계를 절대 빠트리면 안된다. 단순한 업그레이드를 할지라도 새로운
-   configuration 옵션이 각 릴리즈에 추가되어있는데 만약 configuration 파일이
-   설정 되어 있지않다면 문제가 발생할것이다. 만약 작업내용이 많지 않아서 현재
+   configuration 옵션이 각 릴리즈에 추가되어 있는데 만약 configuration 파일이
+   설정 되어 있지 않다면 문제가 발생할 것이다. 만약 작업 내용이 많지 않아서 현재
    가지고 있는 configuration 파일을 유지하고 싶다면, "make oldconfig" 옵션을
    사용하라. 새로운 질문에 대한 답변만 요구할것이다.
 
@@ -359,7 +359,7 @@ CONFIGURING the kernel:
 
 			   lsmod를 통해 loaded 된 모듈과 현재 config 파일을
 			   기반으로 생성. 다른 종류의 기기를 위한
-			   localmodconfig를 생성하기 위해서기기의 lsmod를 저장.
+			   localmodconfig를 생성하기 위해서 기기의 lsmod를 저장.
 			   그리고 LSMOD 파라미터로 떠 넘긴다.
 
                    target$ lsmod > /tmp/mylsmod
@@ -482,8 +482,8 @@ COMPILING the kernel:
    are installing a new kernel with the same version number as your
    working kernel, make a backup of your modules directory before you
    do a "make modules_install".
-   문제 상황에 대비해서 커널을 백업 해라. 이것은 특별히 개발 출시에 있어서 필요
-   하다. 디버깅이 되지 않은 코드들이 래 릴리즈 버전에 포함 되어있다. 또한 커널에
+   문제 상황에 대비해서 커널을 백업 해라. 이것은 특별히 개발 릴리즈에 있어서 필요
+   하다. 디버깅이 되지 않은 코드들이 릴리즈 버전에 포함 되어있다. 또한 커널에
    상응하는 모듈도 백업해야 한다. 만약 현재 동작하는 커널과 같은 버전의 커널을
    설치하고자 한다면 "make module_install" 을 하기 전에 모듈 디렉터리를 백업
    해라.
