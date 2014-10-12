@@ -492,8 +492,8 @@ COMPILING the kernel:
    "LOCALVERSION" to append a unique suffix to the regular kernel version.
    LOCALVERSION can be set in the "General Setup" menu.
    컴파일을 진행하기 이전에 "LOCALVERSION" config 옵션을 사용하면, 정규 커널
-   버전에 고유의 접미사를 붙일 수 있다. LOCALVERSION 은 "General Setup" 메뉴
-   에서 설정할 수 있다.
+   버전에 고유의 접미사를 붙일 수 있다. LOCALVERSION 옵션은 "General Setup"
+   메뉴에서 설정할 수 있다.
 
  - In order to boot your new kernel, you'll need to copy the kernel
    image (e.g. .../linux/arch/i386/boot/bzImage after compilation)
@@ -516,11 +516,10 @@ COMPILING the kernel:
    the new kernel image.
    하드디스크를 통해 리눅스를 부팅 시킨다면, 아마 당신은 /etc/lilo.conf 파일에
    기술되어 있는대로 커널 이미지를 사용하는 LILO를 사용할 것이다. 커널 이미지
-   파일은 보통 다음과 같다. /vmlinuz, /boot/vmlinuz, /bzImage
-   /boot/bzImage. 새 커널을 사용하기 위해서, 예전 이미지 복사본과 이전 것과
-   관련된 새 이미지 복사본을 저장하라. 그리고 loading map을 갱신 하기 위해서
-   LILO를 재시작 해야 한다. 이렇게 하지 않는다면 새 커널 이미지가 부팅
-   되지 않을 것이다.    
+   파일은 보통 다음과 같다. /vmlinuz, /boot/vmlinuz, /bzImage, /boot/bzImage.
+   새 커널을 사용하기 위해서, 예전 이미지 복사본과 이전 것과 관련된 새 이미지
+   복사본을 저장하라. 그리고 loading map을 갱신 하기 위해서 LILO를 재시작
+   해야 한다. 이렇게 하지 않으면 새 커널 이미지가 부팅되지 않을 것이다.    
 
    Reinstalling LILO is usually a matter of running /sbin/lilo.
    You may wish to edit /etc/lilo.conf to specify an entry for your
@@ -560,8 +559,7 @@ IF SOMETHING GOES WRONG:
  - 커널 버그로 부터 기인하는 문제가 생겼을때, 커널에서 그 문제의 해당하는 부분과
    연관되어 있는 사람을 찾기 위해서 MAINTAINERS 파일을 찾아보면 된다. 만약 그
    리스트에서 아무도 찾을 수 없었다면, 나에게 (torvalds@linux-foundation.org)
-   또는, 관계가 있는 메일링리스트나 뉴스그룹에게 메일을 보내는 것이 두번째 좋은
-   방법이 될 것이다.
+   또는, 관계가 있는 메일링리스트나 뉴스그룹에게 메일을 보내는 것도 좋다.
 
  - In all bug-reports, *please* tell what kernel you are talking about,
    how to duplicate the problem, and what your setup is (use your common
