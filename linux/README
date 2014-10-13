@@ -566,7 +566,7 @@ IF SOMETHING GOES WRONG:
    sense).  If the problem is new, tell me so, and if the problem is
    old, please try to tell me when you first noticed it.
  - 모든 버그-리포트 에서는 말하려는 대상이 어떤 커널인지 어떻게 문제를 재현
-   시키는지 문제 발생시 설정이 어떠했는지 등을 말해야 한다. 만약 새로 발견된
+   시키는지 문제 발생시 설정이 어떠했는지 등을 기술해야 한다. 만약 새로 발견된
    문제 였다면, 나게에 말해라. 그리고 문제가 예전 문제라면, 언제 공지 되었었는지
    말해 달라.
 
@@ -591,8 +591,8 @@ IF SOMETHING GOES WRONG:
    on making sense of the dump is in Documentation/oops-tracing.txt
    아니면, 비슷하게 화면에 커널 디버깅 정보나 시스템 로그를 정확히 복사해라.
    그 정보는 이해하기 어려울 수도 있지만, 문제를 디버깅하는데 도움을 줄 수 있는
-   정보를 포함 하고 있다. 또한 덤프의 텍스트도 중요하다. 왜 커널이 코드를 덤프
-   하는지에 대한 내용을 말해준다. (예를 들어, 잘못된 커널 포인터에서 기인한)
+   정보를 포함 하고 있다. 또한 덤프의 텍스트도 중요하다. 이것은 왜 커널이 코드를
+   덤프 하는지에 대해서 말해준다. (예를 들어, 잘못된 커널 포인터에서 기인한)
    덤프에대한 보다 자세한 정보는 Documentation/oops-tracing.txt를 참고.
 
  - If you compiled the kernel with CONFIG_KALLSYMS you can send the dump
