@@ -1,4 +1,5 @@
 1: A GUIDE TO THE KERNEL DEVELOPMENT PROCESS
+1: 커널 개발 프로세스 가이드.
 
 The purpose of this document is to help developers (and their managers)
 work with the development community with a minimum of frustration.  It is
@@ -8,7 +9,10 @@ development (or, indeed, free software development in general).  While
 there is some technical material here, this is very much a process-oriented
 discussion which does not require a deep knowledge of kernel programming to
 understand.
-
+이 문서의 목적은 개발관련 커뮤니티에서 작업을 하는 개발자(또는 관리자)를 돕기 위함이다. (mipimun of frustration과 함께)
+이 문서에서는 리눅스 커널 개발에 익숙하지 않는 사람들이 커뮤니티가 어떻게 돌아가는지에 대한 이해를 도우려고 한다. 
+몇몇의 기술 관련 자료들이 존재하지만, 이 문서는 특히 개발 프로세스에 대한 논의를 지향하는 문서이며, 
+커널 프로그래밍에 대한 깊은 지식이 없어도 이 문서를 이해하는 데에는 문제가 없다.
 
 1.1: EXECUTIVE SUMMARY
 
