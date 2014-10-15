@@ -15,6 +15,7 @@ understand.
 커널 프로그래밍에 대한 깊은 지식이 없어도 이 문서를 이해하는 데에는 문제가 없다.
 
 1.1: EXECUTIVE SUMMARY
+1.1: 요약
 
 The rest of this section covers the scope of the kernel development process
 and the kinds of frustrations that developers and their employers can
@@ -23,6 +24,10 @@ merged into the official ("mainline") kernel, including automatic
 availability to users, community support in many forms, and the ability to
 influence the direction of kernel development.  Code contributed to the
 Linux kernel must be made available under a GPL-compatible license.
+이 섹션의 나머지 부분은 커널 개발 프로세스와 개발자와 그들의 고용주가 직면할 수있는 일종의 좌절감을 커버 한다.
+자동으로 유져가 이용할 수 있는것, 커뮤니티가 다양한 형식을 지원하는 점, 커널 개발에 영향을 미치는 점 등을 포함하여,
+커널 코드가 공식 "mainline" 커널에 머지되어야 하는 많은 이유들이 있다. 
+리눅스 커널에 기여할 코드는 GPL라이센스에 호환되어 사용할 수 있도록 만들어져야 한다. 
 
 Section 2 introduces the development process, the kernel release cycle, and
 the mechanics of the merge window.  The various phases in the patch
