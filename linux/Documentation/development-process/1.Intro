@@ -35,6 +35,10 @@ development, review, and merging cycle are covered.  There is some
 discussion of tools and mailing lists.  Developers wanting to get started
 with kernel development are encouraged to track down and fix bugs as an
 initial exercise.
+섹션 2 에서는 개발 프로세스와 커널의 릴리즈 주기 그리고 merge window의 방법에 대해 소개한다.
+패치 작성, 리뷰, merge 구조의 다양한 단계가 설명되어 있다. 그리고 일부 도구와 메일링 리스트에 대한 논의도 있다. 
+커널 개발을 시작하려고 하는 개발자들 에게는 초기 작업으로 커널을 코드를 분석과 버그 수정을 권장한다. 
+(merge window is a software development process which is sometimes used by large projects.)
 
 Section 3 covers early-stage project planning, with an emphasis on
 involving the development community as soon as possible.
