@@ -9,10 +9,10 @@ development (or, indeed, free software development in general).  While
 there is some technical material here, this is very much a process-oriented
 discussion which does not require a deep knowledge of kernel programming to
 understand.
-이 문서의 목적은 개발관련 커뮤니티에서 작업을 하는 개발자(또는 관리자)를 돕기 위함이다. (mipimun of frustration과 함께)
-이 문서에서는 리눅스 커널 개발에 익숙하지 않는 사람들이 커뮤니티가 어떻게 돌아가는지에 대한 이해를 도우려고 한다. 
-몇몇의 기술 관련 자료들이 존재하지만, 이 문서는 특히 개발 프로세스에 대한 논의를 지향하는 문서이며, 
-커널 프로그래밍에 대한 깊은 지식이 없어도 이 문서를 이해하는 데에는 문제가 없다.
+이 문서의 목적은 개발 커뮤니티에서 활동하는 개발자(또는 관리자)를 돕는 것이다.
+리눅스 커널 개발에 익숙하지 않는 사람들도 커뮤니티가 어떻게 돌아가는지 이해하게 될것이다.
+몇몇의 기술 자료들이 존재하지만, 개발 과정을 주로 다루는 문서 이므로 커널 프로그래밍에
+대한 깊은 지식이 없어도 이 문서를 이해하는 데에는 문제가 없다.
 
 1.1: EXECUTIVE SUMMARY
 1.1: 요약
@@ -244,6 +244,7 @@ much better positioned to get the new product ready for market quickly.
 
 
 1.5: LICENSING
+1.5: 라이선스
 
 Code is contributed to the Linux kernel under a number of licenses, but all
 code must be compatible with version 2 of the GNU General Public License
@@ -253,6 +254,11 @@ GPLv2 (with, optionally, language allowing distribution under later
 versions of the GPL) or the three-clause BSD license.  Any contributions
 which are not covered by a compatible license will not be accepted into the
 kernel.
+코드는 다수의 라이선스 아래 리눅스 커널에 기여하는데, 특히 모든 코드는 
+전체 커널 배포를 관장하는 version 2 of the GNU General Public License
+(GPLv2)와 호환되어야 한다. 실제로, 모든 코드 기여가 GPLv2(선택적으로, 
+GPL의 차기 버전까지 포함) 또는 BSD 라이선스(3 조항 버전) 에 의해 다루어진다는
+것을 의미하며, 위 라이선스를 지키지 않은 코드는 커널에 포함되지 않는다.
 
 Copyright assignments are not required (or requested) for code contributed
 to the kernel.  All code merged into the mainline kernel retains its
