@@ -42,11 +42,14 @@ initial exercise.
 
 Section 3 covers early-stage project planning, with an emphasis on
 involving the development community as soon as possible.
+섹션 3 에서는 가능한 빨리 개발 커뮤니티에 참여 하는것에 중점을 두고 프로젝트의 초기 단계에 대한 계획을 다룬다. 
 
 Section 4 is about the coding process; several pitfalls which have been
 encountered by other developers are discussed.  Some requirements for
 patches are covered, and there is an introduction to some of the tools
 which can help to ensure that kernel patches are correct.
+섹션 4 는 코딩 프로세스에 대한 내용이다. 다른 개발자를 통해 만나게 되는 몇몇 위험에 대해 논의 한다.
+패치에 대한 몇가지 요구 사항을 다루며, 올바른 커널 패치 인지 확인 시켜주는데 도움이 될 수 있는 툴에 대한 소개도 있다. 
 
 Section 5 talks about the process of posting patches for review.  To be
 taken seriously by the development community, patches must be properly
