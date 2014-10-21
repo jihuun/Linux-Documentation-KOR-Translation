@@ -56,6 +56,7 @@ taken seriously by the development community, patches must be properly
 formatted and described, and they must be sent to the right place.
 Following the advice in this section should help to ensure the best
 possible reception for your work.
+섹션 5 에서는 패치를 전달하여 리뷰를 받는 프로세스에 대해 논의 한다. 
 
 Section 6 covers what happens after posting patches; the job is far from
 done at that point.  Working with reviewers is a crucial part of the
