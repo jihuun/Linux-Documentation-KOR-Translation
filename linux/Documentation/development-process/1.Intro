@@ -67,6 +67,10 @@ done at that point.  Working with reviewers is a crucial part of the
 development process; this section offers a number of tips on how to avoid
 problems at this important stage.  Developers are cautioned against
 assuming that the job is done when a patch is merged into the mainline.
+섹션 6 에서는 패치를 포스팅한 이후에 어떻게 할 것인가 에대해 논의 한다. 패치를 등록했다고 다 끝난게 아니다.
+리뷰를 받는 것은 개발 프로세스에서 매우 중요한 부분이기 때문이다. 
+이 섹션에서는 이런 중요한 단계에서 문제가 발생하는것을 줄이기 위한 정보를 제공한다. 
+개발자는 패치가 mainline에 merge가 되면 모든일이 끝났다고 단정 짓는것을 경계해야 할 것이다.
 
 Section 7 introduces a couple of "advanced" topics: managing patches with
 git and reviewing patches posted by others.
