@@ -258,6 +258,12 @@ capabilities to your product.  But these products, too, have a limited
 commercial life, after which a new version must be released.  At that
 point, vendors whose code is in the mainline and well maintained will be
 much better positioned to get the new product ready for market quickly.
+특히 임베디드 시스템 업체들은 제품에 개발이 중지된(frozen) 커널 버전을 사용하면
+출시후 더 이상의 개발이 필요하지 않다고 생각 하면서 이 섹션에서 언급된 내용을 
+무시하고 싶을 수 있다. 이런 생각은 대량의 코드리뷰의 가치와 자사의 제품에 
+사용자가 직접 기능을 추가 할 수 있다는 장점을 놓치는 것이다. 그러나 이런 제품 역시 
+새 버전이 출시되어야하는 시점까지 어느정도 제한된 수명을 가지고있다. 그 시점에서는, 
+메인라인 코드로 잘 유지된 제품이 훨씬 더 빨리 시장에 새 제품을 내놓을 수 있을 것이다.
 
 
 1.5: LICENSING
@@ -280,6 +286,8 @@ GPL의 차기 버전까지 포함) 또는 BSD 라이선스(3 조항 버전) 에 
 Copyright assignments are not required (or requested) for code contributed
 to the kernel.  All code merged into the mainline kernel retains its
 original ownership; as a result, the kernel now has thousands of owners.
+커널에 기여하는 코드를 위한 저작권 할당은 따로 필요없다.
+메인 라인 커널이 가지고 있는 저작권이 자동으로 적용되기 때문에 자동으로 오픈소스가 된다.
 
 One implication of this ownership structure is that any attempt to change
 the licensing of the kernel is doomed to almost certain failure.  There are
@@ -287,6 +295,9 @@ few practical scenarios where the agreement of all copyright holders could
 be obtained (or their code removed from the kernel).  So, in particular,
 there is no prospect of a migration to version 3 of the GPL in the
 foreseeable future.
+이런 소유 구조는 리눅스의 라이선스를 변경하려는 시도는 불가능함을 의미한다.
+모든 저작권 소유자의 동의를 얻는 등 (또는 코드가 커널에서 제거) 몇 가지 실제적인 시나리오가 있고, 
+그래서 가까운 미래에 GPL 버전 3으로 마이그레이션은 전혀 전망이 없다.
 
 It is imperative that all code contributed to the kernel be legitimately
 free software.  For that reason, code from anonymous (or pseudonymous)
@@ -296,6 +307,11 @@ kernel under the GPL.  Code which has not been licensed as free software by
 its owner, or which risks creating copyright-related problems for the
 kernel (such as code which derives from reverse-engineering efforts lacking
 proper safeguards) cannot be contributed.
+모든 코드가 커널에 합법적인 free software로 기여하는 것이 필수적이다. 
+이러한 이유로, 익명 (또는 가명) 참여자의 코드는 허용되지 않는다.
+모든 참여자는 코드가 GPL 아래 커널과 함께 배포 될 수 있다고 자신의 코드에 "서명" 해야한다. 
+소유자에 의해 free software로 허가되지 않았거나 (ex. 적절한 보호장치없이 리버스 엔지니어링으로 파생 된 코드로)
+커널에 대한 저작권 관련 문제를 만들 위험이있는 코드는 커널에 기여 할 수 없다.
 
 Questions about copyright-related issues are common on Linux development
 mailing lists.  Such questions will normally receive no shortage of
@@ -304,3 +320,8 @@ questions are not lawyers and cannot provide legal advice.  If you have
 legal questions relating to Linux source code, there is no substitute for
 talking with a lawyer who understands this field.  Relying on answers
 obtained on technical mailing lists is a risky affair.
+저작권 관련 문제에 대한 질문은 리눅스 개발 메일링리스트에 빈번하다. 
+이러한 질문은 보통의 많은 답변을 받을 수 있지만, 그 답변을 한 사람들이 
+변호사가 아니며 법률적인 자문을 제공 할 수 없음을 명심해야한다. 
+리눅스 소스코드에 관한 법적 문제가 있는 경우, 이 분야를 이해하는 변호사와
+이야기 하는 것이 최선이며, 메일링리스트에서 얻은 답변에 의존하는 것은 위험하다.
