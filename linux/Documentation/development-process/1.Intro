@@ -81,6 +81,7 @@ information on kernel development.
 섹션 8 에서는 커널 개발에 대한 보다 더 자세한 정보를 소스코드 기준으로 설명한다. 
 
 1.2: WHAT THIS DOCUMENT IS ABOUT
+1.2: 요약
 
 The Linux kernel, at over 8 million lines of code and well over 1000
 contributors to each release, is one of the largest and most active free
