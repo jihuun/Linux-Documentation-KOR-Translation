@@ -81,7 +81,7 @@ information on kernel development.
 섹션 8 에서는 커널 개발에 대한 보다 더 자세한 정보를 소스코드 기준으로 설명한다. 
 
 1.2: WHAT THIS DOCUMENT IS ABOUT
-1.2: 요약
+1.2: 이 문서가 말하려는 것
 
 The Linux kernel, at over 8 million lines of code and well over 1000
 contributors to each release, is one of the largest and most active free
@@ -90,6 +90,11 @@ kernel has evolved into a best-of-breed operating system component which
 runs on pocket-sized digital music players, desktop PCs, the largest
 supercomputers in existence, and all types of systems in between.  It is a
 robust, efficient, and scalable solution for almost any situation.
+리눅스 커널은 800만줄 이상의 코드로 구현되어 있으며 각 리리즈 마다 1000명 이상의 개발자들이 컨트리뷰션 한다.
+이것은 존재하는 어떠한 프로젝트 보다 규모가 크고 가장 활발하게 진행 되고 있는 자유 소프트웨어 프로젝트 이다.
+1991년, 시작은 미미 하였지만, 현재는 소형의 디지털 음악 플레이어, 데스크탑 PC, 현존하는 가장 거대한
+슈퍼컴퓨터, 기타 모든 시스템에 적용되고 있으며 가장 뛰어난 성능을 자랑하는 운영체제로 성장 하였다. 
+리눅스는 어떤 상황에서도 가장 탄탄하고 효율적이고 문제가 적은 솔루션 이다.
 
 With the growth of Linux has come an increase in the number of developers
 (and companies) wishing to participate in its development.  Hardware
