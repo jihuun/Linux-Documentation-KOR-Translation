@@ -109,7 +109,8 @@ better suit their needs
 리눅스의 성장을 통해 리눅스 개발에 참여 하려고 하는 개발자(혹은 회사) 수가 많이 증가 하였다. 
 HW 벤더는 리눅스가 그들의 제품을 잘 지원해주길 원하며 이 제품들이 리눅스 유져에게 매력적으로 느껴지고 싶어한다.
 제품에 리눅스가 사용되는 임베디드 시스템 벤더는 리눅스가 보다 쉽게 포팅 되기를 원한다.
-기타 소프트웨어 벤더나 판매자는 
+리눅스 기반의 소프트웨어의 벤더나 판매자는 가능한한 성능과 신뢰성에 관심을 갖고 있다. 
+그리고 최종 사용자는 그들의 필요에 따라서 리눅스가 더 좋게 변화 하길 원한다.
 
 One of the most compelling features of Linux is that it is accessible to
 these developers; anybody with the requisite skills can improve Linux and
@@ -119,6 +120,8 @@ process.  But, if anything, the kernel is even more open than most other
 free software projects.  A typical three-month kernel development cycle can
 involve over 1000 developers working for more than 100 different companies
 (or for no company at all).
+리눅스의 가장 강력한 특징중 하나는 다음의 개발자들이 접근 하기 쉽다는 점이다. 
+
 
 Working with the kernel development community is not especially hard.  But,
 that notwithstanding, many potential contributors have experienced
