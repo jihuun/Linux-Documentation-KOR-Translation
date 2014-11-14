@@ -148,6 +148,11 @@ community's ways (or, worse, who tries to flout or circumvent them) will
 have a frustrating experience in store.  The development community, while
 being helpful to those who are trying to learn, has little time for those
 who will not listen or who do not care about the development process.
+커널 개발 프로세스는 새로운 개발자에게는 다소 어렵고 두렵게 느껴질 수도 있다.
+그러나 그 프로세스의 이면에는 훌륭한 경험과 좋은 이유가 존재한다. 
+커널 커뮤니티의 방법을 이해하지 않는 개발자는 실망스러운 경험을 하게 될 것다.
+이 커뮤니티는 들으려 하지않고 개발 프로세스를 전혀 신경쓰지 않는 개발자에게 많은 시간을 주지 않는다.
+반면에, 배우고자 하는 개발자에게 이 커뮤니티는 많은 도움이 될 것이다. 
 
 It is hoped that those who read this document will be able to avoid that
 frustrating experience.  There is a lot of material here, but the effort
