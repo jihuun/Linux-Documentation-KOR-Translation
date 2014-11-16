@@ -160,9 +160,13 @@ involved in reading it will be repaid in short order.  The development
 community is always in need of developers who will help to make the kernel
 better; the following text should help you - or those who work for you -
 join our community.
-
+이글을 읽음 으로써 커널 개발의 두려움이 사라지기를 희망 한다. 이 문서에는 많은 내용들이 있지만,
+글을 읽는것을 포함한 노력은 곧 보답으로 돌아 올 것이다. 보다 리눅스 커널이 발전하기 위하여 
+개발 커뮤니티에는 그런 도움이 줄 수있는 개발자들이 항상 필요하다. 다음의 글이 도움이 될 것이다.
+이 커뮤니티에 참여해라.
 
 1.3: CREDITS
+1.3: 감사의 말
 
 This document was written by Jonathan Corbet, corbet@lwn.net.  It has been
 improved by comments from Johannes Berg, James Berry, Alex Chiang, Roland
@@ -173,6 +177,12 @@ Jochen Voß.
 This work was supported by the Linux Foundation; thanks especially to
 Amanda McPherson, who saw the value of this effort and made it all happen.
 
+이 문서는 Jonathan Corbet (corbet@lwn.net)에 의해 작성 되었다. 또한 다음의 사람들을 통해 문서가 더욱 다듬어 졌다.
+Johannes Berg, James Berry, Alex Chiang, Roland Dreier, Randy Dunlap, Jake Edge, Jiri Kosina, Matt Mackall, Arthur Marsh,
+Amanda McPherson, Andrew Morton, Andrew Price, Tsugikazu Shibata, and Jochen Voß.
+
+이 작업은 리눅스 재단을 통해 지원 받고 있다. 특별히 Amanda McPherson에게 감사한다.
+그는 이 일의 가치를 알아 봤으며 이 모든것을 가능하게 만들어 주었다.
 
 1.4: THE IMPORTANCE OF GETTING CODE INTO THE MAINLINE
 
