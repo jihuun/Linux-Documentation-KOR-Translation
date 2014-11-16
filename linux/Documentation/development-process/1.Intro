@@ -193,10 +193,17 @@ Torvalds and used as a base by Linux distributors).  In the short term,
 contributing code can look like an avoidable expense; it seems easier to
 just keep the code separate and support users directly.  The truth of the
 matter is that keeping code separate ("out of tree") is a false economy.
+일부 업체와 개발자들은 커널 커뮤니티와 작업하고 메인라인 커널(리누스 토발즈에 
+의해 관리되며 리눅스 디스트리뷰터에 의해 베이스로 사용되는)에 자신들의 코드를
+넣는 일을 귀찮다고 생각한다. 단기적으로는 코드를 기여하는 것은 불필요한 비용으로 생각 할 수 있다;
+그냥 별도의 코드를 유지하고 사용자를 직접 지원하는 것이 쉬워 보인다. 
+하지만 사실은 별도코드(out of tree)를 유지하는 것은 장기적으로 경제적이지 않다.
 
 As a way of illustrating the costs of out-of-tree code, here are a few
 relevant aspects of the kernel development process; most of these will be
 discussed in greater detail later in this document.  Consider:
+별도코드(out of tree) 유지 비용을 설명하기 위해 몇 가지 커널 개발 프로세스의
+중요한 측면을 여기서 소개한다; 상세한 사항은 이 문서 나중에 더 상세히 논의 될 것이다.
 
 - Code which has been merged into the mainline kernel is available to all
   Linux users.  It will automatically be present on all distributions which
@@ -204,6 +211,10 @@ discussed in greater detail later in this document.  Consider:
   of supporting multiple versions of multiple distributions; it all just
   works, for the developer and for the user.  Incorporation into the
   mainline solves a large number of distribution and support problems.
+- 메인라인 커널에 통합 된 코드는 모든 리눅스 사용자가 사용할 수 있다. 
+  드라이버 디스크, 다운로드, 또는 다수의 버전을 지원하는 번거로움 없이
+  모든 배포판의 개발자와 사용자에게 자동적으로 사용 가능하다.
+  메인라인 통합은 다양한 배포 및 지원 관련 문제를 해결한다.  
 
 - While kernel developers strive to maintain a stable interface to user
   space, the internal kernel API is in constant flux.  The lack of a stable
@@ -213,16 +224,26 @@ discussed in greater detail later in this document.  Consider:
   constant upkeep if it is to work with new kernels.  Maintaining
   out-of-tree code requires significant amounts of work just to keep that
   code working.
+  커널 개발자는 유저스페이스에 안정적인 인터페이스를 유지하기 위해 노력하지만
+  내부 커널 API는 유동적이다. 안정적인 내부 인터페이스의 부족은 신중한 디자인 결정이다
+  이는 근본적인 문제를 언제든 개선 할 수 있으며 결과적으로 고품질의 코드를 만든다.
+  그러나 이런 정책의 결과로 새로운 커널을 작업하는 경우라도 개별코드의 일정한 유지보수가
+  필요하다. 개별 코드는 코드를 작동하도록 유지보수 하는데만  상당한 양의 비용이 필요하다.
 
   Code which is in the mainline, instead, does not require this work as the
   result of a simple rule requiring any developer who makes an API change
   to also fix any code that breaks as the result of that change.  So code
   which has been merged into the mainline has significantly lower
   maintenance costs.
+  메인라인에 있는 코드는 API를 수정하는 모든 개발자가 변화의 결과로 발생하는 
+  모든 문제 코드를 해결해야 한다는 간단한 규칙 덕분에 위와 같은 작업이 필요하지 않다. 
+  그래서 메인 라인에 병합 된 코드는 상당히 낮은 유지 보수 비용이 든다.
 
 - Beyond that, code which is in the kernel will often be improved by other
   developers.  Surprising results can come from empowering your user
   community and customers to improve your product.
+- 그 외에도 커널코드는 종종 다른 개발자의 의해 향상 될 것이다. 
+  사용자 커뮤니티와 제품을 개선하고자 하는 고객에 의해 놀라운 결과가 나올 수 있다.
 
 - Kernel code is subjected to review, both before and after merging into
   the mainline.  No matter how strong the original developer's skills are,
