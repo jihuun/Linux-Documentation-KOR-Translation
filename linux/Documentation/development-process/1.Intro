@@ -284,6 +284,8 @@ including code which is distributed in proprietary, binary-only form.
 There are, however, additional factors which should be taken into account
 before considering any sort of binary-only kernel code distribution.  These
 include:
+위의 모든 추론은 바이너리로 배포되는 코드를 포함해서 모든 아웃-오브-트리 커널 코드에 적용된다.
+그러나 바이너리로 배포하기 전에 고려되어야 할 부가 요소가 있다. 이들은 다음을 포함한다 :
 
 - The legal issues around the distribution of proprietary kernel modules
   are cloudy at best; quite a few kernel copyright holders believe that
@@ -294,11 +296,20 @@ include:
   legal advice.  The true legal status of closed-source modules can only be
   determined by the courts.  But the uncertainty which haunts those modules
   is there regardless.
+- 바이너리 커널 모듈의 배포는 항상 법적으로 문제의 소지가 있다.
+  대부분의 커널 저작권자는 바이너리 모듈이 커널의 파생 코드이기 때문에
+  바이너리 배포가 (아래에서 다룰) GNU 일반 공중 라이선스의 위반이라고 생각한다. 
+  저자는 변호사가 아니며 이 문서는 법적 조언으로 간주 될 수 없다. 
+  closed-소스 모듈의 법적 상태는 법원에 의해 결정될 것이다. 
+  하지만 그 모듈이 법적으로 문제의 소지가 있는것은 확실하다.
 
 - Binary modules greatly increase the difficulty of debugging kernel
   problems, to the point that most kernel developers will not even try.  So
   the distribution of binary-only modules will make it harder for your
   users to get support from the community.
+- 바이너리 모듈은 대부분의 커널 개발자가 디버깅은 시도조차하지 않는다는 점에서
+  커널 디버깅을 어렵게 한다. 그래서 바이너리 모듈 배포는 사용자가 커뮤니티의 
+  지원을 받기 어렵게 만들 것이다.
 
 - Support is also harder for distributors of binary-only modules, who must
   provide a version of the module for every distribution and every kernel
@@ -306,11 +317,16 @@ include:
   be required to provide reasonably comprehensive coverage, and your users
   will have to upgrade your module separately every time they upgrade their
   kernel.
+- 배포자도 사용자를 지원하려면 모든 배포와 그들이 지원하고자하는 모든 커널 버전에 대한 
+  모듈의 버전을 제공해야하기 때문에 어렵다. 하나의 모듈을 수십번 빌드해야 포괄적으로
+  사용자를 지원할 수 있고, 사용자도 커널을 업그레이드 할 때마다 모듈을 업그레이드해야한다.
 
 - Everything that was said above about code review applies doubly to
   closed-source code.  Since this code is not available at all, it cannot
   have been reviewed by the community and will, beyond doubt, have serious
   problems.
+- closed-소스 코드에 위에 말한 모든 내용이 중복 적용된다.
+  코드는 커뮤니티에 의해 검토되지 않을 수 있으며, 의심 할 여지없이 심각한 문제가된다.
 
 Makers of embedded systems, in particular, may be tempted to disregard much
 of what has been said in this section in the belief that they are shipping
