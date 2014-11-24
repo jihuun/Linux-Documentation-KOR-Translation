@@ -254,14 +254,18 @@ discussed in greater detail later in this document.  Consider:
   developers.  Out-of-tree code is lower-quality code.
 - 커널 코드는 메인라인에 반영하기 이전과 이후 모두 리뷰를 받아야 한다.
   개발자의 실력이 뛰어난것과는 관계없이 리뷰 프로세스는 코드 개선을 위해 반드시 필요한 방법 이다.
-  리뷰과정을 통해 종종 버그와 보안문제가 발견 되기도 한다.
-  
-
+  리뷰과정을 통해 종종 버그와 보안문제가 발견 되기도 한다. 
+  특별히 이것은 폐쇠된 개발 환경에서 코드를 개발하기 위한 방법이기도 하다.
+  이런 코드가 다른 개발자를 통해 리뷰받는 다면 많은 도움이 될 것이다.
+  Out-of-tree 코트는 좋지 않은 코드이다.
 
 - Participation in the development process is your way to influence the
   direction of kernel development.  Users who complain from the sidelines
   are heard, but active developers have a stronger voice - and the ability
   to implement changes which make the kernel work better for their needs.
+  개발 프로세스에 참여하는것은 커널 개발에 직접적으로 참여하는 방법이다.
+  사이드 라인에서 불평하는 유저는 많지만 실제 활동하는 개발자는 힘있는 목소리와
+  그들의 원하는 대로 커널을 개선 시키는 능력을 가지고 있다. 
 
 - When code is maintained separately, the possibility that a third party
   will contribute a different implementation of a similar feature always
