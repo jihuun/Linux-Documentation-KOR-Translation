@@ -274,6 +274,11 @@ discussed in greater detail later in this document.  Consider:
   unpleasant alternatives of either (1) maintaining a nonstandard feature
   out of tree indefinitely, or (2) abandoning your code and migrating your
   users over to the in-tree version.
+- 코드가 별도로 관리되는 경우, 서드파티가 이미 존재하는 유사한 기능 구현을 
+  반복 할 가능성이 항상 존재한다. 그렇게 되면 그 코드를 머지하는것은
+  불가능에 가깝게 힘들어질 것이다. 이 경우 두가지 대안이 있다.
+  (1) 그 기능을 영원히 아웃-오브-트리 코드로 유지 
+  (2) 코드를 포기하고 사용자를 트리-버전으로 이동 시킨다.
 
 - Contribution of code is the fundamental action which makes the whole
   process work.  By contributing your code you can add new functionality to
@@ -282,6 +287,10 @@ discussed in greater detail later in this document.  Consider:
   thinking about doing so), you clearly have an interest in the continued
   success of this platform; contributing code is one of the best ways to
   help ensure that success.
+  코드 컨트리뷰션은 전체 프로세스 작동시키는 기본 작업이다. 코드를 컨트리뷰트함으로써 
+  커널에 새로운 기능을 추가하고 다른 커널 개발자들에게 쓸모있는 기능과 예제를 제공 할 수 있다.
+  Linux용 코드를 개발한(또는 앞으로 개발할) 경우, 당신은 명확하게 이 플랫폼의 지속적인 성공에 
+  관심을 있을것이고 코드를 기여하는 것은 그 성공을 보장하는 가장 좋은 방법 중 하나다.
 
 All of the reasoning above applies to any out-of-tree kernel code,
 including code which is distributed in proprietary, binary-only form.
