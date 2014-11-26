@@ -24,9 +24,9 @@ merged into the official ("mainline") kernel, including automatic
 availability to users, community support in many forms, and the ability to
 influence the direction of kernel development.  Code contributed to the
 Linux kernel must be made available under a GPL-compatible license.
-이 섹션의 나머지 부분은 커널 개발 프로세스와 개발자와 그들의 고용주가 직면할 수있는 일종의 좌절감을 커버 한다.
-자동으로 유져가 이용할 수 있는것, 커뮤니티가 다양한 형식을 지원하는 점, 커널 개발에 영향을 미치는 점 등을 포함하여,
-커널 코드가 공식 "mainline" 커널에 머지되어야 하는 많은 이유들이 있다. 
+이 섹션의 나머지 부분은 커널 개발 프로세스와 개발자와 그들의 고용주가 직면할 수 있는
+문제들을 다룬다. 유저에게 쉽게 제공되고, 커뮤니티로부터 다양한 형식의 지원을 받을 수 있으며
+커널 개발에 영향을 주기 위해서 커널 코드는 공식 "mainline" 커널에 머지되어야 한다. 
 리눅스 커널에 기여할 코드는 GPL라이센스에 호환되어 사용할 수 있도록 만들어져야 한다. 
 
 Section 2 introduces the development process, the kernel release cycle, and
@@ -35,10 +35,10 @@ development, review, and merging cycle are covered.  There is some
 discussion of tools and mailing lists.  Developers wanting to get started
 with kernel development are encouraged to track down and fix bugs as an
 initial exercise.
-섹션 2 에서는 개발 프로세스와 커널의 릴리즈 주기 그리고 merge window의 방법에 대해 소개한다.
-패치 작성, 리뷰, merge 구조의 다양한 단계가 설명되어 있다. 그리고 일부 도구와 메일링 리스트에 대한 논의도 있다. 
-커널 개발을 시작하려고 하는 개발자들 에게는 초기 작업으로 커널을 코드를 분석과 버그 수정을 권장한다. 
-(merge window is a software development process which is sometimes used by large projects.)
+섹션 2 에서는 개발 프로세스, 커널의 릴리즈 주기, 그리고 merge 과정이 작동하는 방법에 대해
+소개한다. 패치 작성, 리뷰, merge 진행 과정을 다양하게 다룰 것이다. 그리고 일부 툴과 
+메일링 리스트에 대해서도 다룰 것이다. 커널 개발을 시작하려고 하는 개발자들은 버그를 찾아
+수정하는 것으로 시작하는 것이 좋다.
 
 Section 3 covers early-stage project planning, with an emphasis on
 involving the development community as soon as possible.
