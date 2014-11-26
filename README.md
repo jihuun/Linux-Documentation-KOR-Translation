@@ -41,7 +41,9 @@ _기여하는 또 하나의 방법입니다._
 ### Current Works   
 현재 번역이 진행 되고 있는 Document 입니다. 
 
-[linux/README](https://github.com/jihuun/Linux-Documentation-KOR-Translation/blob/master/linux/README)     
+[linux/README](https://github.com/jihuun/Linux-Documentation-KOR-Translation/blob/master/linux/README)  
+[linux/Documentation/development-process/1.Intro](https://github.com/jihuun/Linux-Documentation-KOR-Translation/blob/master/linux/Documentation/development-process/1.Intro)  
+[linux/Documentation/development-process/2.Process](https://github.com/jihuun/Linux-Documentation-KOR-Translation/blob/master/linux/Documentation/development-process/2.Process)  
 
 ### Upcoming Works  
 앞으로 번역 하고자 하는 Document 입니다. 이 프로젝트의 초기 목표는 리눅스 커널  
