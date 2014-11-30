@@ -1,4 +1,5 @@
 2: HOW THE DEVELOPMENT PROCESS WORKS
+2: 개발 프로세스는 어떻게 진행 되는가
 
 Linux kernel development in the early 1990's was a pretty loose affair,
 with relatively small numbers of users and developers involved.  With a
@@ -6,7 +7,10 @@ user base in the millions and with some 2,000 developers involved over the
 course of one year, the kernel has since had to evolve a number of
 processes to keep development happening smoothly.  A solid understanding of
 how the process works is required in order to be an effective part of it.
-
+1990년대에 리눅스 커널 개발은 적은 수의 유저나 개발자만이 관여하고 있었다.
+원활하게 진행되고 있는 여러 커널 개발 프로세스에 따라서 1년동안 100만명의 사용자와
+2000여명의 개발자들이 리눅스를 이용하고 있다. 이 개발 프로세스에 대해 확실히 이해하는 것은
+효율성을 위해서 반드시 필요하다.
 
 2.1: THE BIG PICTURE
 
