@@ -13,10 +13,13 @@ how the process works is required in order to be an effective part of it.
 효율성을 위해서 반드시 필요하다.
 
 2.1: THE BIG PICTURE
+2.1: 큰 그림
 
 The kernel developers use a loosely time-based release process, with a new
 major kernel release happening every two or three months.  The recent
 release history looks like this:
+커널 개발자는 2달 또는 3달에 한번씩 릴리즈 되는 프로세스를 이용한다.
+최근의 릴리즈 히스토리는 다음과 같다. 
 
 	2.6.38	March 14, 2011
 	2.6.37	January 4, 2011
@@ -25,12 +28,24 @@ release history looks like this:
 	2.6.34	May 15, 2010
 	2.6.33	February 24, 2010
 
+	2.6.38	2011년 3월 14일
+	2.6.37	2011년 1월 4일
+	2.6.36	2010년 10월 20일
+	2.6.35	2010년 8월 1일
+	2.6.34	2010년 5월 15일
+	2.6.33	2010년 2월 24일
+
 Every 2.6.x release is a major kernel release with new features, internal
 API changes, and more.  A typical 2.6 release can contain nearly 10,000
 changesets with changes to several hundred thousand lines of code.  2.6 is
 thus the leading edge of Linux kernel development; the kernel uses a
 rolling development model which is continually integrating major changes.
-
+각 2.6.x 버전의 릴리즈는 내부 API변경 등의 새로운 특징을 가진 메이져 커널 버전이다.
+일반적인 2.6 버전의 릴리즈는 거의 10000가지의 수정 사항을 가지고 있으며,
+이것은 약 몇십만 라인의 코드에 해당한다. 따라서 2.6버전은 리눅스 커널 개발을
+이끄는 위치에 해당한다. 커널은 중대한 변화가 지속적으로 통합되는
+rolling development model을 사용한다.
+ 
 A relatively straightforward discipline is followed with regard to the
 merging of patches for each release.  At the beginning of each development
 cycle, the "merge window" is said to be open.  At that time, code which is
