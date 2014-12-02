@@ -121,11 +121,11 @@ process.  But, if anything, the kernel is even more open than most other
 free software projects.  A typical three-month kernel development cycle can
 involve over 1000 developers working for more than 100 different companies
 (or for no company at all).
-리눅스의 가장 강력한 특징중 하나는 다음의 개발자들이 접근 하기 쉽다는 점이다. 
-누구나 리눅스를 개선시킬 수 있으며 개발 방향에 영향을 받을 수 있다. 상업적인 제품들에서는 이런
-자유 소프트웨어의 특징인 개방성을 볼 수없다. 그러나 리눅스 커널은 대부분의 자유 소프트웨어 프로젝트
-보다 많이 공개되어 있다. 일반적인 3개월의 커널 개발 사이클에는 1000여명 이상의 개발자,
-100여개 이상의 회사가 같이 참여한다.
+리눅스의 가장 강력한 특징중 하나는 개발자들이 접근 하기 쉽다는 점이다. 
+누구나 리눅스를 개선시킬 수 있으며 개발 방향에 영향을 줄 수 있다. 
+상업적인 제품들에서는 이런 자유 소프트웨어의 특징인 개방성을 볼 수 없다. 
+특히 리눅스 커널은 대부분의 자유 소프트웨어 프로젝트 보다 개방적이다.
+일반적인 3개월의 커널 개발 사이클에는 1000명 이상의 개발자, 100개 이상의 회사가 참여한다.
 
 Working with the kernel development community is not especially hard.  But,
 that notwithstanding, many potential contributors have experienced
