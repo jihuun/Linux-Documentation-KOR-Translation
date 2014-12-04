@@ -121,11 +121,11 @@ process.  But, if anything, the kernel is even more open than most other
 free software projects.  A typical three-month kernel development cycle can
 involve over 1000 developers working for more than 100 different companies
 (or for no company at all).
-리눅스의 가장 강력한 특징중 하나는 다음의 개발자들이 접근 하기 쉽다는 점이다. 
-누구나 리눅스를 개선시킬 수 있으며 개발 방향에 영향을 받을 수 있다. 상업적인 제품들에서는 이런
-자유 소프트웨어의 특징인 개방성을 볼 수없다. 그러나 리눅스 커널은 대부분의 자유 소프트웨어 프로젝트
-보다 많이 공개되어 있다. 일반적인 3개월의 커널 개발 사이클에는 1000여명 이상의 개발자,
-100여개 이상의 회사가 같이 참여한다.
+리눅스의 가장 강력한 특징중 하나는 개발자들이 접근 하기 쉽다는 점이다. 
+누구나 리눅스를 개선시킬 수 있으며 개발 방향에 영향을 줄 수 있다. 
+상업적인 제품들에서는 이런 자유 소프트웨어의 특징인 개방성을 볼 수 없다. 
+특히 리눅스 커널은 대부분의 자유 소프트웨어 프로젝트 보다 개방적이다.
+일반적인 3개월의 커널 개발 사이클에는 1000명 이상의 개발자, 100개 이상의 회사가 참여한다.
 
 Working with the kernel development community is not especially hard.  But,
 that notwithstanding, many potential contributors have experienced
@@ -135,12 +135,10 @@ smoothly (and produce a high-quality product) in an environment where
 thousands of lines of code are being changed every day.  So it is not
 surprising that Linux kernel development process differs greatly from
 proprietary development methods.
-리눅스 커널 커뮤니티와 작업하는것은 그렇게 어렵지 않다. 그럼에도 불구하고
-커널 작업에 있어서 많은 잠재적 컨트리뷰터들이 어려움을 겪고 있다.
-커널 커뮤니티는 매일 수천 줄의 코드가 수정되는 환경 속에서 그들만의 독특한 운영 방식을 발전 시켜 왔다. 
-그로 인해 기능이 원활해 졌고 높은 수준의 제품이 탄생 할 수 있었다.
-따라서 리눅스 커널 개발 프로세스가 상업적인 S/W의 개발 방법론과 크게 차이가 난다는 점은
-그렇게 놀랄 만한 일이 아니다.
+리눅스 커널 커뮤니티와 작업하는것은 그렇게 어렵지 않음에도 불구하고 많은 잠재적 
+컨트리뷰터들이 커널 개발에 어려움을 겪고 있다. 커널 커뮤니티는 매일 수천 줄의 코드가 
+수정되는 환경 속에서도 뛰어난 코드를 유지하는 뚜렷한 고유의 운영 방식을 발전시켜 왔다. 
+따라서 리눅스 커널 개발 프로세스와 상업적인 S/W의 개발 방법론은 큰 차이를 보인다.
 
 The kernel's development process may come across as strange and
 intimidating to new developers, but there are good reasons and solid
@@ -149,11 +147,11 @@ community's ways (or, worse, who tries to flout or circumvent them) will
 have a frustrating experience in store.  The development community, while
 being helpful to those who are trying to learn, has little time for those
 who will not listen or who do not care about the development process.
-커널 개발 프로세스는 새로운 개발자에게는 다소 어렵고 두렵게 느껴질 수도 있다.
-그러나 그 프로세스의 이면에는 훌륭한 경험과 좋은 이유가 존재한다. 
-커널 커뮤니티의 방법을 이해하지 않는 개발자는 실망스러운 경험을 하게 될 것다.
-이 커뮤니티는 들으려 하지않고 개발 프로세스를 전혀 신경쓰지 않는 개발자에게 많은 시간을 주지 않는다.
-반면에, 배우고자 하는 개발자에게 이 커뮤니티는 많은 도움이 될 것이다. 
+커널 개발 프로세스가 새로운 개발자들에게는 다소 어렵고 두렵게 느껴질 수도 있지만
+그 이면에는 탄탄한 경험과 분명한 이유가 있다. 커널 개발 프로세스를 이해하지 못한
+개발자는 좌절스러운 경험을 하게 될 것다. 이 커뮤니티는 들으려 하지않고 개발 프로세스를
+전혀 신경쓰지 않는 개발자에게 많은 시간을 주지 않는 반면, 배우고자 하는 개발자에게 
+이 커뮤니티는 많은 도움이 될 것이다. 
 
 It is hoped that those who read this document will be able to avoid that
 frustrating experience.  There is a lot of material here, but the effort
