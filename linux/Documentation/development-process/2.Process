@@ -54,6 +54,9 @@ community) is merged into the mainline kernel.  The bulk of changes for a
 new development cycle (and all of the major changes) will be merged during
 this time, at a rate approaching 1,000 changes ("patches," or "changesets")
 per day.
+비교적 간단한 훈련 각 릴리즈의 패치를 머지 하기 위해 필요하다. 각 개발 주기에서 merge window가 오픈 된다. 
+그 때, 충분히 안정적으로 보이며, 커뮤니티에서 검증이 완료된 코드가 메인 라인 커널에 머지 된다.
+하루에 1000개가 머지되는 비율로, 개발 사이클에서 발생한 많은 수정사항들이 이 기간에 반영 될 것이다.
 
 (As an aside, it is worth noting that the changes integrated during the
 merge window do not come out of thin air; they have been collected, tested,
