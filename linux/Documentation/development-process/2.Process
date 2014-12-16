@@ -87,6 +87,12 @@ best thing to do is to wait for the next development cycle.  (An occasional
 exception is made for drivers for previously-unsupported hardware; if they
 touch no in-tree code, they cannot cause regressions and should be safe to
 add at any time).
+그뒤 6~10주 동안은 버그 수정 패치만 메인라인에 반영될 수 있다. 
+때때로 매우 중요한 수정사항이 수락될 때도 있지만 이런 경우는 드물다.
+이렇게 merge window 기간 외에 새로운 수정사항을 반영 하고자 하는 개발자는 비우호적인 대우를 받는 경향이 있다. 
+merge window 기간을 놓쳤을 경우 가장 현명한 방법은 돌아오는 다음 순서를 기다리는 것일 것이다. 
+예외적으로 이전에 지원하지 않던 하드웨어를 지원하는 Driver는 허용될 수 있다. 
+이는 기존 기능의 in-tree 코드를 수정하지 않는다면, 기능을 퇴화 시키지 않을 것이고, 안전할 것이기 때문이다.
 
 As fixes make their way into the mainline, the patch rate will slow over
 time.  Linus releases new -rc kernels about once a week; a normal series
