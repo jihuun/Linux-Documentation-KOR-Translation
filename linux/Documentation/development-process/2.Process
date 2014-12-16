@@ -73,6 +73,10 @@ for example, the release which happens at the end of the merge window will
 be called 2.6.40-rc1.  The -rc1 release is the signal that the time to
 merge new features has passed, and that the time to stabilize the next
 kernel has begun.
+merge window는 약 2주동안 진행 된다. 그리고 리누스 토발즈가 merge window의 종료를 선언하면, 
+첫번째 "rc" 버전의 커널이 릴리즈 된다. 가령, 2.6.40 버전이 될 커널이 merge window의 마지막에
+릴리즈 되었다면 버전은 2.6.40-rc1 이 될것 이다. "rc-1" 릴리즈는 새로운 수정사항이 반영 될
+기간은 지났고, 이제 다음 커널 버전의 안정화 작업이 필요한 단계 라는 것을 의미한다.
 
 Over the next six to ten weeks, only patches which fix problems should be
 submitted to the mainline.  On occasion a more significant change will be
