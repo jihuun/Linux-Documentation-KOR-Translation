@@ -89,7 +89,7 @@ touch no in-tree code, they cannot cause regressions and should be safe to
 add at any time).
 그뒤 6~10주 동안은 버그 수정 패치만 메인라인에 반영될 수 있다. 
 때때로 매우 중요한 수정사항이 수락될 때도 있지만 이런 경우는 드물다.
-이렇게 merge window 기간 외에 새로운 수정사항을 반영 하고자 하는 개발자는 비우호적인 대우를 받는 경향이 있다. 
+만약 merge window 기간 외에 새로운 수정사항을 반영 하고자 하는 개발자는 비우호적인 대우를 받을 수 있다.
 merge window 기간을 놓쳤을 경우 가장 현명한 방법은 돌아오는 다음 순서를 기다리는 것일 것이다. 
 예외적으로 이전에 지원하지 않던 하드웨어를 지원하는 Driver는 허용될 수 있다. 
 이는 기존 기능의 in-tree 코드를 수정하지 않는다면, 기능을 퇴화 시키지 않을 것이고, 안전할 것이기 때문이다.
@@ -99,11 +99,16 @@ time.  Linus releases new -rc kernels about once a week; a normal series
 will get up to somewhere between -rc6 and -rc9 before the kernel is
 considered to be sufficiently stable and the final 2.6.x release is made.
 At that point the whole process starts over again.
+수정사항이 메인라인에 반영 됨에 따라, 패치의 비율은 시간이 지남에 따라 느려진다.
+리누스 토발즈는 새로운 -rc 버전의 커널을 대략 일주일에 한번 릴리즈 한다. 
+커널이 주요 stable 버전과 최종 2.6.x 버전이 만들어 지는것을 고려 하기 이전에, 보통의 시리즈는 대략 -rc6과 -rc9 사이에 향상된다. 
+그 시점에는 전체 프로세스가 다시 반복된다.
 
 As an example, here is how the 2.6.38 development cycle went (all dates in
 2011):
+예) 2.6.28 버전의 개발 주기(2011)
 
-	January 4	2.6.37 stable release
+	January 4	 2.6.37 stable release
 	January 18	2.6.38-rc1, merge window closes
 	January 21	2.6.38-rc2
 	February 1	2.6.38-rc3
