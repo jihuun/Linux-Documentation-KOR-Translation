@@ -126,6 +126,11 @@ break systems which worked in the past are considered to be especially
 serious.  For this reason, patches which cause regressions are looked upon
 unfavorably and are quite likely to be reverted during the stabilization
 period.
+개발 사이클의 종료와 stable 버전의 릴리즈는 언제 결정 되는가?
+가장 좋은 방법은 이전 버전에서 성능 감소를 발생시킨 리스트를 이용 하는 것이다. 버그가 없는것이 좋다. 
+그러나 이전버전에 시스템에 문제를 일으켰던 부분은 중대한 고려 대상이 된다.
+이러한 이유 때문에 성능 감소의 원인이 되는 패치는 좋지 못한 대우를 받는 것으로 볼 수 있고,  
+안정화 기간에 반려(revert) 될 수 있다.
 
 The developers' goal is to fix all known regressions before the stable
 release is made.  In the real world, this kind of perfection is hard to
@@ -135,6 +140,13 @@ worse; the pile of changes waiting for the next merge window will grow
 larger, creating even more regressions the next time around.  So most 2.6.x
 kernels go out with a handful of known regressions though, hopefully, none
 of them are serious.
+개발자의 목표는 stable버전이 릴리즈 되기 이전에 알려진 모든 문제들을 고치는 것이다. 
+그러나 실제로는 이런 완벽한 목표는 달성되기 어렵다. 
+이런 규모의 프로젝트 에서는 너무 많은 변수들이 존재하기 때문이다.
+최종 버전의 릴리즈가 지연되는 것은 문제를 악화 시키는 경우도 있다. 
+다음 merge window에 반영하는 것을 기다리는 파일은 점점 늘어날 것이고, 
+다음번에 더 심각한 문제를 발생 시킬 것이다. 비록 대부분의 2.6.x 커널이
+이런 감당하기 어려운 문제들에 직면해 있지만, 바라는 바는 아무것도 심각해지지 않는 것이다.
 
 Once a stable release is made, its ongoing maintenance is passed off to the
 "stable team," currently consisting of Greg Kroah-Hartman.  The stable team
@@ -144,6 +156,13 @@ fix a significant bug, and (2) already be merged into the mainline for the
 next development kernel.  Kernels will typically receive stable updates for
 a little more than one development cycle past their initial release.  So,
 for example, the 2.6.36 kernel's history looked like:
+stable 릴리즈가 만들어지면, 그것의 관리는 "stable team"에 의해서 진행된다.
+(현재는 Greq Kroah-Hartman으로 구성되어 있다.)  stable team은
+때때로 stable버전의 업데이트 버전을 발행한다 . 버전명은 2.6.x.y의 형식을 따른다.
+업데이트 릴리즈에 반영되기 위해서는 다음의 두가지가 고려된다.
+(1) 심각한 버그의 수정 (2) 이미 다음 버전의 커널을 위해 반영되어진 것.
+커널은 일반적으로 초기 릴리스 에서 한번 이상의 개발주기가 지난 안정적인 업데이트를 받게된다.
+예를 들면 2.6.36 커널은 아래와 같이 진행 되었다.
 
 	October 10	2.6.36 stable release
 	November 22	2.6.36.1
