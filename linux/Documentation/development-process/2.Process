@@ -171,10 +171,13 @@ stable 릴리즈가 만들어지면, 그것의 관리는 "stable team"에 의해
 	February 17	2.6.36.4
 
 2.6.36.4 was the final stable update for the 2.6.36 release.
+2.6.26.4는 최종 stable 버전 이었다.
 
 Some kernels are designated "long term" kernels; they will receive support
 for a longer period.  As of this writing, the current long term kernels
 and their maintainers are:
+몇몇 커널은 오랜 기간동안 지원을 받을 수 있는 "long term" 커널이 있다.
+현재 long term 커널 메인테이너는 아래와 같다.
 
 	2.6.27	Willy Tarreau		(Deep-frozen stable kernel)
 	2.6.32	Greg Kroah-Hartman
@@ -184,6 +187,8 @@ The selection of a kernel for long-term support is purely a matter of a
 maintainer having the need and the time to maintain that release.  There
 are no known plans for long-term support for any specific upcoming
 release.
+LTS(long-term support) 커널이 릴리즈를 유지하기 위해 시간을 보내는 것은
+순수하게 메인테이너의 문제이다. LTS(long-term support) 커널의 차후 릴리즈 계획에 대해 알 수는 없다.
 
 
 2.2: THE LIFECYCLE OF A PATCH
