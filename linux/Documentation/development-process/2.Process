@@ -201,24 +201,37 @@ This process can happen quickly for minor fixes, or, in the case of large
 and controversial changes, go on for years.  Much developer frustration
 comes from a lack of understanding of this process or from attempts to
 circumvent it.
+패치는 개발자의 키보드에서 메인라인 커널로 바로 이동하지 않는다. 각 패치의 품질과
+메인라인에 포함되는 것이 바람직한지 여부를 리뷰하기 위해서 다소 복잡한 프로세스가 디자인 되어있다. 
+이 프로세스는 작은 변경의 경우 신속하게 처리될수 있고, 논란이 있는 큰 변경의 경우 수년에 걸쳐 벌어진다.
+많은 개발자들이 실패하는 이유는 이 프로세스에 대한 이해부족 또는 회피하려는 시도에서 비롯된다.
 
 In the hopes of reducing that frustration, this document will describe how
 a patch gets into the kernel.  What follows below is an introduction which
 describes the process in a somewhat idealized way.  A much more detailed
 treatment will come in later sections.
+그 실패를 줄이기 위해 이 문서는 패치가 커널에 도착하는 방법을 설명한다. 
+다음은 다소 이상적인 방법으로 프로세스를 설명한 서론이다.
+더 자세한 내용은 다음에 다시 다룰 것이다.
 
 The stages that a patch goes through are, generally:
+일반적으로 패치가 거쳐가는 스테이지는 다음과 같다:
 
  - Design.  This is where the real requirements for the patch - and the way
    those requirements will be met - are laid out.  Design work is often
    done without involving the community, but it is better to do this work
    in the open if at all possible; it can save a lot of time redesigning
    things later.
+   디자인. 패치에 대한 실제 요구 사항(과 그 요구 사항이 충족되는 방법)이 배치되어 있는 곳이다. 
+   디자인 작업은 종종 커뮤니티의 관여없이 수행하지만, 가능하다면 이 작업을 오픈해서 수행하면
+   나중에 다시 설계하는 일을 많이 줄일 수 있다.
 
  - Early review.  Patches are posted to the relevant mailing list, and
    developers on that list reply with any comments they may have.  This
    process should turn up any major problems with a patch if all goes
    well.
+   초기 리뷰. 패치는 관련 메일링리스트에 게시되고, 개발자들은 의견을 회신 할 수 있다. 
+   모든 것이 잘 진행 되면,이 과정에서 큰 문제점들이 모두 발견될 것이다.
 
  - Wider review.  When the patch is getting close to ready for mainline
    inclusion, it should be accepted by a relevant subsystem maintainer -
