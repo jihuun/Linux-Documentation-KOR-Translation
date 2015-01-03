@@ -222,7 +222,7 @@ The stages that a patch goes through are, generally:
    done without involving the community, but it is better to do this work
    in the open if at all possible; it can save a lot of time redesigning
    things later.
-   디자인. 패치에 대한 실제 요구 사항(과 그 요구 사항이 충족되는 방법)이 배치되어 있는 곳이다. 
+ - 디자인. 패치에 대한 실제 요구 사항(과 그 요구 사항이 충족되는 방법)이 배치되어 있는 곳이다. 
    디자인 작업은 종종 커뮤니티의 관여없이 수행하지만, 가능하다면 이 작업을 오픈해서 수행하면
    나중에 다시 설계하는 일을 많이 줄일 수 있다.
 
@@ -230,7 +230,7 @@ The stages that a patch goes through are, generally:
    developers on that list reply with any comments they may have.  This
    process should turn up any major problems with a patch if all goes
    well.
-   초기 리뷰. 패치는 관련 메일링리스트에 게시되고, 개발자들은 의견을 회신 할 수 있다. 
+ - 초기 리뷰. 패치는 관련 메일링리스트에 게시되고, 개발자들은 의견을 회신 할 수 있다. 
    모든 것이 잘 진행 되면,이 과정에서 큰 문제점들이 모두 발견될 것이다.
 
  - Wider review.  When the patch is getting close to ready for mainline
@@ -241,6 +241,10 @@ The stages that a patch goes through are, generally:
    process works, this step leads to more extensive review of the patch and
    the discovery of any problems resulting from the integration of this
    patch with work being done by others.
+ - 광범위 리뷰. 패치가 메인 라인 포함시키기 위한 준비가 되면, 해당 서브시스템 메인테이너에게
+   받아들여 져야한다.(이것이 메인라인에 포함되는것을 보장하는 것은 아니다)
+   패치는 메인테이너의 서브트리와 다음 트리에 표시된다. 프로세스가 진행되면서, 이 단계는 
+   패치의 보다 광범위한 리뷰에 이르게하고 패치의 통합에서 발생하는 모든 문제가 발견된다.
 
 -  Please note that most maintainers also have day jobs, so merging
    your patch may not be their highest priority.  If your patch is
@@ -250,6 +254,11 @@ The stages that a patch goes through are, generally:
    appropriate subsystem or driver maintainer, you should be persistent
    in updating the patch to the current kernel so that it applies cleanly
    and keep sending it for review and merging.
+-  대부분의 메인테이터는 본업이 따로 있어서 패치를 병합하는 것이 최우선 순위가 아닐 수 있다.
+   당신의 패치가 수정이 필요하다고 피드백을 받게되면, 그에 따른 수정을 하거나 
+   수정할 수 없는 타당함을 보여야한다. 패치에 대한 이견이 없음에도 적절한 서브 시스템 또는 
+   드라이버 메인테이너에 의해 병합되지 않는 경우에는 패치를 현재커널버전에 맞게 꾸준히 
+   업데이트하여 리뷰 및 병합에 대한 요청을 보내야 한다.
 
  - Merging into the mainline.  Eventually, a successful patch will be
    merged into the mainline repository managed by Linus Torvalds.  More
