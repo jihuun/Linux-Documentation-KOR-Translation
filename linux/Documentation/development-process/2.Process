@@ -264,9 +264,14 @@ The stages that a patch goes through are, generally:
    merged into the mainline repository managed by Linus Torvalds.  More
    comments and/or problems may surface at this time; it is important that
    the developer be responsive to these and fix any issues which arise.
+ - 메인라인 머지. 성공적인 패치는 결국 리누스 토발즈가 관리하는 메인라인 저장소에 머지된다.
+   더 많은 의견 또는 문제가 이 과정에서 드러날 수 있다. 개발자가 이들에 반응하고 
+   발생하는 모든 문제를 해결하는 것이 중요하다.
 
  - Stable release.  The number of users potentially affected by the patch
    is now large, so, once again, new problems may arise.
+   스테이블 릴리즈. 이 과정에서는 잠재적으로 영향을받을 패치 사용자 수가 크므로
+   다시 새로운 문제가 발생할 수 있다.
 
  - Long-term maintenance.  While it is certainly possible for a developer
    to forget about code after merging it, that sort of behavior tends to
@@ -275,11 +280,18 @@ The stages that a patch goes through are, generally:
    problems caused by API changes.  But the original developer should
    continue to take responsibility for the code if it is to remain useful
    in the longer term.
+ - 장기 유지보수. 개발자가 머지 후 코드에 대해 잊어버릴 수도 있고 
+   이런 행동은 개발 커뮤니티에서 나쁜 인상을 남길 수 있다. 
+   일단 코드를 머지하면 다른 사람이 API 변경으로 인한 문제를 해결할 것이므로
+   유지보수의 부담이 줄어든다. 그러나 원래 개발자는 장기적으로 지속될 수있도록
+   코드에 대한 책임을 계속해야한다.
 
 One of the largest mistakes made by kernel developers (or their employers)
 is to try to cut the process down to a single "merging into the mainline"
 step.  This approach invariably leads to frustration for everybody
 involved.
+커널 개발자에 의한 가장 큰 실수는 "메인 라인에 병합" 단계까지 한번에 처리하려고하는 것이다. 
+이러한 접근 방식은 관련된 모두를 좌절하게 만든다.
 
 
 2.3: HOW PATCHES GET INTO THE KERNEL
