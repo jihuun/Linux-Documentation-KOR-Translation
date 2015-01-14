@@ -303,6 +303,10 @@ himself.  The kernel project has long since grown to a size where no single
 developer could possibly inspect and select every patch unassisted.  The
 way the kernel developers have addressed this growth is through the use of
 a lieutenant system built around a chain of trust.
+Linus Torvalds는 메인라인 커널 저장소에 패치를 머지 할 수 있는 유일한 사람이다.
+2.6.38 커널에 보내진 9500개 패치 중 112(1.3%)개만이 리누스에 의해 선택 되었다.
+커널 프로젝트는 오래 전부터 단일 개발자가 혼자 모든 패치를 검사하고 선택할 수 없는 규모로 성장했다. 
+커널 개발자들이 이러한 성장을 해결한 방법은 lieutenant system built around a chain of trust 다.
 
 The kernel code base is logically broken down into a set of subsystems:
 networking, specific architecture support, memory management, video
@@ -311,6 +315,11 @@ who has overall responsibility for the code within that subsystem.  These
 subsystem maintainers are the gatekeepers (in a loose way) for the portion
 of the kernel they manage; they are the ones who will (usually) accept a
 patch for inclusion into the mainline kernel.
+커널 코드는 네트워킹, 특정 아키텍처 지원, 메모리 관리, 비디오 장치 등 
+서브시스템의 집합으로 논리적으로 분류된다. 대부분의 서브시스템은 코드에 대한
+전반적인 책임이있는 개발자인 메인테이너가 지정되어 있다. 
+이러한 서브시스템 메인테이너들은 자신이 관리하는 부분에 대한 문지기이라고 볼 수 있다. 
+그들은 메인라인 커널에 포함하기위한 패치를 수락 할 것이다.
 
 Subsystem maintainers each manage their own version of the kernel source
 tree, usually (but certainly not always) using the git source management
