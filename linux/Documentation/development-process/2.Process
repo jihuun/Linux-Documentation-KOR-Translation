@@ -428,6 +428,13 @@ the pending work that the driver needs for acceptance into the kernel
 proper, as well as a list of people that should be Cc'd for any patches to
 the driver.  Current rules require that drivers contributed to staging
 must, at a minimum, compile properly.
+Greg Kroah-Hartman이 현재 staging tree를 maintain 하고 있다. 
+아직 작업이 필요한 드라이버가 그에게 전송 된다. 그리고 전달되는 드라이버는 
+각각 하위 디렉터리를 가지고 있다. 소스파일과 함께 TODO파일도 그 디렉터리
+내에 존재 하여야 한다. TODO파일은 커널 향상을 위해서 합격을 필요로하는 
+대기중인 드라이버 작업이 기술 된다. 뿐만 아니라 리스트에 기술된 사람들은
+그 드라이버에 보내지는 패치도 참조해야 한다. 현재 규칙은 staging tree에
+기여하는 드라이버는 반드시 최소한의 컴파일을 필요로 해야한다.
 
 Staging can be a relatively easy way to get new drivers into the mainline
 where, with luck, they will come to the attention of other developers and
@@ -436,7 +443,11 @@ code in staging which is not seeing regular progress will eventually be
 removed.  Distributors also tend to be relatively reluctant to enable
 staging drivers.  So staging is, at best, a stop on the way toward becoming
 a proper mainline driver.
-
+Staging은 운이 좋으면 비교적 메인라인에 반영되기위한 쉬운 방법이 될 수 있다.
+그것은 다른 개발자들의 이목을 집중받게 될 것이고 빠르게 개선될 가능성이 크다.
+Staging에 포함되었다고 끝난것이 아니다. 정상적인 프로세스를 따르지 않는 코드는
+언젠가는 삭제되고 말 것이다. 따라서 staging은 최종 메인라인 드라이버에
+적용되기전에 잠시 정차하는 곳이라고 보면 된다.
 
 2.5: TOOLS
 
