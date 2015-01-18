@@ -406,6 +406,7 @@ their way into linux-next some time before the merge window opens.
 
 
 2.4.1: STAGING TREES
+2.4.1: 스테이징 트리
 
 The kernel source tree contains the drivers/staging/ directory, where
 many sub-directories for drivers or filesystems that are on their way to
@@ -450,6 +451,7 @@ Staging에 포함되었다고 끝난것이 아니다. 정상적인 프로세스�
 적용되기전에 잠시 정차하는 곳이라고 보면 된다.
 
 2.5: TOOLS
+2.5: 도구
 
 As can be seen from the above text, the kernel development process depends
 heavily on the ability to herd collections of patches in various
@@ -457,6 +459,9 @@ directions.  The whole thing would not work anywhere near as well as it
 does without suitably powerful tools.  Tutorials on how to use these tools
 are well beyond the scope of this document, but there is space for a few
 pointers.
+위의 내용에서 볼수 있는 바와 같이, 리눅스 커널 개발 프로세스는 다양한 경로를 통한 패치의 모음 능력에 크게 의존한다. 
+모든것은 어디에서도 동작하지 않는다. 뿐만 아니라 그것은 적절한 강력한 도구가 없는 것처럼.
+이 툴 사용법에 대한 튜토리얼은 이 문서의 범위를 벗어난다. 하지만 몇가지 지침을 위한 부분이 필요하다.
 
 By far the dominant source code management system used by the kernel
 community is git.  Git is one of a number of distributed version control
@@ -467,23 +472,34 @@ for being difficult to learn and use, though it has gotten better over
 time.  Some sort of familiarity with git is almost a requirement for kernel
 developers; even if they do not use it for their own work, they'll need git
 to keep up with what other developers (and the mainline) are doing.
+당연히 리눅스 커널 커뮤니티에서 지배적인 소스코드 관리 시스템은 깃(Git) 이다.
+Git은 자유 소프트웨어 재단에서 개발 하고있는 많은 버전 컨트롤 시스템중 하나이다.
+방대한 양의 Git 저장소와(repository) 많은 수의 패치들을 다룰때 꽤 좋은 성능을 발휘 한다는 점에서 Git은 리눅스 커널 개발에 특화되어 있기도 하다. 
+Git은 시간이 지남에따라 나아지고 있음에도 불구하고, 배우거나 사용하는데 있어서 어렵기로 정평이 나있다.
+Git을 사용하는데에 있어서 일종의 친숙함은 커널 개발자에게는 거의 필수이다.
+개발자 본인이 Git을 사용하지 않더라도 말이다. 왜냐하면 다른 개발자 또는 메인라인 커널의 작업을 파악하는데에 Git이 필요하기 때문이다.
 
 Git is now packaged by almost all Linux distributions.  There is a home
 page at:
+Git은 거의 모든 리눅스 배판에 포함되어 있다. 아래는 홈페이지 주소이다.
 
 	http://git-scm.com/
 
 That page has pointers to documentation and tutorials.
+이 페이지는 문서나 튜토리얼에 대한 지침이 있다.
 
 Among the kernel developers who do not use git, the most popular choice is
 almost certainly Mercurial:
+Git을 사용하지 않는 커널 개발자 사이에서 선택할 수 있는 확실히 가장 유명한 툴은 Mercurial 이다.
 
 	http://www.selenic.com/mercurial/
 
 Mercurial shares many features with git, but it provides an interface which
 many find easier to use.
+Mercurial은 git의 많은 특징을 공유하고 있다. 그러나 보다 사용하기 쉬운 인터페이스를 제공한다.
 
 The other tool worth knowing about is Quilt:
+또 다른 잘 알려진 툴은 Quilt 가 있다.
 
 	http://savannah.nongnu.org/projects/quilt/
 
@@ -493,6 +509,9 @@ toward tracking a specific set of changes against an evolving code base.
 Some major subsystem maintainers use quilt to manage patches intended to go
 upstream.  For the management of certain kinds of trees (-mm, for example),
 quilt is the best tool for the job.
+Quilt는 소스코드 관리 시스템이라기 보다는 패치 관리 시스템에 가깝다.
+Quilt는 시간이 지남에 따라 기록을 추적하지 않는다. 대신에 Quilt는 코드 베이스에서 발전되는것에서 대항하는 특정한 변화의 모음을 지향한다.
+몇몇의 주요 subsystem 메인테이너들은 위에 올리는 목적으로 패치를 관리하기 위해 의도적으로 Quilt를 사용한다. 몇몇 종류의 트리를 관리하기 위해서(예를 들면 -mm), Quilt는 이 일의 가장 적합한 툴이다.
 
 
 2.6: MAILING LISTS
