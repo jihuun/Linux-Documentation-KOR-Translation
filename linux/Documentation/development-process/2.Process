@@ -570,8 +570,15 @@ technical, and participants are not always concerned with showing a high
 degree of politeness.  But there is no other place where the kernel
 development community comes together as a whole; developers who avoid this
 list will miss important information.
+물론, 커널 개발의 핵심 메일링 리스트는 linux-kernel 이다. 이 메일링 리스트는
+다음의 내용처럼 두려움을 느끼게 하는 곳이다. 하루에 500개 가량의 메시지가 오고
+가며, 매우 소란스럽고, 대화내용도 매우 기술적으로 어렵다. 그리고 메일링 리스트의
+구성원은 크게 예의를 갖추는 편도 아니다. 그러나 커널의 모든 커뮤니티가 통합 될
+수 있는 것은 메일링 리스트 밖에 존재 하지 않는다. 이런 리스트를 기피하는 개발자는
+중요한 정보를 놓칠 수 있다.
 
 There are a few hints which can help with linux-kernel survival:
+그래서 linux-kernel 에서 살아 남을 수 있는 몇가지 팁을 소개한다.
 
 - Have the list delivered to a separate folder, rather than your main
   mailbox.  One must be able to ignore the stream for sustained periods of
