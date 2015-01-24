@@ -19,7 +19,7 @@ The kernel developers use a loosely time-based release process, with a new
 major kernel release happening every two or three months.  The recent
 release history looks like this:
 커널 개발자는 2달 또는 3달에 한번씩 릴리즈 되는 프로세스를 이용한다.
-최근의 릴리즈 히스토리는 다음과 같다. 
+최근의 릴리즈 히스토리는 다음과 같다.
 
 	2.6.38	March 14, 2011
 	2.6.37	January 4, 2011
@@ -45,7 +45,7 @@ rolling development model which is continually integrating major changes.
 이것은 약 몇십만 라인의 코드에 해당한다. 따라서 2.6버전은 리눅스 커널 개발을
 이끄는 위치에 해당한다. 커널은 중대한 변화가 지속적으로 통합되는
 rolling development model을 사용한다.
- 
+
 A relatively straightforward discipline is followed with regard to the
 merging of patches for each release.  At the beginning of each development
 cycle, the "merge window" is said to be open.  At that time, code which is
@@ -217,7 +217,7 @@ In the hopes of reducing that frustration, this document will describe how
 a patch gets into the kernel.  What follows below is an introduction which
 describes the process in a somewhat idealized way.  A much more detailed
 treatment will come in later sections.
-그 실패를 줄이기 위해 이 문서는 패치가 커널에 도착하는 방법을 설명한다. 
+그 실패를 줄이기 위해 이 문서는 패치가 커널에 도착하는 방법을 설명한다.
 다음은 다소 이상적인 방법으로 프로세스를 설명한 서론이다.
 더 자세한 내용은 다음에 다시 다룰 것이다.
 
@@ -290,8 +290,8 @@ The stages that a patch goes through are, generally:
    problems caused by API changes.  But the original developer should
    continue to take responsibility for the code if it is to remain useful
    in the longer term.
- - 장기 유지보수. 개발자가 머지 후 코드에 대해 잊어버릴 수도 있고 
-   이런 행동은 개발 커뮤니티에서 나쁜 인상을 남길 수 있다. 
+ - 장기 유지보수. 개발자가 머지 후 코드에 대해 잊어버릴 수도 있고
+   이런 행동은 개발 커뮤니티에서 나쁜 인상을 남길 수 있다.
    일단 코드를 머지하면 다른 사람이 API 변경으로 인한 문제를 해결할 것이므로
    유지보수의 부담이 줄어든다. 그러나 원래 개발자는 장기적으로 지속될 수있도록
    코드에 대한 책임을 계속해야한다.
@@ -326,7 +326,7 @@ who has overall responsibility for the code within that subsystem.  These
 subsystem maintainers are the gatekeepers (in a loose way) for the portion
 of the kernel they manage; they are the ones who will (usually) accept a
 patch for inclusion into the mainline kernel.
-커널 코드는 네트워킹, 특정 아키텍처 지원, 메모리 관리, 비디오 장치 등 
+커널 코드는 네트워킹, 특정 아키텍처 지원, 메모리 관리, 비디오 장치 등
 서브시스템의 집합으로 논리적으로 분류된다. 대부분의 서브시스템은 코드에 대한
 전반적인 책임이있는 개발자인 메인테이너가 지정되어 있다. 이러한 서브시스템
 메인테이너들은 자신이 관리하는 부분에 대한 문지기이라고 볼 수 있다. 그들은
@@ -488,7 +488,7 @@ to keep up with what other developers (and the mainline) are doing.
 당연히 리눅스 커널 커뮤니티에서 지배적으로 사용 되는 소스코드 관리 시스템은 Git
 이다. Git은 자유 소프트웨어 재단에서 개발 하고있는 많은 버전 컨트롤 시스템중
 하나이다. 방대한 양의 Git 저장소와(repository) 많은 수의 패치들을 다룰때 꽤
-좋은 성능을 발휘 한다는 점에서 Git은 리눅스 커널 개발에 특화되어 있기도 하다. 
+좋은 성능을 발휘 한다는 점에서 Git은 리눅스 커널 개발에 특화되어 있기도 하다.
 Git은 시간이 지남에따라 나아지고 있음에도 불구하고, 배우거나 사용하는데 있어서
 어렵기로 정평이 나있다. Git을 사용하는데에 있어서 일종의 친숙함은 커널 개발자
 에게는 거의 필수이다. 개발자 본인이 Git을 사용하지 않더라도 말이다. 왜냐하면
@@ -557,7 +557,7 @@ be found at:
 There are lists hosted elsewhere, though; a number of them are at
 lists.redhat.com.
 대부분의 커널 메일링 리스트는 vger.kernel.org 에서 관리 되며 master 리스트는
-아래 에서 찾을 수 있다. 
+아래 에서 찾을 수 있다.
 
 	http://vger.kernel.org/vger-lists.html
 
@@ -583,15 +583,22 @@ There are a few hints which can help with linux-kernel survival:
 - Have the list delivered to a separate folder, rather than your main
   mailbox.  One must be able to ignore the stream for sustained periods of
   time.
+  메일로 받은 리스트를 메일에 두지 말고 각각의 독립적인 폴더로 구분 하라.
+  시간의 지속기간을 위해서 하나는 무시될 수 있다.
 
 - Do not try to follow every conversation - nobody else does.  It is
   important to filter on both the topic of interest (though note that
   long-running conversations can drift away from the original subject
   without changing the email subject line) and the people who are
   participating.
+  모든 대화를 파악하지 마라. 아무도 그렇게 하지 않는다. 관심 주제와 참여자를
+  필터링 하는 것은 매우 중요하다. (비록 대화가 길어지는 경우는 새로운 주제로의
+  메일 변경 없이 원래 주제와 다른 주제로 변경되는 경우도 있다.)
 
 - Do not feed the trolls.  If somebody is trying to stir up an angry
   response, ignore them.
+  고의적으로 대화를 망치려고 하는 자들에게 일일이 응답하지 마라. 누군가가
+  자극 하려고 하거나 화를 내며 답변을 한다면 무시하라.
 
 - When responding to linux-kernel email (or that on other lists) preserve
   the Cc: header for all involved.  In the absence of a strong reason (such
