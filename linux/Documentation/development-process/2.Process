@@ -606,18 +606,28 @@ There are a few hints which can help with linux-kernel survival:
   sure that the person you are responding to is in the Cc: list.  This
   convention also makes it unnecessary to explicitly ask to be copied on
   replies to your postings.
+  linux-kernel 이나 다른 메일링 리스트에서 이메일을 받았을때 참조처는 유지
+  되어야 한다. 특별한 이유가 없이는(노골적인 요청 처럼) 절대로 수신/참조처를
+  제거하면 안된다. 답변을 해야할 사람이 참조 리스트에 존재하는지 항상 확인해야
+  한다. 포스팅을 할때 댓글을 복사 하겠다고 요청할 필요는 없는것 또한 규정이다.
 
 - Search the list archives (and the net as a whole) before asking
   questions.  Some developers can get impatient with people who clearly
   have not done their homework.
+  질문을 하기 전에는 먼저 메일링 리스트나 인터넷에서 검색을 하라. 몇몇 개발자는
+  이것을 지키지 않는 사람에게 짜증을 낼 수도 있다.
 
 - Avoid top-posting (the practice of putting your answer above the quoted
   text you are responding to).  It makes your response harder to read and
   makes a poor impression.
+  답변을 남길때 인용하려는 글 위에 답변을 작성하는 것을 피하라. 그것은 답변을
+  읽기 힘들게 만들며, 안좋은 인상을 남길 수 있다.
 
 - Ask on the correct mailing list.  Linux-kernel may be the general meeting
   point, but it is not the best place to find developers from all
   subsystems.
+  올바른 메일링 리스트에 질문해라. Linux-kernel 메일링 리스트는 가장 일반적인
+  리스트가 될 수는 있지만 모든 주제에서 가장 적합한 장소는 아닐 수 있다.
 
 The last point - finding the correct mailing list - is a common place for
 beginning developers to go wrong.  Somebody who asks a networking-related
@@ -626,6 +636,12 @@ to ask on the netdev list instead, as that is the list frequented by most
 networking developers.  Other lists exist for the SCSI, video4linux, IDE,
 filesystem, etc. subsystems.  The best place to look for mailing lists is
 in the MAINTAINERS file packaged with the kernel source.
+마지막은 시작하는 개발자가 틀리는 공통적인 부분이다. 올바른 메일링 리스트를
+찾아라. 만약 linux-kernel에 네트워크와 관련된 질문을 올린 사람이 있다면 대개
+netdev 리스트에 질문 하라는 정중한 제안을 받게 될 것이다. (netdev는 네트워크
+개발자들이 자주 찾는 메일링 리스트 이다). SCSI, video4linux, IDE, filesystems
+등을 위한 메일링 리스트도 존재한다. 메일링 리스트를 찾는 가장좋은 방법은 커널
+소스 패키지 내에 존재하는 MAINTAINERS 파일에서 찾는 것이다.
 
 
 2.7: GETTING STARTED WITH KERNEL DEVELOPMENT
