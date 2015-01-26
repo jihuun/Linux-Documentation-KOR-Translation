@@ -661,10 +661,14 @@ netdev 리스트에 질문 하라는 정중한 제안을 받게 될 것이다. (
 
 
 2.7: GETTING STARTED WITH KERNEL DEVELOPMENT
+2.7: 커널 개발 시작하기
 
 Questions about how to get started with the kernel development process are
 common - from both individuals and companies.  Equally common are missteps
 which make the beginning of the relationship harder than it has to be.
+개인이나 회사의 커널 개발을 어떻게 시작할지에 대한 질문은 일반적이다.
+Equally common are missteps which make the beginning of the relationship
+harder than it has to be.(help!)
 
 Companies often look to hire well-known developers to get a development
 group started.  This can, in fact, be an effective technique.  But it also
@@ -674,6 +678,12 @@ on Linux kernel development, given the investment of a bit of time.  Taking
 this time can endow an employer with a group of developers who understand
 the kernel and the company both, and who can help to train others as well.
 Over the medium term, this is often the more profitable approach.
+회사는 종종 잘 아는 개발자를 고용하려고 하는 것처럼 보인다. 이것은 실제로
+효과적인 테크닉일 수 있다. 그러나 이것은 또한 많은 비용이 들고 커널 개발 경험이
+있는 인력 수 의 증가를 가져오지도 않는다. 리눅스 커널 개발 속도를 향상 시키기
+위해 사내 개발자들에게 약간의 시간을 투자하는 것은 가능하다. 이런 시간은 고용주
+에게 커널과 회사모두를 잘 이해하며 또한 다른 사람들을 가르칠 수도 있는
+개발자들을 얻게 해준다. 중기적으로 볼때, 이것은 보다 이익이 되는 방법이다.
 
 Individual developers are often, understandably, at a loss for a place to
 start.  Beginning with a large project can be intimidating; one often wants
