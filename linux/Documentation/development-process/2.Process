@@ -389,6 +389,12 @@ want access to the changes in their integrated form before all of those
 changes land in the mainline kernel.  One could pull changes from all of
 the interesting subsystem trees, but that would be a big and error-prone
 job.
+서브 트리 체인은 커널에 패치의 흐름을 가이드 할뿐만 아니라 흥미로운 질문을 제기한다.
+다음 머지 윈도우를 위해 준비되고있는 모든 패치를 확인하고자 할 경우에는 어떻게 할 것인가? 
+개발자는 대기중인 다른 패치에 걱정할만한 충돌이 있는지 여부를 확인하기 위해 관심이 많다.
+예를 들어, 핵심 커널 함수 프로토 타입을 수정하는 패치는 이전 양식을 사용하는 다른 패치와 충돌한다. 
+리뷰어와 테스터는 메인 라인 커널에 머지되기 전 모든 변경점이 통합 된 형태로 액세스 하길 원한다. 
+흥미로운 서브 트리의 모든 변경 사항을 pull 할 수 있지만, 오류가 발생하기 쉽고 매우 큰 작업이 될 것이다.
 
 The answer comes in the form of -next trees, where subsystem trees are
 collected for testing and review.  The older of these trees, maintained by
