@@ -672,9 +672,8 @@ netdev 리스트에 질문 하라는 정중한 제안을 받게 될 것이다. (
 Questions about how to get started with the kernel development process are
 common - from both individuals and companies.  Equally common are missteps
 which make the beginning of the relationship harder than it has to be.
-개인이나 회사의 커널 개발을 어떻게 시작할지에 대한 질문은 일반적이다.
-Equally common are missteps which make the beginning of the relationship
-harder than it has to be.(help!)
+개인이나 회사의 커널 개발을 어떻게 시작할지에 대한 질문은 흔하다.
+관계의 시작을 보다 어렵게 만드는 실수도 역시 흔히 일어난다
 
 Companies often look to hire well-known developers to get a development
 group started.  This can, in fact, be an effective technique.  But it also
@@ -709,6 +708,7 @@ they wish for by these means.
 못할 것이다.
 
 Andrew Morton gives this advice for aspiring kernel developers
+Andrew Morton은 포부를 가진 커널 개발자에게 다음의 조언을 한다.
 
 	The #1 project for all kernel beginners should surely be "make sure
 	that the kernel runs perfectly at all times on all machines which
