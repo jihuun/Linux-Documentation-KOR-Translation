@@ -5,15 +5,23 @@ to jump right in and start coding.  As with any significant project,
 though, much of the groundwork for success is best laid before the first
 line of code is written.  Some time spent in early planning and
 communication can save far more time later on.
-
+리눅스 커널 개발 프로젝트를 고려 할 때, 바로 코딩하고 싶은 유혹이 있을 수 있다.
+하지만 여타 의미있는 프로젝트들과 마찬가지로 첫 번째 코드 행이 기록되기 전에
+성공을위한 토대의 대부분은 완성되어 있다. 초기 계획과 의사소통에 소요 된 시간은
+나중에 훨씬 더 많은 시간을 절약 할 수 있다.
 
 3.1: SPECIFYING THE PROBLEM
+3.1: 문제 명시하기
 
 Like any engineering project, a successful kernel enhancement starts with a
 clear description of the problem to be solved.  In some cases, this step is
 easy: when a driver is needed for a specific piece of hardware, for
 example.  In others, though, it is tempting to confuse the real problem
 with the proposed solution, and that can lead to difficulties.
+여타 엔지니어링 프로젝트들과 마찬가지로, 성공적인 커널 개선은 해결할
+문제의 명확한 설명과 함께 시작된다. 어떤 경우, 이 단계는 매우 간단하다.
+드라이버가 특정 하드웨어를 위해 필요한 경우가 한 예이다. 하지만 대부분의 경우
+의도된 해법과 실제 문제를 혼동하는 유혹에 빠지기 쉽고 그것은 어려움을 초래할 수 있다.
 
 Consider an example: some years ago, developers working with Linux audio
 sought a way to run applications without dropouts or other artifacts caused
@@ -22,6 +30,11 @@ kernel module intended to hook into the Linux Security Module (LSM)
 framework; this module could be configured to give specific applications
 access to the realtime scheduler.  This module was implemented and sent to
 the linux-kernel mailing list, where it immediately ran into problems.
+예를 살펴보면, 몇년전 리눅스 오디오 작업을 하던 개발자들이 시스템에 과도한 대기시간으로
+인한 영향이나 손실 없이 응용 프로그램을 실행할 수 있는 방법을 모색하고 있다.
+그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에 hook 하기위한 커널 모듈이었다;
+이 모듈은 특정 응용프로그램이 실시간 스케줄러에 대한 액세스 권한을 부여하도록 구성될 수 있다.
+이 모듈은 구현되어 즉시 linux-kernel 메일링리스트로 보내져 문제에 바로 적용되었다.
 
 To the audio developers, this security module was sufficient to solve their
 immediate problem.  To the wider kernel community, though, it was seen as a
@@ -30,6 +43,10 @@ onto processes which they would not otherwise have) and a risk to system
 stability.  Their preferred solutions involved realtime scheduling access
 via the rlimit mechanism for the short term, and ongoing latency reduction
 work in the long term.
+오디오 개발자들에게 이 보안 모듈은 즉시 문제를 해결하기에 충분했다.
+그러나 커널 커뮤니티에게 그것은 LSM 프레임워크의 오용(프로세스에 계획되지 않은 권한을 부여)  
+및 시스템 안정성에 위험으로 간주되었다. 커뮤니티가 선호한 솔루션은 단기적으로 rlimit 메커니즘을
+통해 실시간 스케줄링에 액세스하고 장기적으로는 지속적인 대기시간 감소 작업을 하는 것이었다.
 
 The audio community, however, could not see past the particular solution
 they had implemented; they were unwilling to accept alternatives.  The
