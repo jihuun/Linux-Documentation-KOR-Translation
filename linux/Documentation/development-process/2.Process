@@ -401,6 +401,10 @@ collected for testing and review.  The older of these trees, maintained by
 Andrew Morton, is called "-mm" (for memory management, which is how it got
 started).  The -mm tree integrates patches from a long list of subsystem
 trees; it also has some patches aimed at helping with debugging.
+정답은 서브시스템 트리들이 테스트와 리뷰 목적으로 수집되는 다음 트리들이다.
+가장 오래된 트리는 앤드류 모튼이 관리하는 mm 트리다(메모리 관리에 대한 트리)
+mm 트리는 서브시스템 트리의 긴 패치 리스트로 부터 통합된다.
+또한 디버깅에 도움이 되는 일부 패치도 있다.
 
 Beyond that, -mm contains a significant collection of patches which have
 been selected by Andrew directly.  These patches may have been posted on a
@@ -412,30 +416,45 @@ patches which accumulate in -mm will eventually either be forwarded on to
 an appropriate subsystem tree or be sent directly to Linus.  In a typical
 development cycle, approximately 5-10% of the patches going into the
 mainline get there via -mm.
+그건 그렇고, mm트리는 앤드류가 직접 선택한 패치의 중요한 컬렉션을 포함한다. 
+이러한 패치는 메일 링리스트에 게시되었을 수 있으며, 또는 더 지정된 서브 트리가 
+없는 커널의 일부에 적용될 수 있다. 그 결과, mm트리는 최후의 수단으로 사용된다.
+메인 라인으로 패치 다른 명백한 경로가없는 경우, 그것은 -mm에서 끝날 가능성이있다.
+mm에 축적된 이러한 패치는 결국 하나가 적절한 서브 트리에 전달되거나 리누스으로 전달된다. 
+일반적인 개발주기에서, 메인 라인에 들어가는 패치의 약 5 ~ 10 %가 -mm트리를 거친다.
 
 The current -mm patch is available in the "mmotm" (-mm of the moment)
 directory at:
+현재 mm 패치는 mmotm 디렉토리에서 확인 가능하며 주소는 다음과 같다.
 
 	http://www.ozlabs.org/~akpm/mmotm/
 
 Use of the MMOTM tree is likely to be a frustrating experience, though;
 there is a definite chance that it will not even compile.
+mmotm 트리를 이용하는 일은 좌절적이다. 심지어 컴파일이 안되는 경우도 많다.
 
 The primary tree for next-cycle patch merging is linux-next, maintained by
 Stephen Rothwell.  The linux-next tree is, by design, a snapshot of what
 the mainline is expected to look like after the next merge window closes.
 Linux-next trees are announced on the linux-kernel and linux-next mailing
 lists when they are assembled; they can be downloaded from:
+다음 패치 머지 주기를 위한 트리는 Stephen Rothwell에 관리되는 linux-next다.
+linux-next 트리는 다음 머지 창이 닫힌후 예상되는 메인라인의 스냅샷이다.
+linux-next 트리는 완성되면 linux-kernel과 linux-next 메일링리스트에 공지된다.
+다음 주소에서 다운로드 할 수 있다:
 
 	http://www.kernel.org/pub/linux/kernel/next/
 
 Some information about linux-next has been gathered at:
+다음 주소에서도 더 많은 정보를 얻을수 있다.
 
 	http://linux.f-seidel.de/linux-next/pmwiki/
 
 Linux-next has become an integral part of the kernel development process;
 all patches merged during a given merge window should really have found
 their way into linux-next some time before the merge window opens.
+linux-next 트리는 커널 개발 프로세스의 중요한 부분이되었다; 
+머지 창이 열리기 전에 주어진 병합 창 동안 머지된 모든 패치는 linux-next에 포함되어야 한다.
 
 
 2.4.1: STAGING TREES
