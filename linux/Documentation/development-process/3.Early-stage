@@ -53,11 +53,17 @@ they had implemented; they were unwilling to accept alternatives.  The
 resulting disagreement left those developers feeling disillusioned with the
 entire kernel development process; one of them went back to an audio list
 and posted this:
+그러나 오디오 커뮤니티는 그들이 구현 한 솔루션 외에 대안을 생각 할 수 없었다;
+그들은 대안을 수용하지 않으려했고 커널 커뮤니티와 불일치로 전체 커널 개발 프로세스에
+환멸을 느끼게 됐다. 오디오 개발자들 중 하나는 오디오 리스트로 가서 다음 글을 게시했다:
 
 	There are a number of very good Linux kernel developers, but they
 	tend to get outshouted by a large crowd of arrogant fools. Trying
 	to communicate user requirements to these people is a waste of
 	time. They are much too "intelligent" to listen to lesser mortals.
+	좋은 리눅스 커널 개발자가 많이 있지만, 그들은 오만한 바보들의 무리에 의해
+	큰소리를 내는 경향이 있다. 그들에게 사용자 요구사항에 대해 대화를 시도하는
+	것은 시간 낭비이다. 어쭙잖은 인간들의 이야기를 듣기엔 그들은 너무나 뛰어나다.
 
 (http://lwn.net/Articles/131776/).
 
@@ -67,18 +73,27 @@ the right solution to the problem than they were with a specific module.
 The moral of the story is to focus on the problem - not a specific solution
 - and to discuss it with the development community before investing in the
 creation of a body of code.
+실제 상황은 달랐다; 커널 개발자들은 특정 모듈에 대한 문제로 본것이 아니라
+시스템 안정성, 장기간 유지보수성, 정확한 솔루션을 고려한 것이다.
+이 이야기의 교훈은 특정 솔루션에 메달릴 것이 아니라 문제에 집중하고 코딩을
+시작하기 전에 개발 커뮤니티와 충분히 논의해야 한다는 것이다.
 
 So, when contemplating a kernel development project, one should obtain
 answers to a short set of questions:
+따라서 커널 개발 프로젝트를 고려하는 개발자는 다음 질문들에 대한 답을 얻어야한다.
 
  - What, exactly, is the problem which needs to be solved?
+ - 정확히 어떤 문제가 해결되야 하는가?
 
  - Who are the users affected by this problem?  Which use cases should the
    solution address?
+ - 이 문제에 영향을 받는 사용자들은 누구인가? 솔루션은 어떤 유스 케이스를 다뤄야 하는가?
 
  - How does the kernel fall short in addressing that problem now?
+ - 커널이 현재 그 문제를 다루는데 어떻게 부족한가?
 
 Only then does it make sense to start considering possible solutions.
+위 질문에 답을 얻은 후에야 가능한 솔루션들을 생각해 볼 수 있다.
 
 
 3.2: EARLY DISCUSSION
