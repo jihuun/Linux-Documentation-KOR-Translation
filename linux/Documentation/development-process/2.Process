@@ -390,10 +390,10 @@ changes land in the mainline kernel.  One could pull changes from all of
 the interesting subsystem trees, but that would be a big and error-prone
 job.
 서브 트리 체인은 커널에 패치의 흐름을 가이드 할뿐만 아니라 흥미로운 질문을 제기한다.
-다음 머지 윈도우를 위해 준비되고있는 모든 패치를 확인하고자 할 경우에는 어떻게 할 것인가? 
+다음 머지 윈도우를 위해 준비되고있는 모든 패치를 확인하고자 할 경우에는 어떻게 할 것인가?
 개발자는 대기중인 다른 패치에 걱정할만한 충돌이 있는지 여부를 확인하기 위해 관심이 많다.
-예를 들어, 핵심 커널 함수 프로토 타입을 수정하는 패치는 이전 양식을 사용하는 다른 패치와 충돌한다. 
-리뷰어와 테스터는 메인 라인 커널에 머지되기 전 모든 변경점이 통합 된 형태로 액세스 하길 원한다. 
+예를 들어, 핵심 커널 함수 프로토 타입을 수정하는 패치는 이전 양식을 사용하는 다른 패치와 충돌한다.
+리뷰어와 테스터는 메인 라인 커널에 머지되기 전 모든 변경점이 통합 된 형태로 액세스 하길 원한다.
 흥미로운 서브 트리의 모든 변경 사항을 pull 할 수 있지만, 오류가 발생하기 쉽고 매우 큰 작업이 될 것이다.
 
 The answer comes in the form of -next trees, where subsystem trees are
@@ -416,11 +416,11 @@ patches which accumulate in -mm will eventually either be forwarded on to
 an appropriate subsystem tree or be sent directly to Linus.  In a typical
 development cycle, approximately 5-10% of the patches going into the
 mainline get there via -mm.
-그건 그렇고, mm트리는 앤드류가 직접 선택한 패치의 중요한 컬렉션을 포함한다. 
-이러한 패치는 메일 링리스트에 게시되었을 수 있으며, 또는 더 지정된 서브 트리가 
+그건 그렇고, mm트리는 앤드류가 직접 선택한 패치의 중요한 컬렉션을 포함한다.
+이러한 패치는 메일 링리스트에 게시되었을 수 있으며, 또는 더 지정된 서브 트리가
 없는 커널의 일부에 적용될 수 있다. 그 결과, mm트리는 최후의 수단으로 사용된다.
 메인 라인으로 패치 다른 명백한 경로가없는 경우, 그것은 -mm에서 끝날 가능성이있다.
-mm에 축적된 이러한 패치는 결국 하나가 적절한 서브 트리에 전달되거나 리누스으로 전달된다. 
+mm에 축적된 이러한 패치는 결국 하나가 적절한 서브 트리에 전달되거나 리누스으로 전달된다.
 일반적인 개발주기에서, 메인 라인에 들어가는 패치의 약 5 ~ 10 %가 -mm트리를 거친다.
 
 The current -mm patch is available in the "mmotm" (-mm of the moment)
@@ -439,7 +439,7 @@ the mainline is expected to look like after the next merge window closes.
 Linux-next trees are announced on the linux-kernel and linux-next mailing
 lists when they are assembled; they can be downloaded from:
 다음 패치 머지 주기를 위한 트리는 Stephen Rothwell에 관리되는 linux-next다.
-linux-next 트리는 다음 머지 창이 닫힌후 예상되는 메인라인의 스냅샷이다.
+linux-next 트리는 다음 머지 윈도우가 닫힌후 예상되는 메인라인의 스냅샷이다.
 linux-next 트리는 완성되면 linux-kernel과 linux-next 메일링리스트에 공지된다.
 다음 주소에서 다운로드 할 수 있다:
 
@@ -453,8 +453,8 @@ Some information about linux-next has been gathered at:
 Linux-next has become an integral part of the kernel development process;
 all patches merged during a given merge window should really have found
 their way into linux-next some time before the merge window opens.
-linux-next 트리는 커널 개발 프로세스의 중요한 부분이되었다; 
-머지 창이 열리기 전에 주어진 병합 창 동안 머지된 모든 패치는 linux-next에 포함되어야 한다.
+linux-next 트리는 커널 개발 프로세스의 중요한 부분이되었다;
+머지 윈도우가 열리기 전에 주어진 병합 창 동안 머지된 모든 패치는 linux-next에 포함되어야 한다.
 
 
 2.4.1: STAGING TREES
@@ -734,6 +734,10 @@ Andrew Morton은 포부를 가진 커널 개발자에게 다음의 조언을 한
 	you can lay your hands on".  Usually the way to do this is to work
 	with others on getting things fixed up (this can require
 	persistence!) but that's fine - it's a part of kernel development.
+	모든 커널 개발자는 본인의 모든 장치에서 커널이 완벽하게 동작하는 것을
+	확실히 확인해야 한다. 이런식의 방법은 보통 다른사람을 통해 문제가
+	고쳐 지도록 한다.(집념이 필요) 그래도 괜찮다. 이것도 커널 개발의 한
+	요소 이기 때문이다.
 
 (http://lwn.net/Articles/283982/).
 
@@ -742,3 +746,7 @@ at the current lists of regressions and open bugs in general.  There is
 never any shortage of issues in need of fixing; by addressing these issues,
 developers will gain experience with the process while, at the same time,
 building respect with the rest of the development community.
+일반적으로 수정해야할 명백한 문제가 없을 떄에, 현재 문제를 발행시키는 리스트나
+버그를 확인해 볼것을 추천한다. 고쳐야할 이슈는 절대 부족하지 않다. 이런 이슈를
+다룸으로써 개발자는 경험을 얻을 수 있을것이고, 동시에 커뮤니티에서의 신뢰를
+쌓아 나갈 수 있을 것이다.
