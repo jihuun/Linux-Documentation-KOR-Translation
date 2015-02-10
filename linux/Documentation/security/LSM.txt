@@ -1,0 +1,46 @@
+Linux Security Module framework
+-------------------------------
+
+The Linux Security Module (LSM) framework provides a mechanism for
+various security checks to be hooked by new kernel extensions. The name
+"module" is a bit of a misnomer since these extensions are not actually
+loadable kernel modules. Instead, they are selectable at build-time via
+CONFIG_DEFAULT_SECURITY and can be overridden at boot-time via the
+"security=..." kernel command line argument, in the case where multiple
+LSMs were built into a given kernel.
+리눅스 보안 모듈(LSM) 프레임워크는 다양한 보안 점검이 새로운 커널 확장에 의해 
+hook 되는 메커니즘을 제공한다. 이러한 확장이 실제로 로드 가능한 커널모듈이 아니기
+때문에 "모듈"은 사실 부적절한 명칭이다. 대신, 그들은 CONFIG_DEFAULT_SECURITY를
+통해 빌드 타임에 선택될 수 있고, 여러 LSM이 커널에 내장 된 경우, "security=..." 
+커널 명령행 인수를 통해 부팅시 오버라이드 (override) 될 수 있다.
+
+The primary users of the LSM interface are Mandatory Access Control
+(MAC) extensions which provide a comprehensive security policy. Examples
+include SELinux, Smack, Tomoyo, and AppArmor. In addition to the larger
+MAC extensions, other extensions can be built using the LSM to provide
+specific changes to system operation when these tweaks are not available
+in the core functionality of Linux itself.
+LSM 인터페이스의 주된 사용자는 포괄적인 보안 정책을 제공하는 필수 액세스 제어
+(MAC) 확장이다. 예로 SELinux, Smack, Tomoyo 및 AppArmor 등이 있다. 이 MAC 확장
+외에 다른 확장들도 리눅스 자체의 핵심 기능을 수정할 수 없는 경우 시스템 동작에 
+특정한 변경을 제공하는 LSM을 사용하여 구현 될 수 있다.
+
+Without a specific LSM built into the kernel, the default LSM will be the
+Linux capabilities system. Most LSMs choose to extend the capabilities
+system, building their checks on top of the defined capability hooks.
+For more details on capabilities, see capabilities(7) in the Linux
+man-pages project.
+커널에 내장되는 특정 LSM 없이도, 기본 LSM은 스스로 리눅스 기능이 된다.
+대부분 LSM들은 정의 능력 후크의 상부에 수표 건물 기능 시스템을 확장하도록 선택할. 
+기능에 대한 자세한 내용은 리눅스 man-pages 프로젝트에 기능 (7)를 참조하십시오.
+
+Based on https://lkml.org/lkml/2007/10/26/215,
+a new LSM is accepted into the kernel when its intent (a description of
+what it tries to protect against and in what cases one would expect to
+use it) has been appropriately documented in Documentation/security/.
+This allows an LSM's code to be easily compared to its goals, and so
+that end users and distros can make a more informed decision about which
+LSMs suit their requirements.
+
+For extensive documentation on the available LSM hook interfaces, please
+see include/linux/security.h.
