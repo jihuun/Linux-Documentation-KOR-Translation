@@ -30,9 +30,10 @@ Linux capabilities system. Most LSMs choose to extend the capabilities
 system, building their checks on top of the defined capability hooks.
 For more details on capabilities, see capabilities(7) in the Linux
 man-pages project.
-커널에 내장되는 특정 LSM 없이도, 기본 LSM은 스스로 리눅스 기능이 된다.
-대부분 LSM들은 정의 능력 후크의 상부에 수표 건물 기능 시스템을 확장하도록 선택할. 
-기능에 대한 자세한 내용은 리눅스 man-pages 프로젝트에 기능 (7)를 참조하십시오.
+커널에 내장되는 특정 LSM 없이도, 기본 LSM은 리눅스 capability 시스템이 된다.
+대부분 LSM들은 정의된 capability 후크 위에 체크하는 기능을 구현하므로써
+capability 시스템을 확장한다. capability에 대한 자세한 내용은 리눅스 
+man-pages 프로젝트의 capability(7)를 참조하라.
 
 Based on https://lkml.org/lkml/2007/10/26/215,
 a new LSM is accepted into the kernel when its intent (a description of
@@ -41,6 +42,14 @@ use it) has been appropriately documented in Documentation/security/.
 This allows an LSM's code to be easily compared to its goals, and so
 that end users and distros can make a more informed decision about which
 LSMs suit their requirements.
+https://lkml.org/lkml/2007/10/26/215 을 바탕으로, 
+새로운 LSM은 커널에 머지 되려면 목적과 의도(무엇으로 부터 보호하려는건지와
+어떤 경우에 사용해야 하는지)가 적절하게 Documentation/security/에 문서화가 
+되어야 한다. 이렇게 함으로써 이 LSM 코드가 쉽게 목표와 비교 될 수 있고, 
+그래서 최종 사용자와 배포판 단체들이 어떤 LSM이 자신의 요구 사항에 맞는지
+충분한 정보를 바탕으로 결정을 할 수 있습니다.
 
 For extensive documentation on the available LSM hook interfaces, please
 see include/linux/security.h.
+사용가능한 LSM hook 인터페이스에 관한 정보는
+보다 자세한 정보는 
