@@ -1,0 +1,45 @@
+If you want to use SELinux, chances are you will want
+to use the distro-provided policies, or install the
+latest reference policy release from
+	http://oss.tresys.com/projects/refpolicy
+SELinux를 사용하려는 경우, 당신은 배포판 제작사에서 제공하는
+기본정책을 사용하거나 http://oss.tresys.com/projects/refpolicy
+에서 최신 기준 정책 릴리스를 설치할 것이다.
+
+However, if you want to install a dummy policy for
+testing, you can do using 'mdp' provided under
+scripts/selinux.  Note that this requires the selinux
+userspace to be installed - in particular you will
+need checkpolicy to compile a kernel, and setfiles and
+fixfiles to label the filesystem.
+당신이 테스트를 위해 더미 정책을 설치하려는 경우, 
+당신은 scripts/selinux에 제공되는 'mdp'를 사용 할 수 있다.
+'mdp'를 사용하기 위해서는 유저스페이스 SELinux를 설치해야 한다.
+특히 당신이 커널을 컴파일하려면 checkpolicy가 필요하고, 
+파일시스템을 레이블하기 위해 setfiles 및 fixfiles가 필요하다.
+
+	1. Compile the kernel with selinux enabled.
+	2. Type 'make' to compile mdp.
+	3. Make sure that you are not running with
+	   SELinux enabled and a real policy.  If
+	   you are, reboot with selinux disabled
+	   before continuing.
+	4. Run install_policy.sh:
+		cd scripts/selinux
+		sh install_policy.sh
+	1. selinux enable된 커널 컴파일한다.
+	2. 'mdp' 를 컴파일하기 위해 make 실행.
+	3. 다음단계를 진행하기 전에 selinux를 disable한다.
+	4. install_policy.sh 실행:
+		cd scripts/selinux
+		sh install_policy.sh
+  
+Step 4 will create a new dummy policy valid for your
+kernel, with a single selinux user, role, and type.
+It will compile the policy, will set your SELINUXTYPE to
+dummy in /etc/selinux/config, install the compiled policy
+as 'dummy', and relabel your filesystem.
+4 단계는 각각 한가지 SELinux user, role, type과 함께
+커널에 유효한 새로운 더미 정책을 만든다. 또한 그 정책을 컴파일하고,
+/etc/selinux/config의 더미에 당신의 SELINUXTYPE를 설정한다.
+컴파일된 정책을 '더미'로 설치하고, 파일시스템을 다시 레이블 한다.
