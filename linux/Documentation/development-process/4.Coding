@@ -5,14 +5,22 @@ process, the proof of any kernel development project is in the resulting
 code.  It is the code which will be examined by other developers and merged
 (or not) into the mainline tree.  So it is the quality of this code which
 will determine the ultimate success of the project.
+견고하고 커뮤니티 중심인 디자인 프로세스에 대해 할 말이 많지만, 
+어떤 커널 개발 프로젝트의 증거는 결국 결과 코드이다. 이것은 다른 개발자들에게
+리뷰받고 메인라인 트리에 머지되거나 반려된다. 그래서 프로젝트의 궁극적인 성공을
+결정하는것은 이 코드의 품질이다.
 
 This section will examine the coding process.  We'll start with a look at a
 number of ways in which kernel developers can go wrong.  Then the focus
 will shift toward doing things right and the tools which can help in that
 quest.
+이 섹션에서는 코딩 과정을 살펴 본다. 우리는 커널 개발자가 실수 할수있는
+여러가지 경우를 살펴보며 시작할 것이다. 그런 다음 제대로 개발하는 법과 
+작업에 도움을 줄 수있는 도구들을 살펴볼 것이다.
 
 
 4.1: PITFALLS
+4.1: 유의사항
 
 * Coding style
 
@@ -22,6 +30,10 @@ in that file were taken as being, at most, advisory.  As a result, there is
 a substantial amount of code in the kernel which does not meet the coding
 style guidelines.  The presence of that code leads to two independent
 hazards for kernel developers.
+커널은 Documentation/CodingStyle에 표준 코딩스타일을 오래동안 기술해 왔다. 
+그 많은 시간동안 해당 파일에 설명 된 정책은 대부분의 자문정도로 간주되었다.
+결과적으로 코딩 스타일 지침을 충족하지 않는 상당량의 코드가 있다. 
+이런 코드의 존재는 커널 개발자들에게 두가지 위험요소를 유발할 수 있다.
 
 The first of these is to believe that the kernel coding standards do not
 matter and are not enforced.  The truth of the matter is that adding new
