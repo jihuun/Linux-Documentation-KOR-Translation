@@ -43,12 +43,20 @@ before they will even review it.  A code base as large as the kernel
 requires some uniformity of code to make it possible for developers to
 quickly understand any part of it.  So there is no longer room for
 strangely-formatted code.
+이 중 첫 번째는 커널이 표준은 중요하지 않고 강제성이 없다고 생각하는 것이다.
+문제의 진실은 코드 표준을 따르지 않은 경우 커널에 새로운 코드를 추가하기가
+매우 어렵다는 것이다. 심지어 많은 개발자들은 리뷰도 하기 전에 코드 포맷팅을 요청한다.
+커널만큼 큰 코드는 개발자가 가능한 빨리 그것의 일부를 이해할 수 있도록 코드균일성이
+필요하고 그래서 형식을 지키지 않은 코드는 사용될 여지가 없다.
 
 Occasionally, the kernel's coding style will run into conflict with an
 employer's mandated style.  In such cases, the kernel's style will have to
 win before the code can be merged.  Putting code into the kernel means
 giving up a degree of control in a number of ways - including control over
 how the code is formatted.
+때때로, 커널의 코딩 스타일이 고용주가 원하는 스타일과 충돌할 수 있다. 
+이러한 경우, 코드는 머지되기 전에 커널 스타일로 포맷팅 되어야 할 것이다. 
+커널에 코드를 커밋하는 것은 코드포맷 포함하여 여러가지 제어의 포기를 의미한다.
 
 The other trap is to assume that code which is already in the kernel is
 urgently in need of coding style fixes.  Developers may start to generate
@@ -59,11 +67,18 @@ they tend to get a chilly reception.  So this type of patch is best
 avoided.  It is natural to fix the style of a piece of code while working
 on it for other reasons, but coding style changes should not be made for
 their own sake.
+두번재 문제는 이미 머지된 커널코드가 긴급히 스타일 픽스를 필요로 하는 경우를 가정해보자.
+개발자는 과정에 익숙해지기 위해 또는 이름을 기록에 남기기 위해 포맷팅 패치를 생성하기
+시작할 것이다. 그러나 순수한 코딩 스타일 픽스는 개발 커뮤니티에겐 좋게 보이지 않을 것이다.
+차가운 반응을 얻을 것이다. 따라서 이런 유형의 패치를 피해야한다. 다른 이유를 위해 패치하면서
+코딩 스타일을 수정하는 것은 자연 스럽지만 코딩 스타일 패치는 이루어 져서는 안된다.
 
 The coding style document also should not be read as an absolute law which
 can never be transgressed.  If there is a good reason to go against the
 style (a line which becomes far less readable if split to fit within the
 80-column limit, for example), just do it.
+코딩 스타일 문서는 어기면 안되는 절대적인 법처럼 여겨질 필요는 없다.
+예를 들어, 80 열 제한에 맞도록 분할하면 가독성이 떨어지는 경우 꼭 표준을 지킬 필요는 없다.
 
 
 * Abstraction layers
