@@ -101,8 +101,10 @@ Only then does it make sense to start considering possible solutions.
 When planning a kernel development project, it makes great sense to hold
 discussions with the community before launching into implementation.  Early
 communication can save time and trouble in a number of ways:
+커널 개발을 계획할 때, 코드를 반영 하기 전에 먼저 커뮤니티와 충분히 논의를 하는
+것이 바람직하다. 이런 의사소통은 여러가지로 시간과 문제를 줄여줄 수 있다. 
 
- - It may well be that the problem is addressed by the kernel in ways which
+ - %% It may well be that the problem is addressed by the kernel in ways which
    you have not understood.  The Linux kernel is large and has a number of
    features and capabilities which are not immediately obvious.  Not all
    kernel capabilities are documented as well as one might like, and it is
@@ -110,6 +112,9 @@ communication can save time and trouble in a number of ways:
    driver which duplicated an existing driver that the new author had been
    unaware of.  Code which reinvents existing wheels is not only wasteful;
    it will also not be accepted into the mainline kernel.
+ - 이해하지 못한 방법들로 커널이 해결하고자 하는 문제들은
+   리눅스 커널은 너무 크고 즉시 눈에 띄지 않는 수 많은 특징과 기능이 있다.
+   특정 한 사람을 만족시킬 정도로 커널 모든 기능이 문서화 되어 있는 것은 아니다. 그리고 놓치기 쉽다.
 
  - There may be elements of the proposed solution which will not be
    acceptable for mainline merging.  It is better to find out about
