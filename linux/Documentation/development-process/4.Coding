@@ -152,6 +152,11 @@ Conditionally-compiled code can be confined to functions which, if the code
 is not to be present, simply become empty.  The compiler will then quietly
 optimize out the call to the empty function.  The result is far cleaner
 code which is easier to follow.
+#ifdef와 조건부 컴파일은 강력한 기능이며 커널 내에서 사용된다. 
+그러나 #ifdef 블록을 자유롭게 뿌린 코드를 보고 싶지는 않다. 
+일반적으로, #ifdef 사용은 가능한한 헤더 파일에 국한되어야한다.
+조건부 컴파일 된 코드는 단순히 빈되고, 코드가 존재하지 않을 경우 기능에 국한 될 수있다.
+컴파일러는 조용히 빈 함수 호출을 최적화한다. 결과는 따라하기 쉬운 훨씬 깔끔한 코드이다.
 
 C preprocessor macros present a number of hazards, including possible
 multiple evaluation of expressions with side effects and no type safety.
