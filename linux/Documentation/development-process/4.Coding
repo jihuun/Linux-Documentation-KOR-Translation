@@ -164,6 +164,10 @@ If you are tempted to define a macro, consider creating an inline function
 instead.  The code which results will be the same, but inline functions are
 easier to read, do not evaluate their arguments multiple times, and allow
 the compiler to perform type checking on the arguments and return value.
+C 전처리기 매크로는 표현식의 다양한 계산결과 등 부작용과 타입 세이프티 미지원 등
+위험 요소를 갖고있다. 만약 매크로를 사용하고 싶은 경우, 대신 인라인 함수 사용을
+고려 할 수 있다. 결과 코드는 동일하지만, 인라인 함수가 가독성이 좋고 인수를 여러번
+평가하지않고 컴파일러가 인수 및 반환 값에 유형 검사를 수행 할 수 있다.
 
 
 * Inline functions
@@ -178,16 +182,27 @@ slow execution dramatically.  Inline functions, as a rule, should be quite
 small and relatively rare.  The cost of a function call, after all, is not
 that high; the creation of large numbers of inline functions is a classic
 example of premature optimization.
+인라인 함수는 위험요소를 갖고 있지만, 프로그래머는 함수호출을 피하고
+소스파일을 인라인 함수로 채워 고유의 효율성에 매혹될 수 있다. 그러나 이러한 기능은
+실제로 성능을 감소시킬 수 있다. 이들 코드는 각 호출 위치에 복제되기 때문에
+그들은 컴파일 커널의 크기를 팽창시키고 프로세서의 메모리 캐시에 압력을 주어 
+극적으로 실행속도를 느려지게 할 수 있다. 인라인 함수는 원칙적으로 아주 작고 드물게 사용해야한다.
+결국 함수 호출의 비용은 그렇게 높지 않다. 많은 인라인 함수 생성은 조기 최적화의 고전적인 예이다.
 
 In general, kernel programmers ignore cache effects at their peril.  The
 classic time/space tradeoff taught in beginning data structures classes
 often does not apply to contemporary hardware.  Space *is* time, in that a
 larger program will run slower than one which is more compact.
+일반적으로 커널 프로그래머는 캐시 효과를 무시한다. 데이터 구조 수업의
+시작에서 배운 시간/공간 트레이드오프는 종종 현대 하드웨어에 적용되지 않는다. 
+더 큰 프로그램이 작은 프로그램보다 느리게 실행된다는 점에서 공간이 곧 시간이다.
 
 More recent compilers take an increasingly active role in deciding whether
 a given function should actually be inlined or not.  So the liberal
 placement of "inline" keywords may not just be excessive; it could also be
 irrelevant.
+최근의 컴파일러는 주어진 함수가 실제 인라인함수로 사용되는지 여부를 결정하는데 적극적인 역할을 한다. 
+그래서 인라인 함수의 자유로운 배치는 과도하지 않게 조절 되며 또한 관련이 없을 수 있다.
 
 
 * Locking
