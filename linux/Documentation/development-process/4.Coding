@@ -214,12 +214,19 @@ networking in Linux was considered substandard at best, and the Devicescape
 stack offered the promise of fixing that situation.  Yet, this code did not
 actually make it into the mainline until June, 2007 (2.6.22).  What
 happened?
+2006년 5월 "Devicescape" 네트워킹 스택은 GPL라이센스로 메인라인에 포함되었다.
+이 기부는 희소식이었다. 이전 리눅스 무선 네트워킹에 대한 지원은 수준 이하였고
+Devicescape 스택은 그런 상황을 개선하는 제안이었다. 그러나 이 코드는 실제로
+2007년 6월(2.6.22)까지 메인라인에 포함되지 않았다. 무슨 일이 있었을까?
 
 This code showed a number of signs of having been developed behind
 corporate doors.  But one large problem in particular was that it was not
 designed to work on multiprocessor systems.  Before this networking stack
 (now called mac80211) could be merged, a locking scheme needed to be
-retrofitted onto it.  
+retrofitted onto it.
+이 코드는 기업의 문 뒤에서 개발 되었다. 그러나 하나의 큰 문제는 이것이 
+멀티프로세서 시스템에서 작동하도록 설계되지 않았다는 것이다. 
+이 네트워킹 스택(mac80211)은 머지되기 전에 lock방식이 추가되어야 했다.
 
 Once upon a time, Linux kernel code could be developed without thinking
 about the concurrency issues presented by multiprocessor systems.  Now,
@@ -227,6 +234,10 @@ however, this document is being written on a dual-core laptop.  Even on
 single-processor systems, work being done to improve responsiveness will
 raise the level of concurrency within the kernel.  The days when kernel
 code could be written without thinking about locking are long past.
+옛날 옛적엔 리눅스 커널 코드는 멀티프로세서 시스템에 의해 발생되는 동시성 문제를
+고려하지 않고 개발 될 수 있었다. 그러나 지금,이 문서는 듀얼 코어 노트북에서 기록되고 있다.
+심지어 싱글프로세서 시스템에서 응답성을 개선하기 위한 작업은 커널내에서 동시성의
+수준을 올릴 것이다. 커널 코드가 lock에 대해 생각하지 않고 작성되던 시절은 오래전에 끝났다.
 
 Any resource (data structures, hardware registers, etc.) which could be
 accessed concurrently by more than one thread must be protected by a lock.
@@ -235,6 +246,11 @@ locking after the fact is a rather more difficult task.  Kernel developers
 should take the time to understand the available locking primitives well
 enough to pick the right tool for the job.  Code which shows a lack of
 attention to concurrency will have a difficult path into the mainline.
+하나 이상의 스레드에 의해 동시에 액세스 될 수있는 모든 자원(데이터 구조, 하드웨어 레지스터 등)
+은 lock에 의해 보호 되어야한다. 새로운 코드는 이 요구사항을 염두에 두고 작성해야한다.
+사후 lock 추가는 오히려 더 어려운 작업이다. 커널 개발자는 작업에 적합한 도구를 선택할수 있도록
+충분히 가능한 lock 기본 요소를 이해하는 시간을 가져야 한다. 동시성에 대한 관심이 부족한 코드는
+메인라인에 포함되기 어렵다.
 
 
 * Regressions
