@@ -112,17 +112,24 @@ communication can save time and trouble in a number of ways:
    driver which duplicated an existing driver that the new author had been
    unaware of.  Code which reinvents existing wheels is not only wasteful;
    it will also not be accepted into the mainline kernel.
- - 이해하지 못한 방법들로 커널이 해결하고자 하는 문제들은
-   리눅스 커널은 너무 크고 즉시 눈에 띄지 않는 수 많은 특징과 기능이 있다.
-   특정 한 사람을 만족시킬 정도로 커널 모든 기능이 문서화 되어 있는 것은 아니다. 그리고 놓치기 쉽다.
+ - 이해하지 못한 방법들로 커널이 해결하고자 하는 문제들은 리눅스 커널은 너무
+   크고 즉시 눈에 띄지 않는 수 많은 특징과 기능이 있다. 특정 한 사람을 만족시킬
+   정도로 커널 모든 기능이 문서화 되어 있는 것은 아니다. 그리고 놓치기 쉽다.
+   메인테이너는 새로운 작가를 통해 중복 되었다는것을 자각하지도 못한채 작업한 이미
+   존재하는 드라이버가 포스팅 되오던것을 봐왔다.  이미 존재하는 코드를 재 작업하는
+   것은 쓸모없을 뿐더러 메인라인 커널에서 받아드려지지 못할 것이다.
 
  - There may be elements of the proposed solution which will not be
    acceptable for mainline merging.  It is better to find out about
    problems like this before writing the code.
+   메인 라인에 반영되지 못할 솔루션을 제안하는 것들이 있을 것이다. 그럴바에는
+   차라리 코드를 작성하기 전에 이런 문제를 찾는것이 더 낫다.
 
  - It's entirely possible that other developers have thought about the
    problem; they may have ideas for a better solution, and may be willing
    to help in the creation of that solution.
+   다른 개발자들은 분명히 더 좋은 문제 해결책의 아이디어를 가지고 있을 것이고
+   이런 해결책을 구현하는것을 도울 것이다.
 
 Years of experience with the kernel development community have taught a
 clear lesson: kernel code which is designed and developed behind closed
