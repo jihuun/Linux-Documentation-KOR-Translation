@@ -137,6 +137,10 @@ doors invariably has problems which are only revealed when the code is
 released into the community.  Sometimes these problems are severe,
 requiring months or years of effort before the code can be brought up to
 the kernel community's standards.  Some examples include:
+다년간의 커뮤니티에서의 커널 개발 경험을 통해 다음의 교훈을 얻게 되었다.
+비공개로 비밀리에 작업하거나 설계한 코드는 커뮤니티에서 릴리즈 될때 반드시
+문제가 된다. 때로는 문제는 심각해지기도 하며, 커뮤니티의 표준으로 반영되기 까지
+몇달 혹은 몇년의 노력이 필요하다. 예를 들면 다음과 같다.
 
  - The Devicescape network stack was designed and implemented for
    single-processor systems.  It could not be merged into the mainline
