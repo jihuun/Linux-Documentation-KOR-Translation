@@ -147,6 +147,10 @@ the kernel community's standards.  Some examples include:
    until it was made suitable for multiprocessor systems.  Retrofitting
    locking and such into code is a difficult task; as a result, the merging
    of this code (now called mac80211) was delayed for over a year.
+   Devicescape network stack 은 싱글 코어 프로세서 기반으로 설계되었다. 따라서
+   멀티 프로세서를 지원하지 않는 이상 메인라인에 반영될 수 없었다. 이 코드를
+   개선하는 것은 매우 어려운 작업이었기 때문에, 이 코드가 반영되기 까지 1년
+   이상 지연되었다. 
 
  - The Reiser4 filesystem included a number of capabilities which, in the
    core kernel developers' opinion, should have been implemented in the
@@ -155,15 +159,24 @@ the kernel community's standards.  Some examples include:
    deadlocks.  The late revelation of these problems - and refusal to
    address some of them - has caused Reiser4 to stay out of the mainline
    kernel.
+   Reiser4 파일 시스템은 많은 장점을 가지고 있었다. 핵심 커널 개발자의 의견에
+   따르면 이 파일 시스템이 가상 파일 시스템 레이어를 지원하야 한다고 했다.
+   그러나 이것도 시스템에 user-caused deadlock 없이 쉽게 구현되기 어려운 특징을
+   지녔기 때문에 지연의 문제가 발생하였다.  그리고 결국 메인라인 커널에서
+   지원하지 않게 되었다.
 
  - The AppArmor security module made use of internal virtual filesystem
    data structures in ways which were considered to be unsafe and
    unreliable.  This concern (among others) kept AppArmor out of the
    mainline for years.
+   AppArmor 시큐리티 모듈은 안전하지 못하고 불확실하게 결정된 방법으로
+   내부적으로 가상 파일시스템 자료구조의 필요성을 만들었다. 이런 우려 때문에
+   때문에 수년 째 메인라인 커널에서 제거된 상태이다.
 
 In each of these cases, a great deal of pain and extra work could have been
 avoided with some early discussion with the kernel developers.
-
+이런 여러 경우를 봤을때 많은 수의 어려움이나 특별한 작업들은 커뮤니티의 논의를
+통해 조기에 피하는 것이 좋다.
 
 3.3: WHO DO YOU TALK TO?
 
