@@ -262,6 +262,11 @@ regressions have become most unwelcome in the mainline kernel.  With few
 exceptions, changes which cause regressions will be backed out if the
 regression cannot be fixed in a timely manner.  Far better to avoid the
 regression in the first place.
+마지막으로 중요한 위험요소가 있다. 그것은 기존의 사용자 기능을 고장낼 수 있는 
+(하지만 큰 개선을 가져올 수있는) 변경을 하고 싶을 수 있다. 이러한 종류의 변경은
+"regression" 이라고 하며 메인라인 커널에서 가장 환영받지 못할 것이다. 
+몇가지 예외케이스를 제외하고 regression이 빠른시일내에 고쳐질수 없는 경우
+regression의 원인은 되돌려 진다. 제일 좋은 방법은 regression을 애초에 피하는 것이다.
 
 It is often argued that a regression can be justified if it causes things
 to work for more people than it creates problems for.  Why not make a
