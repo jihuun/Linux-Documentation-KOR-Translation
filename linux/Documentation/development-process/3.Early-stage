@@ -175,10 +175,11 @@ the kernel community's standards.  Some examples include:
 
 In each of these cases, a great deal of pain and extra work could have been
 avoided with some early discussion with the kernel developers.
-이런 여러 경우를 봤을때 많은 수의 어려움이나 특별한 작업들은 커뮤니티의 논의를
-통해 조기에 피하는 것이 좋다.
+이런 여러가지 경우를 봤을때 많은 어려움이나 특별한 작업을 다루는 일은
+커뮤니티의 논의를 통해 조기에 피하는 것이 좋다.
 
 3.3: WHO DO YOU TALK TO?
+3.3: 누구와 논의 하나?
 
 When developers decide to take their plans public, the next question will
 be: where do we start?  The answer is to find the right mailing list(s) and
@@ -187,6 +188,13 @@ the MAINTAINERS file for a relevant place to post.  If there is a suitable
 subsystem list, posting there is often preferable to posting on
 linux-kernel; you are more likely to reach developers with expertise in the
 relevant subsystem and the environment may be more supportive.
+개발자가 그들의 계획을 공개적으로 수행하고자 한다면, 다음 질문은 이것이 될
+것이다.  어디서 작업을 해야하는가? 그에 대한 답변은 올바른 메일링 리스트와
+메인테이너를 찾는 것이다.  메일링리스트를 찾을 때 가장 적절한 방법은
+MAINTAINERS 파일에서 올리고자 하는 내용과 연관된 메일링 리스트를 찾는 것이다.
+적절한 서브 시스템 리스트를 찾았다면 그곳에 올리는게 linux-kernel메일링
+리스트에 올리는 것보다 더 바람직하다.  더욱 직접적으로 연관 되어있는 개발자들과
+만날 수 있으며 더욱 지원이 잘될 수 있는 환경일 수 있다.
 
 Finding maintainers can be a bit harder.  Again, the MAINTAINERS file is
 the place to start.  That file tends to not always be up to date, though,
@@ -198,9 +206,19 @@ currently active within the subsystem of interest.  Look at who is writing
 patches, and who, if anybody, is attaching Signed-off-by lines to those
 patches.  Those are the people who will be best placed to help with a new
 development project.
+메인테이너를 찾는것은 좀더 어려울 수 있다. 마찬가지로 MAINTAINERS 파일이 시작
+지점이다.  이 파일은 항상 최신 상태를 유지하지 않는 경향이 있다. 게다가 모든
+서브시스템을 다 포함하는 것도 아니다.  또한 MAINTAINERS 파일에 있는 사람이 현재
+실제 그 역할을 하지 않을 수도 있다.  그래서 누굴 컨택 해야할지 확실 하지 않을
+때 좋은 방법은 git을(더 정확히는 git log) 이용 하는 것이다.  git log를 통해
+해당 서브시스템에서 현재 활동하고 있는 메인테이너를 찾을 수 있을 것이다.  누가
+패치를 작성했는지 누가 패치를 승인 했는지 확인 하라. 이 사람들이 프로젝트를
+진행할 때 도움이 될 수 있는 가장 적절한 사람들이다.
 
 The task of finding the right maintainer is sometimes challenging enough
 that the kernel developers have added a script to ease the process:
+적절한 메인테이너를 찾는 것이 충분하지 않아, 쉽게 찾기 위해 커널 개발자들이
+아래와 같은 스크립트를 추가하였다.
 
 	.../scripts/get_maintainer.pl
 
@@ -211,10 +229,16 @@ copies of the patch.  There are a number of options regulating how hard
 get_maintainer.pl will search for maintainers; please be careful about
 using the more aggressive options as you may end up including developers
 who have no real interest in the code you are modifying.
+이 스크립트는 -f 옵션으로 파일 및 경로를 전달하면 현재 메인테이너를 알려줄
+것이다.  만약 커맨드 라인에서 패치를 찾았다면 거기에 패치를 누가 받아야하는지
+알 수 있는 메인테이너 리스트가 있을 것이다.  메인테이너를 찾는 것이 얼마나
+어려운지 get_maintainer.pl에는 상당히 많은 옵션이 있다.  결국 당신이 작성한
+코드에 아무 관심도 없는 메인테이너를 찾지 않도록 옵션을 주의 해서 사용하라.
 
 If all else fails, talking to Andrew Morton can be an effective way to
 track down a maintainer for a specific piece of code.
-
+이렇게 해도 실패 했다면 Andrew Morton과 연락하는것이 적절한 메인테이너를 찾는
+효과적인 방법이 될 수 있다.
 
 3.4: WHEN TO POST?
 
