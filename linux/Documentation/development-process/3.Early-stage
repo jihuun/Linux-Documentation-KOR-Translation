@@ -247,6 +247,10 @@ helpful.  Describe the problem being solved and any plans that have been
 made on how the implementation will be done.  Any information you can
 provide can help the development community provide useful input on the
 project.
+가능 하다면, 초기 단계에 계획을 올리는것만이 도움이 될것이다. 해결하려고 하는
+문제와 구현이 언제 완료될 것이라는 계획을 기술 해라. 제공할수 있는대로 많은
+정보를 알려주는것이 커뮤니티를 통해 프로젝트에 유용한 도움을 받을 수 있는
+지름길이다.
 
 One discouraging thing which can happen at this stage is not a hostile
 reaction, but, instead, little or no reaction at all.  The sad truth of the
