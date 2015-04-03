@@ -260,13 +260,23 @@ back them up, and (3) nobody is obligated to review or comment on ideas
 posted by others.  Beyond that, high-level designs often hide problems
 which are only reviewed when somebody actually tries to implement those
 designs; for that reason, kernel developers would rather see the code.
+이 단계에서 실망하게 될 수 있는 것은 적대적인 반응이 아니다. 거의 반응이 없거나
+무반응이다.  슬픈 사실은 (1)커널 개발자들은 꽤 바쁘다는것 (2)원대한 계획은
+가지고잇는 개발자들이 적지 않다는것 그리고 그들을 지원하기 위한 코드가
+있다는것. (3)누구도 아이디어에 대해서 리뷰나 답변을 해줄 의무는 없다는 점.
+이런 것들을 떠나서 높은 수준의 설계는 종종 실제 누군가가 그것을 개발할때만
+발견되는 문제가 발생하기도 한다.  이러한 이유 때문에 커널 개발자는 오히려
+코드를 보는것을 선호한다.
 
 If a request-for-comments posting yields little in the way of comments, do
 not assume that it means there is no interest in the project.
 Unfortunately, you also cannot assume that there are no problems with your
 idea.  The best thing to do in this situation is to proceed, keeping the
 community informed as you go.
-
+답변요청을 올리는것은 답변이 달리는데에 방해가 될 뿐이다. 프로젝트에 관심이
+없다는 뜻으로 추측하지 말아야 한다. 유감스럽게도 본인의 아이디어가 아무런
+문제가 없다고 판단할 수 없을 것이다. 이런 상황에서 가장 좋은 방법은
+계속 진행 하는 것이다. 커뮤니티의 정보를 유지하라.
 
 3.5: GETTING OFFICIAL BUY-IN
 
