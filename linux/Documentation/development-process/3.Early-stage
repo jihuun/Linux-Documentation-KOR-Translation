@@ -279,6 +279,7 @@ community informed as you go.
 계속 진행 하는 것이다. 커뮤니티의 정보를 유지하라.
 
 3.5: GETTING OFFICIAL BUY-IN
+3.5: 공식적으로 참여하기.
 
 If your work is being done in a corporate environment - as most Linux
 kernel work is - you must, obviously, have permission from suitably
@@ -287,6 +288,11 @@ public mailing list.  The posting of code which has not been cleared for
 release under a GPL-compatible license can be especially problematic; the
 sooner that a company's management and legal staff can agree on the posting
 of a kernel development project, the better off everybody involved will be.
+회사에서 작업하는 것이라면 (대부분 리눅스 커널 작업이 그렇듯이) 회사의 계획이나
+코드를 메일링 리스트에 올리기 전에 반드시 회사에서 해당 매니져에게 허가를
+받아야한다. 특히 GPL계열의 라이센스 하에 작성되지 않은 코드를 올리는것은 문제가
+있다.  회사의 관리자나 법률 팀이 이 커널 개발 프로젝트에대해서 포스팅하는것에
+동의 할수 있다. 관련된 모든 사람들이 더 잘 알 것이다.
 
 Some readers may be thinking at this point that their kernel work is
 intended to support a product which does not yet have an officially
@@ -294,6 +300,11 @@ acknowledged existence.  Revealing their employer's plans on a public
 mailing list may not be a viable option.  In cases like this, it is worth
 considering whether the secrecy is really necessary; there is often no real
 need to keep development plans behind closed doors.
+몇몇 리더는 이시점에서 그들의 커널 작업이 공식적으로 인정되지 않는 제품을
+지원하기 위한 의도가 아니냐는 생각을 가질 수도 있다. 고용주의 계획을 공개적인
+메일링 리스트에 드러내는것은 실행 가능한 방법이 아닐 것이다. 이런 경우에는
+이렇게 비밀을 유지하는것이 진정 필요한지에 대해서 고민해보는 것이 좋다. 개발
+계획을 비공개적으로 유지하는것은 많은 경우에 필요하지 않다.
 
 That said, there are also cases where a company legitimately cannot
 disclose its plans early in the development process.  Companies with
@@ -304,8 +315,16 @@ best option is often to hire an outside developer to review the plans under
 a non-disclosure agreement.  The Linux Foundation operates an NDA program
 designed to help with this sort of situation; more information can be found
 at:
+그건 그렇다 치고, 개발 초기 단계에서 합법적으로 공개할 수없는 경우도 존재한다.
+노련한 커널 개발자를 가지고 있는 회사는 나중에 생길 수 있는 심각한 integration
+문제를 피할 수 있다는 가정 하에 open-loop 규정으로 진행하는것을 선택할 것이다.
+사내에 전문기술이 없는 회사에 있어서는, 비공개 계획에 따라 리뷰를 하기 위한
+외부 개발자를 고용하는 방법이 있을 것이다.  Linux Foundation에서는 이러한
+상황을 위해 NDA 프로그램을 운영한다. 아래 주고 참고.
 
     http://www.linuxfoundation.org/en/NDA_program
 
 This kind of review is often enough to avoid serious problems later on
 without requiring public disclosure of the project.
+이런 리뷰는 이후의 프로젝트의 공개 요청이 없을때 발생할 수 있는 문제들을
+피하는데 도움이 될 것이다.
