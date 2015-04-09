@@ -193,9 +193,9 @@ In general, kernel programmers ignore cache effects at their peril.  The
 classic time/space tradeoff taught in beginning data structures classes
 often does not apply to contemporary hardware.  Space *is* time, in that a
 larger program will run slower than one which is more compact.
-일반적으로 커널 프로그래머는 캐시 효과를 무시한다. 데이터 구조 수업의
-시작에서 배운 시간/공간 트레이드오프는 종종 현대 하드웨어에 적용되지 않는다. 
-더 큰 프로그램이 작은 프로그램보다 느리게 실행된다는 점에서 공간이 곧 시간이다.
+일반적으로 커널 프로그래머는 캐시 효과를 무시한다. 자료 구조 수업의 시작에서
+배운 시간/공간의 트레이드오프 관계는 종종 현대 하드웨어에 적용되지 않는다. 더
+큰 프로그램이 작은 프로그램보다 느리게 실행된다는 점에서 공간이 곧 시간이다.
 
 More recent compilers take an increasingly active role in deciding whether
 a given function should actually be inlined or not.  So the liberal
@@ -246,7 +246,7 @@ locking after the fact is a rather more difficult task.  Kernel developers
 should take the time to understand the available locking primitives well
 enough to pick the right tool for the job.  Code which shows a lack of
 attention to concurrency will have a difficult path into the mainline.
-하나 이상의 스레드에 의해 동시에 액세스 될 수있는 모든 자원(데이터 구조, 하드웨어 레지스터 등)
+하나 이상의 스레드에 의해 동시에 액세스 될 수있는 모든 자원(자료 구조, 하드웨어 레지스터 등)
 은 lock에 의해 보호 되어야한다. 새로운 코드는 이 요구사항을 염두에 두고 작성해야한다.
 사후 lock 추가는 오히려 더 어려운 작업이다. 커널 개발자는 작업에 적합한 도구를 선택할수 있도록
 충분히 가능한 lock 기본 요소를 이해하는 시간을 가져야 한다. 동시성에 대한 관심이 부족한 코드는
