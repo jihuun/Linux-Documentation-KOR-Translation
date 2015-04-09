@@ -279,6 +279,11 @@ breaks?  The best answer to this question was expressed by Linus in July,
 	progress at all. Is it two steps forwards, one step back, or one
 	step forward and two steps back?
 
+	따라서 우리는 새로운 문제를 공개할 때, 버그를 수정하지 않는다.  이것은
+	정신나간 방법이다. 또한 당신이 실제 어떠한 진전을 이뤄냈는지 아무도
+	모른다.  이것은 두 걸음 진전 한 걸음 후퇴 인가 한 걸음 진전 두 걸음
+	후퇴 인가?
+
 (http://lwn.net/Articles/243460/).
 
 An especially unwelcome type of regression is any sort of change to the
