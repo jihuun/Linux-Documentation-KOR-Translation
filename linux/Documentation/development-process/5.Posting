@@ -9,6 +9,11 @@ document will attempt to cover these expectations in reasonable detail;
 more information can also be found in the files SubmittingPatches,
 SubmittingDrivers, and SubmitChecklist in the kernel documentation
 directory.
+결국 당신의 작업내용이 커뮤니티 리뷰를 위해 준비가 될 것이고, 조만간 메인라인에 포함 될 것이다.
+당연히 커널 개발 커뮤니티 패치의 게시에 사용되는 규칙과 절차들은 발전하고 있다.
+이 규칙과 절차들을 지키면 참여하는 모두의 삶을 훨씬 더 쉽게 만들 것이다.
+이 문서는 이 과정에 대해 자세히 다룰 것이다. 자세한 내용은 documentation 디렉토리의
+SubmittingPatches, SubmittingDrivers, SubmitChecklist 파일들에서도 찾아 볼 수 있다.
 
 
 5.1: WHEN TO POST
