@@ -24,12 +24,21 @@ work being done is complex, though, there is a lot to be gained by getting
 feedback from the community before the work is complete.  So you should
 consider posting in-progress work, or even making a git tree available so
 that interested developers can catch up with your work at any time.
+작업이 완전히 준비되기 전에는 패치 포스팅을 피하고 싶은 유혹이 있다. 
+간단한 패치의 경우, 이것은 별 문제가 되지 않는다. 하지만 작업이 복잡해지면
+작업이 완료되기 전에 커뮤니티로부터 피드백을 통해 얻을 수 있는 것이 많다.
+그래서 당신은 진행중인 작업을 포스팅하거나 관심있는 개발자들이 언제든지 
+따라잡을 수 있도록 git 트리 사용을 고려해야한다.
 
 When posting code which is not yet considered ready for inclusion, it is a
 good idea to say so in the posting itself.  Also mention any major work
 which remains to be done and any known problems.  Fewer people will look at
 patches which are known to be half-baked, but those who do will come in
 with the idea that they can help you drive the work in the right direction.
+아직 포함을 위해 준비되지 않은 코드를 포스팅 할 때, 게시물 자체가 그렇게
+말하는 것이 좋다. 또한 앞으로 수행 해야할 작업 및 알려진 문제를 언급하는게 좋다.
+적은 수의 사람들이 이 불완전한 패치를 볼 것이다, 그러나 그 사람들이 당신이 
+올바른 방향으로 작업을 하는데 도움을 줄수 있다.
 
 
 5.2: BEFORE CREATING PATCHES
