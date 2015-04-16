@@ -84,6 +84,8 @@ always pays back the effort in short order.
 The preparation of patches for posting can be a surprising amount of work,
 but, once again, attempting to save time here is not generally advisable
 even in the short term.
+패치 포스팅을 위한 준비는 놀라운 만큼 많은양의 작업이 될수 있다. 그러나 
+일반적으로 이 단계에서 (단기적이라도) 시간을 절약하려는 시도는 권장하지 않는다.
 
 Patches must be prepared against a specific version of the kernel.  As a
 general rule, a patch should be based on the current mainline as found in
