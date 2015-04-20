@@ -9,6 +9,11 @@ document will attempt to cover these expectations in reasonable detail;
 more information can also be found in the files SubmittingPatches,
 SubmittingDrivers, and SubmitChecklist in the kernel documentation
 directory.
+결국 당신의 작업내용이 커뮤니티 리뷰를 위해 준비가 될 것이고, 조만간 메인라인에 포함 될 것이다.
+당연히 커널 개발 커뮤니티 패치의 게시에 사용되는 규칙과 절차들은 발전하고 있다.
+이 규칙과 절차들을 지키면 참여하는 모두의 삶을 훨씬 더 쉽게 만들 것이다.
+이 문서는 이 과정에 대해 자세히 다룰 것이다. 자세한 내용은 documentation 디렉토리의
+SubmittingPatches, SubmittingDrivers, SubmitChecklist 파일들에서도 찾아 볼 수 있다.
 
 
 5.1: WHEN TO POST
@@ -19,37 +24,59 @@ work being done is complex, though, there is a lot to be gained by getting
 feedback from the community before the work is complete.  So you should
 consider posting in-progress work, or even making a git tree available so
 that interested developers can catch up with your work at any time.
+작업이 완전히 준비되기 전에는 패치 포스팅을 피하고 싶은 유혹이 있다. 
+간단한 패치의 경우, 이것은 별 문제가 되지 않는다. 하지만 작업이 복잡해지면
+작업이 완료되기 전에 커뮤니티로부터 피드백을 통해 얻을 수 있는 것이 많다.
+그래서 당신은 진행중인 작업을 포스팅하거나 관심있는 개발자들이 언제든지 
+따라잡을 수 있도록 git 트리 사용을 고려해야한다.
 
 When posting code which is not yet considered ready for inclusion, it is a
 good idea to say so in the posting itself.  Also mention any major work
 which remains to be done and any known problems.  Fewer people will look at
 patches which are known to be half-baked, but those who do will come in
 with the idea that they can help you drive the work in the right direction.
+아직 포함을 위해 준비되지 않은 코드를 포스팅 할 때, 게시물 자체가 그렇게
+말하는 것이 좋다. 또한 앞으로 수행 해야할 작업 및 알려진 문제를 언급하는게 좋다.
+적은 수의 사람들이 이 불완전한 패치를 볼 것이다, 그러나 그 사람들이 당신이 
+올바른 방향으로 작업을 하는데 도움을 줄수 있다.
 
 
 5.2: BEFORE CREATING PATCHES
 
 There are a number of things which should be done before you consider
 sending patches to the development community.  These include:
+당신이 개발 커뮤니티에 패치를 보내는 것을 고려하기 전에 해야하는 
+다음과 같은 일들이 있다:
 
  - Test the code to the extent that you can.  Make use of the kernel's
    debugging tools, ensure that the kernel will build with all reasonable
    combinations of configuration options, use cross-compilers to build for
    different architectures, etc.
+ - 당신이 할 수있는 범위에 코드를 테스트 해라. 커널 디버깅 도구를 활용해
+   커널이 구성 옵션의 합리적인 조합으로 빌드 될 것을 보장하고
+   크로스 컴파일러를 이용해 다른 아키텍쳐용으로 빌드 되는지 확인하라.
 
  - Make sure your code is compliant with the kernel coding style
    guidelines.
+ - 코드가 커널 코딩 스타일 가이드 라인을 준수하는지 확인하라.
 
  - Does your change have performance implications?  If so, you should run
    benchmarks showing what the impact (or benefit) of your change is; a
    summary of the results should be included with the patch.
+ - 당신의 변경사항이 성능에 영향이 있다면, 당신은 당신의 변경사항의
+   영향(또는 효과)이 무엇인지 보여주는 벤치 마크를 실행해야 한다.
+   결과는 요약하여 패치에 포함되어야한다.
 
  - Be sure that you have the right to post the code.  If this work was done
    for an employer, the employer likely has a right to the work and must be
    agreeable with its release under the GPL.
+ - 당신이 코드를 게시 할 수있는 권한이 있는지 확인하라. 어떤 작업이 특정 업체에
+   의해 수행 된 경우, 그 업체가 이 작업에 대한 권리를 가지고 있으며, 
+   GPL 라이센스로 릴리즈 되는데 동의해야 한다.
 
 As a general rule, putting in some extra thought before posting code almost
 always pays back the effort in short order.
+일반적으로, 코드를 게시하기 전에 패치에 추가되는 것들은 짧은 시간에 좋은 결과로 돌아온다.
 
 
 5.3: PATCH PREPARATION
@@ -57,6 +84,8 @@ always pays back the effort in short order.
 The preparation of patches for posting can be a surprising amount of work,
 but, once again, attempting to save time here is not generally advisable
 even in the short term.
+패치 포스팅을 위한 준비는 놀라운 만큼 많은양의 작업이 될수 있다. 그러나 
+일반적으로 이 단계에서 (단기적이라도) 시간을 절약하려는 시도는 권장하지 않는다.
 
 Patches must be prepared against a specific version of the kernel.  As a
 general rule, a patch should be based on the current mainline as found in
