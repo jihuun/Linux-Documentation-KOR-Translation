@@ -5,9 +5,9 @@ process, the proof of any kernel development project is in the resulting
 code.  It is the code which will be examined by other developers and merged
 (or not) into the mainline tree.  So it is the quality of this code which
 will determine the ultimate success of the project.
-견고하고 커뮤니티 중심인 디자인 프로세스에 대해 할 말이 많지만, 
-어떤 커널 개발 프로젝트의 증거는 결국 결과 코드이다. 이것은 다른 개발자들에게
-리뷰받고 메인라인 트리에 머지되거나 반려된다. 그래서 프로젝트의 궁극적인 성공을
+견고하고 커뮤니티 중심인 디자인 프로세스에 대해 할 말이 많지만,어떤 커널 개발
+프로젝트의 증거는 결국 결과 코드이다. 이것은 다른 개발자들에게 리뷰받고
+메인라인 트리에 머지되거나 반려된다. 그래서 프로젝트의 궁극적인 성공을
 결정하는것은 이 코드의 품질이다.
 
 This section will examine the coding process.  We'll start with a look at a
@@ -15,8 +15,8 @@ number of ways in which kernel developers can go wrong.  Then the focus
 will shift toward doing things right and the tools which can help in that
 quest.
 이 섹션에서는 코딩 과정을 살펴 본다. 우리는 커널 개발자가 실수 할수있는
-여러가지 경우를 살펴보며 시작할 것이다. 그런 다음 제대로 개발하는 법과 
-작업에 도움을 줄 수있는 도구들을 살펴볼 것이다.
+여러가지 경우를 살펴보며 시작할 것이다. 그런 다음 제대로 개발하는 법과작업에
+도움을 줄 수있는 도구들을 살펴볼 것이다.
 
 
 4.1: PITFALLS
@@ -30,10 +30,10 @@ in that file were taken as being, at most, advisory.  As a result, there is
 a substantial amount of code in the kernel which does not meet the coding
 style guidelines.  The presence of that code leads to two independent
 hazards for kernel developers.
-커널은 Documentation/CodingStyle에 표준 코딩스타일을 오래동안 기술해 왔다. 
-그 많은 시간동안 해당 파일에 설명 된 정책은 대부분의 자문정도로 간주되었다.
-결과적으로 코딩 스타일 지침을 충족하지 않는 상당량의 코드가 있다. 
-이런 코드의 존재는 커널 개발자들에게 두가지 위험요소를 유발할 수 있다.
+커널은 Documentation/CodingStyle에 표준 코딩스타일을 오래동안 기술해 왔다.그
+많은 시간동안 해당 파일에 설명 된 정책은 대부분의 자문정도로 간주되었다.
+결과적으로 코딩 스타일 지침을 충족하지 않는 상당량의 코드가 있다.이런 코드의
+존재는 커널 개발자들에게 두가지 위험요소를 유발할 수 있다.
 
 The first of these is to believe that the kernel coding standards do not
 matter and are not enforced.  The truth of the matter is that adding new
@@ -54,9 +54,9 @@ employer's mandated style.  In such cases, the kernel's style will have to
 win before the code can be merged.  Putting code into the kernel means
 giving up a degree of control in a number of ways - including control over
 how the code is formatted.
-때때로, 커널의 코딩 스타일이 고용주가 원하는 스타일과 충돌할 수 있다. 
-이러한 경우, 코드는 머지되기 전에 커널 스타일로 포맷팅 되어야 할 것이다. 
-커널에 코드를 커밋하는 것은 코드포맷 포함하여 여러가지 제어의 포기를 의미한다.
+때때로, 커널의 코딩 스타일이 고용주가 원하는 스타일과 충돌할 수 있다.이러한
+경우, 코드는 머지되기 전에 커널 스타일로 포맷팅 되어야 할 것이다.커널에 코드를
+커밋하는 것은 코드포맷 포함하여 여러가지 제어의 포기를 의미한다.
 
 The other trap is to assume that code which is already in the kernel is
 urgently in need of coding style fixes.  Developers may start to generate
@@ -67,18 +67,20 @@ they tend to get a chilly reception.  So this type of patch is best
 avoided.  It is natural to fix the style of a piece of code while working
 on it for other reasons, but coding style changes should not be made for
 their own sake.
-두번재 문제는 이미 머지된 커널코드가 긴급히 스타일 픽스를 필요로 하는 경우를 가정해보자.
-개발자는 과정에 익숙해지기 위해 또는 이름을 기록에 남기기 위해 포맷팅 패치를 생성하기
-시작할 것이다. 그러나 순수한 코딩 스타일 픽스는 개발 커뮤니티에겐 좋게 보이지 않을 것이다.
-차가운 반응을 얻을 것이다. 따라서 이런 유형의 패치를 피해야한다. 다른 이유를 위해 패치하면서
-코딩 스타일을 수정하는 것은 자연 스럽지만 코딩 스타일 패치는 이루어 져서는 안된다.
+두번재 문제는 이미 머지된 커널코드가 긴급히 스타일 픽스를 필요로 하는 경우를
+가정해보자.  개발자는 과정에 익숙해지기 위해 또는 이름을 기록에 남기기 위해
+포맷팅 패치를 생성하기 시작할 것이다. 그러나 순수한 코딩 스타일 픽스는 개발
+커뮤니티에겐 좋게 보이지 않을 것이다.  차가운 반응을 얻을 것이다. 따라서 이런
+유형의 패치를 피해야한다. 다른 이유를 위해 패치하면서 코딩 스타일을 수정하는
+것은 자연 스럽지만 코딩 스타일 패치는 이루어 져서는 안된다.
 
 The coding style document also should not be read as an absolute law which
 can never be transgressed.  If there is a good reason to go against the
 style (a line which becomes far less readable if split to fit within the
 80-column limit, for example), just do it.
-코딩 스타일 문서는 어기면 안되는 절대적인 법처럼 여겨질 필요는 없다.
-예를 들어, 80 열 제한에 맞도록 분할하면 가독성이 떨어지는 경우 꼭 표준을 지킬 필요는 없다.
+코딩 스타일 문서는 어기면 안되는 절대적인 법처럼 여겨질 필요는 없다.  예를
+들어, 80 열 제한에 맞도록 분할하면 가독성이 떨어지는 경우 꼭 표준을 지킬 필요는
+없다.
 
 
 * Abstraction layers
@@ -90,11 +92,11 @@ involving several million lines of code could do otherwise and survive.
 But experience has shown that excessive or premature abstraction can be
 just as harmful as premature optimization.  Abstraction should be used to
 the level required and no further.
-컴퓨터과학 교수는 유연성과 정보은폐를 위해 추상화 레이어를 광범위하게
-사용하라고 학생들을 가르친다. 물론 커널은 추상화를 광범위하게 사용한다.
-코드 만줄을 포함하는 프로젝트는 달리 할수도 없고 그러지 않으면 살아남을 수 없다. 
-그러나 경험상 과도하거나 섣부른 추상화는 조기 최적화만큼 해가 될 수 있다. 
-추상화는 필요한 수준으로만 사용되어야 한다.
+컴퓨터과학 교수는 유연성과 정보은폐를 위해 추상화 레이어를 광범위하게 사용
+하라고 학생들을 가르친다. 물론 커널은 추상화를 광범위하게 사용한다.  코드
+만줄을 포함하는 프로젝트는 달리 할수도 없고 그러지 않으면 살아남을 수
+없다.그러나 경험상 과도하거나 섣부른 추상화는 조기 최적화만큼 해가 될 수
+있다.추상화는 필요한 수준으로만 사용되어야 한다.
 
 At a simple level, consider a function which has an argument which is
 always passed as zero by all callers.  One could retain that argument just
@@ -107,11 +109,11 @@ programmer's early expectation.  Kernel developers will routinely submit
 patches to remove unused arguments; they should, in general, not be added
 in the first place.
 항상 모든 호출자에 의해 0으로 전달되는 인수를 가진 함수가 있다고 가정하자.
-혹시 누군가가 사용할 수 있으니 유연하게 그 인수를 유지할 수 있다.
-이 경우 미묘하게 잘못 되어도 사용된적이 없기 때문에 발견되지 않을 확률이 높다.
-막상 여분의 유연성을 위해 필요할 때도 프로그래머의 기대처럼 작동하지 않는다. 
-커널 개발자들은 사용되지 않는 인수를 제거하는 패치를 주기적으로 제출한다. 
-일반적으로, 그런 인수는 애초에 추가되지 않았어야 한다.
+혹시 누군가가 사용할 수 있으니 유연하게 그 인수를 유지할 수 있다.  이 경우
+미묘하게 잘못 되어도 사용된적이 없기 때문에 발견되지 않을 확률이 높다.  막상
+여분의 유연성을 위해 필요할 때도 프로그래머의 기대처럼 작동하지 않는다.커널
+개발자들은 사용되지 않는 인수를 제거하는 패치를 주기적으로 제출한다.일반적으로,
+그런 인수는 애초에 추가되지 않았어야 한다.
 
 Abstraction layers which hide access to hardware - often to allow the bulk
 of a driver to be used with multiple operating systems - are especially
@@ -139,10 +141,10 @@ flexibility into a source file.  But the preprocessor is not C, and heavy
 use of it results in code which is much harder for others to read and
 harder for the compiler to check for correctness.  Heavy preprocessor use
 is almost always a sign of code which needs some cleanup work.
-C 전처리기를 C프로그래머에게 효율적으로 소스 파일에 상당한 유연성을 
-인코딩할수 있는 방법으로 강력한 유혹을 제시 할 것이다. 그러나 전처리기는 C가 아니며,
-많이 사용하면 가독성이 떨어지고 컴파일러가 정확성을 확인하기 힘들어 진다.
-과도한 전처리기 사용은 거의 항상 정리 작업이 필요하다는 코드의 표시이다.
+C 전처리기를 C프로그래머에게 효율적으로 소스 파일에 상당한 유연성을인코딩할수
+있는 방법으로 강력한 유혹을 제시 할 것이다. 그러나 전처리기는 C가 아니며, 많이
+사용하면 가독성이 떨어지고 컴파일러가 정확성을 확인하기 힘들어 진다.  과도한
+전처리기 사용은 거의 항상 정리 작업이 필요하다는 코드의 표시이다.
 
 Conditional compilation with #ifdef is, indeed, a powerful feature, and it
 is used within the kernel.  But there is little desire to see code which is
@@ -152,11 +154,11 @@ Conditionally-compiled code can be confined to functions which, if the code
 is not to be present, simply become empty.  The compiler will then quietly
 optimize out the call to the empty function.  The result is far cleaner
 code which is easier to follow.
-#ifdef와 조건부 컴파일은 강력한 기능이며 커널 내에서 사용된다. 
-그러나 #ifdef 블록을 자유롭게 뿌린 코드를 보고 싶지는 않다. 
-일반적으로, #ifdef 사용은 가능한한 헤더 파일에 국한되어야한다.
-조건부 컴파일 된 코드는 단순히 빈되고, 코드가 존재하지 않을 경우 기능에 국한 될 수있다.
-컴파일러는 조용히 빈 함수 호출을 최적화한다. 결과는 따라하기 쉬운 훨씬 깔끔한 코드이다.
+#ifdef와 조건부 컴파일은 강력한 기능이며 커널 내에서 사용된다.그러나 #ifdef
+블록을 자유롭게 뿌린 코드를 보고 싶지는 않다.일반적으로, #ifdef 사용은 가능한한
+헤더 파일에 국한되어야한다.  조건부 컴파일 된 코드는 단순히 빈되고, 코드가
+존재하지 않을 경우 기능에 국한 될 수있다.  컴파일러는 조용히 빈 함수 호출을
+최적화한다. 결과는 따라하기 쉬운 훨씬 깔끔한 코드이다.
 
 C preprocessor macros present a number of hazards, including possible
 multiple evaluation of expressions with side effects and no type safety.
@@ -164,10 +166,11 @@ If you are tempted to define a macro, consider creating an inline function
 instead.  The code which results will be the same, but inline functions are
 easier to read, do not evaluate their arguments multiple times, and allow
 the compiler to perform type checking on the arguments and return value.
-C 전처리기 매크로는 표현식의 다양한 계산결과 등 부작용과 타입 세이프티 미지원 등
-위험 요소를 갖고있다. 만약 매크로를 사용하고 싶은 경우, 대신 인라인 함수 사용을
-고려 할 수 있다. 결과 코드는 동일하지만, 인라인 함수가 가독성이 좋고 인수를 여러번
-평가하지않고 컴파일러가 인수 및 반환 값에 유형 검사를 수행 할 수 있다.
+C 전처리기 매크로는 표현식의 다양한 계산결과 등 부작용과 타입 세이프티 미지원
+등 위험 요소를 갖고있다. 만약 매크로를 사용하고 싶은 경우, 대신 인라인 함수
+사용을 고려 할 수 있다. 결과 코드는 동일하지만, 인라인 함수가 가독성이 좋고
+인수를 여러번 평가하지않고 컴파일러가 인수 및 반환 값에 유형 검사를 수행 할 수
+있다.
 
 
 * Inline functions
@@ -182,12 +185,13 @@ slow execution dramatically.  Inline functions, as a rule, should be quite
 small and relatively rare.  The cost of a function call, after all, is not
 that high; the creation of large numbers of inline functions is a classic
 example of premature optimization.
-인라인 함수는 위험요소를 갖고 있지만, 프로그래머는 함수호출을 피하고
-소스파일을 인라인 함수로 채워 고유의 효율성에 매혹될 수 있다. 그러나 이러한 기능은
-실제로 성능을 감소시킬 수 있다. 이들 코드는 각 호출 위치에 복제되기 때문에
-그들은 컴파일 커널의 크기를 팽창시키고 프로세서의 메모리 캐시에 압력을 주어 
-극적으로 실행속도를 느려지게 할 수 있다. 인라인 함수는 원칙적으로 아주 작고 드물게 사용해야한다.
-결국 함수 호출의 비용은 그렇게 높지 않다. 많은 인라인 함수 생성은 조기 최적화의 고전적인 예이다.
+인라인 함수는 위험요소를 갖고 있지만, 프로그래머는 함수호출을 피하고 소스파일을
+인라인 함수로 채워 고유의 효율성에 매혹될 수 있다. 그러나 이러한 기능은 실제로
+성능을 감소시킬 수 있다. 이들 코드는 각 호출 위치에 복제되기 때문에 그들은
+컴파일 커널의 크기를 팽창시키고 프로세서의 메모리 캐시에 압력을 주어극적으로
+실행속도를 느려지게 할 수 있다. 인라인 함수는 원칙적으로 아주 작고 드물게
+사용해야한다.  결국 함수 호출의 비용은 그렇게 높지 않다. 많은 인라인 함수
+생성은 조기 최적화의 고전적인 예이다.
 
 In general, kernel programmers ignore cache effects at their peril.  The
 classic time/space tradeoff taught in beginning data structures classes
@@ -201,8 +205,9 @@ More recent compilers take an increasingly active role in deciding whether
 a given function should actually be inlined or not.  So the liberal
 placement of "inline" keywords may not just be excessive; it could also be
 irrelevant.
-최근의 컴파일러는 주어진 함수가 실제 인라인함수로 사용되는지 여부를 결정하는데 적극적인 역할을 한다. 
-그래서 인라인 함수의 자유로운 배치는 과도하지 않게 조절 되며 또한 관련이 없을 수 있다.
+최근의 컴파일러는 주어진 함수가 실제 인라인함수로 사용되는지 여부를 결정하는데
+적극적인 역할을 한다.그래서 인라인 함수의 자유로운 배치는 과도하지 않게 조절
+되며 또한 관련이 없을 수 있다.
 
 
 * Locking
@@ -224,9 +229,9 @@ corporate doors.  But one large problem in particular was that it was not
 designed to work on multiprocessor systems.  Before this networking stack
 (now called mac80211) could be merged, a locking scheme needed to be
 retrofitted onto it.
-이 코드는 기업의 문 뒤에서 개발 되었다. 그러나 하나의 큰 문제는 이것이 
-멀티프로세서 시스템에서 작동하도록 설계되지 않았다는 것이다. 
-이 네트워킹 스택(mac80211)은 머지되기 전에 lock방식이 추가되어야 했다.
+이 코드는 기업의 문 뒤에서 개발 되었다. 그러나 하나의 큰 문제는 이것이
+멀티프로세서 시스템에서 작동하도록 설계되지 않았다는 것이다.이 네트워킹
+스택(mac80211)은 머지되기 전에 lock방식이 추가되어야 했다.
 
 Once upon a time, Linux kernel code could be developed without thinking
 about the concurrency issues presented by multiprocessor systems.  Now,
@@ -234,10 +239,11 @@ however, this document is being written on a dual-core laptop.  Even on
 single-processor systems, work being done to improve responsiveness will
 raise the level of concurrency within the kernel.  The days when kernel
 code could be written without thinking about locking are long past.
-옛날 옛적엔 리눅스 커널 코드는 멀티프로세서 시스템에 의해 발생되는 동시성 문제를
-고려하지 않고 개발 될 수 있었다. 그러나 지금,이 문서는 듀얼 코어 노트북에서 기록되고 있다.
-심지어 싱글프로세서 시스템에서 응답성을 개선하기 위한 작업은 커널내에서 동시성의
-수준을 올릴 것이다. 커널 코드가 lock에 대해 생각하지 않고 작성되던 시절은 오래전에 끝났다.
+옛날 옛적엔 리눅스 커널 코드는 멀티프로세서 시스템에 의해 발생되는 동시성
+문제를 고려하지 않고 개발 될 수 있었다. 그러나 지금,이 문서는 듀얼 코어
+노트북에서 기록되고 있다.  심지어 싱글프로세서 시스템에서 응답성을 개선하기
+위한 작업은 커널내에서 동시성의 수준을 올릴 것이다. 커널 코드가 lock에 대해
+생각하지 않고 작성되던 시절은 오래전에 끝났다.
 
 Any resource (data structures, hardware registers, etc.) which could be
 accessed concurrently by more than one thread must be protected by a lock.
@@ -246,11 +252,12 @@ locking after the fact is a rather more difficult task.  Kernel developers
 should take the time to understand the available locking primitives well
 enough to pick the right tool for the job.  Code which shows a lack of
 attention to concurrency will have a difficult path into the mainline.
-하나 이상의 스레드에 의해 동시에 액세스 될 수있는 모든 자원(자료 구조, 하드웨어 레지스터 등)
-은 lock에 의해 보호 되어야한다. 새로운 코드는 이 요구사항을 염두에 두고 작성해야한다.
-사후 lock 추가는 오히려 더 어려운 작업이다. 커널 개발자는 작업에 적합한 도구를 선택할수 있도록
-충분히 가능한 lock 기본 요소를 이해하는 시간을 가져야 한다. 동시성에 대한 관심이 부족한 코드는
-메인라인에 포함되기 어렵다.
+하나 이상의 스레드에 의해 동시에 액세스 될 수있는 모든 자원(자료 구조, 하드웨어
+레지스터 등) 은 lock에 의해 보호 되어야한다. 새로운 코드는 이 요구사항을 염두에
+두고 작성해야한다.  사후 lock 추가는 오히려 더 어려운 작업이다. 커널 개발자는
+작업에 적합한 도구를 선택할수 있도록 충분히 가능한 lock 기본 요소를 이해하는
+시간을 가져야 한다. 동시성에 대한 관심이 부족한 코드는 메인라인에 포함되기
+어렵다.
 
 
 * Regressions
@@ -262,11 +269,12 @@ regressions have become most unwelcome in the mainline kernel.  With few
 exceptions, changes which cause regressions will be backed out if the
 regression cannot be fixed in a timely manner.  Far better to avoid the
 regression in the first place.
-마지막으로 중요한 위험요소가 있다. 그것은 기존의 사용자 기능을 고장낼 수 있는 
-(하지만 큰 개선을 가져올 수있는) 변경을 하고 싶을 수 있다. 이러한 종류의 변경은
-"regression" 이라고 하며 메인라인 커널에서 가장 환영받지 못할 것이다. 
-몇가지 예외케이스를 제외하고 regression이 빠른시일내에 고쳐질수 없는 경우
-regression의 원인은 되돌려 진다. 제일 좋은 방법은 regression을 애초에 피하는 것이다.
+마지막으로 중요한 위험요소가 있다. 그것은 기존의 사용자 기능을 고장낼 수
+있는(하지만 큰 개선을 가져올 수있는) 변경을 하고 싶을 수 있다. 이러한 종류의
+변경은 "regression" 이라고 하며 메인라인 커널에서 가장 환영받지 못할
+것이다.몇가지 예외케이스를 제외하고 regression이 빠른시일내에 고쳐질수 없는
+경우 regression의 원인은 되돌려 진다. 제일 좋은 방법은 regression을 애초에
+피하는 것이다.
 
 It is often argued that a regression can be justified if it causes things
 to work for more people than it creates problems for.  Why not make a
@@ -300,8 +308,8 @@ user-space interfaces is always required.
 ##일단 인터페이스가 user 공간으로 전달되면 불명확하게 지원될 것이다.  ##이
 사실은 user공간 인터페이스의 제작을 도전적으로 만든다.  ##그것이 양립할 수 없는
 방법으로 변경될 수 없을 때 부터, 처음부터 틀리지 않게 만들어 졌을 것이다.
-이러한 이유 때문에 user-space 인터페이스의 많은 의견들과 확실한 문서, 광범위한 리뷰가
-항상 필요한 것이다.
+이러한 이유 때문에 user-space 인터페이스의 많은 의견들과 확실한 문서, 광범위한
+리뷰가 항상 필요한 것이다.
 
 4.2: CODE CHECKING TOOLS
 
@@ -315,7 +323,7 @@ not afflict a user later on, so it stands to reason that the automated
 tools should be used whenever possible.
 지금 당장은, 최소한 에러없는 코드를 작성하는 것은 우리 중 아주 소수만 달성가능한
 비현실적인 일일 것이다.  그러나, 우리가 바랄 수 있는것은, 코드가 메인라인
-커널에 반영되기 이전에 가능한한 많은 수의 에러가 발견되고 수정되는 것이다.  그
+커널에 반영되기 이전에 가능한한 많은 수의 에러가 발견되고 수정되는 것이다. 그
 목적을 달성하기 위해서, 커널 개발자들은 광범위하게 발생할 수 있는 불분명한
 문제들를 자동으로 잡아낼 수 있는 다양한 툴을 한데 모았다.  컴퓨터가 잡아내는
 문제들은 나중에 사용자에게 불편을 주는 문제는 아니다. 그래서 이런 자동화 툴은
@@ -362,9 +370,8 @@ testing purposes.  In particular, you should turn on:
    created by the kernel and warn when things are done out of order.  If
    you are adding a subsystem which creates (and exports) complex objects
    of its own, consider adding support for the object debugging
-
    infrastructure.
- - DEBUG_OBJECTS : 커널이 생성한 다양한 객체의 수명을 추적하는 코드를 추가한다. 
+ - DEBUG_OBJECTS : 커널이 생성한 다양한 객체의 수명을 추적하는 코드를 추가한다.
    그리고 잘못된 순서로 완료된 작업이 있을때 경고메시지를 준다.  만약 그자체로
    복잡한 객체를 생성하는 서브시스템을 추가하려고 한다면, 객체 디버깅 기반의 기술
    추가를 고려해라.
@@ -382,7 +389,11 @@ testing purposes.  In particular, you should turn on:
 There are quite a few other debugging options, some of which will be
 discussed below.  Some of them have a significant performance impact and
 should not be used all of the time.  But some time spent learning the
-available options will likely be paid back many times over in short order. 
+available options will likely be paid back many times over in short order.
+이외에도 다양한 디버깅 옵션이 존재한다. 그중 일부는 아래에서 살펴 볼 것이다.
+그것중 몇몇은 의미있는 성능 효과를 보이기도 하고 항상 사용하면 안되는 것도
+있다.  때때로 이런 사용 가능한 옵션을 익히는데 소모하는 시간은 아마 곧 두고두고
+보상받을 수 있을 것이다.
 
 One of the heavier debugging tools is the locking checker, or "lockdep."
 This tool will track the acquisition and release of every lock (spinlock or
@@ -395,14 +406,28 @@ occasion, deadlock.  This kind of problem can be painful (for both
 developers and users) in a deployed system; lockdep allows them to be found
 in an automated manner ahead of time.  Code with any sort of non-trivial
 locking should be run with lockdep enabled before being submitted for
-inclusion. 
-
+inclusion.
+가장 규모있는 디버깅 툴에는 locking checker 나 lockdep 이 있다.  이 툴은
+시스템에서 락(lock)을(스핀락 또는 뮤텍스) 획득 하거나 릴리즈 하는것을 추적한다.
+##어떤 락이 획득되었는지에 대한 순서는 각각에게 영향을 준다, 현재 인터럽트
+환경이나 그 외의 것 에서.  그것은 락이 항상 같은 순서로 획득되었다는것을
+보장해준다. 그리고 인터럽트는 모든 상황에 적용될 수 있다고 똑같이 가정할 수
+있다.  다시말하면, lockdep은 시스템이 간혹 deadlock에 빠질 수 있는 시나리오를
+검출 할 수 있는 것이다.  이런 종류의 문제는 시스템에 있어서 사용자나 개발자
+모두에게 괴로움을 준다.  lockdep은 이런 문제를 기한보다 일찍 자동으로 발견할 수
+있도록 도와준다.  반영하고자 하는 모든 종류의 중요한 락이 포함된 코드는
+lockdep을 enable시켜 동작시켜봐야 한다.
 As a diligent kernel programmer, you will, beyond doubt, check the return
 status of any operation (such as a memory allocation) which can fail.  The
 fact of the matter, though, is that the resulting failure recovery paths
 are, probably, completely untested.  Untested code tends to be broken code;
 you could be much more confident of your code if all those error-handling
 paths had been exercised a few times.
+당신은 아주 성실한 커널 개발자로서 의심의 여지 없이 당신은 실패할수 있는 모든
+작업의(예를 들어 메모리 할당) 리턴 상태를 체크해 볼 것이다.  ##그러나 사실은
+실패를 초래하는 복구 경로는 실제로 완전히 검증되지 않았다.  검증되지 않은
+코드는 문제를 일으키는 경향이 있다.  모든 error-handling paths가 몇번 통과되고
+나면, 아마 코드에 더 큰 자신감을 가질 수 있을 것이다.
 
 The kernel provides a fault injection framework which can do exactly that,
 especially where memory allocations are involved.  With fault injection
@@ -432,7 +457,7 @@ Documentation/coccinelle.txt for more information.
 Other kinds of portability errors are best found by compiling your code for
 other architectures.  If you do not happen to have an S/390 system or a
 Blackfin development board handy, you can still perform the compilation
-step.  A large set of cross compilers for x86 systems can be found at 
+step.  A large set of cross compilers for x86 systems can be found at
 
 	http://www.kernel.org/pub/tools/crosstool/
 
