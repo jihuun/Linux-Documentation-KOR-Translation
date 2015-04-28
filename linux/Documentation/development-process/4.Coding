@@ -409,21 +409,21 @@ locking should be run with lockdep enabled before being submitted for
 inclusion.
 가장 규모있는 디버깅 툴에는 locking checker 나 lockdep 이 있다.  이 툴은
 시스템에서 락(lock)을(스핀락 또는 뮤텍스) 획득 하거나 릴리즈 하는것을 추적한다.
-##어떤 락이 획득되었는지에 대한 순서는 각각에게 영향을 준다, 현재 인터럽트
-환경이나 그 외의 것 에서.  그것은 락이 항상 같은 순서로 획득되었다는것을
-보장해준다. 그리고 인터럽트는 모든 상황에 적용될 수 있다고 똑같이 가정할 수
-있다.  다시말하면, lockdep은 시스템이 간혹 deadlock에 빠질 수 있는 시나리오를
-검출 할 수 있는 것이다.  이런 종류의 문제는 시스템에 있어서 사용자나 개발자
-모두에게 괴로움을 준다.  lockdep은 이런 문제를 기한보다 일찍 자동으로 발견할 수
-있도록 도와준다.  반영하고자 하는 모든 종류의 중요한 락이 포함된 코드는
-lockdep을 enable시켜 동작시켜봐야 한다.
+##락의 획득 순서는 현재 인터럽트 환경이나 그 외의 것 에서 각각에게 영향을 준다.
+그것은 락이 항상 같은 순서로 획득되었다는것을 보장해준다. 그리고 인터럽트는
+모든 상황에 적용될 수 있다고 똑같이 가정할 수 있다.  다시말하면, lockdep은
+시스템이 간혹 deadlock에 빠질 수 있는 시나리오를 검출 할 수 있는 것이다.  이런
+종류의 문제는 시스템에 있어서 사용자나 개발자 모두를 괴롭힌다.  lockdep은 이런
+문제를 기한보다 일찍 자동으로 발견할 수 있도록 도와준다.  반영하고자 하는 모든
+종류의 중요한 락이 포함된 코드는 lockdep을 enable시켜 동작시켜봐야 한다.
+
 As a diligent kernel programmer, you will, beyond doubt, check the return
 status of any operation (such as a memory allocation) which can fail.  The
 fact of the matter, though, is that the resulting failure recovery paths
 are, probably, completely untested.  Untested code tends to be broken code;
 you could be much more confident of your code if all those error-handling
 paths had been exercised a few times.
-당신은 아주 성실한 커널 개발자로서 의심의 여지 없이 당신은 실패할수 있는 모든
+의심의 여지 없이, 당신은 아주 성실한 커널 개발자로서 실패할수 있는 모든
 작업의(예를 들어 메모리 할당) 리턴 상태를 체크해 볼 것이다.  ##그러나 사실은
 실패를 초래하는 복구 경로는 실제로 완전히 검증되지 않았다.  검증되지 않은
 코드는 문제를 일으키는 경향이 있다.  모든 error-handling paths가 몇번 통과되고
@@ -437,6 +437,14 @@ Running with fault injection enabled allows the programmer to see how the
 code responds when things go badly.  See
 Documentation/fault-injection/fault-injection.txt for more information on
 how to use this facility.
+##
+커널은 그것을 할 수 있도록 일부러 오류를 삽입시키는 (fault injection framework)를 제공 한다.
+##특별히 메모리 할당이 추가될 때.
+fault injection이 설정 되면, ##상당수의 메모리 할당은 실패 할 것이다. 이 실패는
+특별한 코드를 통해 방지시킬 수 있다.  fault injection의 설정과 함께 동작시키게
+되면 개발자는 문제가 발생할 때 코드가 어떻게 대응 하는지 확인 할 수 있다.  이
+기능의 보다 자세한 내용은 Documentation/fault-injection/fault-injection.txt
+에서 확인 가능 하다.
 
 Other kinds of errors can be found with the "sparse" static analysis tool.
 With sparse, the programmer can be warned about confusion between
@@ -446,6 +454,12 @@ flags is expected, and so on.  Sparse must be installed separately (it can
 be found at https://sparse.wiki.kernel.org/index.php/Main_Page if your
 distributor does not package it); it can then be run on the code by adding
 "C=1" to your make command.
+에러를 찾을 수 있는 또 다른 툴은 "sparse" 라는 정적 분석 툴이다. Sparse를
+이용하면, 개발자는 다음의 문제 상황을 인지 할 수 있다; 커널 공간 주소와, 유져
+공간 주소를 혼동, 빅-엔디안과 리틀-엔디안의 혼용, ##flag로 설정된 integer 변수
+파싱, 등.  Sparse는 반드시 구분되서 설치 되어야한다. (만약 배포판이 패키지를
+가지고 있지 않은 경우 https://sparse.wiki.kernel.org/index.php/Main_Page 에서
+확인 가능) 그리고 이 기능은 make 명령에서 "C=1" 을 추가하면 실행 된다.
 
 The "Coccinelle" tool (http://coccinelle.lip6.fr/) is able to find a wide
 variety of potential coding problems; it can also propose fixes for those
@@ -453,6 +467,10 @@ problems.  Quite a few "semantic patches" for the kernel have been packaged
 under the scripts/coccinelle directory; running "make coccicheck" will run
 through those semantic patches and report on any problems found.  See
 Documentation/coccinelle.txt for more information.
+Coccinelle는 잠재적 코딩 문제를 광범위하게 찾고 또한 잡아낼 수 있는 툴이다.
+몇몇의 "semantic patches"는 커널 내에 포함된 scripts/cossinelle경로에 있다.
+"make coccicheck" 를 통해 이런 semantic patch나 여러 문제들을 발견 할 수 있다.
+보다 자세한 내용은 Documentation/coccinelle.txt에서 확인 가능하다.
 
 Other kinds of portability errors are best found by compiling your code for
 other architectures.  If you do not happen to have an S/390 system or a
@@ -463,6 +481,15 @@ step.  A large set of cross compilers for x86 systems can be found at
 
 Some time spent installing and using these compilers will help avoid
 embarrassment later.
+여러 아키텍쳐에서 코드를 컴파일 해보는 것이 잠재적 오류를 발견하는데에 가장
+좋은 방법이다.  ##만약 S/390시스템이나 Blackfin개발 보드에서 하고 싶지 않다면
+compilation 절차를 통해 동작 할 수 있다.  많은 수의 x86용 컴파일러는 아래에서
+찾을 수 있다.
+
+	http://www.kernel.org/pub/tools/crosstool/
+
+때때로는 이 컴파일러들을 이용해 설치하는 시간이 나중에 골칫거리를 피하는데
+도움이 될 것이다.
 
 
 4.3: DOCUMENTATION
