@@ -499,6 +499,10 @@ development.  Even so, adequate documentation will help to ease the merging
 of new code into the kernel, make life easier for other developers, and
 will be helpful for your users.  In many cases, the addition of
 documentation has become essentially mandatory.
+##예상외로 문서 작성은 커널 개발에 있어서 규칙으로 여겨져 왔다.  또한, 적절한
+문서는 코드를 커널에 반영하는데 도움이 되며, 다른 개발자를 보다 편리하게
+해주고, 사용자에게도 유용할 것이다.  많은 경우에 문서를 추가하는것이 필수
+사항이 되어가고 있다. 
 
 The first piece of documentation for any patch is its associated
 changelog.  Log entries should describe the problem being solved, the form
@@ -507,19 +511,33 @@ effects on performance, and anything else that might be needed to
 understand the patch.  Be sure that the changelog says *why* the patch is
 worth applying; a surprising number of developers fail to provide that
 information.
+최초의 패치에 관련된 문서는 그 패치의 change log와 관련 되어 있다. Log
+엔트리에는 다음을 기술 해야 한다.  해결해야할 문제, 문제 해결책의 형태, 해당
+패치 작업에 동행한 사람들, 관련 성능 효과,  그외에 패치를 이해하는데 필요한
+모든것.  changelog에는 반드시 "왜" 이 패치가 적용되는게 이로운가에대한 기술이
+있어야한다.  상당히 많은 수의 개발자가 이 정보를 제공하는것을 빼먹는다.
 
 Any code which adds a new user-space interface - including new sysfs or
 /proc files - should include documentation of that interface which enables
 user-space developers to know what they are working with.  See
 Documentation/ABI/README for a description of how this documentation should
 be formatted and what information needs to be provided.
+sysfs나 /proc 파일과 같은 유져-공간 인터페이스에 관련된 코드를 추가하려고
+할때는, 유져-공간 개발자가 같이 작업할 수 있도록 해당 인터페이스에 대한 문서를
+필히 포함 시켜야 한다.  Documentation/ABI/README에는 이 문서의 형식과 어떤
+정보를 기술해야 하는지 설명되어 있다. 
 
 The file Documentation/kernel-parameters.txt describes all of the kernel's
 boot-time parameters.  Any patch which adds new parameters should add the
 appropriate entries to this file.
+Documentation/kernel-parameters.txt 에는 커널의 부팅 타임 매개변수의 모든것이
+기술 되어있다.  새로운 매개변수가 포함 되는 패치를 적용 하고자 한다면 이 문서에
+해당 내용을 추가해야 한다.
 
 Any new configuration options must be accompanied by help text which
 clearly explains the options and when the user might want to select them.
+새로운 configuration 옵션을 추가하고자 한다면 사용자가 선택 할 수 있도록 명확한
+설명을 추가해야 한다.
 
 Internal API information for many subsystems is documented by way of
 specially-formatted comments; these comments can be extracted and formatted
