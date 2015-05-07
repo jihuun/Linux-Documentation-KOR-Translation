@@ -582,6 +582,7 @@ out.  Anything which might tempt a code janitor to make an incorrect
 위한 임시 코드는 왜 그랬는지, 어떻게 했는지에 대한 설명이 있어야한다.
 
 4.4: INTERNAL API CHANGES
+4.4: 내부 API 변경하기
 
 The binary interface provided by the kernel to user space cannot be broken
 except under the most severe circumstances.  The kernel's internal
@@ -590,6 +591,11 @@ the need arises.  If you find yourself having to work around a kernel API,
 or simply not using a specific functionality because it does not meet your
 needs, that may be a sign that the API needs to change.  As a kernel
 developer, you are empowered to make such changes.
+커널이 제공하는 유져 공간에서의 바이너리 인터페이스는 심각한 문제상황 말고는
+고장나기 어렵다.  대신, 커널의 내부 프로그래밍 인터페이스는 매우 유동적이며,
+필요에따라 변경하는것이 가능하다.  커널 API 로 작업할 일이 생겼을때, 또는
+단순하게 원치않아서 특정 기능을 만들어 쓰지 않을때는 API가 수정이 필요하다는
+뜻이다. 커널 개발자로서 당신은 변경을 할 수 있는 권한을 가지고 있다.
 
 There are, of course, some catches.  API changes can be made, but they need
 to be well justified.  So any patch making an internal API change should be
