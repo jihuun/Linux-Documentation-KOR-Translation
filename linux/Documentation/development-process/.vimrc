@@ -1,3 +1,4 @@
+"Open vim and typing :source .vimrc
 colorscheme morning
 
 " For Highlighting non ascii char of Korean
