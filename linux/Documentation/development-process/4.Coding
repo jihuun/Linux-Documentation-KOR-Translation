@@ -502,7 +502,7 @@ documentation has become essentially mandatory.
 ##예상외로 문서 작성은 커널 개발에 있어서 규칙으로 여겨져 왔다.  또한, 적절한
 문서는 코드를 커널에 반영하는데 도움이 되며, 다른 개발자를 보다 편리하게
 해주고, 사용자에게도 유용할 것이다.  많은 경우에 문서를 추가하는것이 필수
-사항이 되어가고 있다. 
+사항이 되어가고 있다.
 
 The first piece of documentation for any patch is its associated
 changelog.  Log entries should describe the problem being solved, the form
@@ -525,7 +525,7 @@ be formatted and what information needs to be provided.
 sysfs나 /proc 파일과 같은 유져-공간 인터페이스에 관련된 코드를 추가하려고
 할때는, 유져-공간 개발자가 같이 작업할 수 있도록 해당 인터페이스에 대한 문서를
 필히 포함 시켜야 한다.  Documentation/ABI/README에는 이 문서의 형식과 어떤
-정보를 기술해야 하는지 설명되어 있다. 
+정보를 기술해야 하는지 설명되어 있다.
 
 The file Documentation/kernel-parameters.txt describes all of the kernel's
 boot-time parameters.  Any patch which adds new parameters should add the
@@ -555,7 +555,7 @@ Documentation/kernel-doc-nano-HOWTO.txt.
 거기에 추가하거나 계속 유지해야 한다. 이런 문서가 없는 부분이있다면 kerneldoc
 코멘트를 추가하는것이 나중을 위해서 더 좋을 것이다.  이런 글의 형식과 어떻게
 kerneldoc 템플릿을 만들 수 있는지에 대한 정보는
-Documentation/kernel-doc-nano-HOWTO.txt 에서 확인할 수 있다. 
+Documentation/kernel-doc-nano-HOWTO.txt 에서 확인할 수 있다.
 
 Anybody who reads through a significant amount of existing kernel code will
 note that, often, comments are most notable by their absence.  Once again,
@@ -602,6 +602,10 @@ to be well justified.  So any patch making an internal API change should be
 accompanied by a description of what the change is and why it is
 necessary.  This kind of change should also be broken out into a separate
 patch, rather than buried within a larger patch.
+물론 생각해야 할 것이 있다.  API를 수정할 수는 있지만, 합당한 이유가 있어야
+한다.  그래서 어떠한 API 수정 패치라도 어떤 것을 수정했는지, 왜 필요한지 설명이
+있어야 한다.  이런 패치는 여러 종류의 수정사항이 포함된 거대한 패치에
+포함되는것 보다, 개별적인 패치로 분리 해야 한다.
 
 The other catch is that a developer who changes an internal API is
 generally charged with the task of fixing any code within the kernel tree
@@ -611,6 +615,12 @@ likely to conflict with work being done by other developers.  Needless to
 say, this can be a large job, so it is best to be sure that the
 justification is solid.  Note that the Coccinelle tool can help with
 wide-ranging API changes.
+또 하나는, 내부 API를 수정한 개발자는 커널 트리 내에있는 어떤 코드의
+수정사항으로 인한 문제 발생에 일반적으로 책임을 진다. 만약 광범위하게 사용되는
+함수라면, 이 의무는 수백 수천개의 수정사항으로 늘어 날 수 있다(많은 경우 충돌을
+발생시키는 것은 다른 개발자에 의해 수정된다).  두 말할 필요도 없이, 이것은
+거대한 작업이 될수 있다. 따라서 탄탄한 정당성 위에 만들어진 작업인지 확실히
+하는것이 좋다. Coccinelle 툴은 광범위한 API수정에 도움이 될 수 있다.
 
 When making an incompatible API change, one should, whenever possible,
 ensure that code which has not been updated is caught by the compiler.
