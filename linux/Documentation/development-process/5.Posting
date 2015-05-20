@@ -92,12 +92,19 @@ general rule, a patch should be based on the current mainline as found in
 Linus's git tree.  When basing on mainline, start with a well-known release
 point - a stable or -rc release - rather than branching off the mainline at
 an arbitrary spot.
+패치는 커널의 특정 버전에 대한 준비를해야한다. 일반적으로 패치는 현재 메인라인을
+기반으로해야한다. 메인라인을 기반으로 할 때, 임의의 지점에서 분기하기 보다는
+stable 이나 rc 같은 잘 알려진 릴리스 포인트로 시작하는 것이 좋다.
 
 It may become necessary to make versions against -mm, linux-next, or a
 subsystem tree, though, to facilitate wider testing and review.  Depending
 on the area of your patch and what is going on elsewhere, basing a patch
 against these other trees can require a significant amount of work
 resolving conflicts and dealing with API changes.
+하지만 폭넓은 테스트 및 리뷰를 용이하게 하기위해 -mm, linux-next, 또는 
+서브시스템트리에 대한 버전을 만들 필요가 있을 수 있다. 패치의 분야나
+다른곳에서 무슨일이 일어나고 있는지에 따라서 이런 다른버전을 기반으로
+만드는것은 conflict 해결이나 API 변경처리에 상당한 양의 작업이 필요할수 있다.
 
 Only the most simple changes should be formatted as a single patch;
 everything else should be made as a logical series of changes.  Splitting
