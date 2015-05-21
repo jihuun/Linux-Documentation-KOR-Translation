@@ -111,6 +111,9 @@ everything else should be made as a logical series of changes.  Splitting
 up patches is a bit of an art; some developers spend a long time figuring
 out how to do it in the way that the community expects.  There are a few
 rules of thumb, however, which can help considerably:
+가장 간단한 변경만이 하나의 패치로 제작 되야한다; 다른 모든 변경은 다수의 시리즈로
+만들어 져야한다. 패치를 분할하는것은 예술 작업과 같다; 일부 개발자는 커뮤니티가
+기대하는것을 찾는데 오랜시간을 보낸다. 그러나 상당히 도움이 될 수있는 규칙도 있다:
 
  - The patch series you post will almost certainly not be the series of
    changes found in your working revision control system.  Instead, the
