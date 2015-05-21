@@ -8,9 +8,9 @@ posting patches indicates a transition into the next stage of the process,
 with, possibly, quite a bit of work yet to be done.
 이 시점에서, 당신은 지금까지 주어진 가이드라인을 따라 왔다.  당신의 기술 능력과
 함께 완벽한 일종의 패치를 만들었다.  그러나 심지어 경험많은 커널 개발자도
-범하는 가장큰 실수는 본인의 작업이 이제 완료되었다고 결론짓는 것이다.  실제로는
+범하는 가장큰 실수는 본인의 작업이 이제 완료되었다고 결론짓는 것이다.  실제로
 패치를 올리는것은 전체 프로세스에서 다음 단계로 이동한다는것을 의미할 뿐이다.
-완료되기 까지는 꽤 많은 양의 작업이 있다. 
+완료되기 까지는 꽤 많은 양의 작업이 남아 있다.
 
 It is a rare patch which is so good at its first posting that there is no
 room for improvement.  The kernel development process recognizes this fact,
@@ -19,12 +19,12 @@ code.  You, as the author of that code, will be expected to work with the
 kernel community to ensure that your code is up to the kernel's quality
 standards.  A failure to participate in this process is quite likely to
 prevent the inclusion of your patches into the mainline.
-너무 완벽해서 처음 올렸을때 부터 개선이 필요하지 않은 패치는 거의 없다.  커널
-개발 프로세스는 이 사실을 인지 하고 있다. 포스팅 된 코드의 지속적인 개선을
-강력하게 지향한다.  그 코드의 작성자로써 당신의 코드가 커널의 품질 기준의
-부합하는 코드인지 확실히 할 수 있도록 커널 커뮤니티와 함께 논의 해야 할 것이다.
-이 프로세스 참여에 실패한 패치는 메인라인에 반영되는 패치에 포함되지 못할
-가능성이 크다.
+너무 완벽하여 처음 올렸을때 부터 개선이 필요없는 패치는 거의 없다.  커널 개발
+프로세스는 이 사실을 인지 하고 있다. 포스팅 된 코드의 지속적인 개선을 강력하게
+지향한다.  그 코드의 작성자로써 당신의 코드가 커널의 품질 기준의 부합하는
+코드인지 확실히 할 수 있도록 커널 커뮤니티와 함께 논의 해야 할 것이다.  이
+프로세스 참여에 실패한 패치는 메인라인에 반영되는 패치에 포함되지 못할 가능성이
+크다.
 
 
 6.1: WORKING WITH REVIEWERS
@@ -34,6 +34,10 @@ developers as they review the code.  Working with reviewers can be, for
 many developers, the most intimidating part of the kernel development
 process.  Life can be made much easier, though, if you keep a few things in
 mind:
+어떠한 중요 패치라도 다른 개발자의 리뷰에 의한 수많은 코멘트가 생길 것이다.
+대부분 개발자들에게 있어서 리뷰를 받는것은 커널 개발프로세스에서 가장 두려움을
+느끼게 하는 부분일 것이다.  그러나 다음의 몇가지 사항을 숙지하면 보다 수월하게
+리뷰를 받을 수 있다.
 
  - If you have explained your patch well, reviewers will understand its
    value and why you went to the trouble of writing it.  But that value
@@ -42,6 +46,12 @@ mind:
    Many of the changes you may be asked to make - from coding style tweaks
    to substantial rewrites - come from the understanding that Linux will
    still be around and under development a decade from now.
+ - 패치에대해 설명을 잘 작성했다면, 리뷰자는 그 패치의 가치와 어떤 문제를
+   해결하려고 하는건지에 대해 이해할 것이다.  그러나 그 가치도 다음의 근본적인
+   질문으로부터 자유로울 수 없다.  커널이 이코드를 5년 혹은 10년이상 포함하고
+   있으면 어떻게 될것인가.  코딩스타일 부터 수많은 코드 재수정 까지, 대부분의
+   만들려고 문의하는 수정사항은 리눅스는 지금부터 오랜세월이 흘러도 개발 하에서
+   여전히 존재할것 이라는 것의 이해로부터 시작된다.
 
  - Code review is hard work, and it is a relatively thankless occupation;
    people remember who wrote kernel code, but there is little lasting fame
