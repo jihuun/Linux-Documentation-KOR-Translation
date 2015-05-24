@@ -141,6 +141,8 @@ rules of thumb, however, which can help considerably:
    bug, rearranges a few structures, and reformats the code, there is a
    good chance that it will be passed over and the important fix will be
    lost.
+ - 위 가이드라인을 다시 정리하면: 다른 타입의 변경을 하나의 패치에 혼합하면 안된다.
+   단일 패치로 중요한 보안 버그를 수정하고,몇삭지 구좋르  그 위에 전달되며 중요한 수정이 손실 될 것이라는 가능성이 있고, 몇 가지 구조를 재 배열 및 코드 포맷.
 
  - Each patch should yield a kernel which builds and runs properly; if your
    patch series is interrupted in the middle, the result should still be a
