@@ -113,7 +113,7 @@ out how to do it in the way that the community expects.  There are a few
 rules of thumb, however, which can help considerably:
 가장 간단한 변경만이 하나의 패치로 제작 되야한다; 다른 모든 변경은 다수의 시리즈로
 만들어 져야한다. 패치를 분할하는것은 예술 작업과 같다; 일부 개발자는 커뮤니티가
-기대하는것을 찾는데 오랜시간을 보낸다. 그러나 상당히 도움이 될 수있는 규칙도 있다:
+기대하는 방법을 찾는데 오랜시간을 보낸다. 그러나 상당히 도움이 될 수있는 규칙도 있다:
 
  - The patch series you post will almost certainly not be the series of
    changes found in your working revision control system.  Instead, the
@@ -121,6 +121,9 @@ rules of thumb, however, which can help considerably:
    split apart in ways which make sense.  The developers are interested in
    discrete, self-contained changes, not the path you took to get to those
    changes.
+ - 당신의 패치 시리즈는 확실하게 당신의 버전 컨트롤 시스템에서 사용되는 시리즈가 아니다.
+   대신, 최종 형태에서 고려된 뒤에 이해가 가는 방법으로 나누어져야 한다. 개발자들은 당신이
+   그 변경을 만든 과정이 아니라 분리되면서 필요내용을 모두 포함하는가에 관심이 있다.
 
  - Each logically independent change should be formatted as a separate
    patch.  These changes can be small ("add a field to this structure") or
@@ -128,6 +131,10 @@ rules of thumb, however, which can help considerably:
    conceptually small and amenable to a one-line description.  Each patch
    should make a specific change which can be reviewed on its own and
    verified to do what it says it does.
+   논리적으로 독립적인 각 변경은 별도의 패치로 제작해야한다. 이러한 변경들은
+   구조체 필드 추가같이 작을수도 중요한 새 드라이버 추가같이 클수도 있지만 
+   개념적으로 작고 이해하기 쉽게 한줄로 설명되야 한다. 각 패치는 자체적으로 
+   검토가능해야하고 설명과 코드가 일치하는지 검증가능 해야 한다.
 
  - As a way of restating the guideline above: do not mix different types of
    changes in the same patch.  If a single patch fixes a critical security
