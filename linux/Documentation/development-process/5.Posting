@@ -142,7 +142,8 @@ rules of thumb, however, which can help considerably:
    good chance that it will be passed over and the important fix will be
    lost.
  - 위 가이드라인을 다시 정리하면: 다른 타입의 변경을 하나의 패치에 혼합하면 안된다.
-   단일 패치로 중요한 보안 버그를 수정하고,몇삭지 구좋르  그 위에 전달되며 중요한 수정이 손실 될 것이라는 가능성이 있고, 몇 가지 구조를 재 배열 및 코드 포맷.
+   단일 패치로 중요한 보안 버그를 수정하고, 구조체를 재배열하고, 코드를 다듬었다면
+   이 패치는 무시당하고 중요한 변경점을 놓칠 수 있다.
 
  - Each patch should yield a kernel which builds and runs properly; if your
    patch series is interrupted in the middle, the result should still be a
@@ -150,6 +151,10 @@ rules of thumb, however, which can help considerably:
    scenario when the "git bisect" tool is used to find regressions; if the
    result is a broken kernel, you will make life harder for developers and
    users who are engaging in the noble work of tracking down problems.
+ - 각 패치는 정상적으로 빌드되고 실행되는 커널을 산출해야한다; 패치 시리즈가 도중에 중단된
+   경우에도, 그 결과는 여전히 동작하는 커널이어야한다. 패치 시리즈의 부분 적용은 "git bisect"툴이
+   퇴보된 점을 찾기위해 사용될때 흔한 상황이다; 결과가 동작하지 않는 커널인 경우, 당신은 문제점을
+   추적하는 고귀한 작업에 종사하는 개발자와 사용자의 삶을 어렵게 만들 것이다.
 
  - Do not overdo it, though.  One developer once posted a set of edits
    to a single file as 500 separate patches - an act which did not make him
