@@ -191,10 +191,16 @@ So now you have a perfect series of patches for posting, but the work is
 not done quite yet.  Each patch needs to be formatted into a message which
 quickly and clearly communicates its purpose to the rest of the world.  To
 that end, each patch will be composed of the following:
+이제 당신은 포스팅에 적합한 패치세트를 가지고 있지만, 아직 끝이 아니다.
+각 패치는 신속하고 명확하게 목적을 전달할 수 있는 메시지 형식으로 만들어 져야 한다.
+이를 위해, 각 패치는 다음과 같이 구성된다:
 
  - An optional "From" line naming the author of the patch.  This line is
    only necessary if you are passing on somebody else's patch via email,
    but it never hurts to add it when in doubt.
+ - "From" 행에 패치 저자 이름을 넣는 것은 선택사항이다. 당신이 이메일을 통해
+   다른 사람의 패치를 전달한 경우 이 행은 필수지만, 확신이 없는 경우 추가해도
+   아무 문제가 없다.
 
  - A one-line description of what the patch does.  This message should be
    enough for a reader who sees it with no other context to figure out the
@@ -202,15 +208,22 @@ that end, each patch will be composed of the following:
    changelogs.  This message is usually formatted with the relevant
    subsystem name first, followed by the purpose of the patch.  For
    example:
+ - 패치가 하는 일의 한 줄 설명. 이 메시지는 패치의 범위를 파악하기 충분해야한다;
+   이것은 "short form" 체인지 로그에 표시되는 행이다. 예를 들면, 아래와 같이
+   관련있는 서브시스템의 이름이 처음에 오고 패치의 목적이 뒤에 붙는다.
 
 	gpio: fix build on CONFIG_GPIO_SYSFS=n
 
  - A blank line followed by a detailed description of the contents of the
    patch.  This description can be as long as is required; it should say
    what the patch does and why it should be applied to the kernel.
+   한줄의 빈 행 다음에 패치 내용에 대한 상세한 설명. 이 설명은 필요한 만큼 길어질 수 있다;
+   이 패치가 하는 일과 이 패치가 왜 커널에 적용되야 하는지 설명해야 한다.
 
  - One or more tag lines, with, at a minimum, one Signed-off-by: line from
    the author of the patch.  Tags will be described in more detail below.
+   최소 한줄의 "Signed-off-by" 를 포함하는 한줄 이상의 태그 행: 패치의 저자 행.
+   태그는 아래에서 보다 상세히 설명 될 것이다.
 
 The items above, together, form the changelog for the patch.  Writing good
 changelogs is a crucial but often-neglected art; it's worth spending
@@ -223,6 +236,14 @@ hunters wondering whether the patch is responsible for a problem they are
 chasing, users who want to know how the kernel has changed, and more.  A
 good changelog conveys the needed information to all of these people in the
 most direct and concise way possible.
+위 항목들은 함께 패치에 대한 체인지로그를 형성한다. 좋은 체인지로그를 작성하는 것은
+매우 중요하지만 종종 간과되는 기술이다; 이 문제는 다시 논의할 가치가 있다.
+체인지로그를 작성하는 경우, 당신은 다른 많은 사람이 그것을 읽는다는 것을 명심해야한다.
+이들은 이 패치가 포함되야 하는지 검토해야 하는 서브시스템 메인테이너와 리뷰어,
+이 패치가 기존 커널에 백포트 되야 하는지 결정하려는 디스트리뷰터와 다른 메인테이너,
+특정 문제에 대한 원인인지 궁금한 버그사냥꾼, 커널이 어떻게 변경되었는지 알고싶은
+사용자들이 포함된다. 좋은 체인지로그는 가능한 가장 직접적이고 간결한 방법으로
+이 모든 사람들에게 필요한 정보를 전달해야 한다.
 
 To that end, the summary line should describe the effects of and motivation
 for the change as well as possible given the one-line constraint.  The
@@ -237,6 +258,8 @@ changed, detail those changes and how other developers should respond.  In
 general, the more you can put yourself into the shoes of everybody who will
 be reading your changelog, the better that changelog (and the kernel as a
 whole) will be.
+이를 위해, 요약 행은 변경의 효과와 동기를 설명 뿐만 아니라 가능한 한줄 제약 조건을 부여한다.
+상세한 설명은 다음 해당 주제에 증폭하고 필요한 추가 정보를 제공 할 수 있습니다. 패치가 버그를 수정하는 경우, (그리고 제공하십시오 모두 커밋을 인용 할 때 ID와 제목을 커밋) 가능하면 버그를 소개하는 커밋 인용.문제가 특정한 로그인 또는 컴파일러 출력과 연결된 경우, 출력이 같은 문제에 대한 해결책에 대한 검색을 돕기 위해 다른 것을 포함한다.변화가 나중에 패치에서 오는 다른 변경 사항을 지원하기위한 것입니다 경우, 그렇게 말. 내부 API를 변경하는 경우, 세부 변경 사항과 어떻게 다른 개발자가이 요청에 응답해야합니다. 일반적으로, 더 당신이 당신의 변경 로그를 읽고 될 모든 사람들의 신발에 자신을 넣을 수 있습니다, 더 나은 그 변경 내역 (그리고 전체 커널은)입니다.
 
 Needless to say, the changelog should be the text used when committing the
 change to a revision control system.  It will be followed by:
