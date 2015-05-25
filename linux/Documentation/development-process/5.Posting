@@ -161,6 +161,9 @@ rules of thumb, however, which can help considerably:
    the most popular person on the kernel mailing list.  A single patch can
    be reasonably large as long as it still contains a single *logical*
    change.
+ - 하지만 이것을 지나치게 해서도 안된다. 한번은 한 개발자가 한 파일을 수정하는데 500여개의
+   패치 세트를 올렸고 이 행위는 그를 커널 메일링리스트에서 인기없는 사람으로 만들었다. 
+   하나의 패치는 그것이 여전히 하나의 논리적 변화를 포함한다면 합리적으로 클 수있다.
 
  - It can be tempting to add a whole new infrastructure with a series of
    patches, but to leave that infrastructure unused until the final patch
@@ -169,10 +172,17 @@ rules of thumb, however, which can help considerably:
    finger the last patch as the one which caused the problem, even though
    the real bug is elsewhere.  Whenever possible, a patch which adds new
    code should make that code active immediately.
+ - 연속된 패치로 일련의 완전히 새로운 인프라를 추가할때, 이 세트의 마지막 패치가
+   최종적으로 기능을 사용가능하게 할 때까지 그 인프라를 사용하지 않고 싶을수 있다.
+   이 유혹은 가능하면 피해야 한다; 그 시리즈가 퇴보된 점을 추가했다면 bisect 툴은
+   진짜 문제가 어느 패치에 있건 마지막 패치를 원인으로 지목할 것이다.
+   가능하면 새로운 코드를 추가하는 패치는 바로 그 코드를 활성화 해야한다.
 
 Working to create the perfect patch series can be a frustrating process
 which takes quite a bit of time and thought after the "real work" has been
 done.  When done properly, though, it is time well spent.
+완벽한 패치 시리즈를 만드는 작업은 시간과 생각이 많이 필요한 힘든 과정이다.
+하지만 제대로 완료 된다면 그 시간들은 그만한 가치가 있다.
 
 
 5.4: PATCH FORMATTING AND CHANGELOGS
