@@ -50,16 +50,23 @@ mind:
    해결하려고 하는건지에 대해 이해할 것이다.  그러나 그 가치도 다음의 근본적인
    질문으로부터 자유로울 수 없다.  커널이 이코드를 5년 혹은 10년이상 포함하고
    있으면 어떻게 될것인가.  코딩스타일 부터 수많은 코드 재수정 까지, 대부분의
-   만들려고 문의하는 수정사항은 리눅스는 지금부터 오랜세월이 흘러도 개발 하에서
+   만들려고 문의하는 수정사항은 리눅스가 지금부터 오랜세월이 흘러도 개발 하에서
    여전히 존재할것 이라는 것의 이해로부터 시작된다.
 
  - Code review is hard work, and it is a relatively thankless occupation;
    people remember who wrote kernel code, but there is little lasting fame
-   for those who reviewed it.  So reviewers can get grumpy, especially when
+   for those who reviewed it.  So reviewers get grumpy, especially when
    they see the same mistakes being made over and over again.  If you get a
    review which seems angry, insulting, or outright offensive, resist the
    impulse to respond in kind.  Code review is about the code, not about
    the people, and code reviewers are not attacking you personally.
+ - 코드리뷰는 매우 힘든 작업이다, 그리고 상대적으로 보상이 없는 작업이다.
+   사람들은 코드 작성자는 기억하지만, 리뷰자는 누가 리뷰했는지 정도 밖에
+   남는것이 없기 때문이다. 그래서 리뷰자는 반복되는 실수에 언짢아할 수도 있다.
+   만약 적대적이고, 공격적이고, 모욕적으로 리뷰를 받았다고 하더라고 같은식으로
+   답변하려는 충동을 억제해야 한다. 코드리뷰는 코드에 대해 리뷰를 하는것이지
+   사람을 리뷰하는것이 아니다. 리뷰자들은 당신을 개인적으로 공격하는 것은
+   아니다.
 
  - Similarly, code reviewers are not trying to promote their employers'
    agendas at the expense of your own.  Kernel developers often expect to
@@ -67,6 +74,11 @@ mind:
    employer could change.  They truly are, almost without exception,
    working toward the creation of the best kernel they can; they are not
    trying to create discomfort for their employers' competitors.
+ - ##비슷하게, 코드 리뷰자는 고용주의 의견을 관철시키려고 하지 않는다.
+   개발자는 종종 수년동안 커널에서 작업하길 기대한다. ##그러나 그들의 고용주가
+   변할 수 있다는것을 이해하고 있다. ##거의 예외 없이 그들은 할 수있는한 최선을
+   다해 커널 개발을 할것이다.  ##그들은 고용주의 경쟁자를 불편하게 하려고 하지
+   않을 것이기 때문이다.
 
 What all of this comes down to is that, when reviewers send you comments,
 you need to pay attention to the technical observations that they are
@@ -75,6 +87,7 @@ from happening.  When you get review comments on a patch, take the time to
 understand what the reviewer is trying to say.  If possible, fix the things
 that the reviewer is asking you to fix.  And respond back to the reviewer:
 thank them, and describe how you will answer their questions.
+그러면 그 이후에 어떻게 되나?
 
 Note that you do not have to agree with every change suggested by
 reviewers.  If you believe that the reviewer has misunderstood your code,
