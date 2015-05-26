@@ -87,7 +87,12 @@ from happening.  When you get review comments on a patch, take the time to
 understand what the reviewer is trying to say.  If possible, fix the things
 that the reviewer is asking you to fix.  And respond back to the reviewer:
 thank them, and describe how you will answer their questions.
-그러면 그 이후에 어떻게 되나?
+그러면 그 이후에 어떻게 되나? 리뷰자가 코멘트를 남겼을때, 당신은 그들이 작성한
+기술적 관찰에 집중할 필요가 있다. ##Do not let their form of expression or your
+own pride keep that from happening. 패치에 해당하는 리뷰 코멘트를 받았을때,
+조금 시간을 갖고 리뷰자가 무엇을 설명하려 했는지 이해해라.  가급적이면,
+리뷰자가 수정하도록 요구한내용은 수정해라. 그리고 리뷰자에게 감사의 내용과,
+질문에 대한 답변을 전달해라.
 
 Note that you do not have to agree with every change suggested by
 reviewers.  If you believe that the reviewer has misunderstood your code,
@@ -99,16 +104,29 @@ agree with the reviewer, take some time to think things over again.  It can
 be easy to become blinded by your own solution to a problem to the point
 that you don't realize that something is fundamentally wrong or, perhaps,
 you're not even solving the right problem.
+리뷰자의 모든 제안에 동의할 필요는 없다. 만약 리뷰자가 뭔가 잘못 이해한다고
+생각될때, 정확한 내용을 설명해라.  만약 리뷰자와 기술적으로 반대의 의견을
+가지고 있다면, 왜 본인의 수정사항이 해당문제의 해결책인지 설명해라.  그 설명이
+타당하다면, 리뷰자도 수긍할 것이다. 반면, 본인의 설명이 설득적이지 못하고, 특히
+다른 사람들이 리뷰자의 의견에 동의 한다면 다시 한번 생각해 보는것이 좋을
+것이다. 이것은 근본적으로 무엇이 잘못됐는지도 모르는 문제를 해결하려고 하는 눈먼
+장님이 되기 쉬우며, 아마 심지어 그 문제를 해결 못할 것이다.
 
 Andrew Morton has suggested that every review comment which does not result
 in a code change should result in an additional code comment instead; that
 can help future reviewers avoid the questions which came up the first time
 around.
+Andrew Morton 은 리뷰의 결과로 코드 수정이 발생되지 않는 다면, 대신 별도의
+코멘트를 남기라고 제안한다.  이것은 다른 리뷰자가 처음에 했던 질문을 또하는것을
+방지하기 위한 방법이다.
 
 One fatal mistake is to ignore review comments in the hope that they will
 go away.  They will not go away.  If you repost code without having
 responded to the comments you got the time before, you're likely to find
 that your patches go nowhere.
+가장 치명적인 실수 중 하나는 리뷰자가 그냥 잊겠지하는 생각으로 코멘트를
+무시하는 것이다.  그러나 그렇지 않다. 이전에 받은 코멘트에 답변하지 않고 코드를
+다시 올렸다면 패치는 적용되지 않을 것이다.
 
 Speaking of reposting code: please bear in mind that reviewers are not
 going to remember all the details of the code you posted the last time
@@ -118,6 +136,12 @@ place for this kind of information.  Reviewers should not have to search
 through list archives to familiarize themselves with what was said last
 time; if you help them get a running start, they will be in a better mood
 when they revisit your code.
+코드를 다시 올리는것에 관해서, 리뷰자가 지난 모든 것들을 다기억하지는
+못한다는것을 명심해야 한다.  그래서 본인이 그 이슈에대해서 어떻게 진행하고
+있는지, 이전 상태에대해 상기시켜주는것이 좋은 방법이다.  패치의 changelog 도
+정보를 알려주기에 좋은 방법이 될 수 있다. 리뷰자가 이전 내용에대해 친숙해지기
+위해서 스스로 검색하게 하는것은 옳지 않다. 그들이 보다 쉽게 이해할 수 있도록
+도와준다면, 당신의 코드를 다시 살펴볼때 보다 더 좋은 기분으로 볼것이다.
 
 What if you've tried to do everything right and things still aren't going
 anywhere?  Most technical disagreements can be resolved through discussion,
@@ -129,7 +153,14 @@ kernel development community; he can often unjam a situation which seems to
 be hopelessly blocked.  Appealing to Andrew should not be done lightly,
 though, and not before all other alternatives have been explored.  And bear
 in mind, of course, that he may not agree with you either.
-Nutge
+만약 당신의 모든것이 옳지만 계속 반영이 되지 않고 있는 상황이라면 어떻게
+해야할까?  대부분의 기술적인 의견 충돌은 보통 토론으로 해결되지만, 누군가는
+실수를 하는 경우도 있다.  만약 본인의 의견과 다른 결정이 틀렸다고 강하게
+믿어질때는 좀 더 강한 권력에게 의사전달을 할 수 있다.  본 글을 작성하는
+시점에서는 Andrew Morton이다. Andrew Morton은 커널 커뮤니티에서 많은 사람들이
+신뢰한다.  그는 종종 풀리지않는 상황들을 해결 할 수 있다. 그렇다고 무작정
+그에게 어필하는것은 좋지 않다. 그전에 먼저 최대한 많은 대안들을 찾아봐야 한다.
+그리고 그도 당신의 의견에 동의 하지 않을 수 있다는것을 기억해라.
 
 6.2: WHAT HAPPENS NEXT
 
