@@ -258,8 +258,14 @@ changed, detail those changes and how other developers should respond.  In
 general, the more you can put yourself into the shoes of everybody who will
 be reading your changelog, the better that changelog (and the kernel as a
 whole) will be.
-이를 위해, 요약 행은 변경의 효과와 동기를 설명 뿐만 아니라 가능한 한줄 제약 조건을 부여한다.
-상세한 설명은 다음 해당 주제에 증폭하고 필요한 추가 정보를 제공 할 수 있습니다. 패치가 버그를 수정하는 경우, (그리고 제공하십시오 모두 커밋을 인용 할 때 ID와 제목을 커밋) 가능하면 버그를 소개하는 커밋 인용.문제가 특정한 로그인 또는 컴파일러 출력과 연결된 경우, 출력이 같은 문제에 대한 해결책에 대한 검색을 돕기 위해 다른 것을 포함한다.변화가 나중에 패치에서 오는 다른 변경 사항을 지원하기위한 것입니다 경우, 그렇게 말. 내부 API를 변경하는 경우, 세부 변경 사항과 어떻게 다른 개발자가이 요청에 응답해야합니다. 일반적으로, 더 당신이 당신의 변경 로그를 읽고 될 모든 사람들의 신발에 자신을 넣을 수 있습니다, 더 나은 그 변경 내역 (그리고 전체 커널은)입니다.
+이를 위해, 요약 행은 변경의 효과와 동기의 설명뿐만 아니라 가능한 한줄 제약조건을 부여한다.
+상세한 설명은 다음 해당 주제를 강화하고 필요한 추가 정보를 제공할 수 있다. 패치가 버그를
+수정하는 경우, 가능하면 버그를 소개한 커밋을 인용하라(커밋ID와 제목을 제공하라). 문제가
+특정로그 또는 컴파일러출력과 관계있는 경우, 다른사람들이 해결책을 찾기 쉽도록 포함시켜라.
+변화가 다음 패치에서 오는 다른 변경사항을 지원하기위한 것일 경우, 그렇게 적어라. 
+내부 API를 변경하는 경우, 세부 변경사항과 어떻게 다른 개발자가 응답해야 하는지 자세히
+기술하라. 일반적으로, 당신이 체인지로그를 읽게 될 모든사람들의 입장에서 생각할수록,
+더 나은 체인지로그(그리고 커널)가 될 것이다.
 
 Needless to say, the changelog should be the text used when committing the
 change to a revision control system.  It will be followed by:
