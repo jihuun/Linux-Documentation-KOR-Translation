@@ -136,8 +136,8 @@ place for this kind of information.  Reviewers should not have to search
 through list archives to familiarize themselves with what was said last
 time; if you help them get a running start, they will be in a better mood
 when they revisit your code.
-코드를 다시 올리는것에 관해서, 리뷰자가 지난 모든 것들을 다기억하지는
-못한다는것을 명심해야 한다.  그래서 본인이 그 이슈에대해서 어떻게 진행하고
+코드를 다시 올리는것에 관해서, 리뷰자가 지난 모든 것들을 다 기억 하지는
+못한다는것을 명심해야 한다.  ##그래서 본인이 그 이슈에대해서 어떻게 진행하고
 있는지, 이전 상태에대해 상기시켜주는것이 좋은 방법이다.  패치의 changelog 도
 정보를 알려주기에 좋은 방법이 될 수 있다. 리뷰자가 이전 내용에대해 친숙해지기
 위해서 스스로 검색하게 하는것은 옳지 않다. 그들이 보다 쉽게 이해할 수 있도록
@@ -155,12 +155,12 @@ though, and not before all other alternatives have been explored.  And bear
 in mind, of course, that he may not agree with you either.
 만약 당신의 모든것이 옳지만 계속 반영이 되지 않고 있는 상황이라면 어떻게
 해야할까?  대부분의 기술적인 의견 충돌은 보통 토론으로 해결되지만, 누군가는
-실수를 하는 경우도 있다.  만약 본인의 의견과 다른 결정이 틀렸다고 강하게
-믿어질때는 좀 더 강한 권력에게 의사전달을 할 수 있다.  본 글을 작성하는
-시점에서는 Andrew Morton이다. Andrew Morton은 커널 커뮤니티에서 많은 사람들이
-신뢰한다.  그는 종종 풀리지않는 상황들을 해결 할 수 있다. 그렇다고 무작정
-그에게 어필하는것은 좋지 않다. 그전에 먼저 최대한 많은 대안들을 찾아봐야 한다.
-그리고 그도 당신의 의견에 동의 하지 않을 수 있다는것을 기억해라.
+실수를 하는 경우도 있다.  만약 본인의 의견과 다른 결정이 틀렸다는 확신이 들때는
+좀 더 강한 권력에게 의사전달을 할 수 있다.  본 글을 작성하는 시점에서는 Andrew
+Morton이다. Andrew Morton은 커널 커뮤니티에서 많은 사람들이 신뢰한다.  그는
+종종 풀리지않는 상황들을 해결 할 수 있다. 그렇다고 무작정 그에게 어필하는것은
+좋지 않다. 그전에 먼저 최대한 많은 대안들을 찾아봐야 한다.  그리고 그도 당신의
+의견에 동의 하지 않을 수 있다는것을 기억해라.
 
 6.2: WHAT HAPPENS NEXT
 
