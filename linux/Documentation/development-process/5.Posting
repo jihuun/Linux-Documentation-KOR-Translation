@@ -296,12 +296,17 @@ summary.  Each of these lines has the format:
 	tag: Full Name <email address>  optional-other-stuff
 
 The tags in common use are:
+공통적으로 쓰이는 태그들은 다음과 같다:
 
  - Signed-off-by: this is a developer's certification that he or she has
    the right to submit the patch for inclusion into the kernel.  It is an
    agreement to the Developer's Certificate of Origin, the full text of
    which can be found in Documentation/SubmittingPatches.  Code without a
    proper signoff cannot be merged into the mainline.
+ - Signed-off-by: 이 태그는 개발자가 패치를 커널에 포함하기 위해 제출할 권리가 있음을
+   증명한다. 이것은 개발자의 생산자증명인증서에 관한 계약이며,
+   전체 텍스트는 Documentation/SubmittingPatches에서 찾을 수 있다. 
+   적절한 signen-off-by 태그가 없는 코드는 메인라인에 병합 될 수 없다.
 
  - Acked-by: indicates an agreement by another developer (often a
    maintainer of the relevant code) that the patch is appropriate for
