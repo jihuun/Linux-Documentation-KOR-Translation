@@ -171,11 +171,20 @@ subsystem to the next; each maintainer has his or her own way of doing
 things.  In particular, there may be more than one tree - one, perhaps,
 dedicated to patches planned for the next merge window, and another for
 longer-term work.
+패치가 커널에 적용되는데 무리가 없다고 여겨지고, 리뷰 이슈가 해결되었다면, 다음
+절차는 서브시스템 메인테이너 트리에 진출하는 것이다. 어떻게 해야하는지는
+서브시스템 마다 다양하다.  각각의 메인테이너는 다음단계를 위한 그들만의 방법을
+가지고 있다.  특히, 거기에는 하나 이상의 트리가 있는데, 아마 한개는 다음 merge
+window 에 패치를 적용하기 위한 트리일것이고, 나머지 하나는 장기간의 작업을 위한
+트리일 것이다.
 
 For patches applying to areas for which there is no obvious subsystem tree
 (memory management patches, for example), the default tree often ends up
 being -mm.  Patches which affect multiple subsystems can also end up going
 through the -mm tree.
+메모리 관리 패치같이, 명확하게 정해져있지 않은 서브시스템 트리를 위한 패치를
+적용하기 위해서는, -mm 트리가 기본으로 이용된다. 다양한 서브시스템에 영향을
+끼칠 수 있는 패치도 결국 -mm트리를 통한다.
 
 Inclusion into a subsystem tree can bring a higher level of visibility to a
 patch.  Now other developers working with that tree will get the patch by
@@ -183,6 +192,12 @@ default.  Subsystem trees typically feed linux-next as well, making their
 contents visible to the development community as a whole.  At this point,
 there's a good chance that you will get more comments from a new set of
 reviewers; these comments need to be answered as in the previous round.
+##서브시스템 트리로 포함되는것은 더 높은 수준의 패치가 되는것을 시적으로 나타낸
+것과 같다.  그 서브시스템에서 작업하는 개발자들은 기본적으로 패치를 받는것과
+같다.  ##일반적으로 linux-next를 따르는 서브시스템 트리는 커뮤니티 전체에
+그들의 컨텐츠를 볼 수 있게 만든다.  그 시점에서 새로운 리뷰자들을 통해 더 많은
+코멘트를 받을 수 있는 좋은 기회가 된다.  그리고 그 코멘트는 이전의 단계처럼
+답변이 완료되어야 한다.
 
 What may also happen at this point, depending on the nature of your patch,
 is that conflicts with work being done by others turn up.  In the worst
@@ -194,12 +209,25 @@ everything applies cleanly.  This work can be a pain, but count your
 blessings: before the advent of the linux-next tree, these conflicts often
 only turned up during the merge window and had to be addressed in a hurry.
 Now they can be resolved at leisure, before the merge window opens.
+또한 이때, 본인의 패치의 성격에 따라, 다른 사람이 작업한 내용과 충돌이 발생될
+수 도 있다.  ##가장 안좋은 경우는, 규모가 큰 패치의 충돌이 어떤 작업을 뒷전으로
+밀리게 해서 그 남겨진 패치가 다시 수정되어 반영되는것 이다.  다른 때에는,
+충돌의 솔루션이 다른 개발자들의 작업으로 포함될 것이다. ##그리고 모든 것에
+문제가 없는지 확인하기 위하여 몇몇의 패치는 트리로 이동할 것이다.  이 작업은
+괴로운 일이 될 수도 있지만 linux-next트리 이전에 발생하는것을 감사하게 생각해라
+왜냐하면 종종 충돌이 merge window기간에 발생될 수 있고 그때에는 굉장히 시간이
+촉박하기 때문이다.  그래서 지금은 merge window가 열리기 이전에 여유롭게 이슈를
+해결할수 있다.
 
 Some day, if all goes well, you'll log on and see that your patch has been
 merged into the mainline kernel.  Congratulations!  Once the celebration is
 complete (and you have added yourself to the MAINTAINERS file), though, it
 is worth remembering an important little fact: the job still is not done.
 Merging into the mainline brings its own challenges.
+언젠가, 모든것이 완료되었을때, 메인라인 커널에 반영된 패치를 발견할 수 있을
+것이다.  축하한다! 그러나, 축하를 마친뒤에는 (본인 스스로를 MAINTAINERS파일에
+추가할 수 있다.) 한가지 중요한 사실을 기억해야한다. 아직 끝난것이 아니다.
+##메인라인데 반영되는것은 그 자체로 도전이다.
 
 To begin with, the visibility of your patch has increased yet again.  There
 may be a new round of comments from developers who had not been aware of
@@ -207,14 +235,24 @@ the patch before.  It may be tempting to ignore them, since there is no
 longer any question of your code being merged.  Resist that temptation,
 though; you still need to be responsive to developers who have questions or
 suggestions.
+우선, ##패치가 보이는것은 increased yet again. 이 패치에 대해 알지 못햇던
+개발자들의 코멘트로 새로운 국면을 맞이할 수 있다. 코드가 반영된 이후부터 더이상
+아무런 질문이 없었기 ##때문에 그 것들을 무시하고 싶은 유혹이 생길 수도 있다.
+그래도 그것에 맞서야 한다.  당신은 여전히 질문과 제안을 가진 개발자들에 대하여
+민감해야 한다.
 
 More importantly, though: inclusion into the mainline puts your code into
 the hands of a much larger group of testers.  Even if you have contributed
 a driver for hardware which is not yet available, you will be surprised by
 how many people will build your code into their kernels.  And, of course,
 where there are testers, there will be bug reports.
+##그러나 더 중요한것은 메인라인에 포함되는것은 당신의 코드를 훨씬 큰 테스트
+집단에게 맡기는것과 같다.  심지어 아직 사용할 수 없는 하드웨어를 위한
+드라이버에 기여를 했다고 해도, 생각할 수도 없는 많은 사람들이 당신의 코드가
+포함된 커널을 빌드할 것이다. ##물론 테스터가 있는 곳이라면 그곳엔 버그 리포트가
+있다.
 
-The worst sort of bug reports are regressions.  If your patch causes a
+The worst sort of bug reports are ##regressions.  If your patch causes a
 regression, you'll find an uncomfortable number of eyes upon you;
 regressions need to be fixed as soon as possible.  If you are unwilling or
 unable to fix the regression (and nobody else does it for you), your patch
@@ -222,6 +260,13 @@ will almost certainly be removed during the stabilization period.  Beyond
 negating all of the work you have done to get your patch into the mainline,
 having a patch pulled as the result of a failure to fix a regression could
 well make it harder for you to get work merged in the future.
+가장 최악의 버그 리포트는 잘 동작하던 기능이 동작하지 않는것이다(regression).
+당신의 패치가 regression을 발생시킨다면 당신을 향한 불편한 시선을 감수 해야 할 것이다.
+regression은 가능한 빨리 수정되어야 한다. 당신이 regression을 해결할 수 없거나 능력이 안된다면
+(혹은 아무도 도와주지 않는다면) 당신의 패치가 안정화 기간에 제거되는것은 거의 확실하다고 볼 수있다.
+## 레인라인에 반영된 패치를 얻기위해 당신의 작업을 부정하는 것을 떠나서
+## 실패의 결과로 regression을 수정하기 위한 패치를 전달하는 것은 당신이 앞으로
+수정사항을 반영하는데에 있어서 보다 어려움을 줄 것이다.
 
 After any regressions have been dealt with, there may be other, ordinary
 bugs to deal with.  The stabilization period is your best opportunity to
