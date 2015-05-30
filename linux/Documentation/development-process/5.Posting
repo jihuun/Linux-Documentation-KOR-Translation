@@ -377,6 +377,7 @@ Patches should always be sent as plain text.  Please do not send them as
 attachments; that makes it much harder for reviewers to quote sections of
 the patch in their replies.  Instead, just put the patch directly into your
 message.
+패치는 항상 일반 텍스트로 전송해야합니다. 첨부 파일로 보내하지 마십시오; 그게 더 힘들어 검토가 자신의 대답에 패치의 섹션을 인용 할 수 있습니다. 대신, 당신의 메시지에 직접 패치를했습니다.
 
 When mailing patches, it is important to send copies to anybody who might
 be interested in it.  Unlike some other projects, the kernel encourages
