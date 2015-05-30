@@ -42,4 +42,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-linux/README~
+# Vim
+*.~
+*.swp
+*.swo

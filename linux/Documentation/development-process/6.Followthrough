@@ -157,18 +157,16 @@ in mind, of course, that he may not agree with you either.
 해야할까?  대부분의 기술적인 의견 충돌은 보통 토론으로 해결되지만, 누군가는
 실수를 하는 경우도 있다.  만약 본인의 의견과 다른 결정이 틀렸다는 확신이 들때는
 좀 더 강한 권력에게 의사전달을 할 수 있다.  본 글을 작성하는 시점에서는 Andrew
-Morton이다. Andrew Morton은 커널 커뮤니티에서 많은 사람들이 신뢰한다.  그는
-종종 풀리지않는 상황들을 해결 할 수 있다. 그렇다고 무작정 그에게 어필하는것은
-좋지 않다. 그전에 먼저 최대한 많은 대안들을 찾아봐야 한다.  그리고 그도 당신의
-의견에 동의 하지 않을 수 있다는것을 기억해라.
+Morton이다. Andrew Morton은 커널 커뮤니티에서 많은 사람들이 신뢰하는 인물이다.
+그는 종종 풀리지않는 상황들을 해결 할 수 있다. 그렇다고 무작정 그에게 어필
+하는것은 좋지 않다. 그전에 먼저 최대한 많은 대안들을 찾아봐야 한다.  그리고
+그도 당신의 의견에 동의 하지 않을 수 있다는것을 기억해라.
 
 6.2: WHAT HAPPENS NEXT
 
 If a patch is considered to be a good thing to add to the kernel, and once
 most of the review issues have been resolved, the next step is usually
 entry into a subsystem maintainer's tree.  How that works varies from one
-subsystem to the next; each maintainer has his or her own way of doing
-things.  In particular, there may be more than one tree - one, perhaps,
 dedicated to patches planned for the next merge window, and another for
 longer-term work.
 패치가 커널에 적용되는데 무리가 없다고 여겨지고, 리뷰 이슈가 해결되었다면, 다음
@@ -192,7 +190,7 @@ default.  Subsystem trees typically feed linux-next as well, making their
 contents visible to the development community as a whole.  At this point,
 there's a good chance that you will get more comments from a new set of
 reviewers; these comments need to be answered as in the previous round.
-##서브시스템 트리로 포함되는것은 더 높은 수준의 패치가 되는것을 시적으로 나타낸
+##서브시스템 트리로 포함되는것은 더 높은 수준의 패치가 되는것을 시작으로 나타낸
 것과 같다.  그 서브시스템에서 작업하는 개발자들은 기본적으로 패치를 받는것과
 같다.  ##일반적으로 linux-next를 따르는 서브시스템 트리는 커뮤니티 전체에
 그들의 컨텐츠를 볼 수 있게 만든다.  그 시점에서 새로운 리뷰자들을 통해 더 많은
@@ -227,7 +225,7 @@ Merging into the mainline brings its own challenges.
 언젠가, 모든것이 완료되었을때, 메인라인 커널에 반영된 패치를 발견할 수 있을
 것이다.  축하한다! 그러나, 축하를 마친뒤에는 (본인 스스로를 MAINTAINERS파일에
 추가할 수 있다.) 한가지 중요한 사실을 기억해야한다. 아직 끝난것이 아니다.
-##메인라인데 반영되는것은 그 자체로 도전이다.
+##메인라인에 반영되는것은 그 자체로 도전이다.
 
 To begin with, the visibility of your patch has increased yet again.  There
 may be a new round of comments from developers who had not been aware of
@@ -261,12 +259,13 @@ negating all of the work you have done to get your patch into the mainline,
 having a patch pulled as the result of a failure to fix a regression could
 well make it harder for you to get work merged in the future.
 가장 최악의 버그 리포트는 잘 동작하던 기능이 동작하지 않는것이다(regression).
-당신의 패치가 regression을 발생시킨다면 당신을 향한 불편한 시선을 감수 해야 할 것이다.
-regression은 가능한 빨리 수정되어야 한다. 당신이 regression을 해결할 수 없거나 능력이 안된다면
-(혹은 아무도 도와주지 않는다면) 당신의 패치가 안정화 기간에 제거되는것은 거의 확실하다고 볼 수있다.
-## 레인라인에 반영된 패치를 얻기위해 당신의 작업을 부정하는 것을 떠나서
-## 실패의 결과로 regression을 수정하기 위한 패치를 전달하는 것은 당신이 앞으로
-수정사항을 반영하는데에 있어서 보다 어려움을 줄 것이다.
+당신의 패치가 regression을 발생시킨다면 당신을 향한 불편한 시선을 감수 해야 할
+것이다.  regression은 가능한 빨리 수정되어야 한다. 당신이 regression을 해결할
+수 없거나 능력이 안된다면 (혹은 아무도 도와주지 않는다면) 당신의 패치가 안정화
+기간에 제거되는것은 거의 확실하다고 볼 수있다.  ## 레인라인에 반영된 패치를
+얻기위해 당신의 작업을 부정하는 것을 떠나서 ## 실패의 결과로 regression을
+수정하기 위한 패치를 전달하는 것은 당신이 앞으로 수정사항을 반영하는데에 있어서
+보다 어려움을 줄 것이다.
 
 After any regressions have been dealt with, there may be other, ordinary
 bugs to deal with.  The stabilization period is your best opportunity to
@@ -275,6 +274,12 @@ release is as solid as possible.  So, please, answer bug reports, and fix
 the problems if at all possible.  That's what the stabilization period is
 for; you can start creating cool new patches once any problems with the old
 ones have been taken care of.
+regression이 해결된 뒤에는 이제 일반적인 버그를 다뤄야 하는 다른 문제가 있다.
+안정화 기간은 이런 버그를 수정할 수 있는 가장 좋은 기회이며 당신의 코드가
+메인라인 커널 릴리즈에 포함 될정도로 견고하게 만들어졌는지 확인할 수 있는
+기회이다. 그러므로, 가능하면 버그 리포트가 오면 답변하고 그 문제를 수정해라.
+이것이 안정화기간이 존재하는 이유이다. ##당신은 이전의 문제를 수정하기 위한
+새로운 패치제작을 시작 할 수 있다.
 
 And don't forget that there are other milestones which may also create bug
 reports: the next mainline stable release, when prominent distributors pick
@@ -285,9 +290,17 @@ development community remembers developers who lose interest in their code
 after it's merged.  The next time you post a patch, they will be evaluating
 it with the assumption that you will not be around to maintain it
 afterward.
-
+##그리고 버그 리포트를 만들수 있는 다른 이정표가 있다는것도 잊으면 안된다.
+다음 메인라인 안정버전 릴리즈때, 유명한 ##배포판 개발자들이 당신의 패치가
+포함된 커널 버전을 선택할 것이다. 이 버그 리포트에 답변하는것을 유지하는것은
+당신의 작업에 얼마나 자부심을 가지고 있는지에 대한 문제이다.  만약 그것에 대한
+내적 동기가 부족하다면,  커뮤니티는 코드가 반영된 뒤로 그의 코드에 관심을
+떼어버리는 개발자를 기억한다.  는 사실을 고려해 볼만한 가치가 있다.  그 이후에
+패치를 올리고자 할때, 커뮤니티는 당신은 아마 반영된 이후에도 그 코드를 메인테인
+하지 않을것이다라는 가정으로 패치를 평가하게 될 것이다.
 
 6.3: OTHER THINGS THAT CAN HAPPEN
+6.3: 또 발생할 수 있는 것들
 
 One day, you may open your mail client and see that somebody has mailed you
 a patch to your code.  That is one of the advantages of having your code
@@ -296,6 +309,11 @@ either forward it on to the subsystem maintainer (be sure to include a
 proper From: line so that the attribution is correct, and add a signoff of
 your own), or send an Acked-by: response back and let the original poster
 send it upward.
+언젠가는 메일을 열어봤을때 누군가가 당신의 코드를 수정한 패치를 보냈을 수도 있다.
+이것은 코드가 공개되었을때 가질 수 있는 장점중 하나이다. 그 패치에 동의 한다면
+서브시스템 메인테이너에게 포워딩 할 수도 있고(##적절한 출처를 밝혔는지
+주의하라, attribution이 올바른지, 본인의 signoff를 추가했는지), ##포스팅을 한
+원저자가 패치를 보낼 수 있도록 도와줄 수도 있다.
 
 If you disagree with the patch, send a polite response explaining why.  If
 possible, tell the author what changes need to be made to make the patch
@@ -304,6 +322,13 @@ are opposed by the author and maintainer of the code, but it only goes so
 far.  If you are seen as needlessly blocking good work, those patches will
 eventually flow around you and get into the mainline anyway.  In the Linux
 kernel, nobody has absolute veto power over any code.  Except maybe Linus.
+그 패치에 동의하지 않는다면, 왜그런지 정중하게 답변하라. ##가능하면 패치
+작성자에게 어떤 수정이 필요하고 어떻게하면 받아들여질 수 있는지 말해줘라.  코드
+작성자나 메인테이너가 작성한 코드에 반대되는 패치를 반영하는데에는 어려움이
+있을 수 있다.  ##but it only goes so far. 만약 좋은 패치가 불필요하게 막혀
+반영되지 못하는것을 본다면, 그런 패치는 결국 flow around you할것이고 결국
+메인라인에 반영될 것이다.  리눅스 커널에서는 어떠한 코드에도 개인이 절대 권력을
+가질 수 없다. (아마도 리누스 토발즈를 제외하고는)
 
 On very rare occasion, you may see something completely different: another
 developer posts a different solution to your problem.  At that point,
@@ -314,3 +339,10 @@ really only one way to respond: be pleased that your problem got solved and
 get on with your work.  Having one's work shoved aside in this manner can
 be hurtful and discouraging, but the community will remember your reaction
 long after they have forgotten whose patch actually got merged.
+거의 드문 경우이지만, 당신의 문제를 완전히 다른 방법으로 해결한 패치를 발견 할
+수도 있다.  그때는 둘중 한가지 패치는 반영되지 못할 것이다. 이때 "내것이 먼저
+포스팅 되었다." 라는 마인드를 기술적인 논쟁에서 적절하지 못한 방법이다.  만약
+누군가의 패치가 당신의 수정사항에서 교체되어 메인라인에 반영된다고 해도 당신의
+문제가 해결되었다는 사실에 기쁨을 느끼는것이 좋다. 이런 매너 없이 다른사람의
+작업을 밀쳐내는것은 기분을 상하게 하고 낙담시킨다. 그러나 커뮤니티에서는 누구의
+패치가 적용되었는지는 기억 못해도 당신의 그떄의 반응은 기억할 것이다.
