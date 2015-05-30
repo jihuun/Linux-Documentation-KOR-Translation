@@ -306,19 +306,22 @@ The tags in common use are:
  - Signed-off-by: 이 태그는 개발자가 패치를 커널에 포함하기 위해 제출할 권리가 있음을
    증명한다. 이것은 개발자의 생산자증명인증서에 관한 계약이며,
    전체 텍스트는 Documentation/SubmittingPatches에서 찾을 수 있다. 
-   적절한 signen-off-by 태그가 없는 코드는 메인라인에 병합 될 수 없다.
+   적절한 signen-off-by 태그가 없는 코드는 메인라인에 머지될 수 없다.
 
  - Acked-by: indicates an agreement by another developer (often a
    maintainer of the relevant code) that the patch is appropriate for
    inclusion into the kernel.
+ - Acked-by: 패치가 커널에 머지 되기에 적합하다는 다른 개발자(주로 관련코드의
+   메인테이너)에 의한 표시.
 
  - Tested-by: states that the named person has tested the patch and found
    it to work.
+ - Tested-by: 여기 언급된 사람이 해당패치를 테스트 했고 동작을 확인한 사람이다.
 
  - Reviewed-by: the named developer has reviewed the patch for correctness;
    see the reviewer's statement in Documentation/SubmittingPatches for more
    detail.
-   Reviewed-by: 언급된 개발자는 패치를 검토하고있다; 자세한 내용은
+   Reviewed-by: 여기 언급된 개발자는 패치를 검토한 사람이다; 자세한 내용은
    Documentation/SubmittingPatches에 있는 reviewer's statement를 참조하시오.
 
  - Reported-by: names a user who reported a problem which is fixed by this
@@ -342,15 +345,22 @@ for addition without the explicit permission of the person named.
 
 Before you mail your patches, there are a couple of other things you should
 take care of:
+당신이 당신의 패치를 메일로 보내기 전에, 당신이 처리해야할 몇 가지 사항이 더 있다:
 
  - Are you sure that your mailer will not corrupt the patches?  Patches
    which have had gratuitous white-space changes or line wrapping performed
    by the mail client will not apply at the other end, and often will not
    be examined in any detail.  If there is any doubt at all, mail the patch
    to yourself and convince yourself that it shows up intact.
+ - 당신은 패치가 메일시스템에 의해 손상되지 않는다고 확신하는가? 
+   불필요한 공백을 변경하거나 메일 클라이언트에 의해 수행된 줄 바꿈은 종종 다른 쪽에
+   적용되지 않고 종종 구체적으로 검토되지 않는다. 의심의 여지가 있을 경우, 자신에게
+   패치를 보내 그대로 나타나는지 확인을 해보는 것이 좋다.
 
    Documentation/email-clients.txt has some helpful hints on making
    specific mail clients work for sending patches.
+   Documentation/email-clients.txt 문서에 특정 메일 클라이언트들을 이용해 패치를
+   보낼때 유용한 힌트들이 있다.
 
  - Are you sure your patch is free of silly mistakes?  You should always
    run patches through scripts/checkpatch.pl and address the complaints it
@@ -358,6 +368,10 @@ take care of:
    embodiment of a fair amount of thought about what kernel patches should
    look like, is not smarter than you.  If fixing a checkpatch.pl complaint
    would make the code worse, don't do it.
+ - 당신의 패치에 어리석은 실수가 없는지 확신하는가? 당신은 항상 scripts/checkpatch.pl을
+   통해 패치를 체크해보고 제공되는 불만사항을 해결해야한다. 커널 패치가 어때야하는지 충분히
+   생각해 보면서, checkpatch.pl 스크립트가  당신보다 똑똑하지 않다는것을 명심해야 한다.
+   checkpatch.pl 불만을 수정하는것이 코드를 나쁘게 할 수 있다. 그런경우 수정하지 마라.
 
 Patches should always be sent as plain text.  Please do not send them as
 attachments; that makes it much harder for reviewers to quote sections of
