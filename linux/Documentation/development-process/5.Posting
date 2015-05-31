@@ -377,23 +377,34 @@ Patches should always be sent as plain text.  Please do not send them as
 attachments; that makes it much harder for reviewers to quote sections of
 the patch in their replies.  Instead, just put the patch directly into your
 message.
-패치는 항상 일반 텍스트로 전송해야합니다. 첨부 파일로 보내하지 마십시오; 그게 더 힘들어 검토가 자신의 대답에 패치의 섹션을 인용 할 수 있습니다. 대신, 당신의 메시지에 직접 패치를했습니다.
+패치는 항상 일반 텍스트로 전송해야한다. 특히 첨부파일로 보내면 안된다;
+리뷰어가 검토답변에 패치의 섹션을 인용 하기가 어려워진다. 
+대신, 당신의 메시지 안에 직접 패치를 전달하라.
 
 When mailing patches, it is important to send copies to anybody who might
 be interested in it.  Unlike some other projects, the kernel encourages
 people to err on the side of sending too many copies; don't assume that the
 relevant people will see your posting on the mailing lists.  In particular,
 copies should go to:
+패치를 메일로 보낼때, 그것에 관심을 가질만한 모든사람에게 사본을 보내는 것이 중요하다. 
+다른 프로젝트 달리, 커널은 많은 사본을 전송하는것을 지나치다 싶을정도로 장려한다;
+패치에 관련있는 사람들이 메일링리스트에서 당신의 포스팅을 볼거라고 가정하지 마라.
+특히, 사본이 반드시 전달되야 하는 사람들은 아래와 같다:
 
  - The maintainer(s) of the affected subsystem(s).  As described earlier,
    the MAINTAINERS file is the first place to look for these people.
+ - 관련된 서브시스템의 메인테이너. 위에 설명한바와 같이, MAINTAINERS 파일이
+   이 사람들을 찾아볼수 있는 첫 번째 장소다.
 
  - Other developers who have been working in the same area - especially
    those who might be working there now.  Using git to see who else has
    modified the files you are working on can be helpful.
+ - 같은 부분에서 작업하고있는 다른 개발자(특히 현재 작업하고 있을수 있는 사람)
+   git을 통해 당신이 작업중인 파일을 수정한 다른사람을 확인하는 것이 도움이 된다.
 
  - If you are responding to a bug report or a feature request, copy the
    original poster as well.
+ - 버그리포트 또는 기능요청에 의해 작업한 경우, 원래 제안자를 명시하라.
 
  - Send a copy to the relevant mailing list, or, if nothing else applies,
    the linux-kernel list.
