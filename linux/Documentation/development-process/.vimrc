@@ -1,4 +1,6 @@
+"You can set this vim environment which is easy to translation to Korean
 "Open vim and typing :source .vimrc
+
 colorscheme morning
 
 " For Highlighting non ascii char of Korean

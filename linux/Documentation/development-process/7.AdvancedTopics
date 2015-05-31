@@ -33,12 +33,20 @@ teach the reader how to use git; that would be sufficient material for a
 long document in its own right.  Instead, the focus here will be on how git
 fits into the kernel development process in particular.  Developers who
 wish to come up to speed with git will find more information at:
+특히 패치의 양이 방대해짐에 따라 git을 이용해 패치를 관리하는것이 개발자에게 더
+나은 삶을 줄 수 있다.  ##Git도 분명 단점이 있도 위험이 있다. 그리고 이것은
+여전히 문명화된 곳에서 개발자들이 사용하느 강력한 툴이다.  이 문서는 git을
+어떻게 사용하는지 알려주지는 않는다. 그걸 설명하기 위해서 그 자체로 별개의
+충분한 문서가 필요하다.  그래서 대신, 특히 어떻게 git이 커널 개발 프로세스에
+적합한지에 대해 초점을 맞춘다.  보다 빨리 git 을 사용하고자 한다면 아래에서 더
+많은 정보를 얻을 수 있다.
 
 	http://git-scm.com/
 
 	http://www.kernel.org/pub/software/scm/git/docs/user-manual.html
 
 and on various tutorials found on the web.
+그리고 웹에서 보다 다양한 튜토리얼들을 찾을 수 있을 것이다.
 
 The first order of business is to read the above sites and get a solid
 understanding of how git works before trying to use it to make patches
@@ -50,9 +58,20 @@ own terminology and concepts; a new user of git should know about refs,
 remote branches, the index, fast-forward merges, pushes and pulls, detached
 heads, etc.  It can all be a little intimidating at the outset, but the
 concepts are not that hard to grasp with a bit of study.
+가장 먼저 해야할 것은git을 이용해 다른 사람들에게 패치를 만들어 전달하기 전에
+위의 사이트를 읽고 git이 어떻게 동작하는지 충분히 이해하는 것이다.  git을
+사용하는 개발자는 다음을 할 수 있어야 한다; 메인라인 저장소를 복사해 올수 있고,
+revision 히스토리를 탐색 할 수 있으며, 커밋 수정사항, 그리고 브랜치를 사용할 수
+있다. git을 이용해 rebase같이 히스토리를 재 수정하는것도 유용하다.  git은 여러
+용어를 가지고 있는데, 다음의 용어들을 숙지해야한다; refs, 원격 브랜치(remote
+branches), index, fast-forward merges, push, pull, detached heads, 등. 이것들은
+처음에 진입장벽이 다소 높을 수 있으나, 조금만 공부하면 내용을 파악하는데 어렵지
+않은 컨셉이다.
 
 Using git to generate patches for submission by email can be a good
 exercise while coming up to speed.
+git을 사용해 패치를 만들어 이메일을 통해 제출해보는것도 빠르게 익히기 위한 좋은
+연습이 될 수 있다.
 
 When you are ready to start putting up git trees for others to look at, you
 will, of course, need a server that can be pulled from.  Setting up such a
@@ -61,6 +80,12 @@ which is accessible to the Internet.  Otherwise, free, public hosting sites
 (Github, for example) are starting to appear on the net.  Established
 developers can get an account on kernel.org, but those are not easy to come
 by; see http://kernel.org/faq/ for more information.
+다른사람이 git 트리를 볼수 있게 준비가 되었다면, 당연히 pull될 수 있도록 서버가
+필요할 것이다.  인터넷에 접속가능한 시스템을 가지고 있다면 git-daemon을 이용해
+서버를 구축하는것은 비교적 간단한 방법이다.  그렇지 않다면 무료 공개 호스팅
+사이트를(예를 들어 github) 이용하는 ##것도 좋다.  Established developers는
+kernel.org에서 계정을 얻을 수 있다. 그러나 이방법은 쉽게 접근할수 있는 방법은
+아니다.  http://kernel.org/faq/ 에서 더 많은 정보를 확인할 수 있다.
 
 The normal git workflow involves the use of a lot of branches.  Each line
 of development can be separated into a separate "topic branch" and
@@ -70,6 +95,12 @@ development in any branch which you intend to ask others to pull from.
 Publicly-available branches should be created with care; merge in patches
 from development branches when they are in complete form and ready to go -
 not before.
+일반적인 git 작업흐름(workflow)은 많은 수의 브랜치를 이용한다.  각각의 개발은
+각각 독립된 주제의 브랜치에서 관리된다. git에서 브랜치를 이용하는것은 매우
+간단하고 유용하기에 사용하지 않을 이유가 없다. 그리고 어쨋든 다른사람으로부터
+문의를 하기 위해 가져왔던 브랜치에서는 작업을 하면 안된다.  공개적으로
+접근가능한 브랜치를 만들때는 각별히 주의 해야한다.  ##작업이 완료되어 반영할
+준비가된 개발 브랜치에서 반영되는것들을 주의 해야한다.
 
 Git provides some powerful tools which can allow you to rewrite your
 development history.  An inconvenient patch (one which breaks bisection,
@@ -80,6 +111,12 @@ you have been working on it for months.  Changes can be transparently
 shifted from one branch to another.  And so on.  Judicious use of git's
 ability to revise history can help in the creation of clean patch sets with
 fewer problems.
+git은 git 히스토리를 수정할 수 있는 강력한 기능을 제공 한다. 이등분이 안되어
+있거나, 확실한 버그가 존재하는 등의 패치는 수정되거나 git 히스토리에서 제거될
+수 있다.  패치는 재 수정될 수 있다 심지어 몇달 전에 작성한 패치일 지라도, 마치
+메인라인의 최근 가장 위에 작성된 것 처럼 보일것이다. ##수정사항은 투명하게 한
+브랜치에서 다른 브랜치로 이동될 수 있다.  git의 히스토리를 개정 기능을 현명하게
+사용한 다면, 별 문제 없이 깨긋한 패치를 만드는데 도움이 될 수 있다.
 
 Excessive use of this capability can lead to other problems, though, beyond
 a simple obsession for the creation of the perfect project history.
@@ -91,6 +128,13 @@ have pulled into their repositories, you will make life much more difficult
 for those developers.  So a simple rule of thumb applies here: history
 which has been exported to others should generally be seen as immutable
 thereafter.
+완벽한 히스토리를 만드려고하는 강박관념으로 과도하게 이 기능을 사용하게 되면 또
+다른 문제가 발생 할 수 있다. ##히스토리를 수정하면 전체 히스토리내의 수정사항을
+수정하게 될 것이며, ##테스트가 완료된 커널트리를 아직 테스트가 되지않은 트리로
+만들게 될 것이다.  ##그러나 그것을 넘어서면 공유된 프로젝트 히스토리 시각이
+없으면 쉽게 협업하기 어려울 수 있다. ##만약 그들의 저장소에 적용한 히스토리를
+당신이 수정하면 문제는 보다 심각해 진다. 그래서 간단한 룰이 있다.  ##다른사람
+에게 전달된 히스토리는 일반적으로 변경할 수 없다.
 
 So, once you push a set of changes to your publicly-available server, those
 changes should not be rewritten.  Git will attempt to enforce this rule if
