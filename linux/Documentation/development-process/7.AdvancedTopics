@@ -237,6 +237,7 @@ push하는지 기억하도록 해줄 것이다.
 
 
 7.2: REVIEWING PATCHES
+7.2: 패치를 리뷰 하기
 
 Some readers will certainly object to putting this section with "advanced
 topics" on the grounds that even beginning kernel developers should be
@@ -244,7 +245,12 @@ reviewing patches.  It is certainly true that there is no better way to
 learn how to program in the kernel environment than by looking at code
 posted by others.  In addition, reviewers are forever in short supply; by
 looking at code you can make a significant contribution to the process as a
-whole.
+whole. 궁극적으로
+##몇몇 독자는 이 섹션이 심지어 커널 초보 개발자가 패치를 리뷰한다는 것을
+##이유로 심화 주제를 다룬다는 사실에 반대할 것이다.  그러나 커널 개발 환경에서
+다른사람의 코드를 보는것은 프로그래밍을 배우는 가장 좋은 방법이라는것은 자명한
+사실이다. 게다가 리뷰자는 영원이 공급부족에 시달릴 것이다. 궁극적으로 코드를
+보는것 만으로도 이 프로세스에 중대한 기여를 할 수 있다.
 
 Reviewing code can be an intimidating prospect, especially for a new kernel
 developer who may well feel nervous about questioning code - in public -
@@ -254,6 +260,12 @@ piece of advice for reviewers (all reviewers) is this: phrase review
 comments as questions rather than criticisms.  Asking "how does the lock
 get released in this path?" will always work better than stating "the
 locking here is wrong."
+코드를 리뷰 하는것은 본인보다 더 많은 경험을 가진 개발자들에 의해 작성된 코드에
+대해 질문하는 것조차 긴장하고 있는 초보 개발자들에게는 ##더욱 두려움을 느끼게
+한다. 아마 이런 리뷰자들을(혹은 모든 리뷰자) 위한 가장 좋은 조언은 다음일
+것이다.  비난보다 리뷰 코멘트를 남기는게 훨씬 낫다. "이 경로에서 어떻게
+락(lock)을 푸나요(release)?" 같은 질문은 "이부분의 락(lock)은 잘못 사용되었어"
+라고 하는것보다 더 좋다는 것이다.
 
 Different developers will review code from different points of view.  Some
 are mostly concerned with coding style and whether code lines have trailing
@@ -263,6 +275,12 @@ will check for problematic locking, excessive stack usage, possible
 security issues, duplication of code found elsewhere, adequate
 documentation, adverse effects on performance, user-space ABI changes, etc.
 All types of review, if they lead to better code going into the kernel, are
-welcome and worthwhile.
-
+welcome and worthwhile.  
+서로 다른 개발자는 서로 다른 관점에서 코드를 리뷰할 것이다. 어떤 사람은 코딩
+스타일이나 white space가 줄에 포함되었는지에 대해 ##걱정한다.  또 어떤 사람은
+패치가 적용될때 커널에 유용할지 그렇지 않을지에 대해 주로 관심을 갖는 사람도
+있을 것이다.  또 한편으로는, 잘못된 락의 사용, 과도한 스택의 사용, 잠재적 보안
+문제, 중복된 코드, 적당한 문서의 유무, 성능에 부정적인 영향을 끼치진 않는지,
+유져 공간의 API가 변경되지는 안는지 등의 관점도 있다.  커널에 포함되는 모든
+코드를 더욱 좋게 만드는 어떠한 형태의 리뷰라도 가치가 있고 환영을 받는다.
 
