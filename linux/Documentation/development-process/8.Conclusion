@@ -11,14 +11,20 @@ documents in HTML or PDF format (though the version of TeX shipped by some
 distributions runs into internal limits and fails to process the documents
 properly).
 리눅스 커널 개발 및 관련 주제에 대한 다양한 정보들이 존재한다. 그 중 첫 번째는
-커널소스 배포판에있는 Documentation 디렉토리다. 최상위 HOWTO 파일은 중요한 시작점이다;
-SubmittingPatches와 SubmittingDrivers 또한 모든 커널개발자가 읽어야 하는 문서다.
-많은 내부 커널 API는 kerneldoc 메커니즘을 사용하여 설명된다; "pdfdocs을" "HTMLDOCS을"또는 HTML 또는 PDF 형식 (어떤 분포로 배송 텍의 버전은 내부 기준으로 실행되는 문서를 적절히 처리하는 데 실패 할지라도)에서 그 문서를 생성하기 위해 사용될 수있다.
+커널소스 배포판에 있는 Documentation 디렉토리다. 최상위 디렉토리의 HOWTO 파일은
+중요한 시작점이다; SubmittingPatches와 SubmittingDrivers 또한 모든 커널개발자가
+반드시 읽어야 하는 문서다. 많은 내부 커널 API는 kerneldoc을 이용해 문서화 되었다;
+"make htmldocs" 또는 "make pdfdocs" 명령이 HTML 또는 PDF 형식 문서를 생성할때
+쓰인다 (특정 배포판들에 포함된 TeX 버전은 내부기준에의해 적절한 문서를 생성하는데
+실패하긴 한다).
 
 Various web sites discuss kernel development at all levels of detail.  Your
 author would like to humbly suggest http://lwn.net/ as a source;
 information on many specific kernel topics can be found via the LWN kernel
 index at:
+각종 웹 사이트는 모든 수준에서 커널 개발에 대해 자세히 다룬다. http://lwn.net/은
+훌륭한 정보의 원천이다; 많은 특정 커널 주제에 대한 정보를 LWN 커널 인덱스에서
+찾아 볼 수 있다:
 
 	http://lwn.net/Kernel/Index/
 
