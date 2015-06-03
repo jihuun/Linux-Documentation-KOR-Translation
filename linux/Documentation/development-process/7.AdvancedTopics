@@ -111,7 +111,7 @@ you have been working on it for months.  Changes can be transparently
 shifted from one branch to another.  And so on.  Judicious use of git's
 ability to revise history can help in the creation of clean patch sets with
 fewer problems.
-git은 git 히스토리를 수정할 수 있는 강력한 기능을 제공 한다. 이등분이 안되어
+git은 git 히스토리를 수정할 수 있는 강력한 기능을 제공 한다. ##이등분이 안되어
 있거나, 확실한 버그가 존재하는 등의 패치는 수정되거나 git 히스토리에서 제거될
 수 있다.  패치는 재 수정될 수 있다 심지어 몇달 전에 작성한 패치일 지라도, 마치
 메인라인의 최근 가장 위에 작성된 것 처럼 보일것이다. ##수정사항은 투명하게 한
@@ -168,15 +168,16 @@ perform test merges in a private branch.  The git "rerere" tool can be
 useful in such situations; it remembers how merge conflicts were resolved
 so that you don't have to do the same work twice.
 ##메인라인의 발전으로(또는 수정사항의 기준이 되는 다른 트리), 지도적인 위치를
-유지하기 위해 반영되는것이 시도된다.  개인 브랜치를 위해서, rebase하는것은 다른
-트리를 유지하는 가장 쉬운 방법이다.  그러나 rebase는 한번 트리가 export되면
-더이상 선택할 수 있는 옵션이 아니다.  그렇게 되면 full merge가 되어야 한다.
-자주 merge하는 것은 바람직하다. 그러나 지나치게 자주 merge를 하면 히스토리에
-불필요한 혼란을 가져오게 된다.  이런 경우 드물게 merge하기 위해 다음의 스킬을
-제안한다. 메인라인 -rc 릴리즈 같이 특정 릴리즈 지점에서만 반영하는것이다. 만약
-당신이 특정 수정사항들에 민감하다면 개인 브랜치에서 항상 테스트 가능하다.
-git의 "rerere" 툴은 이런 상황에서 유용하다. 이것을 이용하면 merge 충돌이 나서
-해결한 사항을 기억하고 있어서 다음번에 똑같은 작업을 또 할 필요하 없다.
+유지하기 위해서 메인라인 트리에 반영하고 싶어지게 된다.  개인 브랜치를 위해서,
+rebase하는것은 다른 트리를 유지하는 가장 쉬운 방법이다.  그러나 rebase는 한번
+트리가 export되면 더이상 선택할 수 있는 옵션이 아니다.  그렇게 되면 full
+merge가 되어야 한다.  자주 merge하는 것은 바람직하다. 그러나 지나치게 자주
+merge를 하면 히스토리에 불필요한 혼란을 가져오게 된다.  이런 경우 드물게
+merge하기 위해 다음의 스킬을 제안한다. 메인라인 -rc 릴리즈 같이 특정 릴리즈
+지점에서만 반영하는것이다. 만약 당신이 특정 수정사항들에 민감하다면 개인
+브랜치에서 항상 테스트 가능하다.  git의 "rerere" 툴은 이런 상황에서 유용하다.
+이것을 이용하면 merge 충돌이 나서 해결한 사항을 기억하고 있어서 다음번에 똑같은
+작업을 다시 할 필요가 없다.
 
 One of the biggest recurring complaints about tools like git is this: the
 mass movement of patches from one repository to another makes it easy to
@@ -195,10 +196,10 @@ git에대해 끊임없이 발생하는 불만은 다음과 같다.  ##review rad
 	need to know that you know what you're doing, and I need to be able
 	to trust things *without* then having to go and check every
 	individual change by hand.
-	당신의 git 패치를 나에게 pull함으로써, 당신은 나에게 패치를 보낼 수
-	있습니다.  그리고 바라건데, 당신이 무슨작업을 했는지는 알기 원합니다.
-	그리고 제가 일일이 수정사항을 체크하지 않고도 당신의 패치를 신뢰할 수
-	있었으면 좋겠습니다.
+	당신의 git 패치를 나에게 pull함으로써, 나에게 패치를 보낼 수 있습니다.
+	그러나 바라건데, 당신이 무슨작업을 했는지는 알기 원합니다.  그리고 제가
+	일일이 수정사항을 체크하지 않고도 당신의 패치를 신뢰할 수 있었으면
+	좋겠습니다.
 
 (http://lwn.net/Articles/224135/).
 
@@ -219,10 +220,10 @@ don't forget to review them.  Also ensure that you maintain the correct
 authorship information; the git "am" tool does its best in this regard, but
 you may have to add a "From:" line to the patch if it has been relayed to
 you via a third party.
-만약 다른 사람의 패치를 당신의 트리로 포함 시키고하 한다면 그 패치를
-리뷰하는것을 잊지마라.  그리고 ##그리고 올바른 저작정보가 있는지 확실히 하라.
-git "am"툴은 이기능을 이용하는데에 가장 좋은 옵션이다.  ##그러나 third party를
-통해 이어진 패치라면 당신은 "From:"을 추가해야한다.
+만약 다른 사람의 패치를 당신의 트리로 포함 시키고하 한다면 그 패치를 리뷰
+하는것을 잊지마라.  ##그리고 올바른 저작정보가 있는지 확실히 하라.  git "am"
+툴은 이 기능을 이용하는데에 가장 좋은 옵션이다.  ##그러나 third party를 통해
+이어진 패치라면 당신은 "From:"을 추가해야한다.
 
 When requesting a pull, be sure to give all the relevant information: where
 your tree is, what branch to pull, and what changes will result from the
@@ -245,7 +246,7 @@ reviewing patches.  It is certainly true that there is no better way to
 learn how to program in the kernel environment than by looking at code
 posted by others.  In addition, reviewers are forever in short supply; by
 looking at code you can make a significant contribution to the process as a
-whole. 궁극적으로
+whole.
 ##몇몇 독자는 이 섹션이 심지어 커널 초보 개발자가 패치를 리뷰한다는 것을
 ##이유로 심화 주제를 다룬다는 사실에 반대할 것이다.  그러나 커널 개발 환경에서
 다른사람의 코드를 보는것은 프로그래밍을 배우는 가장 좋은 방법이라는것은 자명한
@@ -263,9 +264,9 @@ locking here is wrong."
 코드를 리뷰 하는것은 본인보다 더 많은 경험을 가진 개발자들에 의해 작성된 코드에
 대해 질문하는 것조차 긴장하고 있는 초보 개발자들에게는 ##더욱 두려움을 느끼게
 한다. 아마 이런 리뷰자들을(혹은 모든 리뷰자) 위한 가장 좋은 조언은 다음일
-것이다.  비난보다 리뷰 코멘트를 남기는게 훨씬 낫다. "이 경로에서 어떻게
-락(lock)을 푸나요(release)?" 같은 질문은 "이부분의 락(lock)은 잘못 사용되었어"
-라고 하는것보다 더 좋다는 것이다.
+것이다.  비난보다 리뷰 코멘트를 남기는게 훨씬 낫다. "이부분의 락(lock)은 잘못
+사용되었어" 라고 하는 것보다 "이 경로에서 어떻게 락(lock)을 푸나요(release)?"
+같은 질문은 더 좋다는 것이다.
 
 Different developers will review code from different points of view.  Some
 are mostly concerned with coding style and whether code lines have trailing
@@ -275,9 +276,9 @@ will check for problematic locking, excessive stack usage, possible
 security issues, duplication of code found elsewhere, adequate
 documentation, adverse effects on performance, user-space ABI changes, etc.
 All types of review, if they lead to better code going into the kernel, are
-welcome and worthwhile.  
+welcome and worthwhile.
 서로 다른 개발자는 서로 다른 관점에서 코드를 리뷰할 것이다. 어떤 사람은 코딩
-스타일이나 white space가 줄에 포함되었는지에 대해 ##걱정한다.  또 어떤 사람은
+스타일이나 white space가 줄에 포함 되었는지에 대해 ##걱정한다.  또 어떤 사람은
 패치가 적용될때 커널에 유용할지 그렇지 않을지에 대해 주로 관심을 갖는 사람도
 있을 것이다.  또 한편으로는, 잘못된 락의 사용, 과도한 스택의 사용, 잠재적 보안
 문제, 중복된 코드, 적당한 문서의 유무, 성능에 부정적인 영향을 끼치진 않는지,
