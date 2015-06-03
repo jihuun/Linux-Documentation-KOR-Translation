@@ -104,7 +104,7 @@ communication can save time and trouble in a number of ways:
 커널 개발을 계획할 때, 코드를 반영 하기 전에 먼저 커뮤니티와 충분히 논의를 하는
 것이 바람직하다. 이런 의사소통은 여러가지로 시간과 문제를 줄여줄 수 있다. 
 
- - %% It may well be that the problem is addressed by the kernel in ways which
+ - ## It may well be that the problem is addressed by the kernel in ways which
    you have not understood.  The Linux kernel is large and has a number of
    features and capabilities which are not immediately obvious.  Not all
    kernel capabilities are documented as well as one might like, and it is
