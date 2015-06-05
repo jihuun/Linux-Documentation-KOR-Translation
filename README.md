@@ -1,23 +1,24 @@
 # Linux-Documentation-KOR-Translation
 
 ### Welcome!
-This project is translation works of linux/Documentation/ for Koren linux kernel
-developer. Anyone can participate in this project even if you don't have any
+This project is collaborative translation works of linux/Documentation/ for Koren linux kernel
+developer.  
+Anyone can participate in this project even if you don't have any
 idea of linux kernel contribution.   
 
 __이 프로젝트는 리눅스 커널 소스코드의 Documentation/의 문서를 공동번역하는__   
 __프로젝트 입니다.__			
 
-Documentation/의 도움이 될 만한 _모든_ 문서를 번역하는 것을 목표로 하여	
-대한민국 개발자들의 리눅스 커널 개발에 조금이라도 기여하는 것을 목적으로	
-하고 있습니다. 시작은 다소 부족하지만 오랜 기간동안 꾸준히 진행될 프로젝트	
-이며, 추후에 메인라인에 추가되거나 수정되는 문서들을 본 프로젝트를 통해서	
+Documentation/의 도움이 될 만한 _모든_ 문서를 번역하여 대한민국 개발자들의  
+리눅스 커널 개발에 도움이 되는 것을 목적으로 하고 있습니다. 멤버들이 전문   
+번역가가 아니기에 다소 부족하지만 오랜 기간동안 꾸준히 개선/진행될 프로젝트	  
+이며, 추후에 메인라인에 추가되거나 수정되는 문서들을 본 프로젝트를 통해서	  
 계속 업데이트 할 계획입니다.	
 
 이 공동 번역 프로젝트는 누구나 함께 참여 할 수 있습니다.    
 비개발자,학생,직장인 혹은 리눅스 개발에 지식이 전혀 없어도 상관이 없습니다.  
-비록 초기의 번역된 문장이 어색한 문장이라 할지라도 지속적으로 함께 고쳐
-나가질 것 이기 때문 입니다. _번역에 참여하는 것도 리눅스라는 오픈 소스 성장에_
+비록 초기의 번역된 문장이 어색한 문장이라 할지라도 지속적으로 함께 고쳐   
+나가질 것 이기 때문 입니다. _번역에 참여하는 것도 리눅스라는 오픈 소스 성장에_  
 _기여하는 또 하나의 방법입니다._  
 
 이 프로젝트를 통해 직접적으로 리눅스 커널 개발에 새로 뛰어들고자 하는 분들께	
@@ -32,7 +33,7 @@ _기여하는 또 하나의 방법입니다._
 하나의 파일이 번역이 끝나기 전까지는 영어 문단을 지우지 않고 그 아래에 번역     
 내용을 기술 합니다. (어색한 문장을 지속적으로 고쳐 나가기 위함 입니다.)  
 
-번역을 하긴 했는데 애매한 문장은? 문장앞에 ##을 붙여주세요.	
+번역을 하긴 했는데 애매한 문장은? 문장앞에 __##__을 붙여주세요.	
 
 ### Current Works   
 현재 번역이 진행 되고 있는 Document 입니다. 
@@ -66,9 +67,9 @@ _기여하는 또 하나의 방법입니다._
 것 입니다.       
 
 ### Useful Tools
-vimdic을 이용해 vim 에서 작업해 보세요.
-vimdic을 이용하면 vim에서 영어 단어/숙어/예문등을 가장 빠르게 검색할 수 있습니다.
-vimdic은 본 프로젝트의 생산성 향상을 위해 만들어진 스크립트 입니다.	
+vimdic을 이용해 vim 에서 작업해 보세요.   
+vimdic을 이용하면 vim에서 영어 단어/숙어/예문등을 가장 빠르게 검색할 수 있습니다.   
+vimdic은 본 프로젝트의 생산성 향상을 위해 만들어진 스크립트 입니다.	  
 [vimdic이동](https://github.com/vimdic/vimdic)
 
 ### 번역 용어 정리 문서 
