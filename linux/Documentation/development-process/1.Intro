@@ -26,10 +26,10 @@ availability to users, community support in many forms, and the ability to
 influence the direction of kernel development.  Code contributed to the
 Linux kernel must be made available under a GPL-compatible license.
 이 섹션의 나머지 부분은 커널 개발 프로세스와 개발자와 그들의 고용주가 직면할 수
-있는 문제들을 다룬다.  코드가 공식(메인라인) 커널에 반영되어야 할 좋은 이유가
-많이 있다.  ##유저에게 자동으로 제공되는것을 포함하여, 커뮤니티로부터 여러 가지
-형태의 지원을 받을 수 있으며 커널 개발 방향에 영향을 줄 수 있다.  리눅스 커널에
-기여할 코드는 GPL라이센스에 호환되어 사용할 수 있도록 만들어져야 한다. 
+있는 문제들을 다룬다. 유저에게 쉽게 제공되며, 커뮤니티로부터 여러 가지 형태의
+지원을 받을 수 있고, 커널 개발 방향에 영향을 줄 수 있다는 점 등을 포함해서
+코드가 공식(메인라인) 커널에 반영되어야 할 좋은 이유가 많이 있다.  리눅스
+커널에 기여할 코드는 GPL라이센스에 호환되어 사용할 수 있도록 만들어져야 한다. 
 
 Section 2 introduces the development process, the kernel release cycle, and
 the mechanics of the merge window.  The various phases in the patch
