@@ -18,10 +18,10 @@ clear description of the problem to be solved.  In some cases, this step is
 easy: when a driver is needed for a specific piece of hardware, for
 example.  In others, though, it is tempting to confuse the real problem
 with the proposed solution, and that can lead to difficulties.
-여타 엔지니어링 프로젝트들과 마찬가지로, 성공적인 커널 개선은 해결할
-문제의 명확한 설명과 함께 시작된다. 어떤 경우, 이 단계는 매우 간단하다.
-드라이버가 특정 하드웨어를 위해 필요한 경우가 한 예이다. 하지만 대부분의 경우
-의도된 해법과 실제 문제를 혼동하는 유혹에 빠지기 쉽고 그것은 어려움을 초래할 수 있다.
+여타 엔지니어링 프로젝트들과 마찬가지로, 성공적인 커널 개선은 해결할 문제의
+명확한 설명과 함께 시작된다. 어떤 경우, 이 단계는 매우 간단하다.  드라이버가
+특정 하드웨어를 위해 필요한 경우가 한 예이다. 하지만 대부분의 경우 의도된
+해법과 실제 문제를 혼동하는 유혹에 빠지기 쉽고 그것은 어려움을 초래할 수 있다.
 
 Consider an example: some years ago, developers working with Linux audio
 sought a way to run applications without dropouts or other artifacts caused
@@ -30,11 +30,12 @@ kernel module intended to hook into the Linux Security Module (LSM)
 framework; this module could be configured to give specific applications
 access to the realtime scheduler.  This module was implemented and sent to
 the linux-kernel mailing list, where it immediately ran into problems.
-예를 살펴보면, 몇년전 리눅스 오디오 작업을 하던 개발자들이 시스템에 과도한 대기시간으로
-인한 영향이나 손실 없이 응용 프로그램을 실행할 수 있는 방법을 모색하고 있다.
-그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에 hook 하기위한 커널 모듈이었다;
-이 모듈은 특정 응용프로그램이 실시간 스케줄러에 대한 액세스 권한을 부여하도록 구성될 수 있다.
-이 모듈은 구현되어 즉시 linux-kernel 메일링리스트로 보내져 문제에 바로 적용되었다.
+예를 살펴보면, 몇년전 리눅스 오디오 작업을 하던 개발자들이 시스템에 과도한
+대기시간으로 인한 영향이나 손실 없이 응용 프로그램을 실행할 수 있는 방법을
+모색하고 있다.  그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에 hook
+하기위한 커널 모듈이었다; 이 모듈은 특정 응용프로그램이 실시간 스케줄러에 대한
+액세스 권한을 부여하도록 구성될 수 있다.  이 모듈은 구현되어 즉시 linux-kernel
+메일링리스트로 보내져 문제에 바로 적용되었다.
 
 To the audio developers, this security module was sufficient to solve their
 immediate problem.  To the wider kernel community, though, it was seen as a
@@ -43,10 +44,11 @@ onto processes which they would not otherwise have) and a risk to system
 stability.  Their preferred solutions involved realtime scheduling access
 via the rlimit mechanism for the short term, and ongoing latency reduction
 work in the long term.
-오디오 개발자들에게 이 보안 모듈은 즉시 문제를 해결하기에 충분했다.
-그러나 커널 커뮤니티에게 그것은 LSM 프레임워크의 오용(프로세스에 계획되지 않은 권한을 부여)  
-및 시스템 안정성에 위험으로 간주되었다. 커뮤니티가 선호한 솔루션은 단기적으로 rlimit 메커니즘을
-통해 실시간 스케줄링에 액세스하고 장기적으로는 지속적인 대기시간 감소 작업을 하는 것이었다.
+오디오 개발자들에게 이 보안 모듈은 즉시 문제를 해결하기에 충분했다.  그러나
+커널 커뮤니티에게 그것은 LSM 프레임워크의 오용(프로세스에 계획되지 않은 권한을
+부여) 및 시스템 안정성에 위험으로 간주되었다. 커뮤니티가 선호한 솔루션은
+단기적으로 rlimit 메커니즘을 통해 실시간 스케줄링에 액세스하고 장기적으로는
+지속적인 대기시간 감소 작업을 하는 것이었다.
 
 The audio community, however, could not see past the particular solution
 they had implemented; they were unwilling to accept alternatives.  The
@@ -54,16 +56,18 @@ resulting disagreement left those developers feeling disillusioned with the
 entire kernel development process; one of them went back to an audio list
 and posted this:
 그러나 오디오 커뮤니티는 그들이 구현 한 솔루션 외에 대안을 생각 할 수 없었다;
-그들은 대안을 수용하지 않으려했고 커널 커뮤니티와 불일치로 전체 커널 개발 프로세스에
-환멸을 느끼게 됐다. 오디오 개발자들 중 하나는 오디오 리스트로 가서 다음 글을 게시했다:
+그들은 대안을 수용하지 않으려했고 커널 커뮤니티와 불일치로 전체 커널 개발
+프로세스에 환멸을 느끼게 됐다. 오디오 개발자들 중 하나는 오디오 리스트로 가서
+다음 글을 게시했다:
 
 	There are a number of very good Linux kernel developers, but they
 	tend to get outshouted by a large crowd of arrogant fools. Trying
 	to communicate user requirements to these people is a waste of
 	time. They are much too "intelligent" to listen to lesser mortals.
-	좋은 리눅스 커널 개발자가 많이 있지만, 그들은 오만한 바보들의 무리에 의해
-	큰소리를 내는 경향이 있다. 그들에게 사용자 요구사항에 대해 대화를 시도하는
-	것은 시간 낭비이다. 어쭙잖은 인간들의 이야기를 듣기엔 그들은 너무나 뛰어나다.
+	좋은 리눅스 커널 개발자가 많이 있지만, 그들은 오만한 바보들의 무리에
+	의해 큰소리를 내는 경향이 있다. 그들에게 사용자 요구사항에 대해 대화를
+	시도하는 것은 시간 낭비이다. 어쭙잖은 인간들의 이야기를 듣기엔 그들은
+	너무나 뛰어나다.
 
 (http://lwn.net/Articles/131776/).
 
@@ -74,20 +78,22 @@ The moral of the story is to focus on the problem - not a specific solution
 - and to discuss it with the development community before investing in the
 creation of a body of code.
 실제 상황은 달랐다; 커널 개발자들은 특정 모듈에 대한 문제로 본것이 아니라
-시스템 안정성, 장기간 유지보수성, 정확한 솔루션을 고려한 것이다.
-이 이야기의 교훈은 특정 솔루션에 메달릴 것이 아니라 문제에 집중하고 코딩을
-시작하기 전에 개발 커뮤니티와 충분히 논의해야 한다는 것이다.
+시스템 안정성, 장기간 유지보수성, 정확한 솔루션을 고려한 것이다.  이 이야기의
+교훈은 특정 솔루션에 메달릴 것이 아니라 문제에 집중하고 코딩을 시작하기 전에
+개발 커뮤니티와 충분히 논의해야 한다는 것이다.
 
 So, when contemplating a kernel development project, one should obtain
 answers to a short set of questions:
-따라서 커널 개발 프로젝트를 고려하는 개발자는 다음 질문들에 대한 답을 얻어야한다.
+따라서 커널 개발 프로젝트를 고려하는 개발자는 다음 질문들에 대한 답을
+얻어야한다.
 
  - What, exactly, is the problem which needs to be solved?
  - 정확히 어떤 문제가 해결되야 하는가?
 
  - Who are the users affected by this problem?  Which use cases should the
    solution address?
- - 이 문제에 영향을 받는 사용자들은 누구인가? 솔루션은 어떤 유스 케이스를 다뤄야 하는가?
+ - 이 문제에 영향을 받는 사용자들은 누구인가? 솔루션은 어떤 유스 케이스를
+   다뤄야 하는가?
 
  - How does the kernel fall short in addressing that problem now?
  - 커널이 현재 그 문제를 다루는데 어떻게 부족한가?
@@ -102,7 +108,7 @@ When planning a kernel development project, it makes great sense to hold
 discussions with the community before launching into implementation.  Early
 communication can save time and trouble in a number of ways:
 커널 개발을 계획할 때, 코드를 반영 하기 전에 먼저 커뮤니티와 충분히 논의를 하는
-것이 바람직하다. 이런 의사소통은 여러가지로 시간과 문제를 줄여줄 수 있다. 
+것이 바람직하다. 이런 의사소통은 여러가지로 시간과 문제를 줄여줄 수 있다.
 
  - ## It may well be that the problem is addressed by the kernel in ways which
    you have not understood.  The Linux kernel is large and has a number of
@@ -115,9 +121,9 @@ communication can save time and trouble in a number of ways:
  - 이해하지 못한 방법들로 커널이 해결하고자 하는 문제들은 리눅스 커널은 너무
    크고 즉시 눈에 띄지 않는 수 많은 특징과 기능이 있다. 특정 한 사람을 만족시킬
    정도로 커널 모든 기능이 문서화 되어 있는 것은 아니다. 그리고 놓치기 쉽다.
-   메인테이너는 새로운 작가를 통해 중복 되었다는것을 자각하지도 못한채 작업한 이미
-   존재하는 드라이버가 포스팅 되오던것을 봐왔다.  이미 존재하는 코드를 재 작업하는
-   것은 쓸모없을 뿐더러 메인라인 커널에서 받아드려지지 못할 것이다.
+   메인테이너는 새로운 작가를 통해 중복 되었다는것을 자각하지도 못한채 작업한
+   이미 존재하는 드라이버가 포스팅 되오던것을 봐왔다.  이미 존재하는 코드를 재
+   작업하는 것은 쓸모없을 뿐더러 메인라인 커널에서 받아드려지지 못할 것이다.
 
  - There may be elements of the proposed solution which will not be
    acceptable for mainline merging.  It is better to find out about
@@ -150,7 +156,7 @@ the kernel community's standards.  Some examples include:
    Devicescape network stack 은 싱글 코어 프로세서 기반으로 설계되었다. 따라서
    멀티 프로세서를 지원하지 않는 이상 메인라인에 반영될 수 없었다. 이 코드를
    개선하는 것은 매우 어려운 작업이었기 때문에, 이 코드가 반영되기 까지 1년
-   이상 지연되었다. 
+   이상 지연되었다.
 
  - The Reiser4 filesystem included a number of capabilities which, in the
    core kernel developers' opinion, should have been implemented in the
@@ -275,8 +281,8 @@ idea.  The best thing to do in this situation is to proceed, keeping the
 community informed as you go.
 답변요청을 올리는것은 답변이 달리는데에 방해가 될 뿐이다. 프로젝트에 관심이
 없다는 뜻으로 추측하지 말아야 한다. 유감스럽게도 본인의 아이디어가 아무런
-문제가 없다고 판단할 수 없을 것이다. 이런 상황에서 가장 좋은 방법은
-계속 진행 하는 것이다. 커뮤니티의 정보를 유지하라.
+문제가 없다고 판단할 수 없을 것이다. 이런 상황에서 가장 좋은 방법은 계속 진행
+하는 것이다. 커뮤니티의 정보를 유지하라.
 
 3.5: GETTING OFFICIAL BUY-IN
 3.5: 공식적으로 참여하기.

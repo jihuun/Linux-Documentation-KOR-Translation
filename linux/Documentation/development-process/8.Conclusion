@@ -13,18 +13,18 @@ properly).
 리눅스 커널 개발 및 관련 주제에 대한 다양한 정보들이 존재한다. 그 중 첫 번째는
 커널소스 배포판에 있는 Documentation 디렉토리다. 최상위 디렉토리의 HOWTO 파일은
 중요한 시작점이다; SubmittingPatches와 SubmittingDrivers 또한 모든 커널개발자가
-반드시 읽어야 하는 문서다. 많은 내부 커널 API는 kerneldoc을 이용해 문서화 되었다;
-"make htmldocs" 또는 "make pdfdocs" 명령이 HTML 또는 PDF 형식 문서를 생성할때
-쓰인다 (특정 배포판들에 포함된 TeX 버전은 내부기준에의해 적절한 문서를 생성하는데
-실패하긴 한다).
+반드시 읽어야 하는 문서다. 많은 내부 커널 API는 kerneldoc을 이용해 문서화
+되었다; "make htmldocs" 또는 "make pdfdocs" 명령이 HTML 또는 PDF 형식 문서를
+생성할때 쓰인다 (특정 배포판들에 포함된 TeX 버전은 내부기준에의해 적절한 문서를
+생성하는데 실패하긴 한다).
 
 Various web sites discuss kernel development at all levels of detail.  Your
 author would like to humbly suggest http://lwn.net/ as a source;
 information on many specific kernel topics can be found via the LWN kernel
 index at:
-각종 웹 사이트는 모든 수준에서 커널 개발에 대해 자세히 다룬다. http://lwn.net/은
-훌륭한 정보의 원천이다; 많은 특정 주제에 대한 정보를 LWN 커널 인덱스에서
-찾아 볼 수 있다:
+각종 웹 사이트는 모든 수준에서 커널 개발에 대해 자세히 다룬다.
+http://lwn.net/은 훌륭한 정보의 원천이다; 많은 특정 주제에 대한 정보를 LWN 커널
+인덱스에서 찾아 볼 수 있다:
 
 	http://lwn.net/Kernel/Index/
 
@@ -73,8 +73,8 @@ git에 관한 문서는 아래 주소에서 찾을 수 있다:
 Congratulations to anybody who has made it through this long-winded
 document.  Hopefully it has provided a helpful understanding of how the
 Linux kernel is developed and how you can participate in that process.
-이 장황한 문서를 여기 마지막까지 읽었다면 축하한다. 리눅스 커널의 개발방법과
-그 과정에 참여할 수있는 방법을 이해하는데 도움이 되었길 바란다.
+이 장황한 문서를 여기 마지막까지 읽었다면 축하한다. 리눅스 커널의 개발방법과 그
+과정에 참여할 수있는 방법을 이해하는데 도움이 되었길 바란다.
 
 In the end, it's the participation that matters.  Any open source software
 project is no more than the sum of what its contributors put into it.  The
@@ -82,10 +82,11 @@ Linux kernel has progressed as quickly and as well as it has because it has
 been helped by an impressively large group of developers, all of whom are
 working to make it better.  The kernel is a premier example of what can be
 done when thousands of people work together toward a common goal.
-결국, 중요한것은 참여하는 것이다. 모든 오픈소스 소프트웨어 프로젝트는 참여자들이
-작성하는것 그 이상은 아니다. 리눅스 커널은 신속하게 진행될뿐만 아니라 그것을
-더 잘 만들기 위해 인상적으로 큰 그룹의 개발자들이 노력하고 있다. 커널은 수천명의
-사람들이 공동의 목표를 향해 함께 작업 할 때 무엇을 할 수 있는지의 최고의 예다.
+결국, 중요한것은 참여하는 것이다. 모든 오픈소스 소프트웨어 프로젝트는
+참여자들이 작성 하는것 그 이상은 아니다. 리눅스 커널은 신속하게 진행될뿐만
+아니라 그것을 더 잘 만들기 위해 인상적으로 큰 그룹의 개발자들이 노력하고 있다.
+커널은 수천명의 사람들이 공동의 목표를 향해 함께 작업 할 때 무엇을 할 수
+있는지의 최고의 예다.
 
 The kernel can always benefit from a larger developer base, though.  There
 is always more work to do.  But, just as importantly, most other
@@ -95,8 +96,8 @@ lower maintenance and distribution costs, a higher level of influence over
 the direction of kernel development, and more.  It is a situation where
 everybody involved wins.  Fire up your editor and come join us; you will be
 more than welcome.
-커널은 항상 더 큰 개발자 베이스에서 혜택을 누리지만, 항상 더 해야할 작업이 있다.
-그러나 중요한 것은 리눅스 생태계에 있는 대부분의 다른 참가자는 커널에 기여를 통해
-혜택을 누릴 수 있다. 메인라인에 코드를 넣는 것은 더 높은 코드 품질, 낮은 유지 보수
-및 배포 비용의 비결이다. 이것이 모두가 승리하는 상황이다. 편집기를 열고 우리와
-함께하자 당신을 환영한다.
+커널은 항상 더 큰 개발자 베이스에서 혜택을 누리지만, 항상 더 해야할 작업이
+있다.  그러나 중요한 것은 리눅스 생태계에 있는 대부분의 다른 참가자는 커널에
+기여를 통해 혜택을 누릴 수 있다. 메인라인에 코드를 넣는 것은 더 높은 코드 품질,
+낮은 유지 보수 및 배포 비용의 비결이다. 이것이 모두가 승리하는 상황이다.
+편집기를 열고 우리와 함께하자 당신을 환영한다.

@@ -29,7 +29,7 @@ Linux kernel must be made available under a GPL-compatible license.
 있는 문제들을 다룬다. 유저에게 쉽게 제공되며, 커뮤니티로부터 여러 가지 형태의
 지원을 받을 수 있고, 커널 개발 방향에 영향을 줄 수 있다는 점 등을 포함해서
 코드가 공식(메인라인) 커널에 반영되어야 할 좋은 이유가 많이 있다.  리눅스
-커널에 기여할 코드는 GPL라이센스에 호환되어 사용할 수 있도록 만들어져야 한다. 
+커널에 기여할 코드는 GPL라이센스에 호환되어 사용할 수 있도록 만들어져야 한다.
 
 Section 2 introduces the development process, the kernel release cycle, and
 the mechanics of the merge window.  The various phases in the patch
@@ -45,7 +45,7 @@ initial exercise.
 Section 3 covers early-stage project planning, with an emphasis on
 involving the development community as soon as possible.
 섹션 3 에서는 가능한 빨리 개발 커뮤니티에 참여 하는것을 주안점으로 프로젝트
-초기 단계에서 계획을 세우는 법을 다룬다. 
+초기 단계에서 계획을 세우는 법을 다룬다.
 
 Section 4 is about the coding process; several pitfalls which have been
 encountered by other developers are discussed.  Some requirements for
@@ -53,7 +53,7 @@ patches are covered, and there is an introduction to some of the tools
 which can help to ensure that kernel patches are correct.
 섹션 4 는 코딩 프로세스에 대한 내용이다.  다른 개발자들의 논의를 통해 알려진
 몇몇의 위험에 대해서도 다룬다.  패치를 할때 지켜야 할 몇가지 요구사항들을
-다루며, 올바른 커널 패치 인지 확인할때 도움이 되는 툴도 소개한다. 
+다루며, 올바른 커널 패치 인지 확인할때 도움이 되는 툴도 소개한다.
 
 Section 5 talks about the process of posting patches for review.  To be
 taken seriously by the development community, patches must be properly
@@ -79,7 +79,7 @@ assuming that the job is done when a patch is merged into the mainline.
 Section 7 introduces a couple of "advanced" topics: managing patches with
 git and reviewing patches posted by others.
 섹션 7 에서는 git 으로 패치를 관리하고 다른사람이 등록한 패치를 리뷰하는 방법에
-대해 논의 한다. 
+대해 논의 한다.
 
 Section 8 concludes the document with pointers to sources for more
 information on kernel development.
@@ -161,7 +161,7 @@ who will not listen or who do not care about the development process.
 있지만 그 이면에는 탄탄한 경험과 분명한 이유가 있다. 커널 개발 프로세스를
 이해하지 못한 개발자는 ##좌절스러운 경험을 하게 될 것다. 이 커뮤니티는 ##들으려
 하지않고 개발 프로세스를 전혀 신경쓰지 않는 개발자에게 많은 시간을 주지 않는
-반면, 배우고자 하는 개발자에게 이 커뮤니티는 많은 도움이 될 것이다. 
+반면, 배우고자 하는 개발자에게 이 커뮤니티는 많은 도움이 될 것이다.
 
 It is hoped that those who read this document will be able to avoid that
 frustrating experience.  There is a lot of material here, but the effort
@@ -193,8 +193,8 @@ Chiang, Roland Dreier, Randy Dunlap, Jake Edge, Jiri Kosina, Matt Mackall,
 Arthur Marsh, Amanda McPherson, Andrew Morton, Andrew Price, Tsugikazu Shibata,
 and Jochen Voß.
 
-이 작업은 리눅스 재단을 통해 지원 받고 있다. 특별히 Amanda McPherson에게 감사한다.
-그는 이 일의 가치를 알아 봤으며 이 모든것을 가능하게 만들어 주었다.
+이 작업은 리눅스 재단을 통해 지원 받고 있다. 특별히 Amanda McPherson에게
+감사한다.  그는 이 일의 가치를 알아 봤으며 이 모든것을 가능하게 만들어 주었다.
 
 1.4: THE IMPORTANCE OF GETTING CODE INTO THE MAINLINE
 1.4: 메인라인에 코드를 반영하는것의 중요성
@@ -230,7 +230,7 @@ discussed in greater detail later in this document.  Consider:
   코드를 사용하기로 설정한 모든 배포판에 자동으로 제공될 것이다.  그것은
   드라이버 디스크, 다운로드, 또는 다수의 버전을 지원하는 번거로움이 필요하지
   않다.  모든것이 사용자와 개발자를 위해 바로 동작한다.  메인라인으로의 통합은
-  다양한 배포 및 지원 관련 문제를 해결 할 수있다.  
+  다양한 배포 및 지원 관련 문제를 해결 할 수있다.
 
 - While kernel developers strive to maintain a stable interface to user
   space, the internal kernel API is in constant flux.  The lack of a stable
@@ -284,8 +284,8 @@ discussed in greater detail later in this document.  Consider:
   are heard, but active developers have a stronger voice - and the ability
   to implement changes which make the kernel work better for their needs.
   ##개발 프로세스에 참여하는것은 커널 개발에 직접적으로 참여하는 방법이다.
-  ##사이드 라인에서 불평하는 유저는 많지만 실제 활동하는 개발자는 힘있는 목소리와
-  그들의 원하는 대로 커널을 개선 시키는 능력을 가지고 있다. 
+  ##사이드 라인에서 불평하는 유저는 많지만 실제 활동하는 개발자는 힘있는
+  목소리와 그들의 원하는 대로 커널을 개선 시키는 능력을 가지고 있다.
 
 - When code is maintained separately, the possibility that a third party
   will contribute a different implementation of a similar feature always
@@ -294,10 +294,10 @@ discussed in greater detail later in this document.  Consider:
   unpleasant alternatives of either (1) maintaining a nonstandard feature
   out of tree indefinitely, or (2) abandoning your code and migrating your
   users over to the in-tree version.
-- 코드가 별도로 관리되는 경우, 서드파티가 이미 존재하는 유사한 기능 구현을 
-  반복 할 가능성이 항상 존재한다. 그렇게 되면 그 코드를 머지하는것은
-  불가능에 가깝게 힘들어질 것이다. 이 경우 두가지 대안이 있다.
-  (1) 그 비공식 기능을 영원히 out-of-tree 코드로 유지 
+- 코드가 별도로 관리되는 경우, 서드파티가 이미 존재하는 유사한 기능 구현을 반복
+  할 가능성이 항상 존재한다. 그렇게 되면 그 코드를 머지하는것은 불가능에 가깝게
+  힘들어질 것이다. 이 경우 두가지 대안이 있다.
+  (1) 그 비공식 기능을 영원히 out-of-tree 코드로 유지
   ##(2) 코드를 포기하고 사용자를 in-tree 버전으로 이동 시킨다.
 
 - Contribution of code is the fundamental action which makes the whole
@@ -321,7 +321,7 @@ before considering any sort of binary-only kernel code distribution.  These
 include:
 ##위의 모든 논리는 상업적이거나 바이너리로 배포되는 코드를 포함한 모든
 out-of-tree 커널 코드에 적용된다.  ##그러나 바이너리로 배포하기 전에 고려되어야
-할 부가 요소가 있다. 이들은 다음을 포함한다 :
+할 부가 요소가 있다. 이들은 다음을 포함한다.
 
 - The legal issues around the distribution of proprietary kernel modules
   are cloudy at best; quite a few kernel copyright holders believe that
@@ -336,8 +336,8 @@ out-of-tree 커널 코드에 적용된다.  ##그러나 바이너리로 배포�
   커널 저작권자는 바이너리 모듈이 커널의 파생 코드이기 때문에 바이너리 배포가
   (아래에서 다룰) GPL 라이센스의 위반이라고 생각한다.  ##저자는 변호사가 아니며
   이 문서는 법적 조언으로 간주 될 수 없다.  ##closed-소스 모듈의 법적 상태는
-  법원에 의해 결정될 것이다.  ##하지만 그 모듈이 법적으로 문제의 소지가 있는것은
-  확실하다.
+  법원에 의해 결정될 것이다.  ##하지만 그 모듈이 법적으로 문제의 소지가
+  있는것은 확실하다.
 
 - Binary modules greatly increase the difficulty of debugging kernel
   problems, to the point that most kernel developers will not even try.  So

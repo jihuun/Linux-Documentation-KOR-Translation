@@ -5,8 +5,8 @@ works.  There is still more to learn, however!  This section will cover a
 number of topics which can be helpful for developers wanting to become a
 regular part of the Linux kernel development process.
 이제 당신은 리눅스 개발 프로세스를 어떻게 진행하는지 알고 그것을 다룰수 있게
-되었을 것이다.  그러나 아직 알아야 할것이 더 남아있다. 이 섹션에서는 리눅스 커널
-개발 프로세스의 일부분이 되고자 하는 개발자들을 위해 다양한 주제를 다룬다.
+되었을 것이다.  그러나 아직 알아야 할것이 더 남아있다. 이 섹션에서는 리눅스
+커널 개발 프로세스의 일부분이 되고자 하는 개발자들을 위해 다양한 주제를 다룬다.
 
 7.1: MANAGING PATCHES WITH GIT
 7.1: GIT을 이용한 패치 관리
@@ -284,4 +284,3 @@ welcome and worthwhile.
 문제, 중복된 코드, 적당한 문서의 유무, 성능에 부정적인 영향을 끼치진 않는지,
 유져 공간의 API가 변경되지는 안는지 등의 관점도 있다.  커널에 포함되는 모든
 코드를 더욱 좋게 만드는 어떠한 형태의 리뷰라도 가치가 있고 환영을 받는다.
-

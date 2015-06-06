@@ -9,7 +9,7 @@ processes to keep development happening smoothly.  A solid understanding of
 how the process works is required in order to be an effective part of it.
 1990년대에 리눅스 커널 개발은 적은 수의 유저나 개발자만이 관여하고 있었다.
 원활하게 진행되고 있는 여러 커널 개발 프로세스에 따라서 1년동안 100만명의
-사용자와 2000여명의 개발자들이 리눅스를 이용하고 있다. 따라서 이 개발
+사용자와 2000여명의 개발자들이 리눅스를 이용하고 있다. ##따라서 이 개발
 프로세스에 대해 확실히 이해하는 것은 효율성을 위해서 반드시 필요하다.
 
 2.1: THE BIG PICTURE
@@ -43,8 +43,8 @@ rolling development model which is continually integrating major changes.
 각 2.6.x 버전의 릴리즈는 내부 API변경 등의 새로운 특징을 가진 메이저 커널
 버전이다. 일반적인 2.6 버전의 릴리즈는 거의 10000가지의 수정 사항을 가지고
 있으며, 이것은 약 몇십만 라인의 코드에 해당한다. 따라서 2.6버전은 리눅스 커널
-개발을 이끄는 위치에 해당한다. 커널은 중대한 변화가 지속적으로 통합되는 rolling
-development model을 사용한다.
+##개발을 이끄는 위치에 해당한다. 커널은 중대한 변화가 지속적으로 통합되는
+rolling development model을[1] 사용한다.
 
 A relatively straightforward discipline is followed with regard to the
 merging of patches for each release.  At the beginning of each development
@@ -55,8 +55,8 @@ new development cycle (and all of the major changes) will be merged during
 this time, at a rate approaching 1,000 changes ("patches," or "changesets")
 per day.
 각 릴리즈의 패치를 반영 하기 위해서는 비교적 간단한 훈련이 필요하다. 각 개발
-주기에서 merge window가 오픈 된다. 그 때, 충분히 안정적으로 보이고, 커뮤니티
-에서 검증이 완료된 코드가 메인 라인 커널에 머지 된다. 하루에 1000개가 머지되는
+주기에서 merge window가 오픈 된다. 그 때, 충분히 안정성이 충족되고, 커뮤니티
+에서 검증이 완료된 코드가 메인 라인 커널에 반영 된다. 하루에 1000개가 머지되는
 비율로, 개발 사이클에서 발생한 많은 수정사항들이 이 기간에 반영 될 것이다.
 
 (As an aside, it is worth noting that the changes integrated during the
@@ -65,7 +65,7 @@ and staged ahead of time.  How that process works will be described in
 detail later on).
 (여담 이지만, 머지 작업 기간에 수정사항은 갑자기 마술 처럼 반영되는 것이
 아니라는 점에 주목할 필요가 있다. 그 수정사항들이 먼저 모여야 하며, 테스트
-작업이 필요하고 연출 되어야 한다. 어떻게 이 프로세스가 진행되는지는 다음에서
+작업이 필요하고 ##연출 되어야 한다. 어떻게 이 프로세스가 진행되는지는 다음에서
 자세하게 논의 한다.)
 
 The merge window lasts for approximately two weeks.  At the end of this
@@ -90,23 +90,23 @@ best thing to do is to wait for the next development cycle.  (An occasional
 exception is made for drivers for previously-unsupported hardware; if they
 touch no in-tree code, they cannot cause regressions and should be safe to
 add at any time).
-그뒤 6~10주 동안은 버그 수정 패치만 메인라인에 반영될 수 있다. 때때로 매우
-중요한 수정사항이 수락될 때도 있지만 이런 경우는 드물다. 만약 merge window 기간
-외에 새로운 수정사항을 반영 하고자 한다면 좋은 대우는 받기 어려울 것이다.
-merge window 기간을 놓쳤을 경우 가장 현명한 방법은 돌아오는 다음 순서를
-기다리는 것일 것이다. 예외적으로 이전에 지원하지 않던 하드웨어를 지원하는
-Driver는 허용될 수 있다. 이는 기존 기능의 in-tree 코드를 수정하지 않는다면,
-기능을 감소 시키지 않을 것이고, 안전할 것이기 때문이다.
+그 뒤 6~10주 동안은 버그 수정 패치만 메인라인에 반영될 수 있다. 때때로 매우
+중요한 수정사항이 수락될 때도 있지만 그런 경우는 드물다. 만약 merge window
+기간이 아닐때 새로운 수정사항을 반영 하고자 한다면 좋은 소리를 듣기는 어려울
+것이다.  merge window 기간을 놓쳤을 경우 가장 현명한 방법은 돌아오는 다음
+순서를 기다리는 것일 것이다. 예외적으로 이전에 지원하지 않던 하드웨어를
+지원하는 Driver는 허용될 수 있다. 이는 기존 기능의 in-tree 코드를 수정하지
+않는다면, 기능을 감소 시키지 않을 것이고, 안전할 것이기 때문이다.
 
 As fixes make their way into the mainline, the patch rate will slow over
 time.  Linus releases new -rc kernels about once a week; a normal series
 will get up to somewhere between -rc6 and -rc9 before the kernel is
 considered to be sufficiently stable and the final 2.6.x release is made.
 At that point the whole process starts over again.
-수정사항이 메인라인에 반영 됨에 따라, 패치의 비율은 시간이 지남에 따라
+##수정사항이 메인라인에 반영 됨에 따라, 패치의 비율은 시간이 지남에 따라
 느려진다.  리누스 토발즈는 새로운 -rc 버전의 커널을 대략 일주일에 한번 릴리즈
-한다. 커널이 주요 stable 버전과 최종 2.6.x 버전이 만들어 지는것을 고려 하기
-이전에, 보통의 시리즈는 대략 -rc6과 -rc9 사이에 향상된다. 그 시점에는 전체
+한다. ##커널이 주요 stable 버전과 최종 2.6.x 버전이 만들어 지는것을 고려 하기
+이전에, 보통의 버전은 대략 -rc6과 -rc9 사이에서 만들어진다. 그 시점에는 전체
 프로세스가 다시 반복된다.
 
 As an example, here is how the 2.6.38 development cycle went (all dates in
@@ -131,11 +131,11 @@ break systems which worked in the past are considered to be especially
 serious.  For this reason, patches which cause regressions are looked upon
 unfavorably and are quite likely to be reverted during the stabilization
 period.
-개발 사이클의 종료와 stable 버전의 릴리즈는 언제 결정 되는가? 가장 좋은 방법은
-이전 버전에서 성능 감소를 발생시킨 리스트를 이용 하는 것이다. 버그가 없는것이
-좋다. 그러나 이전버전에 시스템에 문제를 일으켰던 부분은 중대한 고려 대상이
-된다. 이러한 이유 때문에 성능 감소의 원인이 되는 패치는 불리한 대우를 받을 수
-있고, 안정화 기간에 반려(revert) 될 수 있다.
+##개발 사이클의 종료와 stable 버전의 릴리즈는 언제 결정 되는지 알기 위해서 가장
+좋은 방법은 이전 버전에서 성능 감소를 발생시킨 리스트를 이용 하는 것이다.
+버그가 없는것이 좋다. 그러나 이전버전에 시스템에 문제를 일으켰던 부분은 중대한
+고려 대상이 된다. 이러한 이유 때문에 성능 감소의 원인이 되는 패치는 불리한
+대우를 받을 수 있고, 안정화 기간에 반려(revert) 될 수 있다.
 
 The developers' goal is to fix all known regressions before the stable
 release is made.  In the real world, this kind of perfection is hard to
@@ -181,8 +181,8 @@ stable 릴리즈가 만들어지면, 그것의 관리는 "stable team"에 의해
 Some kernels are designated "long term" kernels; they will receive support
 for a longer period.  As of this writing, the current long term kernels
 and their maintainers are:
-몇몇 커널은 오랜 기간동안 지원을 받을 수 있는 "long term" 커널이 있다. 현재
-long term 커널 메인테이너는 아래와 같다.
+몇몇 커널은 오랜 기간동안 지원을 받을 수 있는 "long term" 커널이 있다. 이글을
+작성할 당시, long term 커널 메인테이너는 아래와 같다.
 
 	2.6.27	Willy Tarreau		(Deep-frozen stable kernel)
 	2.6.32	Greg Kroah-Hartman
@@ -207,12 +207,11 @@ This process can happen quickly for minor fixes, or, in the case of large
 and controversial changes, go on for years.  Much developer frustration
 comes from a lack of understanding of this process or from attempts to
 circumvent it.
-
 패치가 작성된다고 무작정 메인라인 커널로 바로 반영되는 것이 아니다. 각 패치의
 품질과 메인라인에 포함되는 것이 바람직한지 여부를 리뷰하기 위해서 다소 복잡한
 프로세스가 설계 되어있다. 이 프로세스는 작은 변경의 경우 신속하게 처리될수
-있고, 논란이 있는 큰 변경의 경우 수년에 걸쳐 처리 된다. 많은 개발자들이
-실패하는 이유는 이 프로세스에 대한 이해부족과 이 프로세스를 회피 하려고 하기
+있고, 논란이 있거나 큰 변경의 경우 수년에 걸쳐 처리 된다. 많은 개발자들이
+실패하는 이유는 이 프로세스에 대한 이해부족과 이 프로세스를 무시 하려고 하기
 때문이다.
 
 In the hopes of reducing that frustration, this document will describe how
@@ -224,14 +223,14 @@ treatment will come in later sections.
 다음에 다시 다룰 것이다.
 
 The stages that a patch goes through are, generally:
-일반적으로 패치가 거쳐가는 스테이지는 다음과 같다:
+일반적으로 패치가 거쳐가는 단계는 다음과 같다:
 
  - Design.  This is where the real requirements for the patch - and the way
    those requirements will be met - are laid out.  Design work is often
    done without involving the community, but it is better to do this work
    in the open if at all possible; it can save a lot of time redesigning
    things later.
- - 디자인. 패치에 대한 실제 요구 사항(과 그 요구 사항이 충족되는 방법)이
+ - 설계. 패치에 대한 실제 요구 사항(과 그 요구 사항이 충족되는 방법)이
    배치되어 있는 곳이다. 디자인 작업은 종종 커뮤니티의 관여없이 수행하지만,
    가능하다면 이 작업을 공개 해서 수행하면 나중에 다시 설계하는 일을 많이 줄일
    수 있다.
@@ -254,9 +253,9 @@ The stages that a patch goes through are, generally:
    patch with work being done by others.
  - 광범위 리뷰. 패치가 메인 라인 포함시키기 위한 준비가 되면, 해당 서브시스템
    메인테이너에게 받아들여 져야한다.(이것이 메인라인에 포함되는것을 보장하는
-   것은 아니다) 패치는 메인테이너의 서브트리와 다음 트리에 표시된다. 프로세스가
-   진행되면서, 이 단계는 패치의 보다 광범위한 리뷰에 이르게하고 패치 통합 될 때
-   발생하는 모든 문제가 발견된다.
+   것은 아니다) 패치는 메인테이너의 서브트리와 -next 트리에 나타나게 될것이다.
+   프로세스가 진행되면서, 이 단계는 패치의 보다 광범위한 리뷰에 이르게하고 패치
+   통합 될 때 발생하는 모든 문제가 발견된다.
 
 -  Please note that most maintainers also have day jobs, so merging
    your patch may not be their highest priority.  If your patch is
@@ -268,17 +267,17 @@ The stages that a patch goes through are, generally:
    and keep sending it for review and merging.
 -  대부분의 메인테이터는 본업이 따로 있어서 패치를 병합하는 것이 최우선 순위가
    아닐 수 있다. 당신의 패치가 수정이 필요하다고 피드백을 받게 되면, 그에 따른
-   수정을 하거나 수정할 수 없는 타당함을 보여야한다. 패치에 대한 이견이 없음에도
-   적절한 서브 시스템 또는 드라이버 메인테이너에 의해 병합되지 않는 경우에는
-   패치를 현재 커널버전에 맞게 꾸준히 업데이트하여 리뷰 및 병합에 대한 요청을
-   보내야 한다.
+   수정을 하거나 수정이 불가능하면 그에 따른 타당함을 보여야한다. 패치에 대한
+   이견이 없음에도 적절한 서브 시스템 또는 드라이버 메인테이너에 의해 병합되지
+   않는 경우에는 패치를 현재 커널버전에 맞게 꾸준히 업데이트하여 리뷰 및 병합에
+   대한 요청을 보내야 한다.
 
  - Merging into the mainline.  Eventually, a successful patch will be
    merged into the mainline repository managed by Linus Torvalds.  More
    comments and/or problems may surface at this time; it is important that
    the developer be responsive to these and fix any issues which arise.
- - 메인라인 머지. 성공적인 패치는 결국 리누스 토발즈가 관리하는 메인라인
-   저장소에 머지 된다. 더 많은 의견 또는 문제가 이 과정에서 드러날 수 있다.
+ - 메인라인에 반영. 성공적인 패치는 결국 리누스 토발즈가 관리하는 메인라인
+   저장소에 병합 된다. 더 많은 의견 또는 문제가 이 과정에서 드러날 수 있다.
    개발자가 이들에 반응하고 발생하는 모든 문제를 해결하는 것이 중요하다.
 
  - Stable release.  The number of users potentially affected by the patch
@@ -756,3 +755,5 @@ building respect with the rest of the development community.
 버그를 확인해 볼것을 추천한다. 고쳐야할 이슈는 절대 부족하지 않다. 이런 이슈를
 다룸으로써 개발자는 경험을 얻을 수 있을것이고, 동시에 커뮤니티에서의 신뢰를
 쌓아 나갈 수 있을 것이다.
+
+[1] http://en.wikipedia.org/wiki/Rolling_release

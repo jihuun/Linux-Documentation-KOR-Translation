@@ -19,12 +19,12 @@ code.  You, as the author of that code, will be expected to work with the
 kernel community to ensure that your code is up to the kernel's quality
 standards.  A failure to participate in this process is quite likely to
 prevent the inclusion of your patches into the mainline.
-너무 완벽하여 처음 올렸을때 부터 개선이 필요없는 패치는 거의 없다.  커널 개발
-프로세스는 이 사실을 인지 하고 있다. 포스팅 된 코드의 지속적인 개선을 강력하게
-지향한다.  그 코드의 작성자로써 당신의 코드가 커널의 품질 기준의 부합하는
-코드인지 확실히 할 수 있도록 커널 커뮤니티와 함께 논의 해야 할 것이다.  이
-프로세스 참여에 실패한 패치는 메인라인에 반영되는 패치에 포함되지 못할 가능성이
-크다.
+너무 완벽하여 처음 올렸을때 부터 개선이 필요없는 패치는 거의 없다.  이것은 커널
+개발 프로세스에서 인식 되어온 사실이다.  포스팅 된 코드의 지속적인 개선을
+강력하게 지향한다.  그 코드의 작성자로써 당신의 코드가 커널의 품질 기준의
+부합하는 코드인지 확실히 할 수 있도록 커널 커뮤니티와 함께 논의 해야 할 것이다.
+이 프로세스 참여에 실패한 패치는 메인라인에 반영되는 패치에 포함되지 못할
+가능성이 크다.
 
 
 6.1: WORKING WITH REVIEWERS
@@ -109,8 +109,8 @@ you're not even solving the right problem.
 가지고 있다면, 왜 본인의 수정사항이 해당문제의 해결책인지 설명해라.  그 설명이
 타당하다면, 리뷰자도 수긍할 것이다. 반면, 본인의 설명이 설득적이지 못하고, 특히
 다른 사람들이 리뷰자의 의견에 동의 한다면 다시 한번 생각해 보는것이 좋을
-것이다. 이것은 근본적으로 무엇이 잘못됐는지도 모르는 문제를 해결하려고 하는 눈먼
-장님이 되기 쉬우며, 아마 심지어 그 문제를 해결 못할 것이다.
+것이다. 이것은 근본적으로 무엇이 잘못됐는지도 모르는 문제를 해결하려고 하는
+눈먼 장님이 되기 쉬우며, 아마 심지어 그 문제를 해결 못할 것이다.
 
 Andrew Morton has suggested that every review comment which does not result
 in a code change should result in an additional code comment instead; that
@@ -309,9 +309,9 @@ either forward it on to the subsystem maintainer (be sure to include a
 proper From: line so that the attribution is correct, and add a signoff of
 your own), or send an Acked-by: response back and let the original poster
 send it upward.
-언젠가는 메일을 열어봤을때 누군가가 당신의 코드를 수정한 패치를 보냈을 수도 있다.
-이것은 코드가 공개되었을때 가질 수 있는 장점중 하나이다. 그 패치에 동의 한다면
-서브시스템 메인테이너에게 포워딩 할 수도 있고(##적절한 출처를 밝혔는지
+언젠가는 메일을 열어봤을때 누군가가 당신의 코드를 수정한 패치를 보냈을 수도
+있다.  이것은 코드가 공개되었을때 가질 수 있는 장점중 하나이다. 그 패치에 동의
+한다면 서브시스템 메인테이너에게 포워딩 할 수도 있고(##적절한 출처를 밝혔는지
 주의하라, attribution이 올바른지, 본인의 signoff를 추가했는지), ##포스팅을 한
 원저자가 패치를 보낼 수 있도록 도와줄 수도 있다.
 
