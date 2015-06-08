@@ -6,7 +6,7 @@ though, much of the groundwork for success is best laid before the first
 line of code is written.  Some time spent in early planning and
 communication can save far more time later on.
 리눅스 커널 개발 프로젝트를 고려 할 때, 바로 코딩하고 싶은 유혹이 있을 수 있다.
-하지만 여타 의미있는 프로젝트들과 마찬가지로 첫 번째 코드 행이 기록되기 전에
+##하지만 여타 의미있는 프로젝트들과 마찬가지로 첫 번째 코드 행이 기록되기 전에
 성공을위한 토대의 대부분은 완성되어 있다. 초기 계획과 의사소통에 소요 된 시간은
 나중에 훨씬 더 많은 시간을 절약 할 수 있다.
 
@@ -18,10 +18,10 @@ clear description of the problem to be solved.  In some cases, this step is
 easy: when a driver is needed for a specific piece of hardware, for
 example.  In others, though, it is tempting to confuse the real problem
 with the proposed solution, and that can lead to difficulties.
-여타 엔지니어링 프로젝트들과 마찬가지로, 성공적인 커널 개선은 해결할 문제의
-명확한 설명과 함께 시작된다. 어떤 경우, 이 단계는 매우 간단하다.  드라이버가
-특정 하드웨어를 위해 필요한 경우가 한 예이다. 하지만 대부분의 경우 의도된
-해법과 실제 문제를 혼동하는 유혹에 빠지기 쉽고 그것은 어려움을 초래할 수 있다.
+여타 엔지니어링 프로젝트들과 마찬가지로, 성공적인 커널 개선은 해결할 문제를
+명확하게 기술 하는것 으로부터 시작된다.  몇몇 경우, 이 단계는 매우 간단하다.
+드라이버가 특정 하드웨어를 위해 필요한 경우가 한 예이다. ##하지만 대부분의 경우
+의도된 해결방법과 실제 문제를 혼동하기 쉽고 그것으로 인해 어려움에 처할 수 있다.
 
 Consider an example: some years ago, developers working with Linux audio
 sought a way to run applications without dropouts or other artifacts caused
@@ -32,7 +32,7 @@ access to the realtime scheduler.  This module was implemented and sent to
 the linux-kernel mailing list, where it immediately ran into problems.
 예를 살펴보면, 몇년전 리눅스 오디오 작업을 하던 개발자들이 시스템에 과도한
 대기시간으로 인한 영향이나 손실 없이 응용 프로그램을 실행할 수 있는 방법을
-모색하고 있다.  그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에 hook
+모색하고 있었다.  그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에 hook
 하기위한 커널 모듈이었다; 이 모듈은 특정 응용프로그램이 실시간 스케줄러에 대한
 액세스 권한을 부여하도록 구성될 수 있다.  이 모듈은 구현되어 즉시 linux-kernel
 메일링리스트로 보내져 문제에 바로 적용되었다.
@@ -55,7 +55,7 @@ they had implemented; they were unwilling to accept alternatives.  The
 resulting disagreement left those developers feeling disillusioned with the
 entire kernel development process; one of them went back to an audio list
 and posted this:
-그러나 오디오 커뮤니티는 그들이 구현 한 솔루션 외에 대안을 생각 할 수 없었다;
+그러나 오디오 커뮤니티는 그들이 구현 한 솔루션 외에 대안을 생각 할 수 없었다.
 그들은 대안을 수용하지 않으려했고 커널 커뮤니티와 불일치로 전체 커널 개발
 프로세스에 환멸을 느끼게 됐다. 오디오 개발자들 중 하나는 오디오 리스트로 가서
 다음 글을 게시했다:
@@ -77,7 +77,7 @@ the right solution to the problem than they were with a specific module.
 The moral of the story is to focus on the problem - not a specific solution
 - and to discuss it with the development community before investing in the
 creation of a body of code.
-실제 상황은 달랐다; 커널 개발자들은 특정 모듈에 대한 문제로 본것이 아니라
+실제 상황은 달랐다. 커널 개발자들은 특정 모듈에 대한 문제로 본것이 아니라
 시스템 안정성, 장기간 유지보수성, 정확한 솔루션을 고려한 것이다.  이 이야기의
 교훈은 특정 솔루션에 메달릴 것이 아니라 문제에 집중하고 코딩을 시작하기 전에
 개발 커뮤니티와 충분히 논의해야 한다는 것이다.
@@ -118,17 +118,17 @@ communication can save time and trouble in a number of ways:
    driver which duplicated an existing driver that the new author had been
    unaware of.  Code which reinvents existing wheels is not only wasteful;
    it will also not be accepted into the mainline kernel.
- - 이해하지 못한 방법들로 커널이 해결하고자 하는 문제들은 리눅스 커널은 너무
+ - ##이해하지 못한 방법들로 커널이 해결하고자 하는 문제들은 리눅스 커널은 너무
    크고 즉시 눈에 띄지 않는 수 많은 특징과 기능이 있다. 특정 한 사람을 만족시킬
-   정도로 커널 모든 기능이 문서화 되어 있는 것은 아니다. 그리고 놓치기 쉽다.
-   메인테이너는 새로운 작가를 통해 중복 되었다는것을 자각하지도 못한채 작업한
+   정도로 커널 모든 기능이 문서화 되어 있는 것은 아니다. ##그리고 놓치기 쉽다.
+   ##메인테이너는 새로운 작가를 통해 중복 되었다는것을 자각하지도 못한채 작업한
    이미 존재하는 드라이버가 포스팅 되오던것을 봐왔다.  이미 존재하는 코드를 재
    작업하는 것은 쓸모없을 뿐더러 메인라인 커널에서 받아드려지지 못할 것이다.
 
  - There may be elements of the proposed solution which will not be
    acceptable for mainline merging.  It is better to find out about
    problems like this before writing the code.
-   메인 라인에 반영되지 못할 솔루션을 제안하는 것들이 있을 것이다. 그럴바에는
+   메인 라인에 반영되지 못할 솔루션으로 제안되는 것들이 있을 것이다. 그럴바에는
    차라리 코드를 작성하기 전에 이런 문제를 찾는것이 더 낫다.
 
  - It's entirely possible that other developers have thought about the
@@ -213,7 +213,7 @@ patches, and who, if anybody, is attaching Signed-off-by lines to those
 patches.  Those are the people who will be best placed to help with a new
 development project.
 메인테이너를 찾는것은 좀더 어려울 수 있다. 마찬가지로 MAINTAINERS 파일이 시작
-지점이다.  이 파일은 항상 최신 상태를 유지하지 않는 경향이 있다. 게다가 모든
+지점이다.  그러나 이 파일은 항상 최신 상태를 유지하지 않는 경향이 있다. 게다가 모든
 서브시스템을 다 포함하는 것도 아니다.  또한 MAINTAINERS 파일에 있는 사람이 현재
 실제 그 역할을 하지 않을 수도 있다.  그래서 누굴 컨택 해야할지 확실 하지 않을
 때 좋은 방법은 git을(더 정확히는 git log) 이용 하는 것이다.  git log를 통해
@@ -270,7 +270,7 @@ designs; for that reason, kernel developers would rather see the code.
 무반응이다.  슬픈 사실은 (1)커널 개발자들은 꽤 바쁘다는것 (2)원대한 계획은
 가지고잇는 개발자들이 적지 않다는것 그리고 그들을 지원하기 위한 코드가
 있다는것. (3)누구도 아이디어에 대해서 리뷰나 답변을 해줄 의무는 없다는 점.
-이런 것들을 떠나서 높은 수준의 설계는 종종 실제 누군가가 그것을 개발할때만
+##이런 것들을 떠나서 높은 수준의 설계는 종종 실제 누군가가 그것을 개발할때만
 발견되는 문제가 발생하기도 한다.  이러한 이유 때문에 커널 개발자는 오히려
 코드를 보는것을 선호한다.
 
@@ -306,8 +306,8 @@ acknowledged existence.  Revealing their employer's plans on a public
 mailing list may not be a viable option.  In cases like this, it is worth
 considering whether the secrecy is really necessary; there is often no real
 need to keep development plans behind closed doors.
-몇몇 리더는 이시점에서 그들의 커널 작업이 공식적으로 인정되지 않는 제품을
-지원하기 위한 의도가 아니냐는 생각을 가질 수도 있다. 고용주의 계획을 공개적인
+##몇몇 리더는 이시점에서 그들의 커널 작업이 공식적으로 인정되지 않는 제품을
+지원하기 위한 의도가 아니냐는 생각을 가질 수도 있다. ##고용주의 계획을 공개적인
 메일링 리스트에 드러내는것은 실행 가능한 방법이 아닐 것이다. 이런 경우에는
 이렇게 비밀을 유지하는것이 진정 필요한지에 대해서 고민해보는 것이 좋다. 개발
 계획을 비공개적으로 유지하는것은 많은 경우에 필요하지 않다.
