@@ -144,10 +144,11 @@ flexibility into a source file.  But the preprocessor is not C, and heavy
 use of it results in code which is much harder for others to read and
 harder for the compiler to check for correctness.  Heavy preprocessor use
 is almost always a sign of code which needs some cleanup work.
-##C 전처리기를 C프로그래머에게 효율적으로 소스 파일에 상당한 유연성을인코딩할수
-있는 방법으로 강력한 유혹을 제시 할 것이다. 그러나 전처리기는 C가 아니며, 많이
-사용하면 가독성이 떨어지고 컴파일러가 정확성을 확인하기 힘들어 진다.  과도한
-전처리기 사용은 거의 항상 정리 작업이 필요하다는 코드의 표시이다.
+##C 전처리기는 C 프로그래머가 유연성을 코드에 넣을 수 있도록 부호화하고 매우
+효율적인 코드가 될 수 있는 방법이므로 사용하고 싶은 욕구가 생길 것이다.
+그러나 전처리기는 C가 아니며, 많이 사용하면 가독성이 떨어지고 컴파일러가
+정확성을 확인하기 힘들어 진다.  과도한 전처리기 사용은 거의 항상 정리 작업이
+필요하다는 코드의 표시이다.
 
 Conditional compilation with #ifdef is, indeed, a powerful feature, and it
 is used within the kernel.  But there is little desire to see code which is
@@ -157,11 +158,11 @@ Conditionally-compiled code can be confined to functions which, if the code
 is not to be present, simply become empty.  The compiler will then quietly
 optimize out the call to the empty function.  The result is far cleaner
 code which is easier to follow.
-#ifdef와 조건부 컴파일은 강력한 기능이며 커널 내에서 사용된다. 그러나 #ifdef
-블록을 자유롭게 뿌린 코드를 보고 싶지는 않다. 일반적으로, #ifdef 사용은 가능한한
-헤더 파일에 국한되어야한다. ##조건부 컴파일 된 코드는 단순히 빈되고, 코드가
-존재하지 않을 경우 기능에 국한 될 수있다. 컴파일러는 조용히 빈 함수 호출을
-최적화한다. 결과는 따라하기 쉬운 훨씬 깔끔한 코드이다.
+#ifdef와 조건부 컴파일은 강력한 기능이며 커널 내에서 사용되고 있다. 그러나 #ifdef
+블록이 무분별하게 사용된 코드는 별로 보고 싶지 않을 것이다. 일반적으로, #ifdef 사용은 가능한한
+헤더 파일에만 국한 되어야한다. 만약 ##코드가 보여지지 않는다면, 조건부 컴파일 된 코드는 
+단순하고 빈 함수에 국한되어 사용될 수 있다. 컴파일러는 조용히 빈 함수 호출을
+최적화 할것이다. 그 결과로 따라가기 쉬운 훨씬 깔끔한 코드가 될 것이다.
 
 C preprocessor macros present a number of hazards, including possible
 multiple evaluation of expressions with side effects and no type safety.
@@ -169,11 +170,11 @@ If you are tempted to define a macro, consider creating an inline function
 instead.  The code which results will be the same, but inline functions are
 easier to read, do not evaluate their arguments multiple times, and allow
 the compiler to perform type checking on the arguments and return value.
-C 전처리기 매크로는 표현식의 다양한 계산결과 등 부작용과 타입 세이프티 미지원
-등 위험 요소를 갖고있다. 만약 매크로를 사용하고 싶은 경우, 대신 인라인 함수
-사용을 고려 할 수 있다. 결과 코드는 동일하지만, 인라인 함수가 가독성이 좋고
-인수를 여러번 평가하지않고 컴파일러가 인수 및 반환 값에 유형 검사를 수행 할 수
-있다.
+부작용을 포함하는 매크로의 ##평가와 타입의 불안정성을 포함하여, C 전처리기
+매크로는 많은 위험요소를 가지고 있다.  만일 매크로를 정의하고자 한다면, 차라리
+인라인 함수를 사용하는것이 낫다.  결과 코드는 동일하지만, 인라인 함수가 더
+가독성이 좋으며, 인자를 여러번 ##평가하지 않고, 컴파일러가 인자 및 반환 값에
+타입 검사를 수행 할 수 있다.
 
 
 * Inline functions
@@ -188,13 +189,14 @@ slow execution dramatically.  Inline functions, as a rule, should be quite
 small and relatively rare.  The cost of a function call, after all, is not
 that high; the creation of large numbers of inline functions is a classic
 example of premature optimization.
-인라인 함수는 위험요소를 갖고 있지만, 프로그래머는 함수호출을 피하고 소스파일을
-인라인 함수로 채워 고유의 효율성에 매혹될 수 있다. 그러나 이러한 기능은 실제로
-성능을 감소시킬 수 있다. 이들 코드는 각 호출 위치에 복제되기 때문에 그들은
-컴파일 커널의 크기를 팽창시키고 프로세서의 메모리 캐시에 압력을 주어극적으로
-실행속도를 느려지게 할 수 있다. 인라인 함수는 원칙적으로 아주 작고 드물게
-사용해야한다.  결국 함수 호출의 비용은 그렇게 높지 않다. 많은 인라인 함수
-생성은 조기 최적화의 고전적인 예이다.
+그러나 인라인 함수자체도 위험요소를 갖고 있다.  프로그래머는 뛰어난 효율성에
+매료되기 쉽고, 그 기저에는 함수 호출을 피하고 소스코드를 인라인 함수로 채우고자
+함이 깔려있다.  그러나 실제로 인라인 함수는 성능을 감소 시킬 수도 있다.  이들
+코드는 각 호출 위치에 복제되기 때문에 그들은 컴파일된 커널의 크기를 팽창시키고
+프로세서의 메모리 캐시에 압력을 주어 극적으로 실행속도를 느려지게 할 수 있다.
+인라인 함수는 원칙적으로 아주 작고 드물게 사용해야한다.  결국 함수 호출의
+비용은 그렇게 높지 않다.  인라인 함수를 과도하게 사용하는것은 오히려 최적화의
+시기상조 라고 볼 수 있다.
 
 In general, kernel programmers ignore cache effects at their peril.  The
 classic time/space tradeoff taught in beginning data structures classes

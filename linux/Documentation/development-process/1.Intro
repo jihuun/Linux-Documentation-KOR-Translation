@@ -403,7 +403,7 @@ kernel.
 Copyright assignments are not required (or requested) for code contributed
 to the kernel.  All code merged into the mainline kernel retains its
 original ownership; as a result, the kernel now has thousands of owners.
-커널에 기여하는 코드를 위한 저작권 할당은 따로 필요없다.  메인 라인 커널이
+커널에 기여하는 코드를 위한 저작권 할당은 따로 필요없다.  ##메인 라인 커널이
 가지고 있는 저작권이 자동으로 적용되기 때문에 자동으로 오픈소스가 된다.
 
 One implication of this ownership structure is that any attempt to change
@@ -412,10 +412,9 @@ few practical scenarios where the agreement of all copyright holders could
 be obtained (or their code removed from the kernel).  So, in particular,
 there is no prospect of a migration to version 3 of the GPL in the
 foreseeable future.
-이런 소유 구조는 리눅스의 라이선스를 변경하려는 시도는 불가능함을 의미한다.
-모든 저작권 소유자의 동의를 얻는 등 (또는 코드가 커널에서 제거) 몇 가지
-실제적인 시나리오가 있고, 그래서 가까운 미래에 GPL 버전 3으로 마이그레이션은
-전혀 전망이 없다.
+##이런 소유 구조의 의미는 커널의 라이센스를 변경하는 것이 불가능하다는 것을 말한다.
+##모든 저작권 소유자의 동의를 얻을 수 있는 경우는 (또는 코드가 커널에서 제거되는 경우는) 거의 없다.
+##그래서 가까운 미래에 GPL 버전 3으로 마이그레이션은 전혀 전망이 없다.
 
 It is imperative that all code contributed to the kernel be legitimately
 free software.  For that reason, code from anonymous (or pseudonymous)
@@ -425,8 +424,8 @@ kernel under the GPL.  Code which has not been licensed as free software by
 its owner, or which risks creating copyright-related problems for the
 kernel (such as code which derives from reverse-engineering efforts lacking
 proper safeguards) cannot be contributed.
-모든 코드가 커널에 합법적인 자유 소프트웨어(free software)로 기여하는 것이
-필수적이다.  이러한 이유로, 익명 (또는 가명) 참여자의 코드는 허용되지 않는다.
+모든 코드를 커널에 기여할 때, 자유 소프트웨어(free software)에 합법적이여야 하는것은 필수이다.
+이러한 이유로, 익명 (또는 가명) 참여자의 코드는 허용되지 않는다.
 모든 참여자는 코드가 GPL 아래 커널과 함께 배포 될 수 있다고 자신의 코드에
 서명(sign-off) 해야 한다.  소유자에 의해 free software로 허가되지 않았거나 (ex.
 적절한 보호장치없이 리버스 엔지니어링으로 파생 된 코드로) 커널에 대한 저작권
