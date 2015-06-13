@@ -5,9 +5,9 @@ process, the proof of any kernel development project is in the resulting
 code.  It is the code which will be examined by other developers and merged
 (or not) into the mainline tree.  So it is the quality of this code which
 will determine the ultimate success of the project.
-견고하고 커뮤니티 중심인 디자인 프로세스에 대해 할 말이 많지만, 어떠한 커널
-개발 프로젝트도 결국은 코드를 증거로 한다. 이것은 다른 개발자들에게 리뷰받고
-메인라인 트리에 머지되거나 반려되는 코드를 말한다. 따라서 프로젝트의 궁극적인
+커뮤니티 중심의 견고한 디자인 프로세스에 대해 할 말이 많지만, 커널의 어떠한
+개발 프로젝트라도 코드로 결과를 증명한다.  이것은 다른 개발자들에게 리뷰받고
+메인라인 트리에 머지되거나 반려되는 코드를 말한다.  따라서 프로젝트의 궁극적인
 성공을 결정하는것은 결국 이 코드의 품질이다.
 
 This section will examine the coding process.  We'll start with a look at a
@@ -73,7 +73,7 @@ their own sake.
 가정해보자.  개발자는 과정에 익숙해지기 위해 또는 이름을 기록에 남기기 위해(혹은 둘다)
 코딩스타일 수정 패치를 생성하기 시작할 것이다. 그러나 순수하게 코딩 스타일만 수정한 패치는
 커뮤니티를 방해하는 잡음 정도로 보일 것이며, 커뮤니티에서 냉담한 반응을 얻게 될 것이다.
-따라서 이런 유형의 패치를 피해야한다. 다른 이유를 위해 패치하면서 코딩 스타일을
+따라서 이런 유형의 패치를 피해야한다. ##다른 이유를 위해 패치하면서 코딩 스타일을
 수정하는 것은 자연 스럽지만 코딩 스타일 자체만으로 패치가 만들어 져서는 안된다.
 
 The coding style document also should not be read as an absolute law which
@@ -112,8 +112,8 @@ programmer's early expectation.  Kernel developers will routinely submit
 patches to remove unused arguments; they should, in general, not be added
 in the first place.
 항상 모든 호출자에 의해 0으로 전달되는 인자(argument)를 가진 함수가 있다고 가정하자.
-혹시 누군가가 사용할 수 있으니 유연하게 그 인자를 유지할 수 있다.  이 경우
-미묘하게 잘못 되어도 사용된적이 없기 때문에 발견되지 않을 확률이 높다.  막상
+혹시 누군가가 사용할 수 있으니 유연하게 그 인자를 유지할 수 있다.  그러나 이 경우
+미묘하게 잘못 되어도 사용된적이 없기 때문에 문제가 발견되지 않을 확률이 높다.  막상
 여분의 유연성을 위해 필요할 때도 프로그래머의 기대처럼 작동하지 않는다. 커널
 개발자들은 사용되지 않는 인자를 제거하는 패치를 주기적으로 제출한다. 일반적으로,
 그런 인자는 애초에 추가되지 않았어야 한다.
@@ -147,8 +147,8 @@ is almost always a sign of code which needs some cleanup work.
 ##C 전처리기는 C 프로그래머가 유연성을 코드에 넣을 수 있도록 부호화하고 매우
 효율적인 코드가 될 수 있는 방법이므로 사용하고 싶은 욕구가 생길 것이다.
 그러나 전처리기는 C가 아니며, 많이 사용하면 가독성이 떨어지고 컴파일러가
-정확성을 확인하기 힘들어 진다.  과도한 전처리기 사용은 거의 항상 정리 작업이
-필요하다는 코드의 표시이다.
+정확성을 확인하기 힘들어 진다.  코드에 과도한 전처리기가 사용된다는것은 대개 항상 정리 작업이
+필요하다는 신호 이다.
 
 Conditional compilation with #ifdef is, indeed, a powerful feature, and it
 is used within the kernel.  But there is little desire to see code which is
@@ -158,10 +158,10 @@ Conditionally-compiled code can be confined to functions which, if the code
 is not to be present, simply become empty.  The compiler will then quietly
 optimize out the call to the empty function.  The result is far cleaner
 code which is easier to follow.
-#ifdef와 조건부 컴파일은 강력한 기능이며 커널 내에서 사용되고 있다. 그러나 #ifdef
+#ifdef와 조건부 컴파일은 강력한 기능이며 커널 내에서도 사용되고 있다. 그러나 #ifdef
 블록이 무분별하게 사용된 코드는 별로 보고 싶지 않을 것이다. 일반적으로, #ifdef 사용은 가능한한
 헤더 파일에만 국한 되어야한다. 만약 ##코드가 보여지지 않는다면, 조건부 컴파일 된 코드는 
-단순하고 빈 함수에 국한되어 사용될 수 있다. 컴파일러는 조용히 빈 함수 호출을
+단순하고 빈(empty) 함수에 국한되어 사용될 수 있다. 컴파일러는 조용히 빈 함수 호출을
 최적화 할것이다. 그 결과로 따라가기 쉬운 훨씬 깔끔한 코드가 될 것이다.
 
 C preprocessor macros present a number of hazards, including possible
@@ -170,8 +170,8 @@ If you are tempted to define a macro, consider creating an inline function
 instead.  The code which results will be the same, but inline functions are
 easier to read, do not evaluate their arguments multiple times, and allow
 the compiler to perform type checking on the arguments and return value.
-부작용을 포함하는 매크로의 ##평가와 타입의 불안정성을 포함하여, C 전처리기
-매크로는 많은 위험요소를 가지고 있다.  만일 매크로를 정의하고자 한다면, 차라리
+C 전처리기 매크로는 부작용을 포함하는 매크로의 ##평가와 타입의 불안정성을
+포함하여, 많은 위험요소를 가지고 있다.  만일 매크로를 정의하고자 한다면, 차라리
 인라인 함수를 사용하는것이 낫다.  결과 코드는 동일하지만, 인라인 함수가 더
 가독성이 좋으며, 인자를 여러번 ##평가하지 않고, 컴파일러가 인자 및 반환 값에
 타입 검사를 수행 할 수 있다.
@@ -236,7 +236,7 @@ designed to work on multiprocessor systems.  Before this networking stack
 retrofitted onto it.
 이 코드는 기업의 ##문 뒤에서 개발 되었다. 그러나 하나의 큰 문제는 이것이
 멀티프로세서 시스템에서 작동하도록 설계되지 않았다는 것이다.이 네트워킹
-스택(mac80211)은 머지되기 전에 lock방식이 추가되어야 했다.
+스택(mac80211라고 불리는)은 머지되기 전에 락(lock) 메커니즘이 추가되어야 했다.
 
 Once upon a time, Linux kernel code could be developed without thinking
 about the concurrency issues presented by multiprocessor systems.  Now,
@@ -245,7 +245,7 @@ single-processor systems, work being done to improve responsiveness will
 raise the level of concurrency within the kernel.  The days when kernel
 code could be written without thinking about locking are long past.
 옛날 옛적엔 리눅스 커널 코드는 멀티프로세서 시스템에 의해 발생되는 동시성
-문제를 고려하지 않고 개발 될 수 있었다. 그러나 지금,이 문서는 듀얼 코어
+문제를 고려하지 않고 개발 될 수 있었다. 그러나 지금, 이 문서는 듀얼 코어
 노트북에서 기록되고 있다.  심지어 싱글프로세서 시스템에서 응답성을 개선하기
 위한 작업은 커널내에서 동시성의 수준을 올릴 것이다. 커널 코드가 lock에 대해
 생각하지 않고 작성되던 시절은 오래전에 끝났다.
@@ -274,10 +274,10 @@ regressions have become most unwelcome in the mainline kernel.  With few
 exceptions, changes which cause regressions will be backed out if the
 regression cannot be fixed in a timely manner.  Far better to avoid the
 regression in the first place.
-마지막으로 중요한 위험요소가 있다. 그것은 기존의 사용자 기능을 고장낼 수
+마지막으로 중요한 위험요소가 있다. ##그것은 기존의 사용자 기능을 고장낼 수
 있는(하지만 큰 개선을 가져올 수있는) 변경을 하고 싶을 수 있다. 이러한 종류의
 변경은 "regression" 이라고 하며 메인라인 커널에서 가장 환영받지 못할
-것이다.몇가지 예외케이스를 제외하고 regression이 빠른시일내에 고쳐질수 없는
+것이다. ##몇가지 예외케이스를 제외하고 regression이 빠른시일내에 고쳐질수 없는
 경우 regression의 원인은 되돌려 진다. 제일 좋은 방법은 regression을 애초에
 피하는 것이다.
 
@@ -294,11 +294,14 @@ regression은 정당화 되는것에 대한 논쟁이 있다.  ##열개의 시�
 	So we don't fix bugs by introducing new problems.  That way lies
 	madness, and nobody ever knows if you actually make any real
 	progress at all. Is it two steps forwards, one step back, or one
-	step forward and two steps back?
+	step forward and two steps back?  Different people will give different
+	answers.  That's why regressions are _so_ much more important than new
+	bugfixes.
 	따라서 우리는 새로운 문제를 공개할 때, 버그를 수정하지 않는다. ##이것은
-	정신나간 방법이다. 또한 당신이 실제 어떠한 진전을 이뤄냈는지 아무도
-	모른다.  이것은 두 걸음 진전 한 걸음 후퇴 인가 한 걸음 진전 두 걸음
-	후퇴 인가?
+	정신나간 방법이 아니다. 또한 당신이 실제 어떠한 진전을 이뤄냈는지
+	아무도 모른다.  이것은 두 걸음 진전 한 걸음 후퇴 인가 한 걸음 진전 두
+	걸음 후퇴 인가? 서로 다른 사람들이 서로 다른 해결책을 내놓을 수 있다.
+	이것이 새로운 버그수정보다 regression이 더 중요한 이유이다.
 
 (http://lwn.net/Articles/243460/).
 
@@ -309,7 +312,7 @@ interfaces particularly challenging: since they cannot be changed in
 incompatible ways, they must be done right the first time.  For this
 reason, a great deal of thought, clear documentation, and wide review for
 user-space interfaces is always required.
-일종의 user-space ABI 수정사항에 관련된 regression은 특별히 환영받기 어렵다.
+일종의 user-space ABI 수정사항에 관련된 regression은 특히 환영받기 어렵다.
 ##일단 인터페이스가 user 공간으로 전달되면 불명확하게 지원될 것이다.  ##이
 사실은 user공간 인터페이스의 제작을 도전적으로 만든다.  ##그것이 양립할 수 없는
 방법으로 변경될 수 없을 때 부터, 처음부터 틀리지 않게 만들어 졌을 것이다.
@@ -535,6 +538,7 @@ sysfs나 /proc 파일과 같은 유져-공간 인터페이스에 관련된 코�
 The file Documentation/kernel-parameters.txt describes all of the kernel's
 boot-time parameters.  Any patch which adds new parameters should add the
 appropriate entries to this file.
+
 Documentation/kernel-parameters.txt 에는 커널의 부팅 타임 매개변수의 모든것이
 기술 되어있다.  새로운 매개변수가 포함 되는 패치를 적용 하고자 한다면 이 문서에
 해당 내용을 추가해야 한다.
