@@ -330,11 +330,11 @@ automated way.  Any problem caught by the computer is a problem which will
 not afflict a user later on, so it stands to reason that the automated
 tools should be used whenever possible.
 지금 당장은, 최소한 에러없는 코드를 작성하는 것은 우리 중 아주 소수만
-달성가능한 비현실적인 일일 것이다.  그러나, 우리가 바랄 수 있는것은, 코드가
+달성가능한 비현실적인 일일 것이다.  그러나, 우리가 기대할 수 있는것은, 코드가
 메인라인 커널에 반영되기 이전에 가능한한 많은 수의 에러가 발견되고 수정되는
 것이다. 그 목적을 달성하기 위해서, 커널 개발자들은 광범위하게 발생할 수 있는
 불분명한 문제들를 자동으로 잡아낼 수 있는 다양한 툴을 한데 모았다.  컴퓨터가
-잡아내는 문제들은 나중에 사용자에게 불편을 주는 문제는 아니다. 그래서 이런
+잡아내는 문제들이 나중에 사용자에게 불편을 주는 문제는 아니기 때문에 이런
 자동화 툴은 가급적이면 사용하는 것이 좋다.
 
 The first step is simply to heed the warnings produced by the compiler.
@@ -400,7 +400,7 @@ should not be used all of the time.  But some time spent learning the
 available options will likely be paid back many times over in short order.
 이외에도 다양한 디버깅 옵션이 존재한다. 그중 일부는 아래에서 살펴 볼 것이다.
 그것중 몇몇은 의미있는 성능 효과를 보이기도 하고 항상 사용하면 안되는 것도
-있다.  때때로 이런 사용 가능한 옵션을 익히는데 소모하는 시간은 아마 곧 두고두고
+있다.  ##때때로 이런 사용 가능한 옵션을 익히는데 소모하는 시간은 아마 곧 두고두고
 보상받을 수 있을 것이다.
 
 One of the heavier debugging tools is the locking checker, or "lockdep."
@@ -418,9 +418,9 @@ inclusion.
 가장 규모있는 디버깅 툴에는 locking checker 나 lockdep 이 있다.  이 툴은
 시스템에서 락(lock)을(스핀락 또는 뮤텍스) 획득 하거나 릴리즈 하는것을 추적한다.
 ##락의 획득 순서는 현재 인터럽트 환경이나 그 외의 것 에서 각각에게 영향을 준다.
-그것은 락이 항상 같은 순서로 획득되었다는것을 보장해준다. 그리고 인터럽트는
+그것은 락이 항상 같은 순서로 획득 되었다는것을 보장해준다. 그리고 인터럽트는
 모든 상황에 적용될 수 있다고 똑같이 가정할 수 있다.  다시말하면, lockdep은
-시스템이 간혹 deadlock에 빠질 수 있는 시나리오를 검출 할 수 있는 것이다.  이런
+시스템이 간혹 데드락(deadlock)에 빠질 수 있는 시나리오를 검출 할 수 있는 것이다.  이런
 종류의 문제는 시스템에 있어서 사용자나 개발자 모두를 괴롭힌다.  lockdep은 이런
 문제를 기한보다 일찍 자동으로 발견할 수 있도록 도와준다.  반영하고자 하는 모든
 종류의 중요한 락이 포함된 코드는 lockdep을 enable시켜 동작시켜봐야 한다.
@@ -560,7 +560,7 @@ information on how to create kerneldoc templates can be found in the file
 Documentation/kernel-doc-nano-HOWTO.txt.
 다양한 서브시스템의 내부 API정보는 특정 형식으로 작성하도록 기록되어 있다. 이
 작성물은 "kernel-doc" 스크립트의 다양한 방법에 의해 작성되거나 형식이 변환될 수
-있다. ##만약 kerneldoc 으로 작성된 서브시스템에서 작업을 한다면,외부 함수등을
+있다. ##만약 kerneldoc 으로 작성된 서브시스템에서 작업을 한다면, 외부 함수등을
 거기에 추가하거나 계속 유지해야 한다. 이런 문서가 없는 부분이있다면 kerneldoc
 코멘트를 추가하는것이 나중을 위해서 더 좋을 것이다.  이런 글의 형식과 어떻게
 kerneldoc 템플릿을 만들 수 있는지에 대한 정보는
@@ -572,7 +572,7 @@ the expectations for new code are higher than they were in the past;
 merging uncommented code will be harder.  That said, there is little desire
 for verbosely-commented code.  The code should, itself, be readable, with
 comments explaining the more subtle aspects.
-현재 커널 코드를 읽는 누구라도 코멘트가 가장 주목할 만한 것이라고 자각할
+##현재 커널 코드를 읽는 누구라도 코멘트가 가장 주목할 만한 것이라고 자각할
 것이다. 다시 말하자면, 새 코드에 대한 기대감은 과거 보다 더 커졌기 때문에,
 문서가 없는 코드는 더욱 반영하기 어려워 졌다. ##그렇다 치고 verbosely-commented
 에대한 욕망이 존재한다. ##코드는 설명과 함께 그 자체로 가독성이 있어야 한다.
@@ -601,7 +601,7 @@ or simply not using a specific functionality because it does not meet your
 needs, that may be a sign that the API needs to change.  As a kernel
 developer, you are empowered to make such changes.
 커널이 제공하는 유져 공간에서의 바이너리 인터페이스는 심각한 문제상황 말고는
-고장나기 어렵다.  대신, 커널의 내부 프로그래밍 인터페이스는 매우 유동적이며,
+문제가 발생하기 어렵다.  대신, 커널의 내부 프로그래밍 인터페이스는 매우 유동적이며,
 필요에따라 변경하는것이 가능하다.  커널 API 로 작업할 일이 생겼을때, 또는
 단순하게 원치않아서 특정 기능을 만들어 쓰지 않을때는 API가 수정이 필요하다는
 뜻이다. 커널 개발자로서 당신은 변경을 할 수 있는 권한을 가지고 있다.
