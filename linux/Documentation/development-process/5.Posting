@@ -77,7 +77,7 @@ sending patches to the development community.  These include:
 
 As a general rule, putting in some extra thought before posting code almost
 always pays back the effort in short order.
-일반적으로, 코드를 게시하기 전에 패치에 추가되는 것들은 짧은 시간에 좋은 결과로
+일반적으로, ##코드를 게시하기 전에 패치에 추가되는 것들은 짧은 시간에 좋은 결과로
 돌아온다.
 
 
@@ -86,7 +86,7 @@ always pays back the effort in short order.
 The preparation of patches for posting can be a surprising amount of work,
 but, once again, attempting to save time here is not generally advisable
 even in the short term.
-패치 포스팅을 위한 준비는 놀라운 만큼 많은양의 작업이 될수 있다. 그러나
+패치 포스팅을 위한 준비는 놀라운 만큼 많은양의 작업이 될수 있다. ##그러나
 일반적으로 이 단계에서 (단기적이라도) 시간을 절약하려는 시도는 권장하지 않는다.
 
 Patches must be prepared against a specific version of the kernel.  As a
@@ -114,9 +114,9 @@ everything else should be made as a logical series of changes.  Splitting
 up patches is a bit of an art; some developers spend a long time figuring
 out how to do it in the way that the community expects.  There are a few
 rules of thumb, however, which can help considerably:
-가장 간단한 변경만이 하나의 패치로 제작 되야한다; 다른 모든 변경은 다수의
+##가장 간단한 변경만이 하나의 패치로 제작 되야한다; 다른 모든 변경은 다수의
 시리즈로 만들어 져야한다. 패치를 분할하는것은 예술 작업과 같다; 일부 개발자는
-커뮤니티가 기대하는 방법을 찾는데 오랜시간을 보낸다. 그러나 상당히 도움이 될
+커뮤니티가 기대하는 방법을 찾는데 오랜시간을 보낸다. ##그러나 상당히 도움이 될
 수있는 규칙도 있다:
 
  - The patch series you post will almost certainly not be the series of
@@ -158,7 +158,7 @@ rules of thumb, however, which can help considerably:
    users who are engaging in the noble work of tracking down problems.
  - 각 패치는 정상적으로 빌드되고 실행되는 커널을 산출해야한다; 패치 시리즈가
    도중에 중단된 경우에도, 그 결과는 여전히 동작하는 커널이어야한다. 패치
-   시리즈의 부분 적용은 "git bisect"툴이 퇴보된 점을 찾기위해 사용될때 흔한
+   시리즈의 부분 적용은 "git bisect"툴이 ##퇴보된 점을 찾기위해 사용될때 흔한
    상황이다; 결과가 동작하지 않는 커널인 경우, 당신은 문제점을 추적하는 고귀한
    작업에 종사하는 개발자와 사용자의 삶을 어렵게 만들 것이다.
 
@@ -181,7 +181,7 @@ rules of thumb, however, which can help considerably:
    code should make that code active immediately.
  - 연속된 패치로 일련의 완전히 새로운 인프라를 추가할때, 이 세트의 마지막
    패치가 최종적으로 기능을 사용가능하게 할 때까지 그 인프라를 사용하지 않고
-   싶을수 있다.  이 유혹은 가능하면 피해야 한다; 그 시리즈가 퇴보된 점을
+   싶을수 있다.  이 ##유혹은 가능하면 피해야 한다; 그 시리즈가 ##퇴보된 점을
    추가했다면 bisect 툴은 진짜 문제가 어느 패치에 있건 마지막 패치를 원인으로
    지목할 것이다.  가능하면 새로운 코드를 추가하는 패치는 바로 그 코드를 활성화
    해야한다.
@@ -385,7 +385,7 @@ take care of:
  - 당신의 패치에 어리석은 실수가 없는지 확신하는가? 당신은 항상
    scripts/checkpatch.pl을 통해 패치를 체크해보고 제공되는 불만사항을
    해결해야한다. 커널 패치가 어때야하는지 충분히 생각해 보면서, checkpatch.pl
-   스크립트가  당신보다 똑똑하지 않다는것을 명심해야 한다.  checkpatch.pl
+   스크립트가  당신보다 똑똑하지 않다는것을 명심해야 한다.  ##checkpatch.pl
    불만을 수정하는것이 코드를 나쁘게 할 수 있다. 그런경우 수정하지 마라.
 
 Patches should always be sent as plain text.  Please do not send them as
