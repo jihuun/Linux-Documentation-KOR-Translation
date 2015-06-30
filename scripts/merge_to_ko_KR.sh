@@ -8,7 +8,10 @@ KO_DIR=../../ko_KR
 # TODO if there is no file in the ko_KR, create the file
 # TODO if [[ $(pwd) == ~~~/$DEF_DIR]]; then
 git diff $1 > ko_KR_diff.patch
+mv ko_KR_diff.patch $KO_DIR/.
 cd $KO_DIR
-patch -p3 < $DEF_DIR/ko_KR_diff.patch
-rm $DEF_DIR/ko_KR_diff.patch
+
+#patch -p3 -F3 --dry-run < ko_KR_diff.patch
+patch -p3 -F3 < ko_KR_diff.patch
+rm ko_KR_diff.patch
 rm $1.orig
