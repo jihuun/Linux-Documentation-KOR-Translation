@@ -1,14 +1,15 @@
 3: EARLY-STAGE PLANNING
+3: 초기 단계 계획하기
 
 When contemplating a Linux kernel development project, it can be tempting
 to jump right in and start coding.  As with any significant project,
 though, much of the groundwork for success is best laid before the first
 line of code is written.  Some time spent in early planning and
 communication can save far more time later on.
-리눅스 커널 개발 프로젝트를 고려 할 때, 바로 코딩하고 싶은 유혹이 있을 수 있다.
-##하지만 여타 의미있는 프로젝트들과 마찬가지로 첫 번째 코드 행이 기록되기 전에
-성공을위한 토대의 대부분은 완성되어 있다. 초기 계획과 의사소통에 소요 된 시간은
-나중에 훨씬 더 많은 시간을 절약 할 수 있다.
+리눅스 커널 개발 프로젝트에 참여하고자 할 때, 팔을 걷어 부치고 바로 코딩 부터
+하고싶어 질 수 있다.  ##하지만 여타 주요 프로젝트들과 마찬가지로 첫 번째 코드
+행이 작성되기 전에 성공적인 기초작업 대부분은 이미 완료되어 있다.  초기 계획과
+의사소통에 소요 된 시간을 통해 나중에 훨씬 더 많은 시간을 절약 할 수 있다.
 
 3.1: SPECIFYING THE PROBLEM
 3.1: 문제 명시하기
@@ -18,10 +19,10 @@ clear description of the problem to be solved.  In some cases, this step is
 easy: when a driver is needed for a specific piece of hardware, for
 example.  In others, though, it is tempting to confuse the real problem
 with the proposed solution, and that can lead to difficulties.
-여타 엔지니어링 프로젝트들과 마찬가지로, 성공적인 커널 개선은 해결할 문제를
-명확하게 기술 하는것 으로부터 시작된다.  몇몇 경우, 이 단계는 매우 간단하다.
+여타 엔지니어링 프로젝트들과 마찬가지로, 성공적으로 커널 개선을 하기 위해서는
+해결할 문제를 명확하게 기술 해야 한다.  몇몇 경우, 이 단계는 매우 간단하다.
 드라이버가 특정 하드웨어를 위해 필요한 경우가 한 예이다. ##하지만 대부분의 경우
-의도된 해결방법과 실제 문제를 혼동하기 쉽고 그것으로 인해 어려움에 처할 수 있다.
+제안된 해결방법과 실제 문제를 혼동하기 쉽고 그것이 문제를 일으키기도 한다.
 
 Consider an example: some years ago, developers working with Linux audio
 sought a way to run applications without dropouts or other artifacts caused
@@ -32,10 +33,10 @@ access to the realtime scheduler.  This module was implemented and sent to
 the linux-kernel mailing list, where it immediately ran into problems.
 예를 살펴보면, 몇년전 리눅스 오디오 작업을 하던 개발자들이 시스템에 과도한
 대기시간으로 인한 영향이나 손실 없이 응용 프로그램을 실행할 수 있는 방법을
-모색하고 있었다.  그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에 hook
-하기위한 커널 모듈이었다; 이 모듈은 특정 응용프로그램이 실시간 스케줄러에 대한
+모색하고 있었다.  그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에 Hooking
+하기위한 커널 모듈이었다.  이 모듈은 특정 응용프로그램이 실시간 스케줄러에 대한
 액세스 권한을 부여하도록 구성될 수 있다.  이 모듈은 구현되어 즉시 linux-kernel
-메일링리스트로 보내져 문제에 바로 적용되었다.
+메일링리스트로 보내져 문제에 바로 적용 되었다.
 
 To the audio developers, this security module was sufficient to solve their
 immediate problem.  To the wider kernel community, though, it was seen as a
@@ -46,9 +47,9 @@ via the rlimit mechanism for the short term, and ongoing latency reduction
 work in the long term.
 오디오 개발자들에게 이 보안 모듈은 즉시 문제를 해결하기에 충분했다.  그러나
 커널 커뮤니티에게 그것은 LSM 프레임워크의 오용(프로세스에 계획되지 않은 권한을
-부여) 및 시스템 안정성에 위험으로 간주되었다. 커뮤니티가 선호한 솔루션은
+부여) 혹은 시스템 안정성에 위험으로 간주되었다.  커뮤니티가 선호한 솔루션은
 단기적으로 rlimit 메커니즘을 통해 실시간 스케줄링에 액세스하고 장기적으로는
-지속적인 대기시간 감소 작업을 하는 것이었다.
+지속적인 대기시간의 감소 작업을 하는 것이었다.
 
 The audio community, however, could not see past the particular solution
 they had implemented; they were unwilling to accept alternatives.  The
@@ -57,17 +58,17 @@ entire kernel development process; one of them went back to an audio list
 and posted this:
 그러나 오디오 커뮤니티는 그들이 구현 한 솔루션 외에 대안을 생각 할 수 없었다.
 그들은 대안을 수용하지 않으려했고 커널 커뮤니티와 불일치로 전체 커널 개발
-프로세스에 환멸을 느끼게 됐다. 오디오 개발자들 중 하나는 오디오 리스트로 가서
-다음 글을 게시했다:
+프로세스에 환멸을 느끼게 됐다.  오디오 개발자들 중 하나는 오디오 리스트로 가서
+다음 글을 게시했다
 
 	There are a number of very good Linux kernel developers, but they
 	tend to get outshouted by a large crowd of arrogant fools. Trying
 	to communicate user requirements to these people is a waste of
 	time. They are much too "intelligent" to listen to lesser mortals.
-	좋은 리눅스 커널 개발자가 많이 있지만, 그들은 오만한 바보들의 무리에
-	의해 큰소리를 내는 경향이 있다. 그들에게 사용자 요구사항에 대해 대화를
-	시도하는 것은 시간 낭비이다. 어쭙잖은 인간들의 이야기를 듣기엔 그들은
-	너무나 뛰어나다.
+	좋은 리눅스 커널 개발자가 많이 있지만, 그들은 목소리만 큰 오만하고
+	멍청한 무리가 내는 의견을 받아드리는 경향이 있다.  그들에게 사용자
+	요구사항에 대해 대화를 시도하는 것은 시간 낭비이다.  어쭙잖은 인간들의
+	이야기를 듣기엔 그들은 너무나 뛰어나다.
 
 (http://lwn.net/Articles/131776/).
 
@@ -77,14 +78,14 @@ the right solution to the problem than they were with a specific module.
 The moral of the story is to focus on the problem - not a specific solution
 - and to discuss it with the development community before investing in the
 creation of a body of code.
-실제 상황은 달랐다. 커널 개발자들은 특정 모듈에 대한 문제로 본것이 아니라
+실제 상황은 달랐다.  커널 개발자들은 특정 모듈에 대한 문제로 본것이 아니라
 시스템 안정성, 장기간 유지보수성, 정확한 솔루션을 고려한 것이다.  이 이야기의
 교훈은 특정 솔루션에 메달릴 것이 아니라 문제에 집중하고 코딩을 시작하기 전에
-개발 커뮤니티와 충분히 논의해야 한다는 것이다.
+커뮤니티와 충분히 논의해야 한다는 것이다.
 
 So, when contemplating a kernel development project, one should obtain
 answers to a short set of questions:
-따라서 커널 개발 프로젝트를 고려하는 개발자는 다음 질문들에 대한 답을
+따라서 커널 개발 프로젝트를 생각하는 개발자는 다음 질문들에 대한 답을
 얻어야한다.
 
  - What, exactly, is the problem which needs to be solved?
@@ -103,12 +104,13 @@ Only then does it make sense to start considering possible solutions.
 
 
 3.2: EARLY DISCUSSION
+3.2: 초기 단계 논의
 
 When planning a kernel development project, it makes great sense to hold
 discussions with the community before launching into implementation.  Early
 communication can save time and trouble in a number of ways:
 커널 개발을 계획할 때, 코드를 반영 하기 전에 먼저 커뮤니티와 충분히 논의를 하는
-것이 바람직하다. 이런 의사소통은 여러가지로 시간과 문제를 줄여줄 수 있다.
+것이 바람직하다.  이런 의사소통은 여러가지로 시간과 문제를 줄여줄 수 있다.
 
  - ## It may well be that the problem is addressed by the kernel in ways which
    you have not understood.  The Linux kernel is large and has a number of
@@ -118,24 +120,26 @@ communication can save time and trouble in a number of ways:
    driver which duplicated an existing driver that the new author had been
    unaware of.  Code which reinvents existing wheels is not only wasteful;
    it will also not be accepted into the mainline kernel.
- - ##이해하지 못한 방법들로 커널이 해결하고자 하는 문제들은 리눅스 커널은 너무
-   크고 즉시 눈에 띄지 않는 수 많은 특징과 기능이 있다. 특정 한 사람을 만족시킬
-   정도로 커널 모든 기능이 문서화 되어 있는 것은 아니다. ##그리고 놓치기 쉽다.
-   ##메인테이너는 새로운 작가를 통해 중복 되었다는것을 자각하지도 못한채 작업한
-   이미 존재하는 드라이버가 포스팅 되오던것을 봐왔다.  이미 존재하는 코드를 재
-   작업하는 것은 쓸모없을 뿐더러 메인라인 커널에서 받아드려지지 못할 것이다.
+ - 커널이 문제를 해결한 방법을 당신이 이해하지 못하는 것은 당연하다.  리눅스
+   커널은 너무 크고 즉시 눈에 띄지 않는 수 많은 특징과 기능이 있다.  특정 한
+   사람을 만족시킬 정도로 커널 모든 기능이 문서화 되어 있는 것도 아니다.
+   문서화 하는것을 잊어버리기도 쉽다.  메인테이너는 새로운 작성자를 통해 이미
+   드라이버가 존재하는데도 똑같은 드라이버를 새로짠 패치가 포스팅 되오던것을
+   봐왔다.  그들은 그것이 중복 되었다는것을 자각하지도 못했다.  이미 존재하는
+   코드를 다시 작성하는 것은 쓸모없을 뿐더러 메인라인 커널에서 받아드려지지
+   못할 것이다.
 
  - There may be elements of the proposed solution which will not be
    acceptable for mainline merging.  It is better to find out about
    problems like this before writing the code.
-   메인 라인에 반영되지 못할 솔루션으로 제안되는 것들이 있을 것이다. 그럴바에는
-   차라리 코드를 작성하기 전에 이런 문제를 찾는것이 더 낫다.
+   메인 라인에 반영되지 못할 솔루션으로 제안되는 것들이 있을 것이다.
+   그럴바에는 차라리 코드를 작성하기 전에 그런 문제를 찾는것이 더 낫다.
 
  - It's entirely possible that other developers have thought about the
    problem; they may have ideas for a better solution, and may be willing
    to help in the creation of that solution.
-   다른 개발자들은 분명히 더 좋은 문제 해결책의 아이디어를 가지고 있을 것이고
-   이런 해결책을 구현하는것을 도울 것이다.
+   다른 개발자들은 분명히 해결할 수 있는 더 좋은 아이디어를 가지고 있을 것이고
+   이런 해결책을 구현하는데에 기꺼히 도우려고 것이다.
 
 Years of experience with the kernel development community have taught a
 clear lesson: kernel code which is designed and developed behind closed
@@ -145,16 +149,16 @@ requiring months or years of effort before the code can be brought up to
 the kernel community's standards.  Some examples include:
 다년간의 커뮤니티에서의 커널 개발 경험을 통해 다음의 교훈을 얻게 되었다.
 비공개로 비밀리에 작업하거나 설계한 코드는 커뮤니티에서 릴리즈 될때 반드시
-문제가 된다. 때로는 문제는 심각해지기도 하며, 커뮤니티의 표준으로 반영되기 까지
-몇달 혹은 몇년의 노력이 필요하다. 예를 들면 다음과 같다.
+문제가 된다.  때로는 문제는 심각해지기도 하며, 커뮤니티의 표준으로 반영되기
+까지 몇달 혹은 몇년의 노력이 필요하다.  예를 들면 다음과 같다.
 
  - The Devicescape network stack was designed and implemented for
    single-processor systems.  It could not be merged into the mainline
    until it was made suitable for multiprocessor systems.  Retrofitting
    locking and such into code is a difficult task; as a result, the merging
    of this code (now called mac80211) was delayed for over a year.
-   Devicescape network stack 은 싱글 코어 프로세서 기반으로 설계되었다. 따라서
-   멀티 프로세서를 지원하지 않는 이상 메인라인에 반영될 수 없었다. 이 코드를
+   Devicescape network stack 은 싱글 코어 프로세서 기반으로 설계되었다.  따라서
+   멀티 프로세서를 지원하지 않는 이상 메인라인에 반영될 수 없었다.  이 코드를
    개선하는 것은 매우 어려운 작업이었기 때문에, 이 코드가 반영되기 까지 1년
    이상 지연되었다.
 
@@ -165,7 +169,7 @@ the kernel community's standards.  Some examples include:
    deadlocks.  The late revelation of these problems - and refusal to
    address some of them - has caused Reiser4 to stay out of the mainline
    kernel.
-   Reiser4 파일 시스템은 많은 장점을 가지고 있었다. 핵심 커널 개발자의 의견에
+   Reiser4 파일 시스템은 많은 장점을 가지고 있었다.  핵심 커널 개발자의 의견에
    따르면 이 파일 시스템이 가상 파일 시스템 레이어를 지원하야 한다고 했다.
    그러나 이것도 시스템에 user-caused deadlock 없이 쉽게 구현되기 어려운 특징을
    지녔기 때문에 지연의 문제가 발생하였다.  그리고 결국 메인라인 커널에서
@@ -195,12 +199,12 @@ subsystem list, posting there is often preferable to posting on
 linux-kernel; you are more likely to reach developers with expertise in the
 relevant subsystem and the environment may be more supportive.
 개발자가 그들의 계획을 공개적으로 수행하고자 한다면, 다음 질문은 이것이 될
-것이다.  어디서 작업을 해야하는가? 그에 대한 답변은 올바른 메일링 리스트와
-메인테이너를 찾는 것이다.  메일링리스트를 찾을 때 가장 적절한 방법은
+것이다.  어디서 작업을 해야하는가?  그에 대한 답변은 올바른 메일링 리스트와
+메인테이너를 찾는 것이 될것이다.  메일링리스트를 찾을 때 가장 적절한 방법은
 MAINTAINERS 파일에서 올리고자 하는 내용과 연관된 메일링 리스트를 찾는 것이다.
 적절한 서브 시스템 리스트를 찾았다면 그곳에 올리는게 linux-kernel메일링
 리스트에 올리는 것보다 더 바람직하다.  더욱 직접적으로 연관 되어있는 개발자들과
-만날 수 있으며 더욱 지원이 잘될 수 있는 환경일 수 있다.
+만날 수 있으며 지원을 더 잘 받을 수 있는 환경일 가능성이 크다.
 
 Finding maintainers can be a bit harder.  Again, the MAINTAINERS file is
 the place to start.  That file tends to not always be up to date, though,
@@ -212,13 +216,13 @@ currently active within the subsystem of interest.  Look at who is writing
 patches, and who, if anybody, is attaching Signed-off-by lines to those
 patches.  Those are the people who will be best placed to help with a new
 development project.
-메인테이너를 찾는것은 좀더 어려울 수 있다. 마찬가지로 MAINTAINERS 파일이 시작
-지점이다.  그러나 이 파일은 항상 최신 상태를 유지하지 않는 경향이 있다. 게다가 모든
+메인테이너를 찾는것은 좀더 어려울 수 있다.  마찬가지로 MAINTAINERS 파일이 시작
+지점이다.  그러나 이 파일은 항상 최신 상태를 유지하지 않는 경향이 있다.  게다가 모든
 서브시스템을 다 포함하는 것도 아니다.  또한 MAINTAINERS 파일에 있는 사람이 현재
 실제 그 역할을 하지 않을 수도 있다.  그래서 누굴 컨택 해야할지 확실 하지 않을
 때 좋은 방법은 git을(더 정확히는 git log) 이용 하는 것이다.  git log를 통해
 해당 서브시스템에서 현재 활동하고 있는 메인테이너를 찾을 수 있을 것이다.  누가
-패치를 작성했는지 누가 패치를 승인 했는지 확인 하라. 이 사람들이 프로젝트를
+패치를 작성했는지 누가 패치를 승인 했는지 확인 하라.  이 사람들이 프로젝트를
 진행할 때 도움이 될 수 있는 가장 적절한 사람들이다.
 
 The task of finding the right maintainer is sometimes challenging enough
@@ -247,15 +251,16 @@ track down a maintainer for a specific piece of code.
 효과적인 방법이 될 수 있다.
 
 3.4: WHEN TO POST?
+3.4: 언제 포스팅을 해야하는가?
 
 If possible, posting your plans during the early stages can only be
 helpful.  Describe the problem being solved and any plans that have been
 made on how the implementation will be done.  Any information you can
 provide can help the development community provide useful input on the
 project.
-가능 하다면, 초기 단계에 계획을 올리는것만이 도움이 될것이다. 해결하려고 하는
-문제와 구현이 언제 완료될 것이라는 계획을 기술 해라. 제공할수 있는대로 많은
-정보를 알려주는것이 커뮤니티를 통해 프로젝트에 유용한 도움을 받을 수 있는
+가능 하다면, 초기 단계일때 계획을 올리는것만이 도움이 될것이다.  해결하려고
+하는 문제와 구현이 언제 완료될 것이라는 계획을 기술 해라.  제공할수 있는대로
+많은 정보를 알려주는것이 커뮤니티를 통해 프로젝트에 유용한 도움을 받을 수 있는
 지름길이다.
 
 One discouraging thing which can happen at this stage is not a hostile
@@ -266,23 +271,23 @@ back them up, and (3) nobody is obligated to review or comment on ideas
 posted by others.  Beyond that, high-level designs often hide problems
 which are only reviewed when somebody actually tries to implement those
 designs; for that reason, kernel developers would rather see the code.
-이 단계에서 실망하게 될 수 있는 것은 적대적인 반응이 아니다. 거의 반응이 없거나
-무반응이다.  슬픈 사실은 (1)커널 개발자들은 꽤 바쁘다는것 (2)원대한 계획은
-가지고잇는 개발자들이 적지 않다는것 그리고 그들을 지원하기 위한 코드가
-있다는것. (3)누구도 아이디어에 대해서 리뷰나 답변을 해줄 의무는 없다는 점.
-##이런 것들을 떠나서 높은 수준의 설계는 종종 실제 누군가가 그것을 개발할때만
-발견되는 문제가 발생하기도 한다.  이러한 이유 때문에 커널 개발자는 오히려
-코드를 보는것을 선호한다.
+이 단계에서 실망하게 될 수 있는 것은 적대적인 반응이 아니다.  거의 반응이
+없거나 반응이 아얘 없는 것이다.  슬픈 사실은 (1)커널 개발자들은 꽤 바쁘다는것
+(2)##원대한 계획을 가지고잇는 개발자들이 적지 않다는것 그리고 그들을 지원하기
+위한 코드가 있다는것.  (3)누구도 아이디어에 대해서 리뷰나 답변을 해줄 의무는
+없다는 점.  ##이런 것들을 떠나서 지나치게 높은 수준의 계획은 종종 실제 누군가가
+그것을 개발할때만 발견되는 문제가 발생하기도 한다.  이러한 이유 때문에 커널
+개발자는 직접 코드로 보는것을 선호한다.
 
 If a request-for-comments posting yields little in the way of comments, do
 not assume that it means there is no interest in the project.
 Unfortunately, you also cannot assume that there are no problems with your
 idea.  The best thing to do in this situation is to proceed, keeping the
 community informed as you go.
-답변요청을 올리는것은 답변이 달리는데에 방해가 될 뿐이다. 프로젝트에 관심이
-없다는 뜻으로 추측하지 말아야 한다. 유감스럽게도 본인의 아이디어가 아무런
-문제가 없다고 판단할 수 없을 것이다. 이런 상황에서 가장 좋은 방법은 계속 진행
-하는 것이다. 커뮤니티의 정보를 유지하라.
+답변요청을 올리는것은 답변이 달리는데에 방해가 될 뿐이다.  프로젝트에 관심이
+없다는 뜻으로 추측하지 말아야 한다.  유감스럽게도 본인의 아이디어가 아무런
+문제가 없다고 판단할 수 없을 것이다.  이런 상황에서 가장 좋은 방법은 계속 진행
+하는 것이다.  지속적으로 커뮤니티의 정보를 파악하라.
 
 3.5: GETTING OFFICIAL BUY-IN
 3.5: 공식적으로 참여하기.
@@ -296,9 +301,9 @@ sooner that a company's management and legal staff can agree on the posting
 of a kernel development project, the better off everybody involved will be.
 회사에서 작업하는 것이라면 (대부분 리눅스 커널 작업이 그렇듯이) 회사의 계획이나
 코드를 메일링 리스트에 올리기 전에 반드시 회사에서 해당 매니져에게 허가를
-받아야한다. 특히 GPL계열의 라이센스 하에 작성되지 않은 코드를 올리는것은 문제가
+받아야한다.  특히 GPL계열의 라이센스 하에 작성되지 않은 코드를 올리는것은 문제가
 있다.  회사의 관리자나 법률 팀이 이 커널 개발 프로젝트에대해서 포스팅하는것에
-동의 할수 있다. 관련된 모든 사람들이 더 잘 알 것이다.
+동의 할수 있다.  관련된 모든 사람들이 더 잘 알 것이다.
 
 Some readers may be thinking at this point that their kernel work is
 intended to support a product which does not yet have an officially
@@ -306,11 +311,11 @@ acknowledged existence.  Revealing their employer's plans on a public
 mailing list may not be a viable option.  In cases like this, it is worth
 considering whether the secrecy is really necessary; there is often no real
 need to keep development plans behind closed doors.
-##몇몇 리더는 이시점에서 그들의 커널 작업이 공식적으로 인정되지 않는 제품을
-지원하기 위한 의도가 아니냐는 생각을 가질 수도 있다. ##고용주의 계획을 공개적인
-메일링 리스트에 드러내는것은 실행 가능한 방법이 아닐 것이다. 이런 경우에는
-이렇게 비밀을 유지하는것이 진정 필요한지에 대해서 고민해보는 것이 좋다. 개발
-계획을 비공개적으로 유지하는것은 많은 경우에 필요하지 않다.
+##몇몇 독자는 이시점에서 그들의 커널 작업이 공식적으로 인정되지 않는 제품을
+지원하기 위한 의도가 아니냐는 생각을 가질 수도 있다.  ##회사의 계획을 공개적인
+메일링 리스트에 드러내는것은 실행 가능한 방법이 아닐 것이다.  이런 경우에는
+이렇게 비밀을 유지하는것이 진정 필요한지에 대해서 고민해보는 것이 좋다.  개발
+계획을 비공개적으로 유지하는것은 대부분의 경우 필요하지 않다.
 
 That said, there are also cases where a company legitimately cannot
 disclose its plans early in the development process.  Companies with
@@ -326,7 +331,7 @@ at:
 문제를 피할 수 있다는 가정 하에 open-loop 규정으로 진행하는것을 선택할 것이다.
 사내에 전문기술이 없는 회사에 있어서는, 비공개 계획에 따라 리뷰를 하기 위한
 외부 개발자를 고용하는 방법이 있을 것이다.  Linux Foundation에서는 이러한
-상황을 위해 NDA 프로그램을 운영한다. 아래 주고 참고.
+상황을 위해 NDA 프로그램을 운영한다.  아래 주소 참고.
 
     http://www.linuxfoundation.org/en/NDA_program
 
