@@ -33,10 +33,10 @@ access to the realtime scheduler.  This module was implemented and sent to
 the linux-kernel mailing list, where it immediately ran into problems.
 예를 살펴보면, 몇년전 리눅스 오디오 작업을 하던 개발자들이 시스템에 과도한
 대기시간으로 인한 영향이나 손실 없이 응용 프로그램을 실행할 수 있는 방법을
-모색하고 있었다.  그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에 Hooking
-하기위한 커널 모듈이었다.  이 모듈은 특정 응용프로그램이 실시간 스케줄러에 대한
-액세스 권한을 부여하도록 구성될 수 있다.  이 모듈은 구현되어 즉시 linux-kernel
-메일링리스트로 보내져 문제에 바로 적용 되었다.
+모색하고 있었다.  그들이 결론낸 솔루션은 리눅스 보안 모듈(LSM) 프레임워크에
+Hooking 하기위한 커널 모듈이었다.  이 모듈은 특정 응용프로그램이 실시간
+스케줄러에 대한 액세스 권한을 부여하도록 구성될 수 있다.  이 모듈은 구현되어
+즉시 linux-kernel 메일링리스트로 보내져 문제에 바로 적용 되었다.
 
 To the audio developers, this security module was sufficient to solve their
 immediate problem.  To the wider kernel community, though, it was seen as a
@@ -112,7 +112,7 @@ communication can save time and trouble in a number of ways:
 커널 개발을 계획할 때, 코드를 반영 하기 전에 먼저 커뮤니티와 충분히 논의를 하는
 것이 바람직하다.  이런 의사소통은 여러가지로 시간과 문제를 줄여줄 수 있다.
 
- - ## It may well be that the problem is addressed by the kernel in ways which
+ - It may well be that the problem is addressed by the kernel in ways which
    you have not understood.  The Linux kernel is large and has a number of
    features and capabilities which are not immediately obvious.  Not all
    kernel capabilities are documented as well as one might like, and it is
@@ -123,7 +123,7 @@ communication can save time and trouble in a number of ways:
  - 커널이 문제를 해결한 방법을 당신이 이해하지 못하는 것은 당연하다.  리눅스
    커널은 너무 크고 즉시 눈에 띄지 않는 수 많은 특징과 기능이 있다.  특정 한
    사람을 만족시킬 정도로 커널 모든 기능이 문서화 되어 있는 것도 아니다.
-   문서화 하는것을 잊어버리기도 쉽다.  메인테이너는 새로운 작성자를 통해 이미
+   문서화 하는것을 잊어버리기도 쉽다.  ##메인테이너는 새로운 작성자를 통해 이미
    드라이버가 존재하는데도 똑같은 드라이버를 새로짠 패치가 포스팅 되오던것을
    봐왔다.  그들은 그것이 중복 되었다는것을 자각하지도 못했다.  이미 존재하는
    코드를 다시 작성하는 것은 쓸모없을 뿐더러 메인라인 커널에서 받아드려지지
@@ -132,13 +132,13 @@ communication can save time and trouble in a number of ways:
  - There may be elements of the proposed solution which will not be
    acceptable for mainline merging.  It is better to find out about
    problems like this before writing the code.
-   메인 라인에 반영되지 못할 솔루션으로 제안되는 것들이 있을 것이다.
+ - 메인 라인에 반영되지 못할 솔루션으로 제안되는 것들이 있을 것이다.
    그럴바에는 차라리 코드를 작성하기 전에 그런 문제를 찾는것이 더 낫다.
 
  - It's entirely possible that other developers have thought about the
    problem; they may have ideas for a better solution, and may be willing
    to help in the creation of that solution.
-   다른 개발자들은 분명히 해결할 수 있는 더 좋은 아이디어를 가지고 있을 것이고
+ - 다른 개발자들은 분명히 해결할 수 있는 더 좋은 아이디어를 가지고 있을 것이고
    이런 해결책을 구현하는데에 기꺼히 도우려고 것이다.
 
 Years of experience with the kernel development community have taught a
@@ -157,7 +157,7 @@ the kernel community's standards.  Some examples include:
    until it was made suitable for multiprocessor systems.  Retrofitting
    locking and such into code is a difficult task; as a result, the merging
    of this code (now called mac80211) was delayed for over a year.
-   Devicescape network stack 은 싱글 코어 프로세서 기반으로 설계되었다.  따라서
+ - Devicescape network stack 은 싱글 코어 프로세서 기반으로 설계되었다.  따라서
    멀티 프로세서를 지원하지 않는 이상 메인라인에 반영될 수 없었다.  이 코드를
    개선하는 것은 매우 어려운 작업이었기 때문에, 이 코드가 반영되기 까지 1년
    이상 지연되었다.
@@ -169,7 +169,7 @@ the kernel community's standards.  Some examples include:
    deadlocks.  The late revelation of these problems - and refusal to
    address some of them - has caused Reiser4 to stay out of the mainline
    kernel.
-   Reiser4 파일 시스템은 많은 장점을 가지고 있었다.  핵심 커널 개발자의 의견에
+ - Reiser4 파일 시스템은 많은 장점을 가지고 있었다.  핵심 커널 개발자의 의견에
    따르면 이 파일 시스템이 가상 파일 시스템 레이어를 지원하야 한다고 했다.
    그러나 이것도 시스템에 user-caused deadlock 없이 쉽게 구현되기 어려운 특징을
    지녔기 때문에 지연의 문제가 발생하였다.  그리고 결국 메인라인 커널에서
@@ -179,7 +179,7 @@ the kernel community's standards.  Some examples include:
    data structures in ways which were considered to be unsafe and
    unreliable.  This concern (among others) kept AppArmor out of the
    mainline for years.
-   AppArmor 시큐리티 모듈은 안전하지 못하고 불확실하게 결정된 방법으로
+ - AppArmor 시큐리티 모듈은 안전하지 못하고 불확실하게 결정된 방법으로
    내부적으로 가상 파일시스템 자료구조의 필요성을 만들었다. 이런 우려 때문에
    때문에 수년 째 메인라인 커널에서 제거된 상태이다.
 
@@ -187,6 +187,7 @@ In each of these cases, a great deal of pain and extra work could have been
 avoided with some early discussion with the kernel developers.
 이런 여러가지 경우를 봤을때 많은 어려움이나 특별한 작업을 다루는 일은
 커뮤니티의 논의를 통해 조기에 피하는 것이 좋다.
+
 
 3.3: WHO DO YOU TALK TO?
 3.3: 누구와 논의 하나?
@@ -217,13 +218,13 @@ patches, and who, if anybody, is attaching Signed-off-by lines to those
 patches.  Those are the people who will be best placed to help with a new
 development project.
 메인테이너를 찾는것은 좀더 어려울 수 있다.  마찬가지로 MAINTAINERS 파일이 시작
-지점이다.  그러나 이 파일은 항상 최신 상태를 유지하지 않는 경향이 있다.  게다가 모든
-서브시스템을 다 포함하는 것도 아니다.  또한 MAINTAINERS 파일에 있는 사람이 현재
-실제 그 역할을 하지 않을 수도 있다.  그래서 누굴 컨택 해야할지 확실 하지 않을
-때 좋은 방법은 git을(더 정확히는 git log) 이용 하는 것이다.  git log를 통해
-해당 서브시스템에서 현재 활동하고 있는 메인테이너를 찾을 수 있을 것이다.  누가
-패치를 작성했는지 누가 패치를 승인 했는지 확인 하라.  이 사람들이 프로젝트를
-진행할 때 도움이 될 수 있는 가장 적절한 사람들이다.
+지점이다.  그러나 이 파일은 항상 최신 상태를 유지하지 않는 경향이 있다.  게다가
+모든 서브시스템을 다 포함하는 것도 아니다.  또한 MAINTAINERS 파일에 있는 사람이
+현재 실제 그 역할을 하지 않을 수도 있다.  그래서 누굴 컨택 해야할지 확실 하지
+않을 때 좋은 방법은 git을(더 정확히는 git log) 이용 하는 것이다.  git log를
+통해 해당 서브시스템에서 현재 활동하고 있는 메인테이너를 찾을 수 있을 것이다.
+누가 패치를 작성했는지 누가 패치를 승인 했는지 확인 하라.  이 사람들이
+프로젝트를 진행할 때 도움이 될 수 있는 가장 적절한 사람들이다.
 
 The task of finding the right maintainer is sometimes challenging enough
 that the kernel developers have added a script to ease the process:
@@ -273,11 +274,11 @@ which are only reviewed when somebody actually tries to implement those
 designs; for that reason, kernel developers would rather see the code.
 이 단계에서 실망하게 될 수 있는 것은 적대적인 반응이 아니다.  거의 반응이
 없거나 반응이 아얘 없는 것이다.  슬픈 사실은 (1)커널 개발자들은 꽤 바쁘다는것
-(2)##원대한 계획을 가지고잇는 개발자들이 적지 않다는것 그리고 그들을 지원하기
-위한 코드가 있다는것.  (3)누구도 아이디어에 대해서 리뷰나 답변을 해줄 의무는
-없다는 점.  ##이런 것들을 떠나서 지나치게 높은 수준의 계획은 종종 실제 누군가가
-그것을 개발할때만 발견되는 문제가 발생하기도 한다.  이러한 이유 때문에 커널
-개발자는 직접 코드로 보는것을 선호한다.
+(2)##원대한 계획을 가지고 있는 개발자들이 적지 않다는것.  그리고 그들을
+지원하기 위한 코드가 있다는것.  (3)누구도 아이디어에 대해서 리뷰나 답변을 해줄
+의무는 없다는 점.  ##이런 것들을 떠나서 지나치게 높은 수준의 계획에는 종종
+누군가가 실제로 그것을 개발 할때만 발견되는 문제가 발생하기도 한다.  이러한
+이유 때문에 커널 개발자는 차라리 코드로 구현된 것을 더 선호한다.
 
 If a request-for-comments posting yields little in the way of comments, do
 not assume that it means there is no interest in the project.
@@ -301,9 +302,9 @@ sooner that a company's management and legal staff can agree on the posting
 of a kernel development project, the better off everybody involved will be.
 회사에서 작업하는 것이라면 (대부분 리눅스 커널 작업이 그렇듯이) 회사의 계획이나
 코드를 메일링 리스트에 올리기 전에 반드시 회사에서 해당 매니져에게 허가를
-받아야한다.  특히 GPL계열의 라이센스 하에 작성되지 않은 코드를 올리는것은 문제가
-있다.  회사의 관리자나 법률 팀이 이 커널 개발 프로젝트에대해서 포스팅하는것에
-동의 할수 있다.  관련된 모든 사람들이 더 잘 알 것이다.
+받아야한다.  특히 GPL계열의 라이센스 하에 작성되지 않은 코드를 올리는 것은
+문제가 있다.  회사의 관리자나 법률 팀이 이 커널 개발 프로젝트에 대해서 포스팅
+하는것에 동의 할수 있다.  관련된 모든 사람들이 더 잘 알 것이다.
 
 Some readers may be thinking at this point that their kernel work is
 intended to support a product which does not yet have an officially
@@ -312,7 +313,7 @@ mailing list may not be a viable option.  In cases like this, it is worth
 considering whether the secrecy is really necessary; there is often no real
 need to keep development plans behind closed doors.
 ##몇몇 독자는 이시점에서 그들의 커널 작업이 공식적으로 인정되지 않는 제품을
-지원하기 위한 의도가 아니냐는 생각을 가질 수도 있다.  ##회사의 계획을 공개적인
+지원하기 위한 의도가 아니냐는 생각을 가질 수도 있다.  회사의 계획을 공개적인
 메일링 리스트에 드러내는것은 실행 가능한 방법이 아닐 것이다.  이런 경우에는
 이렇게 비밀을 유지하는것이 진정 필요한지에 대해서 고민해보는 것이 좋다.  개발
 계획을 비공개적으로 유지하는것은 대부분의 경우 필요하지 않다.
@@ -328,7 +329,7 @@ designed to help with this sort of situation; more information can be found
 at:
 그건 그렇다 치고, 개발 초기 단계에서 합법적으로 공개할 수없는 경우도 존재한다.
 노련한 커널 개발자를 가지고 있는 회사는 나중에 생길 수 있는 심각한 integration
-문제를 피할 수 있다는 가정 하에 open-loop 규정으로 진행하는것을 선택할 것이다.
+문제를 피할 수 있다는 가정 하에 open-loop 규정으로 진행 하는것을 선택할 것이다.
 사내에 전문기술이 없는 회사에 있어서는, 비공개 계획에 따라 리뷰를 하기 위한
 외부 개발자를 고용하는 방법이 있을 것이다.  Linux Foundation에서는 이러한
 상황을 위해 NDA 프로그램을 운영한다.  아래 주소 참고.
