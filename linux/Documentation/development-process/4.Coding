@@ -1,21 +1,22 @@
 4: GETTING THE CODE RIGHT
+4: 제대로 코딩하기
 
 While there is much to be said for a solid and community-oriented design
 process, the proof of any kernel development project is in the resulting
 code.  It is the code which will be examined by other developers and merged
 (or not) into the mainline tree.  So it is the quality of this code which
 will determine the ultimate success of the project.
-커뮤니티 중심의 견고한 디자인 프로세스에 대해 할 말이 많지만, 커널의 어떠한
-개발 프로젝트라도 코드로 결과를 증명한다.  이것은 다른 개발자들에게 리뷰받고
-메인라인 트리에 머지되거나 반려되는 코드를 말한다.  따라서 프로젝트의 궁극적인
-성공을 결정하는것은 결국 이 코드의 품질이다.
+커뮤니티 중심의 확고한 디자인 프로세스에 대해 논의 해야할 것이 많이 있지만,
+커널 프로젝트를 나타내는 것은 결국 코드이다.  이것은 다른 개발자들에게 리뷰받고
+메인라인 트리에 머지되거나 반려되는 코드를 말한다.  따라서 이 코드의 품질이
+프로젝트의 궁극적인 성공을 결정하는 것이다.
 
 This section will examine the coding process.  We'll start with a look at a
 number of ways in which kernel developers can go wrong.  Then the focus
 will shift toward doing things right and the tools which can help in that
 quest.
-이 섹션에서는 코딩 과정을 살펴 본다. 우리는 커널 개발자가 실수 할수있는
-여러가지 경우를 살펴보며 시작할 것이다. 그다음 제대로 개발하는 방법과 작업에
+이 섹션에서는 코딩 프로세스에 대해 살펴 본다.  우리는 커널 개발자가 실수 할수있는
+여러가지 경우를 살펴보며 시작할 것이다.  그다음 제대로 개발하는 방법과 작업에
 도움을 줄 수있는 도구들을 살펴볼 것이다.
 
 
@@ -23,7 +24,7 @@ quest.
 4.1: 유의사항
 
 * Coding style
-코딩 스타일
+* 코딩 스타일
 
 The kernel has long had a standard coding style, described in
 Documentation/CodingStyle.  For much of that time, the policies described
@@ -31,10 +32,10 @@ in that file were taken as being, at most, advisory.  As a result, there is
 a substantial amount of code in the kernel which does not meet the coding
 style guidelines.  The presence of that code leads to two independent
 hazards for kernel developers.
-커널은 오랫동안 Documentation/CodingStyle에 기술된대로 표준 코딩스타일을
-##지켜왔다.  많은 시간동안 해당 파일에 설명 된 정책은 대부분의 자문정도로 간주
+커널은 오랫동안 Documentation/CodingStyle에 기술된 표준 코딩스타일을 가지고
+있었다.  많은 시간동안 해당 파일에 설명 된 정책은 기껏해야 자문정도로만 간주
 되었으며,  결과적으로 코딩 스타일 지침을 따르지 않는 코드가 상당량 존재하게
-되었다.  이런 코드의 존재는 커널 개발자들에게 두가지 위험요소를 유발할 수 있다.
+되었다.  ##이런 코드의 존재는 커널 개발자들에게 두가지 위험요소를 유발할 수 있다.
 
 The first of these is to believe that the kernel coding standards do not
 matter and are not enforced.  The truth of the matter is that adding new
@@ -44,21 +45,22 @@ before they will even review it.  A code base as large as the kernel
 requires some uniformity of code to make it possible for developers to
 quickly understand any part of it.  So there is no longer room for
 strangely-formatted code.
-이 중 첫 번째는 커널이 표준은 중요하지 않고 강제성이 없다고 생각하는 것이다.
-문제의 진실은 코드 표준을 따르지 않은 경우 커널에 새로운 코드를 추가하기가 매우
-어렵다는 것이다. 심지어 많은 개발자들은 리뷰를 해주기 이 전에 코드 포맷팅 부터
-요청한다.  커널같이 방대한 코드는 개발자가 가능한 빨리 그것의 일부를 이해할 수
-있도록 코드의 균일성이 필요하고 그래서 그 형식을 지키지 않은 코드는 사용될 여지가
-없다.
+이 중 첫 번째는 커널의 표준 코딩 스타일은 별로 중요하지 않으며 반드시 지키지
+않아도 된다고 생각하는 것이다.  하지만 실제로는 코딩 스타일을 지키지 않은 경우
+커널에 새로운 코드를 추가하기가 매우 어렵다.  심지어 많은 개발자들은 리뷰를
+해주기 이 전에 코드를 코딩 스타일에 맞게 재수정 하는것 부터 요청한다.  커널같이
+방대한 코드는 개발자가 가능한 빨리 그것의 일부를 이해할 수 있도록 코드의
+일관성이 필요하다.  그래서 그 규칙을 지키지 않은 코드는 사용될 ##여지가 없다.
 
 Occasionally, the kernel's coding style will run into conflict with an
 employer's mandated style.  In such cases, the kernel's style will have to
 win before the code can be merged.  Putting code into the kernel means
 giving up a degree of control in a number of ways - including control over
 how the code is formatted.
-때때로, 커널의 코딩 스타일이 고용주가 원하는 스타일과 충돌할 수 있다. 이러한
-경우, 코드는 머지되기 전에 커널 스타일로 포맷팅 되어야 할 것이다. ##커널에 코드를
-커밋하는 것은 코드포맷 포함하여 여러가지 제어의 포기를 의미한다.
+때때로, 커널의 코딩 스타일이 회사가 원하는 스타일과 충돌할 수 있다. 이러한
+경우, 코드는 반영되기 전에 커널 스타일로 포맷팅 되어야 할 것이다. ##커널에
+코드를 반영하는 것은 본인이 원하는 대로 코딩하는것을 포함에 여러가지 코드에
+대한 통제를 포기해야 함을 의미한다.
 
 The other trap is to assume that code which is already in the kernel is
 urgently in need of coding style fixes.  Developers may start to generate
@@ -69,7 +71,7 @@ they tend to get a chilly reception.  So this type of patch is best
 avoided.  It is natural to fix the style of a piece of code while working
 on it for other reasons, but coding style changes should not be made for
 their own sake.
-두번재 문제는 이미 머지된 커널코드가 긴급히 코딩 스타일 대로 수정이 되어야 하는 경우를
+두번재 문제로는, 이미 머지된 커널코드가 긴급히 코딩 스타일 대로 수정이 되어야 하는 경우를
 가정해보자.  개발자는 과정에 익숙해지기 위해 또는 이름을 기록에 남기기 위해(혹은 둘다)
 코딩스타일 수정 패치를 생성하기 시작할 것이다. 그러나 순수하게 코딩 스타일만 수정한 패치는
 커뮤니티를 방해하는 잡음 정도로 보일 것이며, 커뮤니티에서 냉담한 반응을 얻게 될 것이다.
