@@ -35,7 +35,8 @@ hazards for kernel developers.
 커널은 오랫동안 Documentation/CodingStyle에 기술된 표준 코딩스타일을 가지고
 있었다.  많은 시간동안 해당 파일에 설명 된 정책은 기껏해야 자문정도로만 간주
 되었으며,  결과적으로 코딩 스타일 지침을 따르지 않는 코드가 상당량 존재하게
-되었다.  ##이런 코드의 존재는 커널 개발자들에게 두가지 위험요소를 유발할 수 있다.
+되었다.  이런 코드가 존재함으로써 커널 개발자들에게 두가지 위험요소를 안겨주게
+된다.
 
 The first of these is to believe that the kernel coding standards do not
 matter and are not enforced.  The truth of the matter is that adding new
@@ -71,12 +72,14 @@ they tend to get a chilly reception.  So this type of patch is best
 avoided.  It is natural to fix the style of a piece of code while working
 on it for other reasons, but coding style changes should not be made for
 their own sake.
-두번재 문제로는, 이미 머지된 커널코드가 긴급히 코딩 스타일 대로 수정이 되어야 하는 경우를
-가정해보자.  개발자는 과정에 익숙해지기 위해 또는 이름을 기록에 남기기 위해(혹은 둘다)
-코딩스타일 수정 패치를 생성하기 시작할 것이다. 그러나 순수하게 코딩 스타일만 수정한 패치는
-커뮤니티를 방해하는 잡음 정도로 보일 것이며, 커뮤니티에서 냉담한 반응을 얻게 될 것이다.
-따라서 이런 유형의 패치를 피해야한다. ##다른 이유를 위해 패치하면서 코딩 스타일을
-수정하는 것은 자연 스럽지만 코딩 스타일 자체만으로 패치가 만들어 져서는 안된다.
+두번재 문제는, 이미 반영된 커널코드가 긴급히 코딩 스타일 대로 수정이 되어야
+하는 경우에 나타난다.  개발자들은 프로세스에 익숙해지기 위해 또는 커널
+Changelog에 본인의 이름을 남기기 위해(혹은 둘다) 코딩스타일 수정 패치를
+생성하기 시작할 것이다.  그러나 순수하게 코딩 스타일만 수정한 패치는 커뮤니티를
+방해하는 잡음 정도로 보일 것이며, 커뮤니티에서 냉담한 반응을 얻게 될 것이다.
+따라서 이런 유형의 패치를 피해야한다.  다른 이유로 작업하는 수정사항과 함께
+코딩스타일을 수정하는 것은 괜찮아도, 코딩 스타일 수정 자체만으로 패치가 만들어
+져서는 안된다.
 
 The coding style document also should not be read as an absolute law which
 can never be transgressed.  If there is a good reason to go against the
@@ -98,10 +101,10 @@ But experience has shown that excessive or premature abstraction can be
 just as harmful as premature optimization.  Abstraction should be used to
 the level required and no further.
 컴퓨터과학 교수는 유연성과 정보은폐를 위해 추상화 레이어를 광범위하게 사용
-하라고 학생들을 가르친다. 물론 커널은 추상화를 광범위하게 사용한다.  ##코드
-만줄을 포함하는 프로젝트는 달리 할수도 없고 그러지 않으면 살아남을 수
-없다. 그러나 경험상 과도하거나 섣부른 추상화는 조기 최적화만큼 해가 될 수
-있다. 추상화는 필요한 수준으로만 사용되어야 한다.
+하라고 학생들을 가르친다.  물론 커널은 추상화를 광범위하게 사용한다.  ## 100만
+라인 이상의 코드를 포함하는 프로젝트에서는 달리 할수도 없고 그렇게 하지 않으면
+살아남을 수 없기 때문이다.  그러나 경험상 과도하거나 섣부른 추상화는 조기
+최적화만큼 해가 될 수 있다.  추상화는 필요한 수준으로만 사용되어야 한다.
 
 At a simple level, consider a function which has an argument which is
 always passed as zero by all callers.  One could retain that argument just
@@ -113,20 +116,21 @@ extra flexibility arises, it does not do so in a way which matches the
 programmer's early expectation.  Kernel developers will routinely submit
 patches to remove unused arguments; they should, in general, not be added
 in the first place.
-항상 모든 호출자에 의해 0으로 전달되는 인자(argument)를 가진 함수가 있다고 가정하자.
-혹시 누군가가 사용할 수 있으니 유연하게 그 인자를 유지할 수 있다.  그러나 이 경우
-미묘하게 잘못 되어도 사용된적이 없기 때문에 문제가 발견되지 않을 확률이 높다.  막상
-여분의 유연성을 위해 필요할 때도 프로그래머의 기대처럼 작동하지 않는다. 커널
-개발자들은 사용되지 않는 인자를 제거하는 패치를 주기적으로 제출한다. 일반적으로,
-그런 인자는 애초에 추가되지 않았어야 한다.
+단순하게 항상 모든 호출자에 의해 0으로 전달되는 인자(argument)를 가진 함수가
+있다고 가정하자.  혹시 누군가가 나중에 사용할 수 있으니 유연하게 그 인자를
+유지할 수 있다.  그러나 이 경우 미묘한 방식으로 잘못 되어도 애초에 사용된적이
+없기 때문에 문제가 발견되지 않을 확률이 높다.  막상 여분의 유연성을 위해 필요할
+때도 프로그래머의 기대처럼 작동하지 않는다.  커널 개발자들은 사용되지 않는
+인자를 제거하는 패치를 주기적으로 제출한다.  일반적으로, 그런 인자는 애초에
+추가되지 않았어야 한다.
 
 Abstraction layers which hide access to hardware - often to allow the bulk
 of a driver to be used with multiple operating systems - are especially
 frowned upon.  Such layers obscure the code and may impose a performance
 penalty; they do not belong in the Linux kernel.
-하드웨어 드라이버를 여러 운영 체제에서 사용할 수 있도록 하드웨어 액세스를
-숨기는 추상화층은 특히 못마땅하게 받아들여진다. 이러한 층들은 코드를 모호하게하고
-성능을 떨어뜨릴 수 있어서 리눅스 커널에는 포함되지 않는다.
+특히 못마땅하게 받아 드려지는 것은 하드웨어 드라이버를 여러 운영 체제에서
+사용할 수 있도록 하드웨어 액세스를 숨기는 추상화 레이어 이다.  이러한 레이어는
+코드를 모호하게하고 성능을 떨어뜨릴 수 있어서 리눅스 커널에 포함될 수 없다.
 
 On the other hand, if you find yourself copying significant amounts of code
 from another kernel subsystem, it is time to ask whether it would, in fact,
@@ -139,6 +143,7 @@ replicating the same code throughout the kernel.
 
 
 * #ifdef and preprocessor use in general
+* #ifdef 와 전처리기의 전반적인 사용
 
 The C preprocessor seems to present a powerful temptation to some C
 programmers, who see it as a way to efficiently encode a great deal of
@@ -146,11 +151,11 @@ flexibility into a source file.  But the preprocessor is not C, and heavy
 use of it results in code which is much harder for others to read and
 harder for the compiler to check for correctness.  Heavy preprocessor use
 is almost always a sign of code which needs some cleanup work.
-##C 전처리기는 C 프로그래머가 유연성을 코드에 넣을 수 있도록 부호화하고 매우
-효율적인 코드가 될 수 있는 방법이므로 사용하고 싶은 욕구가 생길 것이다.
-그러나 전처리기는 C가 아니며, 많이 사용하면 가독성이 떨어지고 컴파일러가
-정확성을 확인하기 힘들어 진다.  코드에 과도한 전처리기가 사용된다는것은 대개 항상 정리 작업이
-필요하다는 신호 이다.
+##C 전처리기는 C 프로그래머가 유연성을 코드에 넣을 수 있도록 부호화하고, 매우
+효율적인 코드가 될 수 있는 방법이므로 사용하고 싶은 욕구가 생길 것이다.  그러나
+전처리기는 C가 아니며, 많이 사용하면 가독성이 떨어지고 컴파일러가 정확성을
+확인하기 힘들어 진다.  코드에 과도한 전처리기가 사용된다는것은 대개 항상 정리
+작업이 필요하다는 신호 이다.
 
 Conditional compilation with #ifdef is, indeed, a powerful feature, and it
 is used within the kernel.  But there is little desire to see code which is
@@ -160,11 +165,12 @@ Conditionally-compiled code can be confined to functions which, if the code
 is not to be present, simply become empty.  The compiler will then quietly
 optimize out the call to the empty function.  The result is far cleaner
 code which is easier to follow.
-#ifdef와 조건부 컴파일은 강력한 기능이며 커널 내에서도 사용되고 있다. 그러나 #ifdef
-블록이 무분별하게 사용된 코드는 별로 보고 싶지 않을 것이다. 일반적으로, #ifdef 사용은 가능한한
-헤더 파일에만 국한 되어야한다. 만약 ##코드가 보여지지 않는다면, 조건부 컴파일 된 코드는 
-단순하고 빈(empty) 함수에 국한되어 사용될 수 있다. 컴파일러는 조용히 빈 함수 호출을
-최적화 할것이다. 그 결과로 따라가기 쉬운 훨씬 깔끔한 코드가 될 것이다.
+#ifdef와 조건부 컴파일은 정말 강력한 기능이며 커널 내에서도 사용되고 있다.
+그러나 #ifdef 블록으로 무분별하게 도배된 코드는 별로 보고 싶지 않을 것이다.
+일반적으로, #ifdef 사용은 가능한한 헤더 파일에만 국한 되어야한다.  만약
+##코드가 보여지지 않는다면, 조건부 컴파일 된 코드는 단순하고 빈(empty) 함수에
+국한되어 사용될 수 있다.  컴파일러는 조용히 빈 함수 호출을 최적화 할것이다. 그
+결과로 따라가기 쉬운 훨씬 깔끔한 코드가 될 것이다.
 
 C preprocessor macros present a number of hazards, including possible
 multiple evaluation of expressions with side effects and no type safety.
@@ -172,14 +178,15 @@ If you are tempted to define a macro, consider creating an inline function
 instead.  The code which results will be the same, but inline functions are
 easier to read, do not evaluate their arguments multiple times, and allow
 the compiler to perform type checking on the arguments and return value.
-C 전처리기 매크로는 부작용을 포함하는 매크로의 ##평가와 타입의 불안정성을
-포함하여, 많은 위험요소를 가지고 있다.  만일 매크로를 정의하고자 한다면, 차라리
-인라인 함수를 사용하는것이 낫다.  결과 코드는 동일하지만, 인라인 함수가 더
-가독성이 좋으며, 인자를 여러번 ##평가하지 않고, 컴파일러가 인자 및 반환 값에
+C 전처리기 매크로는 수식을 여러번 계산할때 발생하는 부작용과, ##타입의 불안정성을
+포함하여, 많은 위험요소를 가지고 있다.  만일 매크로를 정의하고자 한다면,
+차라리 인라인 함수를 사용하는것이 낫다.  결과 코드는 동일하지만, 인라인 함수가
+더 가독성이 좋으며, 인자를 여러번 계산하지 않고, 컴파일러가 인자 및 반환 값에
 타입 검사를 수행 할 수 있다.
 
 
 * Inline functions
+* 인라인 함수
 
 Inline functions present a hazard of their own, though.  Programmers can
 become enamored of the perceived efficiency inherent in avoiding a function
@@ -192,7 +199,7 @@ small and relatively rare.  The cost of a function call, after all, is not
 that high; the creation of large numbers of inline functions is a classic
 example of premature optimization.
 그러나 인라인 함수자체도 위험요소를 갖고 있다.  프로그래머는 뛰어난 효율성에
-매료되기 쉽고, 그 기저에는 함수 호출을 피하고 소스코드를 인라인 함수로 채우고자
+매료되기 쉽고, ##그 기저에는 함수 호출을 피하고 소스코드를 인라인 함수로 채우고자
 함이 깔려있다.  그러나 실제로 인라인 함수는 성능을 감소 시킬 수도 있다.  이들
 코드는 각 호출 위치에 복제되기 때문에 그들은 컴파일된 커널의 크기를 팽창시키고
 프로세서의 메모리 캐시에 압력을 주어 극적으로 실행속도를 느려지게 할 수 있다.
@@ -204,20 +211,22 @@ In general, kernel programmers ignore cache effects at their peril.  The
 classic time/space tradeoff taught in beginning data structures classes
 often does not apply to contemporary hardware.  Space *is* time, in that a
 larger program will run slower than one which is more compact.
-일반적으로 커널 프로그래머는 캐시 효과를 무시한다. 자료 구조 수업의 시작에서
-배운 시간/공간의 트레이드오프 관계는 종종 현대 하드웨어에 적용되지 않는다. 더
-큰 프로그램이 작은 프로그램보다 느리게 실행된다는 점에서 공간이 곧 시간이다.
+일반적으로 커널 프로그래머는 캐시 효과를 무시한다.  자료 구조 수업의 시작에서
+배운 시간-공간의 트레이드오프 관계는 종종 현대 하드웨어에 적용되지 않는다.
+##더 큰 프로그램이 작은 프로그램보다 느리게 실행된다는 점에서 공간이 곧
+시간이다.
 
 More recent compilers take an increasingly active role in deciding whether
 a given function should actually be inlined or not.  So the liberal
 placement of "inline" keywords may not just be excessive; it could also be
 irrelevant.
 최근의 컴파일러는 주어진 함수가 실제 인라인함수로 사용되는지 여부를 결정하는데
-적극적인 역할을 한다.그래서 인라인 함수의 자유로운 배치는 과도하지 않게 조절
+적극적인 역할을 한다.  그래서 인라인 함수의 자유로운 배치는 과도하지 않게 조절
 되며 또한 관련이 없을 수 있다.
 
 
 * Locking
+* Lock 메커니즘
 
 In May, 2006, the "Devicescape" networking stack was, with great
 fanfare, released under the GPL and made available for inclusion in the
@@ -227,18 +236,18 @@ stack offered the promise of fixing that situation.  Yet, this code did not
 actually make it into the mainline until June, 2007 (2.6.22).  What
 happened?
 2006년 5월 "Devicescape" 네트워킹 스택은 GPL라이센스로 메인라인에 포함되었다.
-이 기부는 희소식이었다. 이전 리눅스 무선 네트워킹에 대한 지원은 수준 이하였고
-Devicescape 스택은 그런 상황을 개선하는 제안이었다. 그러나 이 코드는 실제로
-2007년 6월(2.6.22)까지 메인라인에 포함되지 않았다. 무슨 일이 있었을까?
+이 기여는 희소식이었다.  이전 리눅스 무선 네트워킹에 대한 지원은 수준 이하였고
+Devicescape 스택은 그런 상황을 개선하는 제안이었다.  그러나 이 코드는 실제로
+2007년 6월(2.6.22)까지 메인라인에 포함되지 않았다.  무슨 일이 있었을까?
 
 This code showed a number of signs of having been developed behind
 corporate doors.  But one large problem in particular was that it was not
 designed to work on multiprocessor systems.  Before this networking stack
 (now called mac80211) could be merged, a locking scheme needed to be
 retrofitted onto it.
-이 코드는 기업의 ##문 뒤에서 개발 되었다. 그러나 하나의 큰 문제는 이것이
-멀티프로세서 시스템에서 작동하도록 설계되지 않았다는 것이다.이 네트워킹
-스택(mac80211라고 불리는)은 머지되기 전에 락(lock) 메커니즘이 추가되어야 했다.
+이 코드는 기업의 ##문 뒤에서 개발 되었다.  그러나 하나의 큰 문제는 이것이
+멀티프로세서 시스템에서 작동하도록 설계되지 않았다는 것이다.  이 네트워킹
+스택(mac80211라고 불리는)은 머지되기 전에 Lock 메커니즘이 추가되어야 했다.
 
 Once upon a time, Linux kernel code could be developed without thinking
 about the concurrency issues presented by multiprocessor systems.  Now,
@@ -247,9 +256,9 @@ single-processor systems, work being done to improve responsiveness will
 raise the level of concurrency within the kernel.  The days when kernel
 code could be written without thinking about locking are long past.
 옛날 옛적엔 리눅스 커널 코드는 멀티프로세서 시스템에 의해 발생되는 동시성
-문제를 고려하지 않고 개발 될 수 있었다. 그러나 지금, 이 문서는 듀얼 코어
+문제를 고려하지 않고 개발 될 수 있었다.  그러나 지금, 이 문서는 듀얼 코어
 노트북에서 기록되고 있다.  심지어 싱글프로세서 시스템에서 응답성을 개선하기
-위한 작업은 커널내에서 동시성의 수준을 올릴 것이다. 커널 코드가 lock에 대해
+위한 작업은 커널내에서 동시성의 수준을 올릴 것이다.  커널 코드가 Lock에 대해
 생각하지 않고 작성되던 시절은 오래전에 끝났다.
 
 Any resource (data structures, hardware registers, etc.) which could be
@@ -260,14 +269,15 @@ should take the time to understand the available locking primitives well
 enough to pick the right tool for the job.  Code which shows a lack of
 attention to concurrency will have a difficult path into the mainline.
 하나 이상의 스레드에 의해 동시에 액세스 될 수있는 모든 자원(자료 구조, 하드웨어
-레지스터 등) 은 lock에 의해 보호 되어야한다. 새로운 코드는 이 요구사항을 염두에
-두고 작성해야한다.  사후 lock 추가는 오히려 더 어려운 작업이다. 커널 개발자는
-작업에 적합한 도구를 선택할수 있도록 충분히 가능한 lock 기본 요소를 이해하는
-시간을 가져야 한다. 동시성에 대한 관심이 부족한 코드는 메인라인에 포함되기
-어렵다.
+레지스터 등) 은 Lock에 의해 보호 되어야한다.  새로운 코드는 이 요구사항을
+염두에 두고 작성 해야한다.  사후 Lock 추가는 오히려 더 어려운 작업이다.  커널
+개발자는 작업에 적합한 도구를 선택할수 있도록 충분히 가능한 Lock 기본 요소를
+이해하는 시간을 가져야 한다.  동시성에 대한 관심이 부족한 코드는 메인라인에
+반영되기 어렵다.
 
 
 * Regressions
+* 퇴행(Regressions)
 
 One final hazard worth mentioning is this: it can be tempting to make a
 change (which may bring big improvements) which causes something to break
