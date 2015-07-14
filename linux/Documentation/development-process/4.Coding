@@ -286,12 +286,13 @@ regressions have become most unwelcome in the mainline kernel.  With few
 exceptions, changes which cause regressions will be backed out if the
 regression cannot be fixed in a timely manner.  Far better to avoid the
 regression in the first place.
-마지막으로 중요한 위험요소가 있다. ##그것은 기존의 사용자 기능을 고장낼 수
-있는(하지만 큰 개선을 가져올 수있는) 변경을 하고 싶을 수 있다. 이러한 종류의
-변경은 "regression" 이라고 하며 메인라인 커널에서 가장 환영받지 못할
-것이다. ##몇가지 예외케이스를 제외하고 regression이 빠른시일내에 고쳐질수 없는
-경우 regression의 원인은 되돌려 진다. 제일 좋은 방법은 regression을 애초에
-피하는 것이다.
+마지막으로 중요한 위험요소가 있다.  큰 개선을 가져올지 모르는 수정사항을 만들고
+싶어할 수 있는데, 그 수정사항이 메인라인에 반영됨으로 기존 유져 어플리케이션이
+정상 동작하지 않는 경우를 말한다.  이러한 종류의 변경은 "Regression" 이라고
+하며 메인라인 커널에서 가장 환영받지 못할 것이다.  몇 예외의 경우가 아니면
+Regression의 원인이 되는 수정사항은 적절한 시기까지 문제가 해결되지 않으면
+메인라인에서 제거될 것이다.  제일 좋은 방법은 Regression을 애초에 피하는
+것이다.
 
 It is often argued that a regression can be justified if it causes things
 to work for more people than it creates problems for.  Why not make a
@@ -299,8 +300,8 @@ change if it brings new functionality to ten systems for each one it
 breaks?  The best answer to this question was expressed by Linus in July,
 2007:
 종종 문제를 발생시키는 것보다 더 많은 사람들이 그 일에 참여하게 하는
-regression은 정당화 되는것에 대한 논쟁이 있다.  ##열개의 시스템 각각에 새로운
-기능이 추가 된다면 변화를 주는것은 어떤가?  이에대한 가장 좋은 답변은 리누스
+Regression이 정당화 되는것에 대한 논쟁이 있다.  ##열개의 시스템 각각에 새로운
+기능이 추가 된다면 변화를 주는것은 어떤가?  이에 대한 가장 좋은 답변은 리누스
 토발즈가 2007년 7월에 작성한 내용이다.
 
 	So we don't fix bugs by introducing new problems.  That way lies
@@ -309,11 +310,11 @@ regression은 정당화 되는것에 대한 논쟁이 있다.  ##열개의 시�
 	step forward and two steps back?  Different people will give different
 	answers.  That's why regressions are _so_ much more important than new
 	bugfixes.
-	따라서 우리는 새로운 문제를 공개할 때, 버그를 수정하지 않는다. ##이것은
-	정신나간 방법이 아니다. 또한 당신이 실제 어떠한 진전을 이뤄냈는지
+	따라서 우리는 새로운 문제를 공개할 때, 버그를 수정하지 않는다.  ##이것은
+	정신나간 방법이 아니다.  또한 당신이 실제 어떠한 진전을 이뤄냈는지
 	아무도 모른다.  이것은 두 걸음 진전 한 걸음 후퇴 인가 한 걸음 진전 두
 	걸음 후퇴 인가? 서로 다른 사람들이 서로 다른 해결책을 내놓을 수 있다.
-	이것이 새로운 버그수정보다 regression이 더 중요한 이유이다.
+	이것이 새로운 버그수정보다 Regression이 더 중요한 이유이다.
 
 (http://lwn.net/Articles/243460/).
 
@@ -324,7 +325,7 @@ interfaces particularly challenging: since they cannot be changed in
 incompatible ways, they must be done right the first time.  For this
 reason, a great deal of thought, clear documentation, and wide review for
 user-space interfaces is always required.
-일종의 user-space ABI 수정사항에 관련된 regression은 특히 환영받기 어렵다.
+일종의 user-space ABI 수정사항에 관련된 Regression은 특히 환영받기 어렵다.
 ##일단 인터페이스가 user 공간으로 전달되면 불명확하게 지원될 것이다.  ##이
 사실은 user공간 인터페이스의 제작을 도전적으로 만든다.  ##그것이 양립할 수 없는
 방법으로 변경될 수 없을 때 부터, 처음부터 틀리지 않게 만들어 졌을 것이다.
