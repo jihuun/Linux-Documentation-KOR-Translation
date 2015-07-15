@@ -327,12 +327,13 @@ reason, a great deal of thought, clear documentation, and wide review for
 user-space interfaces is always required.
 일종의 user-space ABI 수정사항에 관련된 Regression은 특히 환영받기 어렵다.
 ##일단 인터페이스가 user 공간으로 전달되면 불명확하게 지원될 것이다.  ##이
-사실은 user공간 인터페이스의 제작을 도전적으로 만든다.  ##그것이 양립할 수 없는
+사실은 유져공간 인터페이스의 제작을 도전적으로 만든다.  ##그것이 양립할 수 없는
 방법으로 변경될 수 없을 때 부터, 처음부터 틀리지 않게 만들어 졌을 것이다.
 이러한 이유 때문에 user-space 인터페이스의 많은 의견들과 확실한 문서, 광범위한
 리뷰가 항상 필요한 것이다.
 
 4.2: CODE CHECKING TOOLS
+4.2: 코드를 검증 도구
 
 For now, at least, the writing of error-free code remains an ideal that few
 of us can reach.  What we can hope to do, though, is to catch and fix as
@@ -345,7 +346,7 @@ tools should be used whenever possible.
 지금 당장은, 최소한 에러없는 코드를 작성하는 것은 우리 중 아주 소수만
 달성가능한 비현실적인 일일 것이다.  그러나, 우리가 기대할 수 있는것은, 코드가
 메인라인 커널에 반영되기 이전에 가능한한 많은 수의 에러가 발견되고 수정되는
-것이다. 그 목적을 달성하기 위해서, 커널 개발자들은 광범위하게 발생할 수 있는
+것이다.  그 목적을 달성하기 위해서, 커널 개발자들은 광범위하게 발생할 수 있는
 불분명한 문제들를 자동으로 잡아낼 수 있는 다양한 툴을 한데 모았다.  컴퓨터가
 잡아내는 문제들이 나중에 사용자에게 불편을 주는 문제는 아니기 때문에 이런
 자동화 툴은 가급적이면 사용하는 것이 좋다.
@@ -356,25 +357,25 @@ potential errors.  Quite often, these warnings point to real problems.
 Code submitted for review should, as a rule, not produce any compiler
 warnings.  When silencing warnings, take care to understand the real cause
 and try to avoid "fixes" which make the warning go away without addressing its cause.
-첫번째로 할 수 있는것은 단순히 컴파일러의 warning 메시지를 주의 깊게 살피는
+첫번째로 할 수 있는것은 단순히 컴파일러의 Warning 메시지를 주의 깊게 살피는
 것이다.  최신 버전의 gcc는 많은 양의 잠재적 에러를 미리 발견할 수 있다.  꽤
-자주, 이런 warning 메시지는 실제 문제를 나타낸다. 리뷰용으로 제출된 코드는
-어떠한 warning 메시지도 없어야 할 것이다.  warning이 발생할때는, 실제 원인을
-이해하도록 신경써야한다. 그리고 근본적인 원인의 수정이아닌 단순히 warning
+자주, 이런 Warning 메시지는 실제 문제를 나타낸다.  리뷰용으로 제출된 코드는
+어떠한 Warning 메시지도 없어야 할 것이다.  Warning이 발생할때는, 실제 원인을
+이해하도록 신경써야한다. 그리고 근본적인 원인의 수정이아닌 단순히 Warning
 메시지만 없애는 디버깅은 피해야 한다.
 
 Note that not all compiler warnings are enabled by default.  Build the
 kernel with "make EXTRA_CFLAGS=-W" to get the full set.
-모든 컴파일러의 기본으로 경고 메시지를 출력 하도록 설정 되어있다. 모든 경고
-메시지를 출력하기 위해서는 커널을 "make EXTRA_CFLAGS=-W" 와 함께 빌드해라.
+모든 컴파일러의 기본으로 경고 메시지를 출력 하도록 설정 되어있다.  모든 경고
+메시지를 출력하기 위해서는 커널을 "make EXTRA_CFLAGS=-W" 로 빌드해라.
 
 The kernel provides several configuration options which turn on debugging
 features; most of these are found in the "kernel hacking" submenu.  Several
 of these options should be turned on for any kernel used for development or
 testing purposes.  In particular, you should turn on:
 커널은 디버깅 기능을 위한 몇가지 configuration 옵션을 제공한다.  대부분은
-"kernel hacking" 서브메뉴에서 볼 수 있다. 몇몇의 옵션은 개발 또는 테스트용으로
-반드시 사용해야 한다.  특별히, 다음의 피쳐를:
+"kernel hacking" 서브메뉴에서 볼 수 있다.  몇몇의 옵션은 개발 또는 테스트용으로
+반드시 사용해야 한다.  특별히, 다음의 옵션을 사용해야 한다.
 
  - ENABLE_WARN_DEPRECATED, ENABLE_MUST_CHECK, and FRAME_WARN to get an
    extra set of warnings for problems like the use of deprecated interfaces
@@ -383,38 +384,40 @@ testing purposes.  In particular, you should turn on:
    warnings from other parts of the kernel.
  - ENABLE_WARN_DEPRECATED, ENABLE_MUST_CHECK, FRAME_WARN :
    더이상 사용하지 않는 인터페이스나 함수에서 중요한 리턴값이 빠지는 등의
-   별도의 추가적인 warning 메시지를 얻기 위해서 필요. 이렇게 만들어지는 warning
-   메시지는 너무 많을 수도 있다. 그래도 커널의 다른부분의 warning 메시지는
-   무시해도 상관없다.
+   별도의 추가적인 Warning 메시지를 얻기 위해서 필요.  이렇게 만들어지는
+   Warning 메시지는 너무 많을 수도 있다.  그래도 커널의 다른부분의 Warning
+   메시지는 무시해도 상관없다.
 
  - DEBUG_OBJECTS will add code to track the lifetime of various objects
    created by the kernel and warn when things are done out of order.  If
    you are adding a subsystem which creates (and exports) complex objects
    of its own, consider adding support for the object debugging
    infrastructure.
- - DEBUG_OBJECTS : 커널이 생성한 다양한 객체의 수명을 추적하는 코드를 추가한다.
-   그리고 잘못된 순서로 완료된 작업이 있을때 경고메시지를 준다.  만약 그자체로
-   복잡한 객체를 생성하는 서브시스템을 추가하려고 한다면, 객체 디버깅 기반의
-   기술 추가를 고려해라.
+ - DEBUG_OBJECTS :
+   커널이 생성한 다양한 객체의 수명을 추적하는 코드를 추가한다.  그리고 잘못된
+   순서로 완료된 작업이 있을때 경고메시지를 준다.  만약 그자체로 복잡한 객체를
+   생성하는 서브시스템을 추가하려고 한다면, 객체 디버깅 기반의 기술 추가를
+   고려해라.
 
  - DEBUG_SLAB can find a variety of memory allocation and use errors; it
    should be used on most development kernels.
- - DEBUG_SLAB : 다양한 메모리 할당과 사용시 에러를 찾는다. 이것은 커널 개발에
-   가장 많이 사용 되어야 한다.
+ - DEBUG_SLAB :
+   다양한 메모리 할당과 사용시 에러를 찾는다.  이것은 커널 개발에 가장 많이 사용
+   되어야 한다.
 
  - DEBUG_SPINLOCK, DEBUG_ATOMIC_SLEEP, and DEBUG_MUTEXES will find a
    number of common locking errors.
  - DEBUG_SPINLOCK, DEBUG_ATOMIC_SLEEP, DEBUG_MUTEXES :
-   일반적인 locking 에러를 찾는다.
+   일반적인 Locking 에러를 찾는다.
 
 There are quite a few other debugging options, some of which will be
 discussed below.  Some of them have a significant performance impact and
 should not be used all of the time.  But some time spent learning the
 available options will likely be paid back many times over in short order.
-이외에도 다양한 디버깅 옵션이 존재한다. 그중 일부는 아래에서 살펴 볼 것이다.
+이외에도 다양한 디버깅 옵션이 존재한다.  그중 일부는 아래에서 살펴 볼 것이다.
 그것중 몇몇은 의미있는 성능 효과를 보이기도 하고 항상 사용하면 안되는 것도
-있다.  ##때때로 이런 사용 가능한 옵션을 익히는데 소모하는 시간은 아마 곧 두고두고
-보상받을 수 있을 것이다.
+있다.  ##때때로 이런 사용 가능한 옵션을 익히는데 소모하는 시간은 아마 곧
+두고두고 보상받을 수 있을 것이다.
 
 One of the heavier debugging tools is the locking checker, or "lockdep."
 This tool will track the acquisition and release of every lock (spinlock or
@@ -428,15 +431,16 @@ developers and users) in a deployed system; lockdep allows them to be found
 in an automated manner ahead of time.  Code with any sort of non-trivial
 locking should be run with lockdep enabled before being submitted for
 inclusion.
-가장 규모있는 디버깅 툴에는 locking checker 나 lockdep 이 있다.  이 툴은
-시스템에서 락(lock)을(스핀락 또는 뮤텍스) 획득 하거나 릴리즈 하는것을 추적한다.
+가장 규모있는 디버깅 툴에는 Locking checker 나 Lockdep 이 있다.  이 툴은
+시스템에서 락(Lock)을(스핀락 또는 뮤텍스) 획득 하거나 릴리즈 하는것을 추적한다.
 ##락의 획득 순서는 현재 인터럽트 환경이나 그 외의 것 에서 각각에게 영향을 준다.
-그것은 락이 항상 같은 순서로 획득 되었다는것을 보장해준다. 그리고 인터럽트는
-모든 상황에 적용될 수 있다고 똑같이 가정할 수 있다.  다시말하면, lockdep은
-시스템이 간혹 데드락(deadlock)에 빠질 수 있는 시나리오를 검출 할 수 있는 것이다.  이런
-종류의 문제는 시스템에 있어서 사용자나 개발자 모두를 괴롭힌다.  lockdep은 이런
-문제를 기한보다 일찍 자동으로 발견할 수 있도록 도와준다.  반영하고자 하는 모든
-종류의 중요한 락이 포함된 코드는 lockdep을 enable시켜 동작시켜봐야 한다.
+그것은 락이 항상 같은 순서로 획득 되었다는것을 보장해준다.  그리고 인터럽트는
+모든 상황에 적용될 수 있다고 똑같이 가정할 수 있다.  다시말하면, Lockdep은
+시스템이 간혹 데드락(Deadlock)에 빠질 수 있는 시나리오를 검출 할 수 있는
+것이다.  이런 종류의 문제는 시스템에 있어서 사용자나 개발자 모두를 괴롭힌다.
+Lockdep은 이런 문제를 기한보다 일찍, 그리고 자동으로 발견할 수 있도록 도와준다.
+반영하고자 하는 모든 종류의 중요한 락이 포함된 코드는 Lockdep을 enable시켜 동작
+시켜봐야 한다.
 
 As a diligent kernel programmer, you will, beyond doubt, check the return
 status of any operation (such as a memory allocation) which can fail.  The
@@ -459,10 +463,10 @@ code responds when things go badly.  See
 Documentation/fault-injection/fault-injection.txt for more information on
 how to use this facility.
 ##
-커널은 그것을 할 수 있도록 일부러 오류를 삽입시키는 (fault injection
-framework)를 제공 한다.  ##특별히 메모리 할당이 추가될 때.  fault injection이
-설정 되면, ##상당수의 메모리 할당은 실패 할 것이다. 이 실패는 특별한 코드를
-통해 방지시킬 수 있다.  fault injection의 설정과 함께 동작시키게 되면 개발자는
+커널은 그것을 할 수 있도록 일부러 오류를 삽입시키는 (Fault injection
+framework)를 제공 한다.  ##특별히 메모리 할당이 추가될 때.  Fault injection이
+설정 되면, ##상당수의 메모리 할당은 실패 할 것이다.  이 실패는 특별한 코드를
+통해 방지시킬 수 있다.  Fault injection의 설정과 함께 동작시키게 되면 개발자는
 문제가 발생할 때 코드가 어떻게 대응 하는지 확인 할 수 있다.  이 기능의 보다
 자세한 내용은 Documentation/fault-injection/fault-injection.txt 에서 확인 가능
 하다.
@@ -476,11 +480,12 @@ be found at https://sparse.wiki.kernel.org/index.php/Main_Page if your
 distributor does not package it); it can then be run on the code by adding
 "C=1" to your make command.
 에러를 찾을 수 있는 또 다른 툴은 "sparse" 라는 정적 분석 툴이다. Sparse를
-이용하면, 개발자는 다음의 문제 상황을 인지 할 수 있다; 커널 공간 주소와, 유져
+이용하면, 개발자는 다음의 문제 상황을 인지 할 수 있다.  커널 공간 주소와, 유져
 공간 주소를 혼동, 빅-엔디안과 리틀-엔디안의 혼용, ##flag로 설정된 integer 변수
-파싱, 등.  Sparse는 반드시 구분되서 설치 되어야한다. (만약 배포판이 패키지를
-가지고 있지 않은 경우 https://sparse.wiki.kernel.org/index.php/Main_Page 에서
-확인 가능) 그리고 이 기능은 make 명령에서 "C=1" 을 추가하면 실행 된다.
+파싱, 등.  Sparse는 반드시 구분되서 설치 되어야 한다. (만약 당신의 배포판이
+패키지를 가지고 있지 않은 경우
+https://sparse.wiki.kernel.org/index.php/Main_Page 에서 확인 가능) 그리고 이
+기능은 make 명령에서 "C=1" 을 추가하면 실행 된다.
 
 The "Coccinelle" tool (http://coccinelle.lip6.fr/) is able to find a wide
 variety of potential coding problems; it can also propose fixes for those
@@ -514,6 +519,7 @@ compilation 절차를 통해 동작 할 수 있다.  많은 수의 x86용 컴파
 
 
 4.3: DOCUMENTATION
+4.3: 문서화 하기
 
 Documentation has often been more the exception than the rule with kernel
 development.  Even so, adequate documentation will help to ease the merging
@@ -532,11 +538,11 @@ effects on performance, and anything else that might be needed to
 understand the patch.  Be sure that the changelog says *why* the patch is
 worth applying; a surprising number of developers fail to provide that
 information.
-최초의 패치에 관련된 문서는 그 패치의 change log와 관련 되어 있다. Log
+최초의 패치에 관련된 문서는 그 패치의 Change log와 관련 되어 있다. Log
 엔트리에는 다음을 기술 해야 한다.  해결해야할 문제, 문제 해결책의 형태, 해당
-패치 작업에 동행한 사람들, 관련 성능 효과,  그외에 패치를 이해하는데 필요한
-모든것.  changelog에는 반드시 "왜" 이 패치가 적용되는게 이로운가에대한 기술이
-있어야한다.  상당히 많은 수의 개발자가 이 정보를 제공하는것을 빼먹는다.
+패치 작업에 동행한 사람들, 관련 성능 효과, 그외에 패치를 이해하는데 필요한 모든
+것.  Change log에는 반드시 "왜" 이 패치가 적용되는게 이로운가에 대한 기술이
+있어야 한다.  상당히 많은 수의 개발자가 이 정보를 제공하는것을 빼먹는다.
 
 Any code which adds a new user-space interface - including new sysfs or
 /proc files - should include documentation of that interface which enables
@@ -551,14 +557,13 @@ sysfs나 /proc 파일과 같은 유져-공간 인터페이스에 관련된 코�
 The file Documentation/kernel-parameters.txt describes all of the kernel's
 boot-time parameters.  Any patch which adds new parameters should add the
 appropriate entries to this file.
-
 Documentation/kernel-parameters.txt 에는 커널의 부팅 타임 매개변수의 모든것이
 기술 되어있다.  새로운 매개변수가 포함 되는 패치를 적용 하고자 한다면 이 문서에
 해당 내용을 추가해야 한다.
 
 Any new configuration options must be accompanied by help text which
 clearly explains the options and when the user might want to select them.
-새로운 configuration 옵션을 추가하고자 한다면 사용자가 선택 할 수 있도록 명확한
+새로운 Configuration 옵션을 추가하고자 한다면 사용자가 선택 할 수 있도록 명확한
 설명을 추가해야 한다.
 
 Internal API information for many subsystems is documented by way of
@@ -574,7 +579,7 @@ Documentation/kernel-doc-nano-HOWTO.txt.
 다양한 서브시스템의 내부 API정보는 특정 형식으로 작성하도록 기록되어 있다. 이
 작성물은 "kernel-doc" 스크립트의 다양한 방법에 의해 작성되거나 형식이 변환될 수
 있다. ##만약 kerneldoc 으로 작성된 서브시스템에서 작업을 한다면, 외부 함수등을
-거기에 추가하거나 계속 유지해야 한다. 이런 문서가 없는 부분이있다면 kerneldoc
+거기에 추가하거나 계속 유지해야 한다.  이런 문서가 없는 부분이 있다면 kerneldoc
 코멘트를 추가하는것이 나중을 위해서 더 좋을 것이다.  이런 글의 형식과 어떻게
 kerneldoc 템플릿을 만들 수 있는지에 대한 정보는
 Documentation/kernel-doc-nano-HOWTO.txt 에서 확인할 수 있다.
@@ -585,10 +590,11 @@ the expectations for new code are higher than they were in the past;
 merging uncommented code will be harder.  That said, there is little desire
 for verbosely-commented code.  The code should, itself, be readable, with
 comments explaining the more subtle aspects.
-##현재 커널 코드를 읽는 누구라도 코멘트가 가장 주목할 만한 것이라고 자각할
-것이다. 다시 말하자면, 새 코드에 대한 기대감은 과거 보다 더 커졌기 때문에,
-문서가 없는 코드는 더욱 반영하기 어려워 졌다. ##그렇다 치고 verbosely-commented
-에대한 욕망이 존재한다. ##코드는 설명과 함께 그 자체로 가독성이 있어야 한다.
+##현재 커널 코드를 읽는 누구라도 주석이 가장 주목할 만한 것이라고 자각할
+것이다.  다시 말하자면, 새 코드에 대한 기대감은 과거 보다 더 커졌기 때문에,
+주석이 없는 코드는 더욱 반영하기 어려워 졌다.  그것은 보다 자세한 주석을 원하는
+사람이 많다는 뜻이다.  코드는 그 자체로 미묘한 측면들을 보충 설명 해주는 주석과
+함께 가독성이 좋아져야 한다.
 
 Certain things should always be commented.  Uses of memory barriers should
 be accompanied by a line explaining why the barrier is necessary.  The
@@ -597,14 +603,15 @@ Major data structures need comprehensive documentation in general.
 Non-obvious dependencies between separate bits of code should be pointed
 out.  Anything which might tempt a code janitor to make an incorrect
 "cleanup" needs a comment saying why it is done the way it is.  And so on.
-항상 설명을 추가하여야하는 것이 있다.  memory barriers 를 사용한다면 barrier가
-왜 필요한지 라인단위로 설명이 되어야 한다.  일반적으로 자료구조의 locking
-규칙은 설명이 필요하다. 주요 자료구조는 포괄적인 문서가 필요하다.  ##코드간의
-불명확한 의존성은 정확히 가리켜야 한다. 정확하지 않은 cleanup 코드를 만들기
-위한 임시 코드는 왜 그랬는지, 어떻게 했는지에 대한 설명이 있어야한다.
+다음의 내용에는 항상 주석을 추가하여야 한다.  메모리 장벽(memory barriers) 를
+사용한다면 메모리 장벽이 왜 필요한지 라인 단위로 설명이 되어야 한다.
+일반적으로 자료구조의 Locking 규칙은 설명이 필요하다.  주요 자료구조는 포괄적인
+문서가 필요하다.  ##코드간의 불명확한 의존성은 정확히 가리켜야 한다.  정확하지
+않은 Cleanup 코드를 만들기 위한 임시 코드는 왜 그랬는지, 어떻게 했는지에 대한
+설명이 있어야한다.
 
 4.4: INTERNAL API CHANGES
-4.4: 내부 API 변경하기
+4.4: 커널 API 변경하기
 
 The binary interface provided by the kernel to user space cannot be broken
 except under the most severe circumstances.  The kernel's internal
@@ -617,7 +624,7 @@ developer, you are empowered to make such changes.
 문제가 발생하기 어렵다.  대신, 커널의 내부 프로그래밍 인터페이스는 매우 유동적이며,
 필요에따라 변경하는것이 가능하다.  커널 API 로 작업할 일이 생겼을때, 또는
 단순하게 원치않아서 특정 기능을 만들어 쓰지 않을때는 API가 수정이 필요하다는
-뜻이다. 커널 개발자로서 당신은 변경을 할 수 있는 권한을 가지고 있다.
+뜻이다.  커널 개발자로서 당신은 변경을 할 수 있는 권한을 가지고 있다.
 
 There are, of course, some catches.  API changes can be made, but they need
 to be well justified.  So any patch making an internal API change should be
@@ -638,11 +645,11 @@ say, this can be a large job, so it is best to be sure that the
 justification is solid.  Note that the Coccinelle tool can help with
 wide-ranging API changes.
 또 하나는, 내부 API를 수정한 개발자는 커널 트리 내에있는 어떤 코드의
-수정사항으로 인한 문제 발생에 일반적으로 책임을 진다. 만약 광범위하게 사용되는
+수정사항으로 인한 문제 발생에 일반적으로 책임을 진다.  만약 광범위하게 사용되는
 함수라면, 이 의무는 수백 수천개의 수정사항으로 늘어 날 수 있다(많은 경우 충돌을
 발생시키는 것은 다른 개발자에 의해 수정된다).  두 말할 필요도 없이, 이것은
-거대한 작업이 될수 있다. 따라서 탄탄한 정당성 위에 만들어진 작업인지 확실히
-하는것이 좋다. Coccinelle 툴은 광범위한 API수정에 도움이 될 수 있다.
+거대한 작업이 될수 있다.  따라서 그 작업을 해야하는 명확한 필요성이 있는지
+확실히 하는것이 좋다.  Coccinelle 툴은 광범위한 API수정에 도움이 될 수 있다.
 
 When making an incompatible API change, one should, whenever possible,
 ensure that code which has not been updated is caught by the compiler.
@@ -653,7 +660,7 @@ something that kernel developers need to be worried about, but we also do
 not have to make life harder for out-of-tree developers than it needs to
 be.
 호환성이 떨어지는 API를 수정할때는 가급적이면, 업데이트 되지 않은 코드가
-컴파일러에의해서 발견되지 않는지 확실히 하는 것이 좋다.  이것은 이 API가 모든
+컴파일러에 의해서 발견되지 않는지 확실히 하는 것이 좋다.  이것은 이 API가 모든
 in-tree에서 사용되고 있는지 찾는데 도움이 될 것이다.  그리고 out-of-tree코드
 개발자에게도 대응이 필요한지도 알려줄 것이다.  out-of-tree코드 까지 호환되도록
 신경쓸 필요는 없지만, 굳이 out-of-tree개발자를 힘들게 할 필요는 없지 않은가?
