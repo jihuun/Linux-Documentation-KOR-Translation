@@ -245,7 +245,7 @@ corporate doors.  But one large problem in particular was that it was not
 designed to work on multiprocessor systems.  Before this networking stack
 (now called mac80211) could be merged, a locking scheme needed to be
 retrofitted onto it.
-이 코드는 기업의 ##문 뒤에서 개발 되었다.  그러나 하나의 큰 문제는 이것이
+##이 코드는 회사에서 비밀리에 개발 되었다.  그러나 하나의 큰 문제는 이것이
 멀티프로세서 시스템에서 작동하도록 설계되지 않았다는 것이다.  이 네트워킹
 스택(mac80211라고 불리는)은 머지되기 전에 Lock 메커니즘이 추가되어야 했다.
 
@@ -327,8 +327,8 @@ reason, a great deal of thought, clear documentation, and wide review for
 user-space interfaces is always required.
 일종의 user-space ABI 수정사항에 관련된 Regression은 특히 환영받기 어렵다.
 ##일단 인터페이스가 user 공간으로 전달되면 불명확하게 지원될 것이다.  ##이
-사실은 유져공간 인터페이스의 제작을 도전적으로 만든다.  ##그것이 양립할 수 없는
-방법으로 변경될 수 없을 때 부터, 처음부터 틀리지 않게 만들어 졌을 것이다.
+사실은 유져공간 인터페이스의 제작을 도전 과제로 만든다.  ##그것이 양립할 수
+없는 방법으로 변경될 수 없을 때 부터, 처음부터 틀리지 않게 만들어 졌을 것이다.
 이러한 이유 때문에 user-space 인터페이스의 많은 의견들과 확실한 문서, 광범위한
 리뷰가 항상 필요한 것이다.
 
@@ -462,11 +462,10 @@ Running with fault injection enabled allows the programmer to see how the
 code responds when things go badly.  See
 Documentation/fault-injection/fault-injection.txt for more information on
 how to use this facility.
-##
-커널은 그것을 할 수 있도록 일부러 오류를 삽입시키는 (Fault injection
-framework)를 제공 한다.  ##특별히 메모리 할당이 추가될 때.  Fault injection이
-설정 되면, ##상당수의 메모리 할당은 실패 할 것이다.  이 실패는 특별한 코드를
-통해 방지시킬 수 있다.  Fault injection의 설정과 함께 동작시키게 되면 개발자는
+##특별히 메모리 할당된 곳에, 커널은 그것을 할 수 있도록 일부러 오류를
+삽입시키는 (Fault injection framework)를 제공 한다.  Fault injection이 설정
+되면, ##상당수의 메모리 할당은 실패 할 것이다.  이 실패는 특정 영역의 코드를
+제한시킬 수 있다.  Fault injection의 설정과 함께 동작시키게 되면 개발자는
 문제가 발생할 때 코드가 어떻게 대응 하는지 확인 할 수 있다.  이 기능의 보다
 자세한 내용은 Documentation/fault-injection/fault-injection.txt 에서 확인 가능
 하다.
@@ -481,9 +480,9 @@ distributor does not package it); it can then be run on the code by adding
 "C=1" to your make command.
 에러를 찾을 수 있는 또 다른 툴은 "sparse" 라는 정적 분석 툴이다. Sparse를
 이용하면, 개발자는 다음의 문제 상황을 인지 할 수 있다.  커널 공간 주소와, 유져
-공간 주소를 혼동, 빅-엔디안과 리틀-엔디안의 혼용, ##flag로 설정된 integer 변수
-파싱, 등.  Sparse는 반드시 구분되서 설치 되어야 한다. (만약 당신의 배포판이
-패키지를 가지고 있지 않은 경우
+공간 주소를 혼동, 빅-엔디안과 리틀-엔디안의 혼용, 비트 Flag로 설정된 Integer
+변수 파싱, 등.  Sparse는 반드시 구분되서 설치 되어야 한다. (만약 당신의
+배포판이 패키지를 가지고 있지 않은 경우
 https://sparse.wiki.kernel.org/index.php/Main_Page 에서 확인 가능) 그리고 이
 기능은 make 명령에서 "C=1" 을 추가하면 실행 된다.
 
@@ -590,7 +589,7 @@ the expectations for new code are higher than they were in the past;
 merging uncommented code will be harder.  That said, there is little desire
 for verbosely-commented code.  The code should, itself, be readable, with
 comments explaining the more subtle aspects.
-##현재 커널 코드를 읽는 누구라도 주석이 가장 주목할 만한 것이라고 자각할
+##현재 커널 코드를 읽는 누구라도 주석이 가장 주목할 만한 것이라고 생각할
 것이다.  다시 말하자면, 새 코드에 대한 기대감은 과거 보다 더 커졌기 때문에,
 주석이 없는 코드는 더욱 반영하기 어려워 졌다.  그것은 보다 자세한 주석을 원하는
 사람이 많다는 뜻이다.  코드는 그 자체로 미묘한 측면들을 보충 설명 해주는 주석과
