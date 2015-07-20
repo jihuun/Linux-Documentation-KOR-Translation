@@ -1,4 +1,5 @@
 5: POSTING PATCHES
+5: 패치 올리기
 
 Sooner or later, the time comes when your work is ready to be presented to
 the community for review and, eventually, inclusion into the mainline
@@ -9,15 +10,16 @@ document will attempt to cover these expectations in reasonable detail;
 more information can also be found in the files SubmittingPatches,
 SubmittingDrivers, and SubmitChecklist in the kernel documentation
 directory.
-결국 당신의 작업내용이 커뮤니티 리뷰를 위해 준비가 될 것이고, 조만간 메인라인에
-포함 될 것이다.  당연히 커널 개발 커뮤니티 패치의 게시에 사용되는 규칙과
-절차들은 발전하고 있다.  이 규칙과 절차들을 지키면 참여하는 모두의 삶을 훨씬 더
-쉽게 만들 것이다.  이 문서는 이 과정에 대해 자세히 다룰 것이다. 자세한 내용은
-documentation 디렉토리의 SubmittingPatches, SubmittingDrivers, SubmitChecklist
-파일들에서도 찾아 볼 수 있다.
+조만간, 당신의 수정사항이 준비가 완료되어 리뷰를 받게될 시점이 올것이고 결국
+메인라인 커널에 반영될 것이다.  당연하게도, 커널 커뮤니티는 패치를 올리기 위한
+규칙과 절차를 발전 시켜왔다.  (그것을 지키면 모두가 편해짐) 이 문서는 이 과정에
+대해 자세히 다룰 것이다. 자세한 내용은 Documentation 디렉토리의
+SubmittingPatches, SubmittingDrivers, SubmitChecklist 파일들에서도 찾아 볼 수
+있다.
 
 
 5.1: WHEN TO POST
+5.1: 언제 패치를 올리나
 
 There is a constant temptation to avoid posting patches before they are
 completely "ready."  For simple patches, that is not a problem.  If the
@@ -25,37 +27,39 @@ work being done is complex, though, there is a lot to be gained by getting
 feedback from the community before the work is complete.  So you should
 consider posting in-progress work, or even making a git tree available so
 that interested developers can catch up with your work at any time.
-작업이 완전히 준비되기 전에는 패치 포스팅을 피하고 싶은 유혹이 있다.  간단한
-패치의 경우, 이것은 별 문제가 되지 않는다. 하지만 작업이 복잡해지면 작업이
-완료되기 전에 커뮤니티로부터 피드백을 통해 얻을 수 있는 것이 많다.  그래서
-당신은 진행중인 작업을 포스팅하거나 관심있는 개발자들이 언제든지 따라잡을 수
-있도록 git 트리 사용을 고려해야한다.
+작업이 완벽히 준비되기 전에는 패치를 커뮤니티에 올리고 싶지는 않을 것이다.
+간단한 패치의 경우, 이것은 별 문제가 되지 않는다.  하지만 작업이 복잡해지면
+작업이 완료되기 전에 커뮤니티로부터 피드백을 통해 얻을 수 있는 것이 많다.
+그래서 당신은 작업을 진행중인 상태에서 패치를 포스팅하거나 관심을 갖는
+개발자들이 언제든지 따라잡을 수 있도록 git 트리 사용을 고려하는 것이 좋다.
 
 When posting code which is not yet considered ready for inclusion, it is a
 good idea to say so in the posting itself.  Also mention any major work
 which remains to be done and any known problems.  Fewer people will look at
 patches which are known to be half-baked, but those who do will come in
 with the idea that they can help you drive the work in the right direction.
-아직 포함을 위해 준비되지 않은 코드를 포스팅 할 때, 게시물 자체가 그렇게 말하는
-것이 좋다. 또한 앞으로 수행 해야할 작업 및 알려진 문제를 언급하는게 좋다.  적은
-수의 사람들이 이 불완전한 패치를 볼 것이다, 그러나 그 사람들이 당신이 올바른
-방향으로 작업을 하는데 도움을 줄수 있다.
+만약 패치가 메인라인에 반영되기에는 아직 부족한상태로 커뮤니티에 포스팅 할
+경우, 포스팅 글 자체에 그렇게 표기해 주는 것이 좋다.  또한 앞으로 수행 해야할
+작업 및 알려진 문제를 언급하는게 좋다.  많지 않은 사람들이 이 불완전한 패치를
+보겠지만, 그 사람들이 당신이 올바른 방향으로 작업을 하는데 도움을 줄 수 있을
+것이다.
 
 
 5.2: BEFORE CREATING PATCHES
+5.2: 패치를 보내기 전에 고려해야할 사항
 
 There are a number of things which should be done before you consider
 sending patches to the development community.  These include:
 당신이 개발 커뮤니티에 패치를 보내는 것을 고려하기 전에 해야하는 다음과 같은
-일들이 있다:
+일들이 있다
 
  - Test the code to the extent that you can.  Make use of the kernel's
    debugging tools, ensure that the kernel will build with all reasonable
    combinations of configuration options, use cross-compilers to build for
    different architectures, etc.
- - 당신이 할 수있는 범위에 코드를 테스트 해라. 커널 디버깅 도구를 활용해 커널이
-   구성 옵션의 합리적인 조합으로 빌드 될 것을 보장하고 크로스 컴파일러를 이용해
-   다른 아키텍쳐용으로 빌드 되는지 확인하라.
+ - 당신이 할 수있는 범위에서 코드를 테스트 해라.  커널 디버깅 도구를 활용해
+   커널이 구성 옵션의 합리적인 조합으로 빌드 될 것을 보장하고 크로스 컴파일러를
+   이용해 다른 아키텍쳐용으로도 빌드가 되는지 확인하라.
 
  - Make sure your code is compliant with the kernel coding style
    guidelines.
@@ -66,38 +70,40 @@ sending patches to the development community.  These include:
    summary of the results should be included with the patch.
  - 당신의 변경사항이 성능에 영향이 있다면, 당신은 당신의 변경사항의 영향(또는
    효과)이 무엇인지 보여주는 벤치 마크를 실행해야 한다.  결과는 요약하여 패치에
-   포함되어야한다.
+   포함 되어야한다.
 
  - Be sure that you have the right to post the code.  If this work was done
    for an employer, the employer likely has a right to the work and must be
    agreeable with its release under the GPL.
- - 당신이 코드를 게시 할 수있는 권한이 있는지 확인하라. 어떤 작업이 특정 업체에
-   의해 수행 된 경우, 그 업체가 이 작업에 대한 권리를 가지고 있으며, GPL
+ - 당신이 코드를 게시 할 수있는 권한이 있는지 확인하라.  어떤 작업이 회사에
+   의해 수행 된 경우, 그 회사가 이 작업에 대한 권리를 가지고 있으며, GPL
    라이센스로 릴리즈 되는데 동의해야 한다.
 
 As a general rule, putting in some extra thought before posting code almost
 always pays back the effort in short order.
-일반적으로, ##코드를 게시하기 전에 패치에 추가되는 것들은 짧은 시간에 좋은 결과로
-돌아온다.
+일반적으로, 패치를 올리기 이전에 위의 사항을 지켰는지 돌이켜보는 시간을
+갖는것은 나중에 좋은 결과로 돌아오게 될 것이다.
 
 
 5.3: PATCH PREPARATION
+5.3: 패치 준비하기
 
 The preparation of patches for posting can be a surprising amount of work,
 but, once again, attempting to save time here is not generally advisable
 even in the short term.
-패치 포스팅을 위한 준비는 놀라운 만큼 많은양의 작업이 될수 있다. ##그러나
-일반적으로 이 단계에서 (단기적이라도) 시간을 절약하려는 시도는 권장하지 않는다.
+패치 포스팅을 위한 준비는 놀라운 만큼 많은양의 작업이 될수 있다.  그러나 다시
+말하지만 패치를 준비할때 시간을 절약하려고 하는것은 좋은 생각이 아니다.  아무리
+시간이 촉박해도 말이다.
 
 Patches must be prepared against a specific version of the kernel.  As a
 general rule, a patch should be based on the current mainline as found in
 Linus's git tree.  When basing on mainline, start with a well-known release
 point - a stable or -rc release - rather than branching off the mainline at
 an arbitrary spot.
-패치는 커널의 특정 버전에 대한 준비를해야한다. 일반적으로 패치는 현재
-메인라인을 기반으로해야한다. 메인라인을 기반으로 할 때, 임의의 지점에서
-분기하기 보다는 stable 이나 rc 같은 잘 알려진 릴리스 포인트로 시작하는 것이
-좋다.
+패치는 반드시 특정 버전의 커널을 기준으로 준비를 해야한다.  일반적으로 패치는
+현재 메인라인을 기반으로 하는것이 좋다.  메인라인을 기반으로 할 때, 임의의
+지점에서 분기하기 보다는 stable 이나 rc 같은 잘 알려진 릴리스 포인트로 시작하는
+것이 좋다.
 
 It may become necessary to make versions against -mm, linux-next, or a
 subsystem tree, though, to facilitate wider testing and review.  Depending
@@ -105,19 +111,20 @@ on the area of your patch and what is going on elsewhere, basing a patch
 against these other trees can require a significant amount of work
 resolving conflicts and dealing with API changes.
 하지만 폭넓은 테스트 및 리뷰를 용이하게 하기위해 -mm, linux-next, 또는
-서브시스템트리에 대한 버전을 만들 필요가 있을 수 있다. 패치의 분야나 다른곳에서
-무슨일이 일어나고 있는지에 따라서 이런 다른버전을 기반으로 만드는것은 conflict
-해결이나 API 변경처리에 상당한 양의 작업이 필요할수 있다.
+서브시스템 트리에 대한 버전이 필요할 수도 있다.  패치의 분야나 다른곳에서
+무슨일이 일어나고 있는지에 따라서 이런 다른버전을 기반으로 만드는것은 충돌을
+해결하거나, API 변경을 다루는데에 상당한 양의 작업이 필요할수 있다.
 
 Only the most simple changes should be formatted as a single patch;
 everything else should be made as a logical series of changes.  Splitting
 up patches is a bit of an art; some developers spend a long time figuring
 out how to do it in the way that the community expects.  There are a few
 rules of thumb, however, which can help considerably:
-##가장 간단한 변경만이 하나의 패치로 제작 되야한다; 다른 모든 변경은 다수의
-시리즈로 만들어 져야한다. 패치를 분할하는것은 예술 작업과 같다; 일부 개발자는
-커뮤니티가 기대하는 방법을 찾는데 오랜시간을 보낸다. ##그러나 상당히 도움이 될
-수있는 규칙도 있다:
+가장 간단한 하나의 변경만이 하나의 패치로 제작 되어야 한다.  모든 수정사항은
+그런 단순한 개별 패치의 논리적인 묶음으로 만들어져야 한다.  패치를 분할
+하는것은 약간의 기술을 필요로 한다.  일부 개발자는 커뮤니티가 원하는 방법대로
+패치를 분할 하는방법을 찾는데에 많은 시간을 보내기도 한다.  그래서 경험으로
+얻은 상당히 도움이 될만한 규칙들을 소개한다.
 
  - The patch series you post will almost certainly not be the series of
    changes found in your working revision control system.  Instead, the
@@ -125,10 +132,10 @@ rules of thumb, however, which can help considerably:
    split apart in ways which make sense.  The developers are interested in
    discrete, self-contained changes, not the path you took to get to those
    changes.
- - 당신의 패치 시리즈는 확실하게 당신의 버전 컨트롤 시스템에서 사용되는
-   시리즈가 아니다.  대신, 최종 형태에서 고려된 뒤에 이해가 가는 방법으로
-   나누어져야 한다. 개발자들은 당신이 그 변경을 만든 과정이 아니라 분리되면서
-   필요내용을 모두 포함하는가에 관심이 있다.
+ - 당신의 패치 묶음는 확실하게 당신이 작업하는 ##로컬 버전의 패치 묶음의
+   형태와는 다르게 제작해야 한다.  대신, 최종 형태에서 고려된 뒤에 이치에 맞는
+   방법으로 나누어져야 한다.  개발자들은 당신이 그 변경을 만든 과정이 아니라
+   분리되면서 필요내용을 모두 포함하는가에 관심이 있다.
 
  - Each logically independent change should be formatted as a separate
    patch.  These changes can be small ("add a field to this structure") or
