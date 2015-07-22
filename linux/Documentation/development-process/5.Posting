@@ -369,7 +369,7 @@ for addition without the explicit permission of the person named.
 Before you mail your patches, there are a couple of other things you should
 take care of:
 당신이 당신의 패치를 메일로 보내기 전에, 당신이 처리해야할 몇 가지 사항이 더
-있다:
+있다.
 
  - Are you sure that your mailer will not corrupt the patches?  Patches
    which have had gratuitous white-space changes or line wrapping performed
@@ -378,12 +378,12 @@ take care of:
    to yourself and convince yourself that it shows up intact.
  - 당신은 패치가 메일시스템에 의해 손상되지 않는다고 확신하는가?  불필요한
    공백을 변경하거나 메일 클라이언트에 의해 수행된 줄 바꿈은 종종 다른 쪽에
-   적용되지 않고 종종 구체적으로 검토되지 않는다. 의심의 여지가 있을 경우,
-   자신에게 패치를 보내 그대로 나타나는지 확인을 해보는 것이 좋다.
+   적용되지 않고 종종 구체적으로 검토되지 않는다.  의심스럽다면, 자신에게
+   패치를 보내 그대로 나타나는지 확인을 해보는 것이 좋다.
 
    Documentation/email-clients.txt has some helpful hints on making
    specific mail clients work for sending patches.
- - Documentation/email-clients.txt 문서에 특정 메일 클라이언트들을 이용해
+   Documentation/email-clients.txt 문서에 특정 메일 클라이언트들을 이용해
    패치를 보낼때 유용한 힌트들이 있다.
 
  - Are you sure your patch is free of silly mistakes?  You should always
@@ -393,25 +393,26 @@ take care of:
    look like, is not smarter than you.  If fixing a checkpatch.pl complaint
    would make the code worse, don't do it.
  - 당신의 패치에 어리석은 실수가 없는지 확신하는가? 당신은 항상
-   scripts/checkpatch.pl을 통해 패치를 체크해보고 제공되는 불만사항을
-   해결해야한다. 커널 패치가 어때야하는지 충분히 생각해 보면서, checkpatch.pl
-   스크립트가  당신보다 똑똑하지 않다는것을 명심해야 한다.  ##checkpatch.pl
-   불만을 수정하는것이 코드를 나쁘게 할 수 있다. 그런경우 수정하지 마라.
+   scripts/checkpatch.pl을 통해 패치를 체크해보고 출력되는 문제들을 해결
+   해야한다.  커널 패치가 어때야 하는지 충분히 생각해 보면서, checkpatch.pl
+   스크립트가 당신보다 똑똑하지 않다는것을 명심해야 한다.  ##checkpatch.pl 가
+   출력하는 문제를 수정하는것이 코드를 나쁘게 할 수 있다. 그런경우 수정하지
+   마라.
 
 Patches should always be sent as plain text.  Please do not send them as
 attachments; that makes it much harder for reviewers to quote sections of
 the patch in their replies.  Instead, just put the patch directly into your
 message.
-패치는 항상 일반 텍스트로 전송해야한다. 특히 첨부파일로 보내면 안된다; 리뷰어가
-검토답변에 패치의 섹션을 인용 하기가 어려워진다.  대신, 당신의 메시지 안에 직접
-패치를 전달하라.
+패치는 항상 일반 텍스트로 전송해야한다.  특히 첨부파일로 보내면 안된다.
+리뷰자가 검토답변에 패치의 특정 부분을 인용 하기가 어려워지기 때문이다.  대신,
+당신의 메시지 안에 직접 패치를 전달하라.
 
 When mailing patches, it is important to send copies to anybody who might
 be interested in it.  Unlike some other projects, the kernel encourages
 people to err on the side of sending too many copies; don't assume that the
 relevant people will see your posting on the mailing lists.  In particular,
 copies should go to:
-패치를 메일로 보낼때, 그것에 관심을 가질만한 모든사람에게 사본을 보내는 것이
+패치를 메일로 보낼때, 그것에 관심을 가질만한 모든사람에게 ##사본을 보내는 것이
 중요하다.  다른 프로젝트 달리, 커널은 많은 사본을 전송하는것을 지나치다
 싶을정도로 장려한다; 패치에 관련있는 사람들이 메일링리스트에서 당신의 포스팅을
 볼거라고 가정하지 마라.  특히, 사본이 반드시 전달되야 하는 사람들은 아래와
@@ -443,10 +444,11 @@ copies should go to:
    the patch.  Also add a "Cc: stable@vger.kernel.org" to the tags within
    the patch itself; that will cause the stable team to get a notification
    when your fix goes into the mainline.
- - 당신이 버그를 수정하는 경우, 변경점이 다음 stable 업데이트에 포함되어야 할지
-   생각해봐야한다.  만약 포함되어야 한다고 생각되면 stable@vger.kernel.org 로
-   패치의 사본을 보내야 한다.  또한 "Cc: stable@vger.kernel.org" 태그를 패치에
-   추가해야 stable팀에서 당신의 수정이 메인라인에 머지될때 통지를 받을 수 있다.
+ - 당신이 버그를 수정하는 경우, 수정사항이 다음 stable 업데이트에 포함 되어야
+   하는지 생각해 보아야 한다.  만약 포함되어야 한다고 생각되면
+   stable@vger.kernel.org 로 패치의 사본을 보내야 한다.  또한 "Cc:
+   stable@vger.kernel.org" 태그를 패치에 추가해야 stable팀에서 당신의 수정이
+   메인라인에 병합될때 통지를 받을 수 있다.
 
 When selecting recipients for a patch, it is good to have an idea of who
 you think will eventually accept the patch and get it merged.  While it
@@ -456,9 +458,9 @@ subsystem maintainers who watch over specific parts of the kernel.  Usually
 you will be wanting that maintainer to merge your patches.  If there is no
 obvious maintainer, Andrew Morton is often the patch target of last resort.
 패치를 받는 사람을 선택할때, 결국 누가 패치를 받아 머지시킬지 생각해보는게
-좋다.  리누스 토발즈에게 직접 패치를 보내 머지시키는 것도 가능하지만, 보통
-그런식으로 진행되지 않는다. 리누스는 바쁘고, 커널의 각 특정부분을 지켜보는
-서브시스템 메인테이너들이 있다. 일반적으로 그런 메인테이너들이 패치를 머지
+좋다.  리누스 토발즈에게 직접 패치를 보내 반영시키는 것도 가능하지만, 보통
+그런식으로 진행되지 않는다.  리누스는 바쁘고, 커널의 각 특정부분을 지켜보는
+서브시스템 메인테이너들이 있다.  일반적으로 그런 메인테이너들이 패치를 반영
 해주길 원한다.  명백한 메인테이너가 없다면, Andrew Morton이 최후의 의지할 수
 있는 사람이다.
 
@@ -480,7 +482,7 @@ introductory description as part zero.  This convention is not universally
 followed though; if you use it, remember that information in the
 introduction does not make it into the kernel changelogs.  So please ensure
 that the patches, themselves, have complete changelog information.
-만약 크기가 큰 패치셋을 준비한 경우, 'part 0' 으로 간단한 소개를 보내는 것이
+만약 크기가 큰 ##패치셋을 준비한 경우, ##'part 0' 으로 간단한 소개를 보내는 것이
 관례다.  이 관례는 잘 지켜지지 않지만, 그것을 사용하는 경우, 이것이 커널
 Changelog에 포함되지는 않는다. 그래서 패치 자체가 완전한 Changelog 정보를
 갖췄는지 확인해야한다.
@@ -491,8 +493,8 @@ receiving end.  Tools like git and quilt have commands to mail out a set of
 patches with the proper threading.  If you have a long series, though, and
 are using git, please stay away from the --chain-reply-to option to avoid
 creating exceptionally deep nesting.
-일반적으로, 패치셋을 보낼때 두번째 이후 패치들은 첫 번째 패치에 대한 답장
-형식으로 보내야 받는쪽에서 한 쓰레드로 한꺼번에 받을수 있다. git 이나 quilt
+일반적으로, ##패치셋을 보낼때 두번째 이후 패치들은 첫 번째 패치에 대한 답장
+형식으로 보내야 받는쪽에서 한 쓰레드로 한꺼번에 받을수 있다.  git 이나 quilt
 같은 툴들은 패치셋을 적절하게 한 쓰레드로 보낼수 있는 명령어를 가지고 있다.
-그러나 아주 많은 양의 패치셋이 있고 git을 사용하는 경우라면, 너무 많은 중첩을
+그러나 아주 많은 양의 ##패치셋이 있고 git을 사용하는 경우라면, 너무 많은 중첩을
 피하기 위해 예외적으로 --chain-reply-to 옵션을 사용하지 말아야 한다.
