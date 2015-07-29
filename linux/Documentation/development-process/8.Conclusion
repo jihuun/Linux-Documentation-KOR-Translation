@@ -1,4 +1,5 @@
 8: FOR MORE INFORMATION
+8: 더 많은 정보
 
 There are numerous sources of information on Linux kernel development and
 related topics.  First among those will always be the Documentation
@@ -10,40 +11,41 @@ mechanism; "make htmldocs" or "make pdfdocs" can be used to generate those
 documents in HTML or PDF format (though the version of TeX shipped by some
 distributions runs into internal limits and fails to process the documents
 properly).
-리눅스 커널 개발 및 관련 주제에 대한 다양한 정보들이 존재한다. 그 중 첫 번째는
-커널소스 배포판에 있는 Documentation 디렉토리다. 최상위 디렉토리의 HOWTO 파일은
-중요한 시작점이다; SubmittingPatches와 SubmittingDrivers 또한 모든 커널개발자가
-반드시 읽어야 하는 문서다. 많은 내부 커널 API는 kerneldoc을 이용해 문서화
-되었다; "make htmldocs" 또는 "make pdfdocs" 명령이 HTML 또는 PDF 형식 문서를
-생성할때 쓰인다 (특정 배포판들에 포함된 TeX 버전은 내부기준에의해 적절한 문서를
-생성하는데 실패하긴 한다).
+리눅스 커널 개발 및 관련 주제에 대한 다양한 정보들이 존재한다.  그 중 첫 번째는
+커널소스 배포판에 있는 Documentation 디렉토리다.  최상위 디렉토리의 HOWTO
+파일은 가장 먼저 읽어봐야할 중요 문서이다.  SubmittingPatches와
+SubmittingDrivers 또한 모든 커널 개발자가 반드시 읽어야 하는 문서다.  많은 내부
+커널 API는 kerneldoc을 이용해 문서화 되었다.  "make htmldocs" 또는 "make
+pdfdocs" 명령이 HTML 또는 PDF 형식 문서를 생성할때 쓰인다. (특정 배포판들에
+포함된 TeX 버전은 내부기준에의해 적절한 문서를 생성하는데 실패하긴 한다)
 
 Various web sites discuss kernel development at all levels of detail.  Your
 author would like to humbly suggest http://lwn.net/ as a source;
 information on many specific kernel topics can be found via the LWN kernel
 index at:
 각종 웹 사이트는 모든 수준에서 커널 개발에 대해 자세히 다룬다.
-http://lwn.net/은 훌륭한 정보의 원천이다; 많은 특정 주제에 대한 정보를 LWN 커널
-인덱스에서 찾아 볼 수 있다:
+http://lwn.net/은 훌륭한 정보의 원천이다.  많은 특정 주제에 대한 정보를 LWN 커널
+인덱스에서 찾아 볼 수 있기 때문이다.
 
 	http://lwn.net/Kernel/Index/
 
 Beyond that, a valuable resource for kernel developers is:
-그밖에, 커널 개발자를 위한 귀한 자료들은 아래주소에도 있다:
+그밖에, 커널 개발자에게 가치있는 자료들은 아래주소에도 있다:
 
 	http://kernelnewbies.org/
 
 Information about the linux-next tree gathers at:
-linux-next 트리에 대한 정보들은 아래주소에서 찾아볼수 있다:
+linux-next 트리에 대한 정보들은 아래 주소에서 찾아볼수 있다:
 
 	http://linux.f-seidel.de/linux-next/pmwiki/
 
 And, of course, one should not forget http://kernel.org/, the definitive
 location for kernel release information.
-그리고 커널 릴리즈에 관한 최종 정보는 http://kernel.org/ 에 있다.
+그리고 커널 릴리즈에 관한 최종 정보는 http://kernel.org/ 에 있기 때문에 기억
+해야할 주소이다.
 
 There are a number of books on kernel development:
-다수의 커널 개발을 다룬 책들도 아래와 같이 준비되어 있다.
+아래와같이 커널 개발에 관련된 다양한 책도 있다.
 
 	Linux Device Drivers, 3rd Edition (Jonathan Corbet, Alessandro
 	Rubini, and Greg Kroah-Hartman).  Online at
@@ -57,8 +59,10 @@ All of these books suffer from a common fault, though: they tend to be
 somewhat obsolete by the time they hit the shelves, and they have been on
 the shelves for a while now.  Still, there is quite a bit of good
 information to be found there.
-이런 모든 책들은 훌륭한 정보들은 많이 담고 있음에도 불구하고 다른 책들과
-마찬가지로 선반에 쌓여 무용지물이 되는 경향이 있다.
+
+이런 모든 책들은 다음의 두가지로 고통받고 있다.  그 책들이 판매될 때는 다소
+시대에 뒤떨어지는 경향이 있으며 그런 책들이 오랫동안 선반에 쌓여있는것.  그러나
+그 책에서는 여전히 훌륭한 정보들이 많이 있다.
 
 Documentation for git can be found at:
 git에 관한 문서는 아래 주소에서 찾을 수 있다:
@@ -69,12 +73,13 @@ git에 관한 문서는 아래 주소에서 찾을 수 있다:
 
 
 9: CONCLUSION
+9: 결론
 
 Congratulations to anybody who has made it through this long-winded
 document.  Hopefully it has provided a helpful understanding of how the
 Linux kernel is developed and how you can participate in that process.
-이 장황한 문서를 여기 마지막까지 읽었다면 축하한다. 리눅스 커널의 개발방법과 그
-과정에 참여할 수있는 방법을 이해하는데 도움이 되었길 바란다.
+이 장황한 문서를 여기 마지막까지 읽은것에 축하를 보낸다.  리눅스 커널의
+개발방법과 그 과정에 참여할 수있는 방법을 이해하는데 도움이 되었길 바란다.
 
 In the end, it's the participation that matters.  Any open source software
 project is no more than the sum of what its contributors put into it.  The
@@ -82,11 +87,11 @@ Linux kernel has progressed as quickly and as well as it has because it has
 been helped by an impressively large group of developers, all of whom are
 working to make it better.  The kernel is a premier example of what can be
 done when thousands of people work together toward a common goal.
-결국, 중요한것은 참여하는 것이다. 모든 오픈소스 소프트웨어 프로젝트는
-참여자들이 작성 하는것 그 이상은 아니다. 리눅스 커널은 신속하게 진행될뿐만
+결국, 중요한것은 참여하는 것이다.  모든 오픈소스 소프트웨어 프로젝트는
+참여자들이 작성 하는것 그 이상은 아니다.  리눅스 커널은 신속하게 진행될뿐만
 아니라 그것을 더 잘 만들기 위해 인상적으로 큰 그룹의 개발자들이 노력하고 있다.
 커널은 수천명의 사람들이 공동의 목표를 향해 함께 작업 할 때 무엇을 할 수
-있는지의 최고의 예다.
+있는지의 알수 있는 최고의 사례이다.
 
 The kernel can always benefit from a larger developer base, though.  There
 is always more work to do.  But, just as importantly, most other
@@ -96,8 +101,8 @@ lower maintenance and distribution costs, a higher level of influence over
 the direction of kernel development, and more.  It is a situation where
 everybody involved wins.  Fire up your editor and come join us; you will be
 more than welcome.
-커널은 항상 더 큰 개발자 베이스에서 혜택을 누리지만, 항상 더 해야할 작업이
+커널은 항상 수많은 개발자 기반을 통해서 혜택을 얻지만, 항상 더 해야할 작업이
 있다.  그러나 중요한 것은 리눅스 생태계에 있는 대부분의 다른 참가자는 커널에
-기여를 통해 혜택을 누릴 수 있다. 메인라인에 코드를 넣는 것은 더 높은 코드 품질,
-낮은 유지 보수 및 배포 비용의 비결이다. 이것이 모두가 승리하는 상황이다.
-편집기를 열고 우리와 함께하자 당신을 환영한다.
+기여를 통해 혜택을 누릴 수 있다.  메인라인에 코드를 넣는 것은 더 높은 코드
+품질, 낮은 유지 보수 및 배포 비용의 비결이다.  이것이 모두가 승리하는 상황이다.
+편집기를 열고 우리와 함께하자.  당신을 환영한다.
