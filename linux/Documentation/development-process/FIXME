@@ -1,0 +1,710 @@
+TODO: Here are sentence which has to be fixed from all of files.
+
+--------------------
+1.Intro
+
+The purpose of this document is to help developers (and their managers)
+work with the development community with a minimum of frustration. 
+##이 문서의 목적은 개발자(또는 그들의 관리자)가 커널 커뮤니티에서 활동하는 데에
+겪는 어려움을 최소화 할 수 있도록 그들을 돕고자 함에 있다.  
+
+There are a great many reasons why kernel code should be
+merged into the official ("mainline") kernel, including automatic
+availability to users, community support in many forms, and the ability to
+influence the direction of kernel development.  
+##자동으로 유져가 사용할 수 있게 되고,
+커뮤니티로부터 여러 가지 형태의 지원을 받을 수 있고, 커널 개발 방향에 영향을 줄
+수 있다는 점 등을 포함해서 코드가 공식(메인라인) 커널에 반영되어야 할 좋은
+이유가 많이 있다.  
+
+Section 3 covers early-stage project planning, with an emphasis on
+involving the development community as soon as possible.
+섹션 3 에서는 가능한 빨리 개발 커뮤니티에 참여 하는것을 주안점으로 프로젝트
+초기 단계에서 ##계획을 세우는 법을 다룬다.
+
+The lack of a stable
+internal interface is a deliberate design decision; it allows fundamental
+improvements to be made at any time and results in higher-quality code.
+##안정적인 내부 인터페이스가 부족한 것은 신중논의 끝에
+결정된 설계다. 
+
+But one result of that policy is that any out-of-tree code requires
+constant upkeep if it is to work with new kernels.  
+##그러나 이런 정책의 결과로 독립적인
+코드(out-of-tree)의 지속적인 유지보수 비용이 필요하게 되었다. 
+
+ Code which is in the mainline, instead, does not require this work as the
+  result of a simple rule requiring any developer who makes an API change
+  to also fix any code that breaks as the result of that change.  
+  ##대신에 메인라인에 있는 코드는 API를 수정하는 어떠한 개발자라도 수정사항의
+  결과로 발생하는 모든 코드의 문제를 해결해야 한다는 간단한 규칙 덕분에 위와
+  같은 작업이 필요하지 않다.  
+
+Out-of-tree code is lower-quality code.
+##따라서 메인라인에 반영하지 않고 독립적으로 운영되는 커널코드(Out-of-tree)의
+  품질은 좋을 수가 없다.
+
+Participation in the development process is your way to influence the
+  direction of kernel development.
+##사이드 라인에서 불평하는 유져의 목소리도 많지만, 실제 활발하게
+  참여하는 개발자는 큰 영향력을 가지고 있다.
+
+Then you will be faced with the
+  unpleasant alternatives of either (1) maintaining a nonstandard feature
+  out of tree indefinitely, or (2) abandoning your code and migrating your
+  users over to the in-tree version.
+(1) 그 비공식 기능을
+  영원히 out-of-tree 코드로 유지 ##(2) 그 코드를 포기하고 사용자를 in-tree
+  버전으로 이동 시킨다.
+
+
+All of the reasoning above applies to any out-of-tree kernel code,
+including code which is distributed in proprietary, binary-only form.
+##위의 모든 논리는 상업적이며 바이너리로 배포되는 코드를 포함한 모든
+out-of-tree 커널 코드에 적용된다.
+
+There are, however, additional factors which should be taken into account
+before considering any sort of binary-only kernel code distribution.
+##그러나 바이너리로 배포하기 전에 고려되어야
+할 부가 요소가 있다.
+
+- The legal issues around the distribution of proprietary kernel modules
+  are cloudy at best; quite a few kernel copyright holders believe that
+  most binary-only modules are derived products of the kernel and that, as
+  a result, their distribution is a violation of the GNU General Public
+  license (about which more will be said below)
+- ##상업적인 커널 모듈의 배포는 항상 법적으로 문제의 소지가 있다.  ##대부분의
+  커널 저작권자는 바이너리 모듈이 커널의 파생 코드이기 때문에 바이너리 배포가
+  (아래에서 다룰) GPL 라이센스의 위반이라고 생각한다.  ##저자는 변호사가 아니며
+  이 문서는 법적 조언으로 간주 될 수 없다.  ##폐쇄적인 소스 모듈의 법적 상태는
+  법원에 의해 결정될 것이다.  ##하지만 그 모듈이 법적으로 문제의 소지가
+  있는것은 불확실하다.
+
+Support is also harder for distributors of binary-only modules, who must
+  provide a version of the module for every distribution and every kernel
+  version they wish to support.
+##바이너리만 제공되는 모듈의 배포자도 사용자를 지원하려면 모든 배포와 그들이
+  지원하고자하는 모든 커널 버전에 대한 모듈의 버전을 제공해야하기 때문에
+  어렵다.
+All code merged into the mainline kernel retains its
+original ownership; as a result, the kernel now has thousands of owners.
+
+Everything that was said above about code review applies doubly to
+  closed-source code.
+##폐쇄적인 소스 코드에 위에 말한 모든 내용이 중복 적용된다.
+
+All code merged into the mainline kernel retains its
+original ownership; as a result, the kernel now has thousands of owners.
+##메인 라인
+커널이 가지고 있는 저작권이 자동으로 적용되기 때문에 자동으로 오픈소스가 된다.
+
+
+One implication of this ownership structure is that any attempt to change
+the licensing of the kernel is doomed to almost certain failure.
+##이런 소유 구조의 의미는 커널의 라이센스를 변경하는 것이 불가능하다는 것을
+말한다.
+
+There are
+few practical scenarios where the agreement of all copyright holders could
+be obtained (or their code removed from the kernel)
+##모든 저작권 소유자의 동의를 얻을 수 있는 경우는 (또는 코드가
+커널에서 제거되는 경우는) 거의 없다.
+
+So, in particular,
+there is no prospect of a migration to version 3 of the GPL in the
+foreseeable future.
+##그래서 가까운 미래에 GPL 버전 3으로
+마이그레이션 될 가능성은 없다.
+
+
+
+
+
+--------------------
+2.Process
+
+A solid understanding of
+how the process works is required in order to be an effective part of it.
+##이런 개발 프로세스를 확실히 이해하는것은 효과적으로 개발에 참여하기 위해서
+반드시 필요하다.
+
+2.6 is thus the leading edge of Linux kernel development; 
+따라서 2.6의 두자릿수 버전은
+리눅스 커널 ##개발을 이끄는 위치에 해당한다.
+
+they have been collected, tested, and staged ahead of time.
+그 수정사항들이 먼저 모여야 하며, 테스트
+작업이 필요하고 빠른 시간내에 ##staging 되어야 한다. 
+
+As fixes make their way into the mainline, the patch rate will slow over
+time.
+##수정사항이 메인 라인에 반영 됨에 따라, 패치의 비율은 시간이 지남에 따라
+느려진다.
+
+How do the developers decide when to close the development cycle and create
+the stable release?
+##개발 사이클의 종료와 Stable 버전의 릴리즈는 언제 결정 되는지 알기 위해서 가장
+좋은 방법은 이전 버전에서 성능 감소(regression)를 발생시킨 리스트를 이용 하는 것이다.
+
+This chain of repositories can be arbitrarily long, though it rarely
+exceeds two or three links.
+##저장소 체인은 길어질수도 있지만 거의 두 개 또는 세 개의 링크를
+초과하지 않는다.
+
+The chain of subsystem trees guides the flow of patches into the kernel,
+but it also raises an interesting question: what if somebody wants to look
+at all of the patches which are being prepared for the next merge window?
+##서브시스템 트리 체인은 커널에 패치의 흐름을 가이드 할뿐만 아니라 흥미로운
+질문을 제기한다.
+
+Developers will be interested in what other changes are pending to see
+whether there are any conflicts to worry about; 
+##개발자는 대기중인 다른 패치에 걱정할만한 충돌이
+있는지 여부를 확인하기 위해 관심이 많다.
+
+a patch which changes a
+core kernel function prototype, for example, will conflict with any other
+patches which use the older form of that function.
+##예를 들어, 핵심 커널 함수 프로토
+타입을 수정하는 패치는 이전 양식을 사용하는 다른 패치와 충돌한다.
+
+Reviewers and testers
+want access to the changes in their integrated form before all of those
+changes land in the mainline kernel.
+##리뷰어와
+테스터는 메인 라인 커널에 머지되기 전 모든 변경점이 통합 된 형태로 액세스 하길
+원한다.
+
+One could pull changes from all of
+the interesting subsystem trees, but that would be a big and error-prone
+job.
+##흥미로운 서브 트리의 모든 변경 사항을 pull 할 수 있지만, 오류가
+발생하기 쉽고 매우 큰 작업이 될 것이다.
+
+The kernel source tree contains the drivers/staging/ directory, where
+many sub-directories for drivers or filesystems that are on their way to
+being added to the kernel tree live.
+##이 곳은 최종
+커널에 적용되는 도중에 거치는 드라이버나 파일시스템등을 위한 서브 디렉터리
+이다.
+
+This is a way to keep track of drivers that aren't
+up to Linux kernel coding or quality standards, but people may want to use
+them and track development.
+이것은 리눅스 커널 코딩과 품질 기준에
+미치치 못하는 드라이버를 관리하기 위함이다.  ##하지만 사람들은 그것을 이용
+하거나 개발하고 싶어 할지도 모른다.
+
+The whole thing would not work anywhere near as well as it
+does without suitably powerful tools.
+##그리고 어디에서든
+강력하면서 적절한 툴없이는 모든것은 동작하지 않을 것이다.
+
+Unfortunately, such patches create a level of
+noise which is distracting for the development community as a whole, so,
+increasingly, they are looked down upon.
+##하지만 그런 패치는 전반적으로 커뮤니티에
+방해가 되는 잡음을 만드는 결과를 초래 하기도 한다.
+
+New developers wishing to
+introduce themselves to the community will not get the sort of reception
+they wish for by these means.
+##그러면 커뮤니티는 점차
+그들을 멸시하게 된다.  ##새 개발자가 커뮤니티에 본인을 알리는데에만 급급해
+한다면 커뮤니티에서 환영을 받기 힘들 것이다.
+
+
+
+
+
+
+--------------------
+3.Early-stage
+
+As with any significant project,
+though, much of the groundwork for success is best laid before the first
+line of code is written.
+##하지만 여타 주요 프로젝트들과 마찬가지로 첫 번째 코드
+행이 작성되기 전에 성공적인 기초작업 대부분은 이미 완료되어 있다.
+
+In others, though, it is tempting to confuse the real problem
+with the proposed solution, and that can lead to difficulties.
+##하지만 대부분의 경우
+제안된 해결방법과 실제 문제를 혼동하기 쉽고 그것이 문제를 일으키기도 한다.
+
+Your author has seen the posting of a complete
+   driver which duplicated an existing driver that the new author had been
+   unaware of.
+##메인테이너는 새로운 작성자를 통해 이미
+   드라이버가 존재하는데도 똑같은 드라이버를 새로짠 패치가 포스팅 되오던것을
+   봐왔다.
+
+Beyond that, high-level designs often hide problems
+which are only reviewed when somebody actually tries to implement those
+designs;
+##이런 것들을 떠나서 지나치게 높은 수준의 계획에는 종종
+누군가가 실제로 그것을 개발 할때만 발견되는 문제가 발생하기도 한다.
+
+Some readers may be thinking at this point that their kernel work is
+intended to support a product which does not yet have an officially
+acknowledged existence.
+##몇몇 독자는 이시점에서 그들의 커널 작업이 공식적으로 인정되지 않는 제품을
+지원하기 위한 의도가 아니냐는 생각을 가질 수도 있다.
+
+
+
+
+
+
+
+--------------------
+4.Coding
+
+So there is no longer room for
+strangely-formatted code.
+그래서 그 규칙을 지키지 않은 코드는 사용될 ##여지가 없다.
+
+Putting code into the kernel means
+giving up a degree of control in a number of ways - including control over
+how the code is formatted.
+##커널에
+코드를 반영하는 것은 본인이 원하는 대로 코딩하는것을 포함에 여러가지 코드에
+대한 통제를 포기해야 함을 의미한다.
+
+no project
+involving several million lines of code could do otherwise and survive.
+## 100만
+라인 이상의 코드를 포함하는 프로젝트에서는 달리 할수도 없고 그렇게 하지 않으면
+살아남을 수 없기 때문이다.
+
+The C preprocessor seems to present a powerful temptation to some C
+programmers, who see it as a way to efficiently encode a great deal of
+flexibility into a source file.
+##C 전처리기는 C 프로그래머가 유연성을 코드에 넣을 수 있도록 부호화하고, 매우
+효율적인 코드가 될 수 있는 방법이므로 사용하고 싶은 욕구가 생길 것이다.
+
+Conditionally-compiled code can be confined to functions which, if the code
+is not to be present, simply become empty.
+##코드가 보여지지 않는다면, 조건부 컴파일 된 코드는 단순하고 빈(empty) 함수에
+국한되어 사용될 수 있다.
+
+C preprocessor macros present a number of hazards, including possible
+multiple evaluation of expressions with side effects and no type safety.
+C 전처리기 매크로는 수식을 여러번 계산할때 발생하는 부작용과, ##타입의 불안정성을
+포함하여, 많은 위험요소를 가지고 있다.
+
+Programmers can
+become enamored of the perceived efficiency inherent in avoiding a function
+call and fill a source file with inline functions.
+프로그래머는 뛰어난 효율성에
+매료되기 쉽고, ##그 기저에는 함수 호출을 피하고 소스코드를 인라인 함수로 채우고자
+함이 깔려있다.
+
+Space *is* time, in that a
+larger program will run slower than one which is more compact.
+##더 큰 프로그램이 작은 프로그램보다 느리게 실행된다는 점에서 공간이 곧
+시간이다.
+
+This code showed a number of signs of having been developed behind
+corporate doors.
+##이 코드는 회사에서 비밀리에 개발 되었다.
+
+Why not make a
+change if it brings new functionality to ten systems for each one it
+breaks?
+##열개의 시스템 각각에 새로운
+기능이 추가 된다면 변화를 주는것은 어떤가?
+
+That way lies
+	madness, and nobody ever knows if you actually make any real
+	progress at all.
+##이것은
+	정신나간 방법이 아니다.
+
+Once an interface has been exported to user space, it must
+be supported indefinitely.
+##일단 인터페이스가 user 공간으로 전달되면 불명확하게 지원될 것이다.
+
+This fact makes the creation of user-space
+interfaces particularly challenging: 
+##이 사실은 유져공간 인터페이스의 제작을 도전 과제로 만든다.
+
+since they cannot be changed in
+incompatible ways, they must be done right the first time.
+##그것이 양립할 수
+없는 방법으로 변경될 수 없을 때 부터, 처음부터 틀리지 않게 만들어 졌을 것이다.
+
+But some time spent learning the
+available options will likely be paid back many times over in short order.
+##때때로 이런 사용 가능한 옵션을 익히는데 소모하는 시간은 아마 곧
+두고두고 보상받을 수 있을 것이다.
+
+in the system, the order in which locks are acquired relative to
+each other, the current interrupt environment, and more.
+##락의 획득 순서는 현재 인터럽트 환경이나 그 외의 것 에서 각각에게 영향을 준다.
+
+The
+fact of the matter, though, is that the resulting failure recovery paths
+are, probably, completely untested.
+##그러나 사실은
+실패를 초래하는 복구 경로는 실제로 완전히 검증되지 않았다.
+
+The kernel provides a fault injection framework which can do exactly that,
+especially where memory allocations are involved.
+##특별히 메모리 할당된 곳에, 커널은 그것을 할 수 있도록 일부러 오류를
+삽입시키는 (Fault injection framework)를 제공 한다.
+
+With fault injection enabled, a configurable percentage of memory allocations
+will be made to fail; 
+FIf you do not happen to have an S/390 system or a
+Blackfin development board handy, you can still perform the compilation
+step.ault injection이 설정 되면, ##상당수의 메모리 할당은
+실패 할 것이다.
+
+
+If you do not happen to have an S/390 system or a
+Blackfin development board handy, you can still perform the compilation
+step.
+##만약 S/390시스템이나 Blackfin개발 보드에서 하고 싶지 않다면
+compilation 절차를 통해 동작 할 수 있다.
+
+Documentation has often been more the exception than the rule with kernel
+development.
+##예상외로 문서 작성은 커널 개발에 있어서 규칙으로 여겨져 왔다.
+
+If you are working within
+a subsystem which has kerneldoc comments, you should maintain them and add
+them, as appropriate, for externally-available functions.
+##만약 kerneldoc 으로 작성된 서브시스템에서 작업을 한다면, 외부 함수등을
+거기에 추가하거나 계속 유지해야 한다.
+
+Anybody who reads through a significant amount of existing kernel code will
+note that, often, comments are most notable by their absence.
+##현재 커널 코드를 읽는 누구라도 주석이 가장 주목할 만한 것이라고 생각할
+것이다.
+
+Non-obvious dependencies between separate bits of code should be pointed
+out.
+##코드간의 불명확한 의존성은 정확히 가리켜야 한다.
+
+
+
+
+
+
+
+
+
+
+--------------------
+5.Posting
+
+The patch series you post will almost certainly not be the series of
+   changes found in your working revision control system.
+당신의 포스팅할 패치 묶음는 확실하게 당신이 작업하는 ##로컬 버전의 패치
+   묶음의 형태와는 다르게 제작해야 한다.
+
+Instead, the
+   changes you have made need to be considered in their final form, then
+   split apart in ways which make sense.
+대신, 커뮤니티에서 원하는 형식의 패치로 만드는것을 고려해야 한다.  그리고
+개별패치로 나눌 때에는 ##이치에 맞는 방법으로 나누어져야 한다.
+
+there is a
+   good chance that it will be passed over and the important fix will be
+   lost.
+이 패치는 무시당하고 중요한 ##변경점을 놓칠 수 있다.
+
+Partial application of a patch series is a common
+scenario when the "git bisect" tool is used to find regressions; 
+##패치
+시리즈의 부분 적용은 "git bisect"툴이 Regression을 찾기위해 사용될때 흔한
+상황이다;
+
+
+This temptation should be avoided if possible; 
+##유혹은 가능하면 피해야 한다; 
+
+
+Needless to say, the changelog should be the text used when committing the
+change to a revision control system.
+물론, Changelog는 ##버전관리시스템에 사용되는 텍스트여야한다.
+
+It is an
+   agreement to the Developer's Certificate of Origin, the full text of
+   which can be found in Documentation/SubmittingPatches.
+##이것은 개발자의 생산자 증명 인증서에 관한 계약이며, 전체
+   텍스트는 Documentation/SubmittingPatches에서 찾을 수 있다.
+
+If fixing a checkpatch.pl complaint
+   would make the code worse, don't do it.
+##checkpatch.pl 가
+   출력하는 문제를 수정하는것이 코드를 나쁘게 할 수 있다.
+
+When mailing patches, it is important to send copies to anybody who might
+be interested in it.
+패치를 메일로 보낼때, 그것에 관심을 가질만한 모든사람에게 ##사본을 보내는 것이
+중요하다.
+
+If you have a significant series of patches, it is customary to send an
+introductory description as part zero.
+만약 크기가 큰 ##패치셋을 준비한 경우, ##'part 0' 으로 간단한 소개를 보내는 것이
+관례다.
+
+In general, the second and following parts of a multi-part patch should be
+sent as a reply to the first part so that they all thread together at the
+receiving end.
+##패치셋을 보낼때 두번째 이후 패치들은 첫 번째 패치에 대한 답장
+형식으로 보내야 받는쪽에서 한 쓰레드로 한꺼번에 받을수 있다.
+
+If you have a long series, though, and
+are using git, please stay away from the --chain-reply-to option to avoid
+creating exceptionally deep nesting.
+##패치셋이 있고 git을 사용하는 경우라면, 너무 많은 중첩을
+피하기 위해 예외적으로 --chain-reply-to 옵션을 사용하지 말아야 한다.
+
+
+
+
+
+
+--------------------
+6.Followthrough
+
+
+ - Similarly, code reviewers are not trying to promote their employers'
+   agendas at the expense of your own.  
+ - ##비슷하게, 코드 리뷰자는 당신의 희생을 통해서 회사의 의견을 관철시키려고
+   하지 않는다.  
+
+   but they understand that their employer could change.  
+   ##그러나
+   그들의 회사가 변할 수 있다는것을 이해하고 있다. 
+
+They truly are, almost without exception,
+   working toward the creation of the best kernel they can; 
+   ##거의 예외 없이 그들은 할
+   수있는한 최선을 다해 커널 개발을 할것이다.  
+   
+   they are not
+   trying to create discomfort for their employers' competitors.
+   ##그들은 회사의 경쟁자를
+   불편하게 하려고 하지 않을 것이기 때문이다.
+
+Do not let their form of expression or your own pride keep that
+from happening.
+##그들의 표현의 형태를 유지하도록 놔두지
+말고 그런일이 발생할때 자존심을 세우지 마라.
+
+So it is always a good idea to remind reviewers of previously
+raised issues and how you dealt with them; the patch changelog is a good
+place for this kind of information.
+##그래서 본인이 그 이슈에대해서 어떻게 진행하고
+있는지, 이전 상태에 대해 상기시켜 주는것이 좋은 방법이다.
+
+Subsystem trees typically feed linux-next as well, making their
+contents visible to the development community as a whole.
+##일반적으로 linux-next를 따르는 서브시스템 트리는 커뮤니티 전체에 그들의
+컨텐츠를 볼 수 있게 만든다.
+
+In the worst
+case, heavy patch conflicts can result in some work being put on the back
+burner so that the remaining patches can be worked into shape and merged.
+##가장 안좋은 경우는, 규모가 큰 패치의 충돌이 어떤 작업을 뒷전으로
+밀리게 해서 그 남겨진 패치가 다시 수정되어 반영되는것 이다.
+
+and, possibly, moving some patches between trees to ensure that
+everything applies cleanly.
+##그리고 모든 것에
+문제가 없는지 확인하기 위하여 몇몇의 패치는 트리로 이동할 것이다.
+
+
+Merging into the mainline brings its own challenges.
+##메인라인에 반영 되는것은 그 자체로 도전이다.
+
+It may be tempting to ignore them, since there is no
+longer any question of your code being merged.
+코드가 반영된 이후부터 더이상
+아무런 질문이 없었기 ##때문에 그 것들을 무시하고 싶은 유혹이 생길 수도 있다.
+
+More importantly, though: inclusion into the mainline puts your code into
+the hands of a much larger group of testers.
+##그러나 더 중요한것은 메인라인에 포함되는것은 당신의 코드를 훨씬 큰 테스트
+집단에게 맡기는 것과 같다.
+
+And, of course,
+where there are testers, there will be bug reports.
+##물론 테스터가 있는 곳이라면 그곳엔 버그
+리포트가 있다.
+
+Beyond
+negating all of the work you have done to get your patch into the mainline,
+having a patch pulled as the result of a failure to fix a regression could
+well make it harder for you to get work merged in the future.
+##메인라인에 반영된 패치를
+얻기위해 당신의 작업을 부정하는 것을 떠나서 ## 실패의 결과로 Regression을
+수정하기 위한 패치를 전달하는 것은 당신이 앞으로 수정사항을 반영하는데에 있어서
+보다 어려움을 줄 것이다.
+
+you can start creating cool new patches once any problems with the old
+ones have been taken care of.
+##당신은 이전의 문제를 수정하기 위한
+새로운 패치제작을 시작 할 수 있다.
+
+And don't forget that there are other milestones which may also create bug
+reports: 
+##그리고 버그 리포트를 만들수 있는 다른 이정표가 있다는것도 잊으면 안된다.
+
+prominent distributors 
+##배포판 개발자들이
+
+
+(be sure to include a
+proper From: line so that the attribution is correct, and add a signoff of
+your own), or send an Acked-by: response back and let the original poster
+send it upward.
+##적절한 출처를 밝혔는지
+주의하라, attribution이 올바른지, 본인의 signoff를 추가했는지), ##포스팅을 한
+원저자가 패치를 보낼 수 있도록 도와줄 수도 있다.
+
+If
+possible, tell the author what changes need to be made to make the patch
+acceptable to you.
+##가능하면 패치
+작성자에게 어떤 수정이 필요하고 어떻게하면 받아들여질 수 있는지 말해줘라.
+
+If you are seen as needlessly blocking good work, those patches will
+eventually flow around you and get into the mainline anyway.
+만약 좋은 패치가 불필요하게 막혀
+반영되지 못하는것을 본다면, 그런 패치는 결국 ##당신을 지날 것이고 결국
+메인라인에 반영될 것이다.
+
+
+
+
+
+
+
+--------------------
+7.AdvancedTopics
+
+While BitKeeper was controversial, the approach to software
+version management it embodied most certainly was not.
+##BitKeeper는 논란이 있었지만,
+##이것은 소프트웨어 버전 관리를 위해 구현된것은 확실히 아니었다.
+
+Distributed version
+control enabled an immediate acceleration of the kernel development
+project.
+##배포된 버전
+관리는 커널 개발 프로젝트가 즉시 착수되도록 했다.
+
+Git also has its rough
+edges and poses certain hazards; it is a young and powerful tool which is
+still being civilized by its developers.
+##git도 분명 단점이 있도 위험성이 있다.
+그리고 이것은 여전히 문명화된 곳에서 개발자들이 사용하는 강력한 툴이다.
+
+Otherwise, free, public hosting sites
+(Github, for example) are starting to appear on the net.
+그렇지 않다면 무료 공개 호스팅
+사이트를(이를테면 github) 이용하는 ##것도 좋다.
+
+Publicly-available branches should be created with care; merge in patches
+from development branches when they are in complete form and ready to go -
+not before.
+##작업이 완료되어 반영될 준비가 되기 전까지는 development 브랜치의 패치가
+병합되는 것에 주의를 해야한다.
+
+An inconvenient patch (one which breaks bisection,
+say, or which has some other sort of obvious bug) can be fixed in place or
+made to disappear from the history entirely.
+##이등분이 안되어
+있거나, 확실한 버그가 존재하는 등의 패치는 수정되거나 git 히스토리에서 제거될
+수 있다.
+
+Changes can be transparently
+shifted from one branch to another.
+##수정사항은 투명하게 한
+브랜치에서 다른 브랜치로 이동될 수 있다.
+
+Rewriting history will rewrite the changes contained in that history,
+turning a tested (hopefully) kernel tree into an untested one.
+##히스토리를 수정하면 전체 히스토리내의 수정사항을
+수정하게 될 것이며, ##테스트가 완료된 커널트리를 아직 테스트가 되지않은 트리로
+만들게 될 것이다.
+
+But, beyond
+that, developers cannot easily collaborate if they do not have a shared
+view of the project history; 
+##그러나 그것을 넘어서 공유된 프로젝트 히스토리 시각이
+없으면 쉽게 협업하기 어려울 수 있다.
+
+if you rewrite history which other developers
+have pulled into their repositories, you will make life much more difficult
+for those developers.
+##만약 그들의 저장소에 적용한 히스토리를
+당신이 수정하면 문제는 보다 심각해 진다.
+
+history
+which has been exported to others should generally be seen as immutable
+thereafter.
+##다른사람
+에게 전달된 히스토리는 일반적으로 변경할 수 없다.
+
+
+It is possible to
+override this check, and there may be times when it is necessary to rewrite
+an exported tree.
+##export된 트리의 수정이 필요할때
+수정할 수 있는 기간이 있을 것이다.
+
+only moved into public branches when
+it's in a reasonably advanced state.
+그리고 ##합리적으로 개선된 상태일때만 공개 브랜치로 옮겨야 한다.
+
+##As the mainline (or other tree upon which a set of changes is based)
+advances, it is tempting to merge with that tree to stay on the leading
+edge.
+##메인라인의 전진으로(또는 수정사항의 기준이 되는 다른 트리), 지도적인 위치를
+유지하기 위해서 메인라인 트리에 반영하고 싶어지게 된다.
+
+
+the
+mass movement of patches from one repository to another makes it easy to
+slip in ill-advised changes which go into the mainline below the review
+radar.
+##review radar 하에 메인라인에
+반영하려는 패치를 주의깊게 만들지 않으면, 방대한 양의 패치가 한 저장소에서 다른
+저장소로 이동할때 문제가 발생하기 쉽다.
+
+Also ensure that you maintain the correct
+authorship information; 
+##그리고 올바른 저작정보가 있는지 확실히 하라.
+
+but you may have to add a "From:" line to the patch if it has been relayed to
+you via a third party.  
+##그러나 third party를 통해
+이어진 패치라면 당신은 "From:"을 추가해야한다.
+
+it will format the request as other developers expect, and will also check to
+be sure that you have remembered to push those changes to the public server.
+이 명령어는 다른 개발자들이 기대하는 포맷에 맞출 것이다.  ##그리고 이
+수정사항을 공개 서버로 push하는지 기억하도록 해줄 것이다.
+
+Some readers will certainly object to putting this section with "advanced
+topics" on the grounds that even beginning kernel developers should be
+reviewing patches.
+##몇몇 독자는 이 섹션이 심지어 커널 초보 개발자가 패치를 리뷰한다는 것을
+##이유로 심화 주제를 다룬다는 사실에 반대할 것이다.
+
+
+
+
+
+
+
+--------------------
+8.Conclusion
+
+done.
