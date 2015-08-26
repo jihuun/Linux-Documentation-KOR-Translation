@@ -7,7 +7,7 @@ code.  It is the code which will be examined by other developers and merged
 (or not) into the mainline tree.  So it is the quality of this code which
 will determine the ultimate success of the project.
 커뮤니티 중심의 확고한 디자인 프로세스에 대해 논의 해야할 것이 많이 있지만,
-커널 프로젝트를 나타내는 것은 결국 코드이다.  이것은 다른 개발자들에게 리뷰받고
+어떠한 커널 프로젝트라도 결국은 코드로 증명된다.  이것은 다른 개발자들에게 리뷰받고
 메인라인 트리에 머지되거나 반려되는 코드를 말한다.  따라서 이 코드의 품질이
 프로젝트의 궁극적인 성공을 결정하는 것이다.
 
@@ -51,15 +51,15 @@ strangely-formatted code.
 커널에 새로운 코드를 추가하기가 매우 어렵다.  심지어 많은 개발자들은 리뷰를
 해주기 이 전에 코드를 코딩 스타일에 맞게 재수정 하는것 부터 요청한다.  커널같이
 방대한 코드는 개발자가 가능한 빨리 그것의 일부를 이해할 수 있도록 코드의
-일관성이 필요하다.  그래서 그 규칙을 지키지 않은 코드는 사용될 ##여지가 없다.
+일관성이 필요하다.  그래서 그 규칙을 지키지 않은 코드는 반영되기 어렵다.
 
 Occasionally, the kernel's coding style will run into conflict with an
 employer's mandated style.  In such cases, the kernel's style will have to
 win before the code can be merged.  Putting code into the kernel means
 giving up a degree of control in a number of ways - including control over
 how the code is formatted.
-때때로, 커널의 코딩 스타일이 회사가 원하는 스타일과 충돌할 수 있다. 이러한
-경우, 코드는 반영되기 전에 커널 스타일로 포맷팅 되어야 할 것이다. ##커널에
+때때로, 커널의 코딩 스타일이 회사가 원하는 스타일과 충돌할 수 있다.  이러한
+경우, 코드는 반영되기 전에 커널 스타일로 포맷팅 되어야 할 것이다.  ##커널에
 코드를 반영하는 것은 본인이 원하는 대로 코딩하는것을 포함에 여러가지 코드에
 대한 통제를 포기해야 함을 의미한다.
 
@@ -154,7 +154,7 @@ is almost always a sign of code which needs some cleanup work.
 ##C 전처리기는 C 프로그래머가 유연성을 코드에 넣을 수 있도록 부호화하고, 매우
 효율적인 코드가 될 수 있는 방법이므로 사용하고 싶은 욕구가 생길 것이다.  그러나
 전처리기는 C가 아니며, 많이 사용하면 가독성이 떨어지고 컴파일러가 정확성을
-확인하기 힘들어 진다.  코드에 과도한 전처리기가 사용된다는것은 대개 항상 정리
+확인하기 힘들어 진다.  코드에 과도한 전처리기가 사용된다는 것은 대개 항상 정리
 작업이 필요하다는 신호 이다.
 
 Conditional compilation with #ifdef is, indeed, a powerful feature, and it
@@ -165,11 +165,11 @@ Conditionally-compiled code can be confined to functions which, if the code
 is not to be present, simply become empty.  The compiler will then quietly
 optimize out the call to the empty function.  The result is far cleaner
 code which is easier to follow.
-#ifdef와 조건부 컴파일은 정말 강력한 기능이며 커널 내에서도 사용되고 있다.
+#ifdef와 조건부 컴파일은 정말 강력한 기능이며 커널 내에서도 많이 사용되고 있다.
 그러나 #ifdef 블록으로 무분별하게 도배된 코드는 별로 보고 싶지 않을 것이다.
 일반적으로, #ifdef 사용은 가능한한 헤더 파일에만 국한 되어야한다.  만약
 ##코드가 보여지지 않는다면, 조건부 컴파일 된 코드는 단순하고 빈(empty) 함수에
-국한되어 사용될 수 있다.  컴파일러는 조용히 빈 함수 호출을 최적화 할것이다. 그
+국한되어 사용될 수 있다.  컴파일러는 조용히 빈 함수 호출을 최적화 할것이다.  그
 결과로 따라가기 쉬운 훨씬 깔끔한 코드가 될 것이다.
 
 C preprocessor macros present a number of hazards, including possible
@@ -201,7 +201,7 @@ example of premature optimization.
 그러나 인라인 함수자체도 위험요소를 갖고 있다.  프로그래머는 뛰어난 효율성에
 매료되기 쉽고, ##그 기저에는 함수 호출을 피하고 소스코드를 인라인 함수로 채우고자
 함이 깔려있다.  그러나 실제로 인라인 함수는 성능을 감소 시킬 수도 있다.  이들
-코드는 각 호출 위치에 복제되기 때문에 그들은 컴파일된 커널의 크기를 팽창시키고
+코드는 각 호출 위치에 복제되기 때문에 그들은 컴파일된 커널의 크기를 증가시키고
 프로세서의 메모리 캐시에 압력을 주어 극적으로 실행속도를 느려지게 할 수 있다.
 인라인 함수는 원칙적으로 아주 작고 드물게 사용해야한다.  결국 함수 호출의
 비용은 그렇게 높지 않다.  인라인 함수를 과도하게 사용하는것은 오히려 최적화의
@@ -247,7 +247,7 @@ designed to work on multiprocessor systems.  Before this networking stack
 retrofitted onto it.
 ##이 코드는 회사에서 비밀리에 개발 되었다.  그러나 하나의 큰 문제는 이것이
 멀티프로세서 시스템에서 작동하도록 설계되지 않았다는 것이다.  이 네트워킹
-스택(mac80211라고 불리는)은 머지되기 전에 Lock 메커니즘이 추가되어야 했다.
+스택(mac80211라고 불리는)은 적용되기 전에 Lock 메커니즘이 추가되어야 했다.
 
 Once upon a time, Linux kernel code could be developed without thinking
 about the concurrency issues presented by multiprocessor systems.  Now,
@@ -255,7 +255,7 @@ however, this document is being written on a dual-core laptop.  Even on
 single-processor systems, work being done to improve responsiveness will
 raise the level of concurrency within the kernel.  The days when kernel
 code could be written without thinking about locking are long past.
-옛날 옛적엔 리눅스 커널 코드는 멀티프로세서 시스템에 의해 발생되는 동시성
+예전에는 리눅스 커널 코드는 멀티프로세서 시스템에 의해 발생되는 동시성
 문제를 고려하지 않고 개발 될 수 있었다.  그러나 지금, 이 문서는 듀얼 코어
 노트북에서 기록되고 있다.  심지어 싱글프로세서 시스템에서 응답성을 개선하기
 위한 작업은 커널내에서 동시성의 수준을 올릴 것이다.  커널 코드가 Lock에 대해
@@ -327,13 +327,14 @@ reason, a great deal of thought, clear documentation, and wide review for
 user-space interfaces is always required.
 일종의 user-space ABI 수정사항에 관련된 Regression은 특히 환영받기 어렵다.
 ##일단 인터페이스가 user 공간으로 전달되면 불명확하게 지원될 것이다.  ##이
-사실은 유져공간 인터페이스의 제작을 도전 과제로 만든다.  ##그것이 양립할 수
+사실은 유져공간 인터페이스의 제작을 특히 더 어렵게 만든다.  ##그것이 양립할 수
 없는 방법으로 변경될 수 없을 때 부터, 처음부터 틀리지 않게 만들어 졌을 것이다.
 이러한 이유 때문에 user-space 인터페이스의 많은 의견들과 확실한 문서, 광범위한
 리뷰가 항상 필요한 것이다.
 
+
 4.2: CODE CHECKING TOOLS
-4.2: 코드를 검증 도구
+4.2: 코드 검증 도구
 
 For now, at least, the writing of error-free code remains an ideal that few
 of us can reach.  What we can hope to do, though, is to catch and fix as
@@ -395,7 +396,7 @@ testing purposes.  In particular, you should turn on:
    infrastructure.
  - DEBUG_OBJECTS :
    커널이 생성한 다양한 객체의 수명을 추적하는 코드를 추가한다.  그리고 잘못된
-   순서로 완료된 작업이 있을때 경고메시지를 준다.  만약 그자체로 복잡한 객체를
+   순서로 완료된 작업이 있을때 경고 메시지를 준다.  만약 그자체로 복잡한 객체를
    생성하는 서브시스템을 추가하려고 한다면, 객체 디버깅 기반의 기술 추가를
    고려해라.
 
@@ -416,8 +417,8 @@ should not be used all of the time.  But some time spent learning the
 available options will likely be paid back many times over in short order.
 이외에도 다양한 디버깅 옵션이 존재한다.  그중 일부는 아래에서 살펴 볼 것이다.
 그것중 몇몇은 의미있는 성능 효과를 보이기도 하고 항상 사용하면 안되는 것도
-있다.  ##때때로 이런 사용 가능한 옵션을 익히는데 소모하는 시간은 아마 곧
-두고두고 보상받을 수 있을 것이다.
+있다.  때때로 이런 사용 가능한 옵션을 익히는데 많은 시간이 필요할 수 있다.
+그러나 그 시간은 아마 곧 두고두고 보상받을 수 있을 것이다.
 
 One of the heavier debugging tools is the locking checker, or "lockdep."
 This tool will track the acquisition and release of every lock (spinlock or
@@ -451,7 +452,7 @@ paths had been exercised a few times.
 의심의 여지 없이, 당신은 아주 성실한 커널 개발자로서 실패할수 있는 모든
 작업의(예를 들어 메모리 할당) 리턴 상태를 체크해 볼 것이다.  ##그러나 사실은
 실패를 초래하는 복구 경로는 실제로 완전히 검증되지 않았다.  검증되지 않은
-코드는 문제를 일으키는 경향이 있다.  모든 error-handling paths가 몇번 통과되고
+코드는 문제를 일으키는 경향이 있다.  발생 가능한 모든 문제 경로를 몇번 훈련하고
 나면, 아마 코드에 더 큰 자신감을 가질 수 있을 것이다.
 
 The kernel provides a fault injection framework which can do exactly that,
@@ -478,7 +479,7 @@ flags is expected, and so on.  Sparse must be installed separately (it can
 be found at https://sparse.wiki.kernel.org/index.php/Main_Page if your
 distributor does not package it); it can then be run on the code by adding
 "C=1" to your make command.
-에러를 찾을 수 있는 또 다른 툴은 "sparse" 라는 정적 분석 툴이다. Sparse를
+에러를 찾을 수 있는 또 다른 툴은 "sparse" 라는 정적 분석 툴이다.  Sparse를
 이용하면, 개발자는 다음의 문제 상황을 인지 할 수 있다.  커널 공간 주소와, 유져
 공간 주소를 혼동, 빅-엔디안과 리틀-엔디안의 혼용, 비트 Flag로 설정된 Integer
 변수 파싱, 등.  Sparse는 반드시 구분되서 설치 되어야 한다. (만약 당신의
@@ -508,8 +509,8 @@ Some time spent installing and using these compilers will help avoid
 embarrassment later.
 여러 아키텍쳐에서 코드를 컴파일 해보는 것이 잠재적 오류를 발견하는데에 가장
 좋은 방법이다.  ##만약 S/390시스템이나 Blackfin개발 보드에서 하고 싶지 않다면
-compilation 절차를 통해 동작 할 수 있다.  많은 수의 x86용 컴파일러는 아래에서
-찾을 수 있다.
+여러절차를 통해 동작 할 수 있다.  많은 수의 x86용 컴파일러는 아래에서 찾을 수
+있다.
 
 	http://www.kernel.org/pub/tools/crosstool/
 
@@ -599,13 +600,12 @@ Certain things should always be commented.  Uses of memory barriers should
 be accompanied by a line explaining why the barrier is necessary.  The
 locking rules for data structures generally need to be explained somewhere.
 Major data structures need comprehensive documentation in general.
-Non-obvious dependencies between separate bits of code should be pointed
-out.  Anything which might tempt a code janitor to make an incorrect
+Non-obvious dependencies between separate bits of code should be pointed out.  Anything which might tempt a code janitor to make an incorrect
 "cleanup" needs a comment saying why it is done the way it is.  And so on.
 다음의 내용에는 항상 주석을 추가하여야 한다.  메모리 장벽(memory barriers) 를
 사용한다면 메모리 장벽이 왜 필요한지 라인 단위로 설명이 되어야 한다.
 일반적으로 자료구조의 Locking 규칙은 설명이 필요하다.  주요 자료구조는 포괄적인
-문서가 필요하다.  ##코드간의 불명확한 의존성은 정확히 가리켜야 한다.  정확하지
+문서가 필요하다.  ##코드간의 불명확한 의존성은 명확히 지정해야 한다.  정확하지
 않은 Cleanup 코드를 만들기 위한 임시 코드는 왜 그랬는지, 어떻게 했는지에 대한
 설명이 있어야한다.
 
