@@ -7,11 +7,11 @@ patches.  One of the biggest mistakes that even experienced kernel
 developers can make is to conclude that their work is now done.  In truth,
 posting patches indicates a transition into the next stage of the process,
 with, possibly, quite a bit of work yet to be done.
-이 시점에서, 당신은 지금까지 주어진 가이드라인을 따라 왔다.  당신의 기술 능력과
-함께 완벽한 일종의 패치를 만들었다.  그러나 아무리 경험많은 커널 개발자라도
-범할 수 있는 가장 큰 실수는 본인의 작업이 이제 완료되었다고 결론짓는 것이다.
-실제로 패치를 올리는 것은 단지 전체 프로세스에서 다음 단계로 이동 한다는것을 의미할
-뿐이다.  완료하기 까지는 아직 꽤 많은 양의 작업이 남아 있다.
+이 시점에서, 당신은 지금까지 주어진 가이드라인을 잘 따라 왔다.  당신의 기술
+능력과 함께 완벽한 일종의 패치를 만들었다.  그러나 아무리 경험많은 커널
+개발자라도 범할 수 있는 가장 큰 실수는 본인의 작업이 이제 완료되었다고 결론짓는
+것이다.  실제로 패치를 올리는 것은 단지 전체 프로세스에서 다음 단계로 이동
+한다는것을 의미할 뿐이다.  완료하기 까지는 아직 꽤 많은 양의 작업이 남아 있다.
 
 It is a rare patch which is so good at its first posting that there is no
 room for improvement.  The kernel development process recognizes this fact,
@@ -21,11 +21,11 @@ kernel community to ensure that your code is up to the kernel's quality
 standards.  A failure to participate in this process is quite likely to
 prevent the inclusion of your patches into the mainline.
 너무 완벽하여 처음 올렸을때 부터 개선이 필요없는 패치는 거의 없다.  이것은 커널
-개발 프로세스에서 인식 되어온 사실이다.  포스팅한 코드를 지속적으로 유지보수
-하는것을 지향하고 있다.  그 코드의 작성자로써 당신의 코드가 커널의 품질 기준의
-부합하는 코드인지 확실히 할 수 있도록 커널 커뮤니티와 함께 논의 해야 할 것이다.
-이 프로세스 참여에 실패한 패치는 메인라인에 반영되는 패치에 포함되지 못할
-가능성이 크다.
+개발 프로세스에서 인정하는 사실이다.  이 프로세스는 포스팅한 코드를 지속적으로
+유지보수 하는것을 지향하고 있다.  그 코드의 작성자로써 당신의 코드가 커널의
+품질 기준의 부합하는 코드인지 확실히 할 수 있도록 커널 커뮤니티와 함께 논의
+해야 할 것이다.  이 프로세스 참여에 실패한 패치는 메인라인에 반영되는 패치에
+포함되지 못할 가능성이 크다.
 
 
 6.1: WORKING WITH REVIEWERS
@@ -36,10 +36,10 @@ developers as they review the code.  Working with reviewers can be, for
 many developers, the most intimidating part of the kernel development
 process.  Life can be made much easier, though, if you keep a few things in
 mind:
-어떠한 중요 패치라도 다른 개발자의 리뷰에 의한 수많은 코멘트가 생길 것이다.
-대부분 개발자들에게 있어서 리뷰를 받는것은 커널 개발프로세스에서 가장 두려움을
-느끼게 하는 부분일 것이다.  그러나 다음의 몇가지 사항을 숙지하면 보다 수월하게
-리뷰를 받을 수 있다.
+의미있는 패치는 다른 개발자의 리뷰에 의한 수많은 코멘트가 생길 것이다.  대부분
+개발자들에게 있어서 리뷰를 받는것은 커널 개발프로세스에서 가장 두려움을 느끼게
+하는 부분일 것이다.  그러나 다음의 몇가지 사항을 숙지하면 보다 수월하게 리뷰를
+받을 수 있다.
 
  - If you have explained your patch well, reviewers will understand its
    value and why you went to the trouble of writing it.  But that value
@@ -65,7 +65,7 @@ mind:
  - 코드리뷰는 매우 힘든 작업이다, 그리고 상대적으로 보상이 없는 작업이다.
    사람들은 코드 작성자는 기억하지만, 리뷰자는 누가 리뷰했는지 정도 밖에
    남는것이 없기 때문이다.  그래서 리뷰자는 반복되는 실수에 언짢아할 수도 있다.
-   만약 적대적이고, 공격적이고, 모욕적으로 리뷰를 받았다고 하더라고 같은식으로
+   만약 적대적이고, 공격적이고, 모욕적으로 리뷰를 받았다고 하더라고 같은 식으로
    답변하려는 충동을 억제해야 한다.  코드리뷰는 코드에 대해 리뷰를 하는것이지
    사람을 리뷰하는것이 아니다.  리뷰자들이 당신을 개인적으로 공격하는 것은
    아니다.
@@ -76,11 +76,11 @@ mind:
    employer could change.  They truly are, almost without exception,
    working toward the creation of the best kernel they can; they are not
    trying to create discomfort for their employers' competitors.
- - ##비슷하게, 코드 리뷰자는 당신의 희생을 통해서 회사의 의견을 관철시키려고
-   하지 않는다.  개발자는 종종 수년동안 커널에서 작업하길 기대한다.  ##그러나
-   그들의 회사가 변할 수 있다는것을 이해하고 있다. ##거의 예외 없이 그들은 할
-   수있는한 최선을 다해 커널 개발을 할것이다.  ##그들은 회사의 경쟁자를
-   불편하게 하려고 하지 않을 것이기 때문이다.
+ - ##비슷하게, 코드 리뷰자는 당신의 희생을 통해서 회사의 의견을 관철 시키려는
+   것을 장려 하지 않는다.  개발자는 종종 수년동안 커널에서 작업하길 기대한다.
+   ##그러나 그들의 회사가 변할 수 있다는것을 이해하고 있다. ##거의 예외 없이
+   그들은 할 수있는한 최선을 다해 커널 개발을 할것이다.  ##그들은 회사의
+   경쟁자를 불편하게 하려고 하지 않을 것이기 때문이다.
 
 What all of this comes down to is that, when reviewers send you comments,
 you need to pay attention to the technical observations that they are
@@ -91,9 +91,9 @@ that the reviewer is asking you to fix.  And respond back to the reviewer:
 thank them, and describe how you will answer their questions.
 그러면 그 이후에 어떻게 되나?  리뷰자가 코멘트를 남겼을때, 당신은 그들이 작성한
 기술적 관찰에 집중할 필요가 있다.  ##그들의 표현의 형태를 유지하도록 놔두지
-말고 그런일이 발생할때 자존심을 세우지 마라.  패치에 해당하는 리뷰 코멘트를
-받았을때, 조금 시간을 갖고 리뷰자가 무엇을 설명하려 했는지 이해해라.
-가급적이면, 리뷰자가 수정 하도록 요구한 내용은 수정해라. 그리고 리뷰자에게
+말고 혹은 그런일이 발생할때 자존심을 세우지 마라.  패치에 해당하는 리뷰
+코멘트를 받았을때, 조금 시간을 갖고 리뷰자가 무엇을 설명하려 했는지 이해해라.
+가급적이면, 리뷰자가 수정 하도록 요구한 내용은 수정해라.  그리고 리뷰자에게
 감사의 내용과, 질문에 대한 답변을 전달해라.
 
 Note that you do not have to agree with every change suggested by
@@ -173,7 +173,7 @@ entry into a subsystem maintainer's tree.  How that works varies from one
 dedicated to patches planned for the next merge window, and another for
 longer-term work.
 패치가 커널에 적용되는데 무리가 없다고 여겨지고, 리뷰 이슈가 해결되었다면, 다음
-절차는 서브시스템 메인테이너 트리에 진출하는 것이다. 어떻게 해야하는지는
+절차는 서브시스템 메인테이너 트리에 진출하는 것이다.  어떻게 해야하는지는
 서브시스템 마다 다양하다.  각각의 메인테이너는 다음단계를 위한 그들만의 방법을
 가지고 있다.  특히, 거기에는 하나 이상의 트리가 있는데, 아마 한개는 다음 merge
 window 에 패치를 적용하기 위한 트리 일것이고, 나머지 하나는 장기간의 작업을
@@ -194,8 +194,8 @@ contents visible to the development community as a whole.  At this point,
 there's a good chance that you will get more comments from a new set of
 reviewers; these comments need to be answered as in the previous round.
 서브시스템 트리로 포함됨으로써 패치가 더 큰 주목을 받을 수 있다.  이제 나머지
-개발자들은 그 패치가 기본으로 적용되어 있는 상태에서 작업할 것ㅇ다.
-##일반적으로 linux-next를 따르는 서브시스템 트리는 커뮤니티 전체에 그들의
+개발자들은 그 패치가 기본으로 적용되어 있는 상태에서 작업할 것이다.  일반적으로
+서브시스템 트리는 마찬가지로 linux-next에 제공 한다.  커뮤니티 전체에 그들의
 컨텐츠를 볼 수 있게 만든다.  그 시점에서 새로운 리뷰자들을 통해 더 많은
 코멘트를 받을 수 있는 좋은 기회가 된다.  그리고 그 코멘트는 이전의 단계처럼
 답변이 완료되어야 한다.
@@ -248,7 +248,7 @@ a driver for hardware which is not yet available, you will be surprised by
 how many people will build your code into their kernels.  And, of course,
 where there are testers, there will be bug reports.
 ##그러나 더 중요한것은 메인라인에 포함되는것은 당신의 코드를 훨씬 큰 테스트
-집단에게 맡기는 것과 같다.  심지어 아직 사용할 수 없는 하드웨어를 위한
+집단에게 맡기는 것과 같다는 것이다.  심지어 아직 사용할 수 없는 하드웨어를 위한
 드라이버에 기여를 했다고 해도, 생각할 수도 없는 많은 사람들이 당신의 코드가
 포함된 커널을 빌드할 것이다.  ##물론 테스터가 있는 곳이라면 그곳엔 버그
 리포트가 있다.
@@ -266,7 +266,7 @@ well make it harder for you to get work merged in the future.
 것이다.  Regression은 가능한 빨리 수정되어야 한다.  당신이 Regression을 해결할
 수 없거나 능력이 안된다면(혹은 아무도 도와주지 않는다면), 당신의 패치가 안정화
 기간에 제거 되는것은 거의 확실하다고 볼 수있다.  ##메인라인에 반영된 패치를
-얻기위해 당신의 작업을 부정하는 것을 떠나서 ## 실패의 결과로 Regression을
+얻기위해 당신의 작업을 부정하는 것을 떠나서 ##실패의 결과로 Regression을
 수정하기 위한 패치를 전달하는 것은 당신이 앞으로 수정사항을 반영하는데에 있어서
 보다 어려움을 줄 것이다.
 
@@ -327,11 +327,11 @@ eventually flow around you and get into the mainline anyway.  In the Linux
 kernel, nobody has absolute veto power over any code.  Except maybe Linus.
 그 패치에 동의하지 않는다면, 왜그런지 정중하게 답변하라.  ##가능하면 패치
 작성자에게 어떤 수정이 필요하고 어떻게하면 받아들여질 수 있는지 말해줘라.  코드
-작성자나 메인테이너가 작성한 코드에 반대되는 패치를 반영하는데에는 어려움이
+작성자나 메인테이너가 작성한 코드에 반대되는 패치를 반영 하는데에는 어려움이
 있을 수 있다.  하지만 그것은 지나친 것이다.  만약 좋은 패치가 불필요하게 막혀
-반영되지 못하는것을 본다면, 그런 패치는 결국 ##당신을 지날 것이고 결국
-메인라인에 반영될 것이다.  리눅스 커널에서는 어떠한 코드에도 개인이 절대 권력을
-가질 수 없다. (아마도 리누스 토발즈를 제외하고는)
+반영되지 못하는것을 본다면, 그런 패치는 ##당신을 지나치고 결국 메인라인에
+반영될 것이다.  리눅스 커널에서는 어떠한 코드에도 개인이 절대 권력을 가질 수
+없다.  (아마도 리누스 토발즈를 제외하고는)
 
 On very rare occasion, you may see something completely different: another
 developer posts a different solution to your problem.  At that point,
@@ -344,7 +344,7 @@ be hurtful and discouraging, but the community will remember your reaction
 long after they have forgotten whose patch actually got merged.
 거의 드문 경우이지만, 당신의 문제를 완전히 다른 방법으로 해결한 패치를 발견 할
 수도 있다.  그때는 둘중 한가지 패치는 반영되지 못할 것이다.  이때 "내것이 먼저
-포스팅 되었다." 라는 마인드를 기술적인 논쟁에서 적절하지 못한 방법이다.  만약
+포스팅 되었다."  라는 마인드를 기술적인 논쟁에서 적절하지 못한 방법이다.  만약
 누군가의 패치가 당신의 수정사항에서 교체되어 메인라인에 반영된다고 해도 당신의
 문제가 해결되었다는 사실에 기쁨을 느끼는것이 좋다.  이런 매너 없이 다른사람의
 작업을 밀쳐내는것은 기분을 상하게 하고 낙담시킨다.  그러나 커뮤니티에서는
