@@ -20,8 +20,8 @@ project.  In current times, there are several free alternatives to
 BitKeeper.  For better or for worse, the kernel project has settled on git
 as its tool of choice.
 리눅스 커널은 2002년초 부터 버전관리 툴을 이용하기 시작했고,  리누스 토발즈는
-상용 응용프로그램인 BitKeeper를 사용했다.  ##BitKeeper는 논란이 있었지만,
-##이것은 소프트웨어 버전 관리를 위해 구현된것은 확실히 아니었다.  ##배포된 버전
+상용 응용프로그램인 BitKeeper를 사용했다.  ##그러나 BitKeeper는 논란이 있었다,
+##이것은 확실히 소프트웨어 버전 관리를 위한 용도는 아니었다.  ##배포된 버전
 관리는 커널 개발 프로젝트가 즉시 착수되도록 했다.  현재는 BitKeeper를 대체할 수
 있는 몇몇의 무료 툴이 존재한다. 좋든 싫든, 커널은 git을 선택했다.
 
@@ -33,13 +33,13 @@ teach the reader how to use git; that would be sufficient material for a
 long document in its own right.  Instead, the focus here will be on how git
 fits into the kernel development process in particular.  Developers who
 wish to come up to speed with git will find more information at:
-특히 패치의 양이 방대해짐에 따라 git을 이용해 패치를 관리하는것이 개발자의 삶을
-더 풍요롭게 만들었다.  ##git도 분명 단점이 있도 위험성이 있다.  그리고 이것은
-여전히 문명화된 곳에서 개발자들이 사용하는 강력한 툴이다.  이 문서는 git을
-어떻게 사용하는지 알려주지는 않는다.  그걸 설명하기 위해서 그 자체로 별개의
-충분한 문서가 필요하다.  그래서 대신, 특히 어떻게 git이 커널 개발 프로세스에
-적합한지에 대해 초점을 맞춘다.  보다 빨리 git 을 사용하고자 한다면 아래에서 더
-많은 정보를 얻을 수 있다.
+특히 패치의 양이 방대해짐에 따라 git을 이용해 패치를 관리함으로써 개발자의 삶을
+더 편리하게 만들었다.  ##git도 분명 단점이 있도 위험성이 있다.  git은 탄생한지
+오래되지는 않았지만 여전히 개발자들에 의해 개발되고 있는 강력한 툴이다.  이
+문서는 git을 어떻게 사용하는지 알려주지는 않는다.  그걸 설명하기 위해서 그
+자체로 별개의 충분한 문서가 필요하다.  그래서 대신, 특히 어떻게 git이 커널 개발
+프로세스에 적합한지에 대해 초점을 맞춘다.  보다 빨리 git 을 사용하고자 한다면
+아래에서 더 많은 정보를 얻을 수 있다.
 
 	http://git-scm.com/
 
@@ -58,11 +58,11 @@ own terminology and concepts; a new user of git should know about refs,
 remote branches, the index, fast-forward merges, pushes and pulls, detached
 heads, etc.  It can all be a little intimidating at the outset, but the
 concepts are not that hard to grasp with a bit of study.
-가장 먼저 해야할 것은git을 이용해 다른 사람들에게 패치를 만들어 전달하기 전에
+가장 먼저 해야할 것은 git을 이용해 다른 사람들에게 패치를 만들어 전달하기 전에
 위의 사이트를 읽고 git이 어떻게 동작하는지 충분히 이해하는 것이다.  git을
 사용하는 개발자는 다음을 할 수 있어야 한다.  메인라인 저장소를 복사해 올수
 있고, revision 히스토리를 탐색 할 수 있으며, 커밋 수정사항, 그리고 브랜치를
-사용할 수 있어야 한다.  git을 이용해 rebase같이 히스토리를 재 수정하는것도
+사용할 수 있어야 한다.  git을 이용해 rebase같이 히스토리를 재수정 하는것도
 유용하다.  git은 여러 용어를 가지고 있는데, 다음의 용어들을 숙지해야한다; refs,
 원격 브랜치(remote branches), index, fast-forward merges, push, pull, detached
 heads, 등.  이것들은 처음에 진입장벽이 다소 높을 수 있으나, 조금만 공부하면
@@ -83,7 +83,7 @@ by; see http://kernel.org/faq/ for more information.
 다른사람이 git 트리를 볼수 있게 준비가 되었다면, 당연히 pull될 수 있도록 서버가
 필요할 것이다.  인터넷에 접속가능한 시스템을 가지고 있다면 git-daemon을 이용해
 서버를 구축 하는것은 비교적 간단한 방법이다.  그렇지 않다면 무료 공개 호스팅
-사이트를(이를테면 github) 이용하는 ##것도 좋다.  커뮤니티에서 입지를 굳힌
+사이트를(이를테면 github) 이용하는 것도 좋다.  커뮤니티에서 입지를 굳힌
 개발자들은 kernel.org에서 계정을 얻을 수 있다.  그러나 이 방법은 쉽게 접근할수
 있는 방법은 아니다.  http://kernel.org/faq/에서 더 많은 정보를 확인할 수 있다.
 
@@ -112,12 +112,13 @@ you have been working on it for months.  Changes can be transparently
 shifted from one branch to another.  And so on.  Judicious use of git's
 ability to revise history can help in the creation of clean patch sets with
 fewer problems.
-git은 커밋 히스토리를 수정할 수 있는 강력한 기능을 제공 한다.  ##이등분이 안되어
-있거나, 확실한 버그가 존재하는 등의 패치는 수정되거나 git 히스토리에서 제거될
-수 있다.  패치는 재 수정될 수 있어서 심지어 몇달 전에 작성한 패치일 지라도, 마치
-메인라인의 최근 가장 위에 작성된 것 처럼 보일것이다.  ##수정사항은 투명하게 한
-브랜치에서 다른 브랜치로 이동될 수 있다.  git의 히스토리를 수정 기능을 지혜롭게
-사용한 다면, 별 문제 없이 깨긋한 패치를 만드는데 도움이 될 수 있다.
+git은 커밋 히스토리를 수정할 수 있는 강력한 기능을 제공 한다.  ##분리가 안되어
+있거나, 확실한 버그가 존재하는 등의 패치는 수정되거나 git 히스토리에서 완전히
+제거될 수 있다.  패치는 재 수정될 수 있어서 심지어 몇달 전에 작성한 패치일
+지라도, 마치 메인라인의 최근 가장 위에 작성된 것 처럼 보일것이다.  수정사항은
+투명하게 한 브랜치에서 다른 브랜치로 이동될 수 있다.  git의 히스토리를 수정
+기능을 현명하게 사용한 다면, 별 문제 없이 깨긋한 패치를 만드는데 도움이 될 수
+있다.
 
 Excessive use of this capability can lead to other problems, though, beyond
 a simple obsession for the creation of the perfect project history.
@@ -130,12 +131,12 @@ for those developers.  So a simple rule of thumb applies here: history
 which has been exported to others should generally be seen as immutable
 thereafter.
 완벽한 히스토리를 만들고자하는 강박관념으로 과도하게 이 기능을 사용하게 되면 또
-다른 문제가 발생 할 수 있다.  ##히스토리를 수정하면 전체 히스토리내의 수정사항을
-수정하게 될 것이며, ##테스트가 완료된 커널트리를 아직 테스트가 되지않은 트리로
-만들게 될 것이다.  ##그러나 그것을 넘어서 공유된 프로젝트 히스토리 시각이
-없으면 쉽게 협업하기 어려울 수 있다.  ##만약 그들의 저장소에 적용한 히스토리를
-당신이 수정하면 문제는 보다 심각해 진다.  그래서 간단한 룰이 있다.  ##다른사람
-에게 전달된 히스토리는 일반적으로 변경할 수 없다.
+다른 문제가 발생 할 수 있다.  ##히스토리를 수정하면 전체 히스토리내의
+수정사항을 수정하게 될 것이며, ##테스트가 완료된 커널트리를 아직 테스트가
+되지않은 트리로 만들게 될 것이다.  ##그러나 그것을 넘어서 공유된 프로젝트
+히스토리 정보가 없으면 쉽게 협업하기 어려울 수 있다.  ##만약 당신이 그들의
+저장소에 적용한 히스토리를 수정하면 문제는 보다 심각해 진다.  그래서 간단한
+룰이 있다.  ##다른사람 에게 전달된 히스토리는 일반적으로 변경할 수 없다.
 
 So, once you push a set of changes to your publicly-available server, those
 changes should not be rewritten.  Git will attempt to enforce this rule if
@@ -186,7 +187,7 @@ slip in ill-advised changes which go into the mainline below the review
 radar.  Kernel developers tend to get unhappy when they see that kind of
 thing happening; putting up a git tree with unreviewed or off-topic patches
 can affect your ability to get trees pulled in the future.  Quoting Linus:
-git에대해 끊임없이 발생하는 불만은 다음과 같다.  ##review radar 하에 메인라인에
+git에대해 끊임없이 발생하는 불만은 다음과 같다.  review ##감시 하에 메인라인에
 반영하려는 패치를 주의깊게 만들지 않으면, 방대한 양의 패치가 한 저장소에서 다른
 저장소로 이동할때 문제가 발생하기 쉽다.  커널 개발자들은 이런상황을 마주칠때
 불편을 느낀다.  리뷰를 받지않거나 주제에서 벗어난 패치를 git 트리에 올리는것은
@@ -233,9 +234,9 @@ format the request as other developers expect, and will also check to be
 sure that you have remembered to push those changes to the public server.
 pull request를 할때, 모든 관련 정보를 확실히 하라.  당신의 트리는 어디있는지,
 어떤 브랜치를 pull하려고 하는지, pull을 통해 어떤 결과가 나타날 수 있는지.
-##git request-pull 명령어는 이것에 도움이 될 것이다.  이 명령어는 다른
-개발자들이 기대하는 포맷에 맞출 것이다.  ##그리고 이 수정사항을 공개 서버로
-push하는지 기억하도록 해줄 것이다.
+git request-pull 명령어는 이것에 도움이 될 것이다.  이 명령어는 다른 개발자들이
+기대하는 포맷에 맞출 것이다.  ##그리고 이 수정사항을 공개 서버로 push하는지
+기억하도록 해줄 것이다.
 
 
 7.2: REVIEWING PATCHES
