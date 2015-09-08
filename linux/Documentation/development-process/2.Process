@@ -457,11 +457,6 @@ linux-next 트리는 완성되면 linux-kernel과 linux-next 메일링리스트�
 
 	http://www.kernel.org/pub/linux/kernel/next/
 
-Some information about linux-next has been gathered at:
-다음 주소에서도 더 많은 정보를 얻을수 있다.
-
-	http://linux.f-seidel.de/linux-next/pmwiki/
-
 Linux-next has become an integral part of the kernel development process;
 all patches merged during a given merge window should really have found
 their way into linux-next some time before the merge window opens.

@@ -34,11 +34,6 @@ Beyond that, a valuable resource for kernel developers is:
 
 	http://kernelnewbies.org/
 
-Information about the linux-next tree gathers at:
-linux-next 트리에 대한 정보들은 아래 주소에서 찾아볼수 있다:
-
-	http://linux.f-seidel.de/linux-next/pmwiki/
-
 And, of course, one should not forget http://kernel.org/, the definitive
 location for kernel release information.
 그리고 커널 릴리즈에 관한 최종 정보는 http://kernel.org/ 에 있기 때문에 기억

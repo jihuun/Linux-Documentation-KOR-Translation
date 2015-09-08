@@ -278,8 +278,6 @@ attention to concurrency will have a difficult path into the mainline.
 
 * Regressions
 * 퇴행(Regressions)
-
-One final hazard worth mentioning is this: it can be tempting to make a
 change (which may bring big improvements) which causes something to break
 for existing users.  This kind of change is called a "regression," and
 regressions have become most unwelcome in the mainline kernel.  With few
@@ -357,7 +355,8 @@ Contemporary versions of gcc can detect (and warn about) a large number of
 potential errors.  Quite often, these warnings point to real problems.
 Code submitted for review should, as a rule, not produce any compiler
 warnings.  When silencing warnings, take care to understand the real cause
-and try to avoid "fixes" which make the warning go away without addressing its cause.
+and try to avoid "fixes" which make the warning go away without addressing
+its cause.
 첫번째로 할 수 있는것은 단순히 컴파일러의 Warning 메시지를 주의 깊게 살피는
 것이다.  최신 버전의 gcc는 많은 양의 잠재적 에러를 미리 발견할 수 있다.  꽤
 자주, 이런 Warning 메시지는 실제 문제를 나타낸다.  리뷰용으로 제출된 코드는
@@ -600,7 +599,8 @@ Certain things should always be commented.  Uses of memory barriers should
 be accompanied by a line explaining why the barrier is necessary.  The
 locking rules for data structures generally need to be explained somewhere.
 Major data structures need comprehensive documentation in general.
-Non-obvious dependencies between separate bits of code should be pointed out.  Anything which might tempt a code janitor to make an incorrect
+Non-obvious dependencies between separate bits of code should be pointed
+out.  Anything which might tempt a code janitor to make an incorrect
 "cleanup" needs a comment saying why it is done the way it is.  And so on.
 다음의 내용에는 항상 주석을 추가하여야 한다.  메모리 장벽(memory barriers) 를
 사용한다면 메모리 장벽이 왜 필요한지 라인 단위로 설명이 되어야 한다.

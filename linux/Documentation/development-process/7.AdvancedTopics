@@ -157,7 +157,7 @@ it's in a reasonably advanced state.
 개발자들이 필요할 때 언제든지 수정할 수 있는 본인의 브랜치에서 작업을 해야하는
 이유이다.  그리고 ##합리적으로 개선된 상태일때만 공개 브랜치로 옮겨야 한다.
 
-##As the mainline (or other tree upon which a set of changes is based)
+As the mainline (or other tree upon which a set of changes is based)
 advances, it is tempting to merge with that tree to stay on the leading
 edge.  For a private branch, rebasing can be an easy way to keep up with
 another tree, but rebasing is not an option once a tree is exported to the

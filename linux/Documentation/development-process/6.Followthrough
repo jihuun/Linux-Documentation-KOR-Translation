@@ -57,7 +57,7 @@ mind:
 
  - Code review is hard work, and it is a relatively thankless occupation;
    people remember who wrote kernel code, but there is little lasting fame
-   for those who reviewed it.  So reviewers get grumpy, especially when
+   for those who reviewed it.  So reviewers can get grumpy, especially when
    they see the same mistakes being made over and over again.  If you get a
    review which seems angry, insulting, or outright offensive, resist the
    impulse to respond in kind.  Code review is about the code, not about
@@ -170,6 +170,8 @@ Morton이다. Andrew Morton은 커널 커뮤니티에서 많은 사람들이 신
 If a patch is considered to be a good thing to add to the kernel, and once
 most of the review issues have been resolved, the next step is usually
 entry into a subsystem maintainer's tree.  How that works varies from one
+subsystem to the next; each maintainer has his or her own way of doing
+things.  In particular, there may be more than one tree - one, perhaps,
 dedicated to patches planned for the next merge window, and another for
 longer-term work.
 패치가 커널에 적용되는데 무리가 없다고 여겨지고, 리뷰 이슈가 해결되었다면, 다음
@@ -253,7 +255,7 @@ where there are testers, there will be bug reports.
 포함된 커널을 빌드할 것이다.  ##물론 테스터가 있는 곳이라면 그곳엔 버그
 리포트가 있다.
 
-The worst sort of bug reports are ##regressions.  If your patch causes a
+The worst sort of bug reports are regressions.  If your patch causes a
 regression, you'll find an uncomfortable number of eyes upon you;
 regressions need to be fixed as soon as possible.  If you are unwilling or
 unable to fix the regression (and nobody else does it for you), your patch
