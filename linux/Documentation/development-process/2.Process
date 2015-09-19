@@ -8,10 +8,10 @@ course of one year, the kernel has since had to evolve a number of
 processes to keep development happening smoothly.  A solid understanding of
 how the process works is required in order to be an effective part of it.
 1990년대에 리눅스 커널 개발은 소수의 유저나 개발자만이 관여하고 있었다.  개발을
-원활하게 진행 시키기 위해서 커널은 수많은 개발 프로세스를 진화 시켜왔다.  그
-결과 1년에 100만명의 사용자와 2000여명의 개발자들이 리눅스를 이용하게 되었다.
-##이런 개발 프로세스를 확실히 이해하는것은 효과적으로 개발에 참여하기 위해서
-반드시 필요하다.
+원활하게 진행 시키기 위해서 커널은 수많은 개발 프로세스를 진화시켜왔다.  그
+결과 1년에 100만 명의 사용자와 2000여 명의 개발자들이 리눅스를 이용하게 되었다.
+##이런 개발 프로세스를 확실히 이해하는 것은 효과적으로 개발에 참여하기 위해서
+꼭 필요하다.
 
 
 2.1: THE BIG PICTURE
@@ -20,8 +20,8 @@ how the process works is required in order to be an effective part of it.
 The kernel developers use a loosely time-based release process, with a new
 major kernel release happening every two or three months.  The recent
 release history looks like this:
-커널 개발자는 2달 또는 3달에 한번씩 릴리즈 되는 프로세스를 이용한다. 최근의
-릴리즈 히스토리는 다음과 같다.
+커널 개발자는 2달 또는 3달에 한 번씩 배포 되는 프로세스를 이용한다.  최근의
+릴리즈 이력은 다음과 같다.
 
 	2.6.38	March 14, 2011
 	2.6.37	January 4, 2011
@@ -45,7 +45,7 @@ rolling development model which is continually integrating major changes.
 각 2.6.x 버전의 릴리즈는 내부 API변경 등의 새로운 특징을 가진 메이저 커널
 버전이다.  일반적인 2.6 버전의 릴리즈는 거의 10000가지의 수정 사항을 가지고
 있으며, 이것은 약 몇십만 라인의 코드에 해당한다.  따라서 2.6의 두자릿수 버전은
-리눅스 커널 ##개발을 이끄는 위치에 해당한다.  커널은 중대한 변화가 지속적으로
+리눅스 커널 ##개발을 이끄는 위치에 해당한다.  커널은 중대한 변화가 지속해서
 통합되는 "Rolling Development Model"을[1] 사용한다.
 
 A relatively straightforward discipline is followed with regard to the
@@ -56,20 +56,20 @@ community) is merged into the mainline kernel.  The bulk of changes for a
 new development cycle (and all of the major changes) will be merged during
 this time, at a rate approaching 1,000 changes ("patches," or "changesets")
 per day.
-각 릴리즈의 패치를 반영 하기 위해서는 비교적 간단한 훈련이 필요하다.  각 개발
-주기에서 Merge Window가 오픈 되었다고 선언된다.  그 때, 충분히 안정성이
-충족되고, 커뮤니티 에서 검증이 완료된 코드가 메인 라인 커널에 반영 된다.  보통
-새로운 기능이나 중요한 수정사항들이 이 기간에 반영되며 그 비율은 하루에
-1000여개 패치 혹은 패치셋이 반영되는 정도이다.
+각 릴리즈의 패치를 반영하기 위해서는 비교적 간단한 훈련이 필요하다.  각 개발
+주기에서 Merge Window가 오픈되었다고 선언된다.  그 때, 충분히 안정성이
+충족되고, 커뮤니티에서 검증이 완료된 코드가 메인 라인 커널에 반영된다.  보통
+새로운 기능이나 중요한 수정사항들이 이 기간에 반영되며 그 비율은 하루에 1000여
+개 패치 혹은 패치 묶음이 반영되는 정도이다.
 
 (As an aside, it is worth noting that the changes integrated during the
 merge window do not come out of thin air; they have been collected, tested,
 and staged ahead of time.  How that process works will be described in
 detail later on).
-(여담 이지만, 머지 작업 기간에 수정사항은 갑자기 마술 처럼 반영되는 것이
-아니라는 점에 주목할 필요가 있다.  그 수정사항들이 먼저 모여야 하며, 테스트
-작업이 필요하고 빠른 시간내에 ##staging 되어야 한다. 어떻게 이 프로세스가
-진행되는지는 다음에서 자세하게 논의 한다.)
+(여담이지만, 머지 작업 기간에 수정사항은 갑자기 마술처럼 반영되는 것이 아니라는
+점에 주목할 필요가 있다.  그 수정사항들이 먼저 모여야 하며, 테스트 작업이
+필요하고 빠르게 ##staging 되어야 한다. 어떻게 이 프로세스가 진행되는지는
+다음에서 자세하게 논의한다.)
 
 The merge window lasts for approximately two weeks.  At the end of this
 time, Linus Torvalds will declare that the window is closed and release the
@@ -78,11 +78,11 @@ for example, the release which happens at the end of the merge window will
 be called 2.6.40-rc1.  The -rc1 release is the signal that the time to
 merge new features has passed, and that the time to stabilize the next
 kernel has begun.
-Merge Window는 약 2주동안 진행 된다.  그리고 리누스 토발즈가 Merge Window의
-종료를 선언하면, 첫번째 "rc" 버전의 커널이 릴리즈 된다. 가령, 2.6.40 버전이 될
-커널이 Merge Window가 종료되고 릴리즈 되면 첫 번째 버전명은 2.6.40-rc1 이 된다.
-"-rc1" 릴리즈는 새로운 수정사항이 반영 될 기간은 지났고, 이제 다음 커널 버전의
-안정화 작업이 필요한 단계 라는 것을 의미한다.
+Merge Window는 약 2주 동안 진행된다.  그리고 리누스 토발즈가 Merge Window의
+종료를 선언하면, 첫 번째 "rc" 버전의 커널이 릴리즈 된다. 가령, 2.6.40 버전이 될
+커널이 Merge Window가 종료되고 릴리즈 되면 첫 번째 버전 명은 2.6.40-rc1 이
+된다.  "-rc1" 릴리즈는 새로운 수정사항이 반영될 기간은 지났고, 이제 다음 커널
+버전의 안정화 작업이 필요한 단계라는 것을 의미한다.
 
 Over the next six to ten weeks, only patches which fix problems should be
 submitted to the mainline.  On occasion a more significant change will be
@@ -95,22 +95,22 @@ touch no in-tree code, they cannot cause regressions and should be safe to
 add at any time).
 그 뒤 6 ~ 10주 동안은 버그 수정 패치만 메인 라인에 반영될 수 있다.  때때로 매우
 중요한 수정사항이 허용될 때도 있지만 그런 경우는 드물다.  만약 Merge Window
-기간이 아닐때 새로운 수정사항을 반영 하고자 한다면 좋은 소리를 듣기는 어렵다.
+기간이 아닐 때 새로운 수정사항을 반영하고자 한다면 좋은 소리를 듣기는 어렵다.
 Merge Window 기간을 놓쳤을 경우에는 돌아오는 다음 순서를 기다리는 것이 가장
 현명한 방법일 것이다.  예외적으로 이전에 지원하지 않던 하드웨어를 지원하는
 Driver는 허용될 수 있다.  이는 기존 기능의 in-tree 코드를 수정하지 않는다면,
-기능을 감소 시키지 않을 것이고, 안전할 것이기 때문이다.
+성능을 감소시키지 않을 것이고, 안전할 것이기 때문이다.
 
 As fixes make their way into the mainline, the patch rate will slow over
 time.  Linus releases new -rc kernels about once a week; a normal series
 will get up to somewhere between -rc6 and -rc9 before the kernel is
 considered to be sufficiently stable and the final 2.6.x release is made.
 At that point the whole process starts over again.
-##수정사항이 메인 라인에 반영 됨에 따라, 패치의 비율은 시간이 지남에 따라
-느려진다.  리누스 토발즈는 새로운 "-rc" 버전의 커널을 대략 일주일에 한번 릴리즈
-한다.  보통 "-rc6" ~ "-rc9" 정도 되면 해당 개발버전이 어느정도 안정화되었다고
-판단하고 최종 2.6.x 라는 버전으로 Stable 버전을 릴리즈한다.  그 시점부터 전체
-프로세스가 다시 반복된다.
+##수정사항이 메인 라인에 반영됨에 따라, 패치의 비율은 시간이 지남에 따라
+느려진다.  리누스 토발즈는 새로운 "-rc" 버전의 커널을 대략 일주일에 한 번
+릴리즈 한다.  보통 "-rc6" ~ "-rc9" 정도 되면 해당 개발 버전이 어느 정도 안정화
+되었다고 판단하고 최종 2.6.x 라는 버전으로 Stable 버전을 릴리즈한다.  그
+시점부터 전체 프로세스가 다시 반복된다.
 
 As an example, here is how the 2.6.38 development cycle went (all dates in
 2011):
@@ -134,11 +134,11 @@ break systems which worked in the past are considered to be especially
 serious.  For this reason, patches which cause regressions are looked upon
 unfavorably and are quite likely to be reverted during the stabilization
 period.
-##개발 사이클의 종료와 Stable 버전의 릴리즈는 언제 결정 되는지 알기 위해서 가장
-좋은 방법은 이전 버전에서 성능 감소(regression)를 발생시킨 리스트를 이용 하는 것이다.
-버그가 없는것이 좋다.  그러나 이전버전에 시스템에 문제를 일으켰던 부분은 중대한
-고려 대상이 된다.  이러한 이유 때문에 성능 감소의 원인이 되는 패치는 불리한
-대우를 받을 수 있고, 안정화 기간에 반려(revert) 될 수 있다.
+##개발 사이클의 종료와 Stable 버전의 릴리즈는 언제 결정되는지 알기 위해서 가장
+좋은 방법은 이전 버전에서 성능 감소(regression)를 발생시킨 리스트를 이용하는
+것이다.  버그가 없는 것이 좋다.  그러나 이전 버전에 시스템에 문제를 일으켰던
+부분은 중대한 고려 대상이 된다.  이러한 이유로 성능 감소의 원인이 되는 패치는
+불리한 대우를 받을 수 있고, 안정화 기간에 반려(revert)될 수 있다.
 
 The developers' goal is to fix all known regressions before the stable
 release is made.  In the real world, this kind of perfection is hard to
@@ -148,12 +148,12 @@ worse; the pile of changes waiting for the next merge window will grow
 larger, creating even more regressions the next time around.  So most 2.6.x
 kernels go out with a handful of known regressions though, hopefully, none
 of them are serious.
-개발자의 목표는 Stable 버전이 릴리즈 되기 이전에 알려진 모든 문제들을 고치는
+개발자의 목표는 Stable 버전이 릴리즈 되기 이전에 알려진 모든 문제를 고치는
 것이다.  그러나 실제로는 이런 완벽한 목표는 달성되기 어렵다.  이런 규모의
-프로젝트 에서는 너무 많은 변수들이 존재하기 때문이다.  최종 버전의 릴리즈가
-지연되는 것은 문제를 악화 시키는 경우도 있다.  다음 Merge Window에 반영하는 것을
-기다리는 파일은 점점 늘어날 것이고, 추후에 더 심각한 문제를 발생 시킬 것이다.
-비록 대부분의 2.6.x 커널이 이런 소수의 문제들을 포함하여 릴리즈 되지만, 심각한
+프로젝트에서는 너무 많은 변수가 존재하기 때문이다.  최종 버전의 릴리즈가
+지연되는 것은 문제를 악화시키는 경우도 있다.  다음 Merge Window에 반영하는 것을
+기다리는 파일은 점점 늘어날 것이고, 나중에 더 심각한 문제를 발생시킬 것이다.
+비록 대부분의 2.6.x 커널이 이런 소수의 문제를 포함하여 릴리즈 되지만, 심각한
 문제가 발생하지 않기를 바랄 뿐이다.
 
 Once a stable release is made, its ongoing maintenance is passed off to the
@@ -164,13 +164,13 @@ fix a significant bug, and (2) already be merged into the mainline for the
 next development kernel.  Kernels will typically receive stable updates for
 a little more than one development cycle past their initial release.  So,
 for example, the 2.6.36 kernel's history looked like:
-Stable 릴리즈가 만들어지면, 그것의 관리는 "stable team"에 의해서 진행된다.
-(현재는 Greg Kroah-Hartman으로 구성되어 있다.)  "stable team"은 때때로 Stable
-버전의 업데이트 버전을 발행한다.  버전명은 2.6.x.y의 형식을 따른다.  업데이트
-릴리즈에 반영되기 위해서는 다음의 두가지가 고려된다.  (1) 심각한 버그의 수정
-(2) 이미 다음 버전의 커널을 위해 반영 되어진 것.  커널은 일반적으로 초기 릴리스
-에서 한번 이상의 개발주기가 지난 안정적인 업데이트를 받게된다.  예를 들면
-2.6.36 커널은 아래와 같이 진행 되었다.
+Stable 릴리즈가 만들어지면, 그것의 관리는 "stable team"에 의해서
+진행된다(현재는 Greg Kroah-Hartman으로 구성되어 있다).  "stable team"은 때때로
+Stable 버전의 업데이트 버전을 발행한다.  버전명은 2.6.x.y의 형식을 따른다.
+업데이트 릴리즈에 반영되기 위해서는 다음의 두 가지가 고려된다.  (1) 심각한
+버그의 수정 (2) 이미 다음 버전의 커널을 위해 반영 된 것.  커널은 일반적으로
+초기 릴리스 에서 한 번 이상의 개발주기가 지난 안정적인 업데이트를 받게 된다.
+예를 들면 2.6.36 커널은 아래와 같이 진행되었다.
 
 	October 10	2.6.36 stable release
 	November 22	2.6.36.1
@@ -179,13 +179,13 @@ Stable 릴리즈가 만들어지면, 그것의 관리는 "stable team"에 의해
 	February 17	2.6.36.4
 
 2.6.36.4 was the final stable update for the 2.6.36 release.
-2.6.26.4는 최종 stable 버전 이었다.
+2.6.26.4는 최종 stable 버전이었다.
 
 Some kernels are designated "long term" kernels; they will receive support
 for a longer period.  As of this writing, the current long term kernels
 and their maintainers are:
-몇몇 커널은 오랜 기간동안 지원을 받을 수 있는 "long term" 커널이 있다. 이글을
-작성할 당시, long term 커널 메인테이너는 아래와 같다.
+몇몇 커널은 오랫동안 지원을 받을 수 있는 "long term" 커널이 있다. 이글을 작성할
+당시, long term 커널 메인테이너는 아래와 같다.
 
 	2.6.27	Willy Tarreau		(Deep-frozen stable kernel)
 	2.6.32	Greg Kroah-Hartman
@@ -212,11 +212,11 @@ and controversial changes, go on for years.  Much developer frustration
 comes from a lack of understanding of this process or from attempts to
 circumvent it.
 패치가 작성된다고 무작정 메인 라인 커널로 바로 반영되는 것이 아니다.  각 패치의
-품질과 메인 라인에 포함되는 것이 바람직한지 여부를 리뷰하기 위해서 다소 복잡한
-프로세스가 설계 되어있다.  이 프로세스는 작은 변경의 경우 신속하게 처리될수
-있고, 논란이 있거나 큰 변경의 경우 수년에 걸쳐 처리 된다.  많은 개발자들이
-실패하는 이유는 이 프로세스에 대한 이해가 부족했거나 프로세스를 무시 하려고
-했기 때문이다.
+품질과 메인 라인에 포함되는 것이 바람직한지 아닌지를 리뷰하기 위해서 다소
+복잡한 프로세스가 설계되어있다.  이 프로세스는 작은 변경의 경우 신속하게 처리될
+수 있고, 논란이 있거나 큰 변경의 경우 수년에 걸쳐 처리 된다.  많은 개발자가
+실패하는 이유는 이 프로세스에 대한 이해가 부족했거나 프로세스를 무시했기
+때문이다.
 
 In the hopes of reducing that frustration, this document will describe how
 a patch gets into the kernel.  What follows below is an introduction which
@@ -227,24 +227,23 @@ treatment will come in later sections.
 다음에 다시 다룰 것이다.
 
 The stages that a patch goes through are, generally:
-일반적으로 패치가 거쳐가는 단계는 다음과 같다:
+일반적으로 패치가 거쳐 가는 단계는 다음과 같다.
 
  - Design.  This is where the real requirements for the patch - and the way
    those requirements will be met - are laid out.  Design work is often
    done without involving the community, but it is better to do this work
    in the open if at all possible; it can save a lot of time redesigning
    things later.
- - 설계.  패치에 대한 실제 요구 사항(과 그 요구 사항이 충족되는 방법)이
-   배치되어 있는 곳이다.  설계 작업은 종종 커뮤니티의 관여없이 수행하지만,
-   가능하다면 이 작업을 공개 해서 수행하면 나중에 다시 작업하는 일을 많이 줄일
-   수 있다.
+ - 설계.  패치에 대한 실제 요구 사항(과 그 요구 사항이 충족되는 방법)이 배치된
+   곳이다.  설계 작업은 종종 커뮤니티의 관여 없이 수행하지만, 가능하다면 이
+   작업을 공개해서 수행하면 나중에 다시 작업하는 일을 많이 줄일 수 있다.
 
  - Early review.  Patches are posted to the relevant mailing list, and
    developers on that list reply with any comments they may have.  This
    process should turn up any major problems with a patch if all goes
    well.
- - 초기 리뷰.  패치는 관련 메일링 리스트에 게시되고, 개발자들은 의견을 회신 할
-   수 있다.  모든 것이 잘 진행 되면, 이 과정에서 큰 문제점들이 모두 발견될
+ - 초기 리뷰.  패치는 관련 메일링 리스트에 게시되고, 개발자들은 의견을 회신할
+   수 있다.  모든 것이 잘 진행되면, 이 과정에서 큰 문제점들이 모두 발견될
    것이다.
 
  - Wider review.  When the patch is getting close to ready for mainline
@@ -255,11 +254,11 @@ The stages that a patch goes through are, generally:
    process works, this step leads to more extensive review of the patch and
    the discovery of any problems resulting from the integration of this
    patch with work being done by others.
- - 광범위 리뷰.  패치가 메인 라인 포함시키기 위한 준비가 되면, 해당 서브시스템
-   메인테이너에게 받아들여져야 한다.  (이것이 메인 라인에 포함되는것을 보장하는
-   것은 아니다) 패치는 메인테이너의 서브트리와 "-next" 트리에 나타나게 될
-   것이다.  프로세스가 진행 되면서, 이 단계는 패치의 보다 광범위한 리뷰에
-   이르게하고 패치 통합 될 때 발생하는 모든 문제가 발견된다.
+ - 광범위 리뷰.  패치가 메인 라인 포함하기 위한 준비가 되면, 해당 서브시스템
+   메인테이너에게 받아들여져야 한다(이것이 메인 라인에 포함되는 것을 보장하는
+   것은 아니다).  패치는 메인테이너의 서브 트리와 "-next" 트리에 나타나게 될
+   것이다.  프로세스가 진행되면서, 이 단계는 패치의 더욱 광범위한 리뷰에 이르게
+   하고 패치 통합될 때 발생하는 모든 문제가 발견된다.
 
 -  Please note that most maintainers also have day jobs, so merging
    your patch may not be their highest priority.  If your patch is
@@ -271,23 +270,23 @@ The stages that a patch goes through are, generally:
    and keep sending it for review and merging.
 -  대부분의 메인테이터는 본업이 따로 있어서 패치를 병합하는 것이 최우선 순위가
    아닐 수 있다.  당신의 패치가 수정이 필요하다고 피드백을 받게 되면, 그에 따른
-   수정을 하거나 수정이 불가능하면 그에 따른 타당함을 보여야한다.  패치에 대한
+   수정을 하거나 수정할 수 없으면 그에 따른 타당함을 보여야 한다.  패치에 대한
    이견이 없음에도 적절한 서브 시스템 또는 드라이버 메인테이너에 의해 병합되지
-   않는 경우에는 패치를 현재 커널버전에 맞게 꾸준히 업데이트하여 리뷰 및 반영에
-   대한 요청을 보내야 한다.
+   않는 경우에는 패치를 현재 커널 버전에 맞게 꾸준히 업데이트하여 리뷰 및
+   반영에 대한 요청을 보내야 한다.
 
  - Merging into the mainline.  Eventually, a successful patch will be
    merged into the mainline repository managed by Linus Torvalds.  More
    comments and/or problems may surface at this time; it is important that
    the developer be responsive to these and fix any issues which arise.
  - 메인 라인에 반영.  성공적인 패치는 결국 리누스 토발즈가 관리하는 메인 라인
-   저장소에 병합 된다.  더 많은 의견 또는 문제가 이 과정에서 드러날 수 있다.
+   저장소에 병합된다.  더 많은 의견 또는 문제가 이 과정에서 드러날 수 있다.
    개발자가 이들에 반응하고 발생하는 모든 문제를 해결하는 것이 중요하다.
 
  - Stable release.  The number of users potentially affected by the patch
    is now large, so, once again, new problems may arise.
- - 스테이블 릴리즈.  이 과정에서는 패치에 의해서 잠재적으로 영향을 받을 수 있는
-   사용자 수가 많기 때문에 다시 새로운 문제가 발생할 수 있다.
+ - 안정 버전 릴리즈.  이 과정에서는 패치에 의해서 잠재적으로 영향을 받을 수
+   있는 사용자 수가 많으므로 다시 새로운 문제가 발생할 수 있다.
 
  - Long-term maintenance.  While it is certainly possible for a developer
    to forget about code after merging it, that sort of behavior tends to
@@ -299,15 +298,15 @@ The stages that a patch goes through are, generally:
  - 장기 유지보수.  개발자가 머지 후 코드에 대해 잊어버릴 수도 있다.  이런
    행동은 개발 커뮤니티에서 나쁜 인상을 남길 수 있다.  일단 코드를 머지하면
    다른 사람이 API 변경으로 인한 문제를 해결할 것이므로 유지보수의 부담이
-   줄어든다.  그러나 원래 개발자는 장기적으로 지속될 수있도록 코드에 대한
-   책임을 계속 해야한다.
+   줄어든다.  그러나 원래 개발자는 장기적으로 지속할 수 있도록 코드에 대한
+   책임을 계속 해야 한다.
 
 One of the largest mistakes made by kernel developers (or their employers)
 is to try to cut the process down to a single "merging into the mainline"
 step.  This approach invariably leads to frustration for everybody
 involved.
-커널 개발자에 의한 가장 큰 실수는 "메인 라인에 반영" 단계까지 한번에 처리
-하려고 하는 것이다.  이러한 접근 방식은 늘 관련된 모두를 힘들게 만들 뿐이다.
+커널 개발자에 의한 가장 큰 실수는 "메인 라인에 반영" 단계까지 한 번에 처리
+하려고 하는 것이다.  이러한 접근 방식은 늘 관련된 모두를 힘들 게 만들 뿐이다.
 
 
 2.3: HOW PATCHES GET INTO THE KERNEL
@@ -321,10 +320,10 @@ developer could possibly inspect and select every patch unassisted.  The
 way the kernel developers have addressed this growth is through the use of
 a lieutenant system built around a chain of trust.
 리누스 토발즈는 메인 라인 커널 저장소에 패치를 반영할 수 있는 유일한 사람이다.
-2.6.38 커널에 보내진 9500개 패치 중 112(1.3%)개만이 리누스에 의해 선택 되었다.
-커널 프로젝트는 오래 전부터 단일 개발자가 혼자 모든 패치를 검사하고 선택할 수
-없는 규모로 성장했다.  이 때문에 리눅스 커널 코드관리는 군대처럼 관리계급 하에
-이루어 진다.  그리고, 이러한 관리는 철저하게 신뢰에 바탕을 두고 이루어진다.
+2.6.38 커널에 보내진 9500개 패치 중 112(1.3%)개만이 리누스에 의해 선택되었다.
+커널 프로젝트는 오래전부터 단일 개발자가 혼자 모든 패치를 검사하고 선택할 수
+없는 규모로 성장했다.  이 때문에 리눅스 커널 코드관리는 군대처럼 관리계급하에
+이루어진다.  그리고, 이러한 관리는 철저하게 신뢰에 바탕을 두고 이루어진다.
 
 The kernel code base is logically broken down into a set of subsystems:
 networking, specific architecture support, memory management, video
@@ -336,8 +335,8 @@ patch for inclusion into the mainline kernel.
 커널 코드는 네트워킹, 특정 아키텍처 지원, 메모리 관리, 비디오 장치 등
 서브시스템의 집합으로 논리적으로 분류된다.  대부분의 서브시스템은 코드에 대한
 전반적인 책임이 있는 개발자인 메인테이너가 지정되어 있다.  이러한 서브시스템
-메인테이너들은 자신이 관리하는 부분에 대한 문지기 라고 볼 수 있다.  그들은
-메인 라인 커널에 포함하기 위한 패치를 수락 할 것이다.
+메인테이너들은 자신이 관리하는 부분에 대한 문지기라고 볼 수 있다.  그들은 메인
+라인 커널에 포함하기 위한 패치를 수락할 것이다.
 
 Subsystem maintainers each manage their own version of the kernel source
 tree, usually (but certainly not always) using the git source management
@@ -347,7 +346,7 @@ and other metadata.  At any given time, the maintainer can identify which
 patches in his or her repository are not found in the mainline.
 서브시스템의 각 메인테이너들은 git을 이용하여 커널 소스트리를 관리한다, git
 같은 도구는 메인테이너들이 저자 정보 및 기타 메타 데이터를 포함하는 패치 목록을
-추적 할 수 있도록 한다. 메인테이너는 언제든 자신의 저장소의 패치가 메인 라인에
+추적할 수 있도록 한다. 메인테이너는 언제든 자신의 저장소의 패치가 메인 라인에
 포함되어 있는지 찾을 수 있다.
 
 When the merge window opens, top-level maintainers will ask Linus to "pull"
@@ -357,11 +356,11 @@ becoming part of the mainline kernel.  The amount of attention that Linus
 pays to specific patches received in a pull operation varies.  It is clear
 that, sometimes, he looks quite closely.  But, as a general rule, Linus
 trusts the subsystem maintainers to not send bad patches upstream.
-Merge Window가 열리면, 최상위 메인테이너들은 자신의 저장소에서 병합 하기위해
-선택한 패치를 "pull" 해달라고 리누스에게 요청한다.  리누스가 동의 한 경우,
+Merge Window가 열리면, 최상위 메인테이너들은 자신의 저장소에서 병합 하기 위해
+선택한 패치를 "pull" 해달라고 리누스에게 요청한다.  리누스가 동의한 경우,
 패치의 흐름은 메인 라인 커널의 일부가 된다.  리누스가 "pull" 요청을 받은 경우,
-그 특정 패치에 관심을 보일수도 있고 아닐수도 있다.  그러나 일반적으로 리누스는
-서브시스템 메인테이너가 부적절한 패치를 보내지 않는다고 신뢰한다.
+그 특정 패치에 관심을 보일 수도 있고 아닐 수도 있다.  그러나 일반적으로
+리누스는 서브시스템 메인테이너가 부적절한 패치를 보내지 않는다고 신뢰한다.
 
 Subsystem maintainers, in turn, can pull patches from other maintainers.
 For example, the networking tree is built from patches which accumulated
@@ -372,14 +371,14 @@ those managing lower-level trees, this process is known as the "chain of
 trust."
 서브 시스템 메인테이너는 차례로 다른 관리자들로부터 패치를 "pull" 할 수 있다.
 예를 들어, Network 트리는 장치 드라이버, 무선 네트워킹 등의 트리를 기반으로
-만들어졌다. ##저장소 체인은 길어질수도 있지만 거의 두 개 또는 세 개의 링크를
+만들어졌다. ##저장소 체인은 길어질 수도 있지만 거의 두 개 또는 세 개의 링크를
 초과하지 않는다.  저장소 체인의 각 메인테이너는 로우레벨 트리의 메인테이너들을
-신뢰하기 때문에 이러한 프로세스를 "신뢰 체인" 이라고 알려져 있다.
+신뢰하기 때문에 이러한 프로세스를 "신뢰 체인"이라고 알려져 있다.
 
 Clearly, in a system like this, getting patches into the kernel depends on
 finding the right maintainer.  Sending patches directly to Linus is not
 normally the right way to go.
-분명히, 이같은 시스템에서, 커널에 패치를 넣는 것은 적절한 관리자를 찾는것에
+분명히, 이런 시스템에서, 커널에 패치를 넣는 것은 적절한 관리자를 찾는 것에
 달려있다. 리누스에게 직접 패치를 보내는 것은 올바른 방법이 아니다.
 
 
@@ -397,12 +396,12 @@ want access to the changes in their integrated form before all of those
 changes land in the mainline kernel.  One could pull changes from all of
 the interesting subsystem trees, but that would be a big and error-prone
 job.
-##서브시스템 트리 체인은 커널에 패치의 흐름을 가이드 할뿐만 아니라 흥미로운
-질문을 제기한다.  다음 Merge Window를 위해 준비되고있는 모든 패치를 확인하고자
-할 경우에는 어떻게 할 것인가?  ##개발자는 대기중인 다른 패치에 걱정할만한 충돌이
-있는지 여부를 확인하기 위해 관심이 많다.  ##예를 들어, 핵심 커널 함수 프로토
+##서브시스템 트리 체인은 커널에 패치의 흐름을 유도 할뿐만 아니라 흥미로운
+질문을 제기한다.  다음 Merge Window를 위해 준비되고 있는 모든 패치를 확인하고자
+할 경우에는 어떻게 할 것인가?  ##개발자는 대기 중인 다른 패치에 걱정할만한
+충돌이 있는지를 확인하기 위해 관심이 많다.  ##예를 들어, 핵심 커널 함수 프로토
 타입을 수정하는 패치는 이전 양식을 사용하는 다른 패치와 충돌한다.  ##리뷰어와
-테스터는 메인 라인 커널에 머지되기 전 모든 변경점이 통합 된 형태로 액세스 하길
+테스터는 메인 라인 커널에 병합되기 전 모든 변경점이 통합된 형태로 액세스 하길
 원한다.  ##흥미로운 서브 트리의 모든 변경 사항을 pull 할 수 있지만, 오류가
 발생하기 쉽고 매우 큰 작업이 될 것이다.
 
@@ -413,8 +412,8 @@ started).  The -mm tree integrates patches from a long list of subsystem
 trees; it also has some patches aimed at helping with debugging.
 정답은 서브시스템 트리에 테스트와 리뷰 목적으로 수집되는 -next 트리 형식의
 트리이다.  가장 오래된 트리는 앤드류 모튼(Andrew Morton)이 관리하는 -mm
-트리이다.(메모리 관리에 대한 트리) -mm 트리는 서브시스템 트리의 긴 패치
-리스트로 부터 통합된다.  또한 디버깅에 도움이 되는 일부 패치도 있다.
+트리이다(메모리 관리에 대한 트리).  -mm 트리는 서브시스템 트리의 긴 패치
+리스트로부터 통합된다.  또한, 디버깅에 도움이 되는 일부 패치도 있다.
 
 Beyond that, -mm contains a significant collection of patches which have
 been selected by Andrew directly.  These patches may have been posted on a
@@ -426,24 +425,24 @@ patches which accumulate in -mm will eventually either be forwarded on to
 an appropriate subsystem tree or be sent directly to Linus.  In a typical
 development cycle, approximately 5-10% of the patches going into the
 mainline get there via -mm.
-그건 그렇고, -mm트리는 앤드류가 직접 선택한 중요한 패치모음을 포함한다.
-이러한 패치는 메일 링리스트에 게시되었을 수 있으며, 또는 더 지정된 서브 트리가
-없는 커널의 일부에 적용될 수 있다.  그 결과, -mm트리는 최후의 수단으로 사용된다.
-메인 라인으로 패치 다른 명백한 경로가 없는 경우, 그것은 -mm에서 끝날 가능성이
-있다.  -mm에 축적된 이러한 패치는 결국 하나가 적절한 서브 트리에 전달되거나
-리누스 토발즈에게 전달된다.  일반적인 개발 주기에서, 메인 라인에 들어가는
-패치의 약 5 ~ 10 %가 -mm트리를 거친다.
+그건 그렇고, -mm 트리는 앤드류가 직접 선택한 중요한 패치모음을 포함한다.
+이러한 패치는 메일링리스트에 게시되었을 수 있으며, 또는 더 지정된 서브 트리가
+없는 커널의 일부에 적용될 수 있다.  그 결과, -mm 트리는 최후의 수단으로
+사용된다.  메인 라인으로 패치 다른 명백한 경로가 없는 경우, 그것은 -mm에서 끝날
+가능성이 있다.  -mm에 축적된 이러한 패치는 결국 하나가 적절한 서브 트리에
+전달되거나 리누스 토발즈에게 전달된다.  일반적인 개발 주기에서, 메인 라인에
+들어가는 패치의 약 5 ~ 10%가 -mm 트리를 거친다.
 
 The current -mm patch is available in the "mmotm" (-mm of the moment)
 directory at:
-현재 -mm 패치는 "mmotm" 디렉토리에서 확인 가능하며 주소는 다음과 같다.
+현재 -mm 패치는 "mmotm" 디렉터리에서 확인 가능하며 주소는 다음과 같다.
 
 	http://www.ozlabs.org/~akpm/mmotm/
 
 Use of the MMOTM tree is likely to be a frustrating experience, though;
 there is a definite chance that it will not even compile.
-"mmotm" 트리를 이용하는 일은 좌절감을 느끼게 할 수있다. 심지어 컴파일이 안되는
-경우도 많다.
+"mmotm" 트리를 이용하는 일은 좌절감을 느끼게 할 수 있다. 심지어 컴파일이 안
+되는 경우도 많다.
 
 The primary tree for next-cycle patch merging is linux-next, maintained by
 Stephen Rothwell.  The linux-next tree is, by design, a snapshot of what
@@ -451,7 +450,7 @@ the mainline is expected to look like after the next merge window closes.
 Linux-next trees are announced on the linux-kernel and linux-next mailing
 lists when they are assembled; they can be downloaded from:
 다음 패치 머지 주기를 위한 트리는 Stephen Rothwell에 관리되는 linux-next다.
-linux-next 트리는 다음 Merge Window가 닫힌후 예상되는 메인 라인의 스냅샷이다.
+linux-next 트리는 다음 Merge Window가 닫힌 후 예상되는 메인 라인의 스냅 샷이다.
 linux-next 트리는 완성되면 linux-kernel과 linux-next 메일링리스트에 공지된다.
 다음 주소에서 다운로드 할 수 있다:
 
@@ -460,7 +459,7 @@ linux-next 트리는 완성되면 linux-kernel과 linux-next 메일링리스트�
 Linux-next has become an integral part of the kernel development process;
 all patches merged during a given merge window should really have found
 their way into linux-next some time before the merge window opens.
-linux-next 트리는 커널 개발 프로세스의 중요한 부분이되었다.  Merge Window가
+linux-next 트리는 커널 개발 프로세스의 중요한 부분이 되었다.  Merge Window가
 열리기 전에, 주어진 Merge Window 기간 동안 머지될 모든 패치는 linux-next에
 포함되어야 한다.
 
@@ -475,11 +474,11 @@ they still need more work; once complete, they can be moved into the
 kernel proper.  This is a way to keep track of drivers that aren't
 up to Linux kernel coding or quality standards, but people may want to use
 them and track development.
-리눅스 커널 소스 트리에는 drivers/staging/ 디렉터리가 있다.  ##이 곳은 최종
-커널에 적용되는 도중에 거치는 드라이버나 파일시스템등을 위한 서브 디렉터리
-이다.  아직 작업이 더 필요한 경우 이 곳에 남게된다.  작업이 완료되면 그 내용은
+리눅스 커널 소스 트리에는 drivers/staging/ 디렉터리가 있다.  ##이곳은 최종
+커널에 적용되는 도중에 거치는 드라이버나 파일시스템 등을 위한 서브 디렉터리
+이다.  아직 작업이 더 필요한 경우 이곳에 남게 된다.  작업이 완료되면 그 내용은
 커널의 적절한 장소로 이동하게 된다.  이것은 리눅스 커널 코딩과 품질 기준에
-미치치 못하는 드라이버를 관리하기 위함이다.  ##하지만 사람들은 그것을 이용
+미치지 못하는 드라이버를 관리하기 위함이다.  ##하지만 사람들은 그것을 이용
 하거나 개발하고 싶어 할지도 모른다.
 
 Greg Kroah-Hartman currently maintains the staging tree.  Drivers that
@@ -490,13 +489,13 @@ the pending work that the driver needs for acceptance into the kernel
 proper, as well as a list of people that should be Cc'd for any patches to
 the driver.  Current rules require that drivers contributed to staging
 must, at a minimum, compile properly.
-Greg Kroah-Hartman이 현재 staging tree를 maintain 하고 있다. 아직 작업이 필요한
-드라이버가 그에게 전송 된다.  그리고 전달되는 드라이버는 각각 하위 디렉터리를
-가지고 있다.  소스파일과 함께 TODO파일도 그 디렉터리 내에 존재 하여야 한다.
-TODO파일은 커널 향상을 위해서 승인을 필요로하는 대기중인 드라이버 작업이 기술
-된다.  뿐만 아니라 리스트에 기술된 사람들은 그 드라이버에 보내지는 패치도 참조
-해야 한다.  현재 규칙은 staging tree에 컨트리뷰션하는 드라이버는 최소한, 제대로
-컴파일이 되어야 한다.
+Greg Kroah-Hartman이 현재 staging tree를 maintain하고 있다. 아직 작업이 필요한
+드라이버가 그에게 전송된다.  그리고 전달되는 드라이버는 각각 하위 디렉터리를
+가지고 있다.  소스파일과 함께 TODO파일도 그 디렉터리 내에 존재하여야 한다.
+TODO파일은 커널 향상을 위해서 승인을 필요로 하는 대기 중인 드라이버 작업이 기술
+된다.  그 뿐만 아니라 리스트에 기술된 사람들은 그 드라이버에 보내지는 패치도
+참조 해야 한다.  현재 규칙은 staging tree에 컨트리뷰션하는 드라이버는 최소한,
+제대로 컴파일이 되어야 한다.
 
 Staging can be a relatively easy way to get new drivers into the mainline
 where, with luck, they will come to the attention of other developers and
@@ -505,12 +504,12 @@ code in staging which is not seeing regular progress will eventually be
 removed.  Distributors also tend to be relatively reluctant to enable
 staging drivers.  So staging is, at best, a stop on the way toward becoming
 a proper mainline driver.
-Staging은 운이 좋으면 비교적 메인 라인에 반영되기위한 쉬운 방법이 될 수 있다.
-그것은 다른 개발자들의 이목을 집중받게 될 것이고 빠르게 개선될 가능성이 크다.
-Staging에 포함되었다고 끝난것이 아니다.  정상적인 프로세스를 따르지 않는 코드는
-언젠가는 삭제되고 말 것이다.  배포자는 staging 드라이버를 허용 하는것을
-상대적으로 꺼려 하는 경향이 있다.  따라서 staging은 최종 메인 라인 드라이버에
-적용 되기전에 잠시 정차하는 곳이라고 보면 된다.
+Staging은 운이 좋으면 비교적 메인 라인에 반영되기 위한 쉬운 방법이 될 수 있다.
+그것은 다른 개발자들의 이목을 집중 받게 될 것이고 빠르게 개선될 가능성이 크다.
+Staging에 포함되었다고 끝난 것이 아니다.  정상적인 프로세스를 따르지 않는
+코드는 언젠가는 삭제되고 말 것이다.  배포자는 staging 드라이버를 허용 하는 것을
+상대적으로 꺼리는 경향이 있다.  따라서 staging은 최종 메인 라인 드라이버에 적용
+되기 전에 잠시 정차하는 곳이라고 보면 된다.
 
 
 2.5: TOOLS
@@ -522,10 +521,11 @@ directions.  The whole thing would not work anywhere near as well as it
 does without suitably powerful tools.  Tutorials on how to use these tools
 are well beyond the scope of this document, but there is space for a few
 pointers.
-위의 내용에서 볼수 있는 바와 같이, 리눅스 커널 개발 프로세스는 다양한 경로에서
-만들어진 패치의 모음에 크게 의존한다는 것을 알 수있다.  ##그리고 어디에서든
-강력하면서 적절한 툴없이는 모든것은 동작하지 않을 것이다.  이 툴 사용법에 대한
-튜토리얼은 이 문서의 범위를 벗어나지만 몇가지 지침을 위한 내용을 소개한다.
+위의 내용에서 볼 수 있는 바와 같이, 리눅스 커널 개발 프로세스는 다양한 경로에서
+만들어진 패치의 모음에 크게 의존한다는 것을 알 수 있다.  ##그리고 어디에서든
+강력하면서 적절한 툴 없이는 모든 것은 동작하지 않을 것이다.  이 툴 사용법에
+대한 튜토리얼은 이 문서의 범위를 벗어나지만 몇 가지 지침을 위한 내용을
+소개한다.
 
 By far the dominant source code management system used by the kernel
 community is git.  Git is one of a number of distributed version control
@@ -537,13 +537,14 @@ time.  Some sort of familiarity with git is almost a requirement for kernel
 developers; even if they do not use it for their own work, they'll need git
 to keep up with what other developers (and the mainline) are doing.
 당연히 리눅스 커널 커뮤니티에서 지배적으로 사용 되는 소스코드 관리 시스템은 Git
-이다.  Git은 자유 소프트웨어 재단에서 개발 하고있는 많은 버전 컨트롤 시스템중
-하나이다.  방대한 양의 Git 저장소와(repository) 많은 수의 패치들을 다룰때 꽤
-좋은 성능을 발휘 한다는 점에서 Git은 리눅스 커널 개발에 특화되어 있기도 하다.
-Git이 오랜 시간동안 발전 했음에도 불구하고, 배우거나 사용하는데 있어서 어렵기로
-정평이 나있다.  Git을 사용하는데에 있어서 일종의 친숙함은 커널 개발자 에게는
-거의 필수이다.  개발자 본인이 Git을 사용하지 않더라도 말이다.  왜냐하면 다른
-개발자 또는 메인 라인 커널의 작업을 파악하는데에 Git이 필요하기 때문이다.
+이다.  Git은 자유 소프트웨어 재단에서 개발 하는 많은 버전 컨트롤 시스템 중
+하나이다.  방대한 양의 Git 저장소와(repository) 많은 수의 패치들을 다룰 때 꽤
+좋은 성능을 발휘한다는 점에서 Git은 리눅스 커널 개발에 특화되어 있기도 하다.
+Git이 오랜 시간 동안 발전했음에도 불구하고, 배우거나 사용하는 데 있어서
+어렵기로 정평이 나 있다.  Git을 사용하는 데에 있어서 일종의 친숙함은 커널
+개발자에게는 거의 필수이다.  개발자 본인이 Git을 사용하지 않더라도 말이다.
+왜냐하면 다른 개발자 또는 메인 라인 커널의 작업을 파악하는 데에 Git이 필요하기
+때문이다.
 
 Git is now packaged by almost all Linux distributions.  There is a home
 page at:
@@ -557,7 +558,7 @@ That page has pointers to documentation and tutorials.
 Among the kernel developers who do not use git, the most popular choice is
 almost certainly Mercurial:
 Git을 사용하지 않는 커널 개발자 사이에서 선택할 수 있는 확실히 가장 유명한 툴은
-Mercurial 이다.
+Mercurial이다.
 
 	http://www.selenic.com/mercurial/
 
@@ -567,7 +568,7 @@ Mercurial은 git의 많은 특징을 공유하고 있다. 그러나 보다 사�
 인터페이스를 제공한다.
 
 The other tool worth knowing about is Quilt:
-또 다른 잘 알려진 툴은 Quilt 가 있다.
+또 다른 잘 알려진 툴은 Quilt가 있다.
 
 	http://savannah.nongnu.org/projects/quilt/
 
@@ -577,12 +578,12 @@ toward tracking a specific set of changes against an evolving code base.
 Some major subsystem maintainers use quilt to manage patches intended to go
 upstream.  For the management of certain kinds of trees (-mm, for example),
 quilt is the best tool for the job.
-Quilt는 소스코드 관리 시스템이라기 보다는 패치 관리 시스템에 가깝다.  Quilt는
+Quilt는 소스코드 관리 시스템이라기보다는 패치 관리 시스템에 가깝다.  Quilt는
 오랜 시간의 히스토리를 추적하지 않지만, 대신에 코드 베이스에 대한 특정 패치
-모음을 관리 하는 방향으로 특화된 시스템이다.  몇몇의 주요 서브시스템
-메인테이너들은 upstream에 올리는 목적으로 패치를 관리하기 위해 일부러 Quilt를
+모음을 관리 하는 방향으로 특화된 시스템이다.  몇몇 주요 서브시스템
+메인테이너들은 upstream에 올리는 목적으로 패치를 관리하려고 일부러 Quilt를
 사용하기도 한다.  몇몇 종류의 트리를 관리하는 용도로서는(예를 들면 -mm),
-Quilt는 이 작업에 있어서 가장 적합한 툴이다.
+Quilt는 이 작업에서 가장 적합한 툴이다.
 
 
 2.6: MAILING LISTS
@@ -594,11 +595,11 @@ without joining at least one list somewhere.  But Linux mailing lists also
 represent a potential hazard to developers, who risk getting buried under a
 load of electronic mail, running afoul of the conventions used on the Linux
 lists, or both.
-대부분의 리눅스 개발은 메일링 리스트를 통해 이루어 진다.  적어도 하나의 메일링
-리스트에 참여하지 않고는 커뮤니티의 핵심 멤버가 되는것은 어려운 일이다.  그러나
-리눅스 메일링 리스트는 개발자에 대한 잠재적 위험이 될 수도 있는데, 과도한
-이메일의 양에 파묻힐 수도 있으며, 리눅스 메일링 리스트에서 사용되는 규약에
-충돌할 수도 있다.
+대부분의 리눅스 개발은 메일링 리스트를 통해 이루어진다.  적어도 하나의 메일링
+리스트에 참여하지 않고는 커뮤니티의 핵심 구성원이 되는 것은 어려운 일이다.
+그러나 리눅스 메일링 리스트는 개발자에 대한 잠재적 위험이 될 수도 있는데,
+과도한 이메일의 양에 파묻힐 수도 있으며, 리눅스 메일링 리스트에서 사용되는
+규약에 충돌할 수도 있다.
 
 Most kernel mailing lists are run on vger.kernel.org; the master list can
 be found at:
@@ -608,7 +609,7 @@ be found at:
 There are lists hosted elsewhere, though; a number of them are at
 lists.redhat.com.
 대부분의 커널 메일링 리스트는 vger.kernel.org 에서 관리 되며 master 리스트는
-아래 에서 찾을 수 있다.
+아래에서 찾을 수 있다.
 
 	http://vger.kernel.org/vger-lists.html
 
@@ -621,20 +622,20 @@ technical, and participants are not always concerned with showing a high
 degree of politeness.  But there is no other place where the kernel
 development community comes together as a whole; developers who avoid this
 list will miss important information.
-물론, 커널 개발의 핵심 메일링 리스트는 linux-kernel 이다. 이 메일링 리스트는
-다음의 내용처럼 무지막지한 곳이다.  하루에 500개 가량의 메시지가 오고 가며, 매우
-소란스럽고, 대화내용도 기술적으로 매우 어렵다.  그리고 메일링 리스트의 구성원은
-크게 예의를 갖추는 편도 아니다.  그러나 커널의 모든 커뮤니티가 통합 될 수 있는
-것은 linux-kernel 메일링 리스트 밖에 존재 하지 않는다.  이런 메일링 리스트를
-기피하면 중요한 정보를 놓칠 수 밖에 없다.
+물론, 커널 개발의 핵심 메일링 리스트는 linux-kernel이다. 이 메일링 리스트는
+다음의 내용처럼 무지막지한 곳이다.  하루에 500개가량의 메시지가 오고 가며, 매우
+소란스럽고, 대화 내용도 기술적으로 매우 어렵다.  그리고 메일링 리스트의
+구성원은 크게 예의를 갖추는 편도 아니다.  그러나 커널의 모든 커뮤니티가 통합될
+수 있는 것은 linux-kernel 메일링 리스트 밖에 존재하지 않는다.  이런 메일링
+리스트를 꺼리면 중요한 정보를 놓칠 수밖에 없다.
 
 There are a few hints which can help with linux-kernel survival:
-그래서 linux-kernel 에서 살아 남을 수 있는 몇가지 팁을 소개한다.
+그래서 linux-kernel에서 살아남을 수 있는 몇 가지 팁을 소개한다.
 
 - Have the list delivered to a separate folder, rather than your main
   mailbox.  One must be able to ignore the stream for sustained periods of
   time.
-- 메일로 받은 리스트를 메일에 두지 말고 각각의 독립적인 폴더로 구분 하라.
+- 메일로 받은 리스트를 메일에 두지 말고 각각의 독립적인 폴더로 구분하라.
   시간의 지속기간을 위해서 하나는 무시될 수 있다.
 
 - Do not try to follow every conversation - nobody else does.  It is
@@ -643,13 +644,13 @@ There are a few hints which can help with linux-kernel survival:
   without changing the email subject line) and the people who are
   participating.
 - 모든 대화를 파악하지 마라.  아무도 그렇게 하지 않는다.  관심 주제와 참여자를
-  필터링 하는 것은 매우 중요하다.  (비록 대화가 길어지는 경우는 새로운 주제로의
+  필터링하는 것은 매우 중요하다.  (비록 대화가 길어지는 경우는 새로운 주제로의
   메일 변경 없이 원래 주제와 다른 주제로 변경되는 경우도 있다.)
 
 - Do not feed the trolls.  If somebody is trying to stir up an angry
   response, ignore them.
-- 고의적으로 대화를 망치려고 하는 자들에게 일일이 응답하지 마라.  누군가가
-  자극 하려고 하거나 화를 내며 답변을 한다면 무시하라.
+- 고의로 대화를 망치려고 하는 자들에게 일일이 응답하지 마라.  누군가가
+  자극하려고 하거나 화를 내며 답변을 한다면 무시하라.
 
 - When responding to linux-kernel email (or that on other lists) preserve
   the Cc: header for all involved.  In the absence of a strong reason (such
@@ -657,22 +658,23 @@ There are a few hints which can help with linux-kernel survival:
   sure that the person you are responding to is in the Cc: list.  This
   convention also makes it unnecessary to explicitly ask to be copied on
   replies to your postings.
-- linux-kernel 이나 다른 메일링 리스트에서 이메일을 받았을때 참조처는 유지
-  되어야 한다.  특별한 이유가 없이는(노골적인 요청 처럼) 절대로 수신/참조처를
-  제거하면 안된다.  답변을 해야할 사람이 참조 리스트에 존재하는지 항상 확인해야
-  한다.  포스팅을 할때 댓글을 복사 하겠다고 요청할 필요는 없는것 또한 규정이다.
+- linux-kernel이나 다른 메일링 리스트에서 이메일을 받았을 때 참조처는 유지
+  되어야 한다.  특별한 이유가 없이는(노골적인 요청처럼) 절대로 수신/참조처를
+  제거하면 안 된다.  답변을 해야 할 사람이 참조 리스트에 존재하는지 항상
+  확인해야 한다.  포스팅을 할 때 댓글을 복사하겠다고 요청할 필요는 없는 것 또한
+  규정이다.
 
 - Search the list archives (and the net as a whole) before asking
   questions.  Some developers can get impatient with people who clearly
   have not done their homework.
-- 질문을 하기 전에는 먼저 메일링 리스트나 인터넷에서 검색을 하라.  몇몇 개발자는
+- 질문하기 전에는 먼저 메일링 리스트나 인터넷에서 검색하라.  몇몇 개발자는
   이것을 지키지 않는 사람에게 짜증을 낼 수도 있다.
 
 - Avoid top-posting (the practice of putting your answer above the quoted
   text you are responding to).  It makes your response harder to read and
   makes a poor impression.
-- 답변을 남길때 인용하려는 글 위에 답변을 작성하는 것을 피하라.  그것은 답변을
-  읽기 힘들게 만들며, 좋지 않은 인상을 남길 수 있다.
+- 답변을 남길 때 인용하려는 글 위에 답변을 작성하는 것을 피하라.  그것은 답변을
+  읽기 힘들 게 만들며, 좋지 않은 인상을 남길 수 있다.
 
 - Ask on the correct mailing list.  Linux-kernel may be the general meeting
   point, but it is not the best place to find developers from all
@@ -687,13 +689,12 @@ to ask on the netdev list instead, as that is the list frequented by most
 networking developers.  Other lists exist for the SCSI, video4linux, IDE,
 filesystem, etc. subsystems.  The best place to look for mailing lists is
 in the MAINTAINERS file packaged with the kernel source.
-마지막으로 정확한 메일링 리스트를 찾아라.  이 지점은 초보자가 공통적으로
-실수하는 부분 이기도 하다,  만약 linux-kernel에 네트워크와 관련된 질문을 올린
-사람이 있다면 대개 정중하게 netdev 리스트에 질문 하라는 제안을 받게 될 것이다.
-(netdev는 네트워크 개발자들이 자주 찾는 메일링 리스트 이다).  SCSI,
-video4linux, IDE, filesystems 등을 위한 메일링 리스트도 존재한다.  메일링
-리스트를 찾는 가장좋은 방법은 커널 소스 패키지 내에 존재하는 MAINTAINERS
-파일에서 찾는 것이다.
+마지막으로 정확한 메일링 리스트를 찾아라.  이 지점은 초보자가 공통으로 실수하는
+부분 이기도 하다,  만약 linux-kernel에 네트워크와 관련된 질문을 올린 사람이
+있다면 대개 정중하게 netdev 리스트에 질문하라는 제안을 받게 될 것이다.
+(netdev는 네트워크 개발자들이 자주 찾는 메일링 리스트이다).  SCSI, video4linux,
+IDE, filesystems 등을 위한 메일링 리스트도 존재한다.  메일링 리스트를 찾는 가장
+좋은 방법은 커널 소스 패키지 내에 존재하는 MAINTAINERS 파일에서 찾는 것이다.
 
 
 2.7: GETTING STARTED WITH KERNEL DEVELOPMENT
@@ -714,12 +715,12 @@ this time can endow an employer with a group of developers who understand
 the kernel and the company both, and who can help to train others as well.
 Over the medium term, this is often the more profitable approach.
 회사는 개발조직에 종종 잘 알려진 개발자를 고용하려고 하는 것처럼 보인다.
-이것은 실제로 효과적인 테크닉일 수 있다.  그러나 이것은 또한 많은 비용이 들고
-커널 개발 경험이 있는 인력 수 의 증가를 가져오지도 않는다.  그러나 리눅스 커널
-개발을 위해 사내 개발자들에게 약간의 시간을 제공하는 것은 쉬운 방법이다.
-이런 시간은 고용주 에게 커널과 회사모두를 잘 이해하며 또한 다른 사람들을 가르칠
-수도 있는 개발자들을 얻게 해준다.  중기적으로 볼때, 이것은 보다 이익이 되는
-접근 방법이다.
+이것은 실제로 효과적인 방법일 수 있다.  그러나 이것은 또한 큰 비용이 들고 커널
+개발 경험이 있는 인력 수의 증가를 가져오지도 않는다.  그러나 리눅스 커널 개발을
+위해 사내 개발자들에게 약간의 시간을 제공하는 것은 쉬운 방법이다.  이런 시간은
+회사에 커널과 회사모두를 잘 이해하며 또한 다른 사람들을 가르칠 수도 있는
+개발자들을 얻게 해준다.  중기적으로 볼 때, 이것은 보다 이익이 되는 접근
+방법이다.
 
 Individual developers are often, understandably, at a loss for a place to
 start.  Beginning with a large project can be intimidating; one often wants
@@ -730,12 +731,12 @@ noise which is distracting for the development community as a whole, so,
 increasingly, they are looked down upon.  New developers wishing to
 introduce themselves to the community will not get the sort of reception
 they wish for by these means.
-개인 개발자는 종종 어디서 부터 시작해야 할지 해매게 된다.  그렇다고 대규모
-프로젝트 부터 시작하기는 쉽지 않다.  작은것 부터 테스트하여 상황을 살피는 것이
-좋다.  이것이 개발자가 오타나 단순한 코딩 규약 오류 문제를 수정하는 등의 패치
+개인 개발자는 종종 어디서부터 시작해야 할지 헤매게 된다.  그렇다고 대규모
+프로젝트부터 시작하기는 쉽지 않다.  작은것 부터 테스트하여 상황을 살피는 것이
+좋다.  이것이 개발자가 오타 나 단순한 코딩 규약 오류 문제를 수정하는 등의 패치
 제작에 뛰어들게 되는 지점이다.  ##하지만 그런 패치는 전반적으로 커뮤니티에
-방해가 되는 잡음을 만드는 결과를 초래 하기도 한다.  ##그러면 커뮤니티는 점차
-그들을 멸시하게 된다.  ##새 개발자가 커뮤니티에 본인을 알리는데에만 급급해
+방해가 되는 잡음을 만드는 결과를 가져오기도 한다.  ##그러면 커뮤니티는 점차
+그들을 멸시하게 된다.  ##새 개발자가 커뮤니티에 본인을 알리는 데에만 급급해
 한다면 커뮤니티에서 환영을 받기 힘들 것이다.
 
 Andrew Morton gives this advice for aspiring kernel developers
@@ -746,8 +747,8 @@ Andrew Morton은 포부를 가진 커널 개발자에게 다음의 조언을 한
 	you can lay your hands on".  Usually the way to do this is to work
 	with others on getting things fixed up (this can require
 	persistence!) but that's fine - it's a part of kernel development.
-	확실히 모든 초보자들이 첫번째로 해봐야 할 것은, 당신이 찾을수 있는
-	머신에서 당신이 빌드한 커널이 언제나 완벽하게 잘 동작하는지 확인 해보는
+	확실히 모든 초보자가 첫 번째로 해봐야 할 것은, 그들이 찾을 수 있는
+	머신에서 당신이 빌드한 커널이 언제나 완벽하게 잘 동작하는지 확인해보는
 	것이다.  대개 이런 방식을 통해 당신이 아닌 다른 사람들이 문제를
 	수정하게 되지만(집념이 필요한 부분이다) 그래도 괜찮다.  이것도 커널
 	개발의 한 부분이기 때문이다.
@@ -759,9 +760,9 @@ at the current lists of regressions and open bugs in general.  There is
 never any shortage of issues in need of fixing; by addressing these issues,
 developers will gain experience with the process while, at the same time,
 building respect with the rest of the development community.
-일반적으로 수정해야할 명백한 문제가 없을 때에는, Regression 리스트나 버그를
-확인해 볼것을 추천 한다.  고쳐야할 이슈는 절대로 부족하지 않다.  이런 이슈를
-다룸으로써 개발자는 경험을 얻을 수 있을것이고, 동시에 커뮤니티에서의 신뢰를
+일반적으로 수정해야 할 명백한 문제가 없을 때는, Regression 리스트나 버그를
+확인해 볼 것을 추천한다.  고쳐야 할 이슈는 절대로 부족하지 않다.  이런 이슈를
+다룸으로써 개발자는 경험을 얻을 수 있을 것이고, 동시에 커뮤니티에서의 신뢰를
 쌓아 나갈 수 있을 것이다.
 
 [1] http://en.wikipedia.org/wiki/Rolling_release
