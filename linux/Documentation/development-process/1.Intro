@@ -98,7 +98,7 @@ runs on pocket-sized digital music players, desktop PCs, the largest
 supercomputers in existence, and all types of systems in between.  It is a
 robust, efficient, and scalable solution for almost any situation.
 리눅스 커널은 800만 줄 이상의 코드로 구현되어 있으며 각 릴리즈 마다 1000명
-이상의 개발자들이 컨트리뷰션 한다.  이것은 존재하는 어떠한 프로젝트보다 규모가
+이상의 개발자들이 컨트리뷰션 한다.  이것은 현존하는 어떠한 프로젝트보다 규모가
 크고 가장 활발하게 진행되는 자유 소프트웨어(오픈 소스) 프로젝트이다.  1991년의
 작은 시작 이후 성장을 거듭하면서 현재는 소형 mp3 플레이어, 데스크톱 PC,
 현존하는 가장 거대한 슈퍼컴퓨터 등 기타 모든 시스템에서 사용되는 가장 뛰어난
@@ -130,11 +130,12 @@ process.  But, if anything, the kernel is even more open than most other
 free software projects.  A typical three-month kernel development cycle can
 involve over 1000 developers working for more than 100 different companies
 (or for no company at all).
-리눅스의 가장 강력한 특징 중 하나는 개발자들이 접근하기 쉽다는 점이다.  누구나
-리눅스를 개선할 수 있으며 개발 방향에 영향을 줄 수 있다.  상업적인 제품에서는
-이런 자유 소프트웨어의 특징인 개방성을 볼 수 없다.  특히 리눅스 커널은 대부분의
-자유 소프트웨어 프로젝트보다 개방적이다.  일반적인 3개월의 커널 개발 주기 동안
-1000명 이상의 개발자, 100개 이상의 회사가 참여한다.
+리눅스의 가장 강력한 특징 중 하나는 개발자들이 접근하기 쉽다는 점이다. 요구되는
+선결 조건만 충족된다면 누구나 리눅스를 개선할 수 있으며 개발 방향에 영향을 줄
+수 있다.  자유소프트웨어의 특징은 개방성이다. 상업적인 제품에서는 이런 개방성을
+볼 수 없는 반면, 리눅스 커널은 대부분의 자유 소프트웨어 프로젝트 보다
+개방적이다.  일반적인 3개월의 커널 개발 주기 동안 1000명 이상의 개발자, 100개
+이상의 회사가 참여한다.
 
 Working with the kernel development community is not especially hard.  But,
 that notwithstanding, many potential contributors have experienced
@@ -158,11 +159,12 @@ have a frustrating experience in store.  The development community, while
 being helpful to those who are trying to learn, has little time for those
 who will not listen or who do not care about the development process.
 커널 개발 프로세스가 새로운 개발자들에게는 다소 어렵고 두렵게 느껴질 수도
-있지만, 그 뒤에는 타당한 이유가 있고 탄탄한 경험할 수 있다는 장점이 있다.  커널
-개발 프로세스를 제대로 이해하지 못한 개발자는 좌절을 경험하게 될 것이다. 이
-커뮤니티는 타인의 의견에 귀 귀울이려 하지 않고 개발 프로세스를 전혀 신경 쓰지
-않는 개발자에게 많은 시간을 주지 않지만 배우고자 하는 의지가 있는 개발자에게 이
-커뮤니티는 많은 도움이 될 것이다.
+있지만, 그 뒤에는 타당한 이유가 있고 탄탄한 경험을 할 수 있다는 장점이 있다.
+커널 커뮤니티의 방식을 제대로 이해하지 못하였거나, 심지어 프로세스를 무시하는
+개발자는 답답하고 힘든 경험을 하게 될 것이다.  이 커뮤니티는 타인의 의견에 귀
+귀울이려 하지 않고 개발 프로세스를 전혀 신경 쓰지 않는 개발자에게 기회를 주지
+않지만 배우고자 하는 의지가 있는 개발자에게 이 커뮤니티는 많은 도움이 될
+것이다.
 
 It is hoped that those who read this document will be able to avoid that
 frustrating experience.  There is a lot of material here, but the effort
@@ -170,10 +172,11 @@ involved in reading it will be repaid in short order.  The development
 community is always in need of developers who will help to make the kernel
 better; the following text should help you - or those who work for you -
 join our community.
-이글을 읽음으로써 커널 개발의 두려움이 사라지기를 희망한다.  이 문서는 양이
-방대해 읽기 힘들겠지만, 다 읽고 나면 그 노력에 대한 보답을 얻을 수 있을 것이다.
-리눅스 커뮤니티는 커널을 발전시켜줄 개발자들이 항상 필요하다.  이어질 내용이
-커뮤니티에 참여할 수 있도록 도움을 줄 것이다.  우리 커뮤니티와 함께하자.
+이 글을 읽음으로써 커널 개발 참여에 대한 두려움이 사라지기를 희망한다.  이
+문서는 양이 방대해 읽기가 쉽지는 않다. 하지만, 다 읽고 나면 그 노력에 대한
+보답을 얻을 수 있을 것이다.  리눅스 커뮤니티는 커널을 발전시켜줄 개발자들이
+항상 필요하다.  이어질 내용이 커뮤니티에 참여할 수 있도록 도움을 줄 것이다.
+우리 커뮤니티와 함께하자.
 
 
 1.3: CREDITS
@@ -229,8 +232,8 @@ discussed in greater detail later in this document.  Consider:
   works, for the developer and for the user.  Incorporation into the
   mainline solves a large number of distribution and support problems.
 - 메인라인 커널에 통합 된 코드는 모든 리눅스 사용자가 사용할 수 있다.  그
-  코드를 사용하기로 설정한 모든 배포판에 자동으로 제공될 것이다.  그것은
-  드라이버 디스크, 다운로드, 또는 다수의 버전을 지원하는 번거로움이 필요하지
+  코드를 사용하기로 설정한 모든 배포판에 자동으로 제공될 것이다.  드라이버
+  디스크, 다운로드, 또는 다수의 버전을 지원 해야 하는 등의 번거로움이 필요하지
   않다.  모든 것이 사용자와 개발자를 위해 바로 동작한다.  메인라인으로의 통합은
   다양한 배포 및 지원 관련 문제를 해결할 수 있다.
 
@@ -254,15 +257,15 @@ discussed in greater detail later in this document.  Consider:
   to also fix any code that breaks as the result of that change.  So code
   which has been merged into the mainline has significantly lower
   maintenance costs.
-  ##대신에 메인라인에 있는 코드는 API를 수정하는 어떠한 개발자라도 수정사항의
-  결과로 발생하는 모든 코드의 문제를 해결해야 한다는 간단한 규칙 덕분에 위와
-  같은 작업이 필요하지 않다.  그래서 메인 라인에 병합된 코드는 상당히 낮은 유지
-  보수 비용이 드는 것이다.
+  대신에 메인라인데 반영된 코드는 이렇게 비용이 많이 드는 작업이 필요하지 않다.
+  그것은 커널내의 API를 수정한 개발자가 그 수정의 결과로 발생할 수 있는 문제를
+  책임져야 한다는 간단한 규칙 때문이다.  그래서 메인 라인에 병합된 코드는 유지
+  보수 비용이 상당히 낮은 것이다.
 
 - Beyond that, code which is in the kernel will often be improved by other
   developers.  Surprising results can come from empowering your user
   community and customers to improve your product.
-- 그뿐 아니라, 메인라인에 있는 코드는 종종 다른 개발자에 의해 향상 될 것이다.
+- 그뿐 아니라, 메인라인에 있는 코드는 종종 다른 개발자에 의해 개선 될 것이다.
   사용자 커뮤니티와 제품을 개선하고자 하는 고객에 의해 놀라운 결과가 나올 수
   있다.
 
@@ -273,22 +276,22 @@ discussed in greater detail later in this document.  Consider:
   especially true for code which has been developed in a closed
   environment; such code benefits strongly from review by outside
   developers.  Out-of-tree code is lower-quality code.
-- 커널 코드는 메인라인에 반영하기 이전과 이후 모두 리뷰를 받아야 한다.
-  개발자의 실력이 뛰어난 것과는 관계없이 리뷰 프로세스는 코드 개선을 위해
-  필요한 절차이다.  리뷰과정을 통해 종종 버그와 보안문제가 발견되기도 한다.
-  특별히 이것은 폐쇄된 개발 환경에서 코드를 개발할 수 있는 방법이기도 하다.
-  이런 코드가 외부의 개발자를 통해 리뷰 받는 다면 많은 도움이 될 것이다.
-  ##따라서 메인라인에 반영하지 않고 독립적으로 운영되는 커널코드(Out-of-tree)의
-  품질은 좋을 수가 없다.
+- 커널 코드는 메인라인에 반영하기 전과 후 모두 리뷰를 받아야 한다.  개발자의
+  실력이 뛰어난 것과는 관계없이 리뷰 프로세스는 코드 개선을 위해 필요한
+  절차이다.  리뷰과정을 통해 종종 버그와 보안문제가 발견되기도 한다.  특별히
+  이것은 폐쇄된 개발 환경에서 코드를 개발할 수 있는 방법이기도 하다.  이런
+  코드가 외부의 개발자를 통해 리뷰 받는 다면 많은 도움이 될 것이다.  따라서
+  메인라인에 반영하지 않고 독립적으로 운영되는 커널코드(Out-of-tree)의 품질은
+  좋을 수가 없다.
 
 - Participation in the development process is your way to influence the
   direction of kernel development.  Users who complain from the sidelines
   are heard, but active developers have a stronger voice - and the ability
   to implement changes which make the kernel work better for their needs.
   본인의 방식으로 개발 프로세스에 참여하는 것도 전체 커널 개발에 영향을 줄 수
-  있다.  ##방관자로써 불평하는 사용자의 목소리도 크지만, 실제 활발하게 참여하는
-  개발자는 큰 영향력을 가지고 있다.  그리고 수정사항을 반영함으로써 그들이
-  원하는 대로 커널을 개선 시킬 수 있는 능력을 갖추고 있다.
+  있다.  멀찌감치에서 이슈를 제기하는 유져도 종종 있지만,  실제 활발하게
+  참여하는 개발자는 큰 영향력을 가지고 있다.  그리고 수정사항을 반영함으로써
+  그들이 원하는 대로 커널을 개선 시킬 수 있는 능력을 갖추고 있다.
 
 - When code is maintained separately, the possibility that a third party
   will contribute a different implementation of a similar feature always
@@ -298,10 +301,10 @@ discussed in greater detail later in this document.  Consider:
   out of tree indefinitely, or (2) abandoning your code and migrating your
   users over to the in-tree version.
 - 코드가 별도로 관리되는 경우, 협력업체는 이미 존재하는 유사한 기능을 반복
-  구현할 가능성이 항상 존재한다.  그렇게 되면 그 코드를 병합 하는 것은 불가능에
-  가깝게 힘들어질 것이다. 이 경우 두 가지 대안이 있다.  (1) 그 비공식 기능을
-  영원히 out-of-tree 코드로 유지 ##(2) 그 코드를 포기하고 사용자를 in-tree
-  버전으로 이동시킨다.
+  구현할 가능성이 많다.  그렇게 되면 그 코드를 병합 하는 것은 불가능에 가깝게
+  힘들어질 것이다. 이 경우 두 가지 대안이 있다.  (1) 그 비공식 기능을 영원히
+  out-of-tree 코드로 유지 ##(2) 그 코드를 포기하고 사용자를 in-tree 버전으로
+  이동시킨다.
 
 - Contribution of code is the fundamental action which makes the whole
   process work.  By contributing your code you can add new functionality to
@@ -312,9 +315,9 @@ discussed in greater detail later in this document.  Consider:
   help ensure that success.
   코드를 컨트리뷰션 하는 것은 전체 프로세스를 작동시키는 기본이 되는 작업이다.
   코드를 컨트리뷰션 함으로써 커널에 새로운 기능을 추가하고 다른 커널
-  개발자들에게 쓸모있는 기능과 예제를 제공 할 수 있다.  리눅스용 코드를
+  개발자들에게 유용한 기능과 예제를 제공 할 수 있다.  리눅스용 코드를
   개발한(또는 앞으로 개발할) 경우, 당신은 명확하게 이 플랫폼의 지속적인 성공에
-  관심을 있을 것이고 코드를 기여하는 것은 그 성공을 보장하는 가장 좋은 방법 중
+  관심이 있을 것이고, 코드에 기여하는 것은 그 성공을 보장하는 가장 좋은 방법 중
   하나이다.
 
 All of the reasoning above applies to any out-of-tree kernel code,
@@ -444,7 +447,7 @@ legal questions relating to Linux source code, there is no substitute for
 talking with a lawyer who understands this field.  Relying on answers
 obtained on technical mailing lists is a risky affair.
 저작권 관련 문제에 대한 질문은 리눅스 개발 메일링리스트에 빈번히 올라온다.
-이러한 질문은 보통의 많은 답변을 받을 수 있지만, 그 답변을 한 사람들이 변호사가
+이러한 질문은 보통 많은 답변을 받을 수 있지만, 그 답변을 한 사람들이 변호사가
 아니며 법률적인 자문을 제공할 수 없음을 명심해야 한다.  리눅스 소스코드에 관한
 법적 문제가 있는 경우, 이 분야를 이해하는 변호사와 이야기하는 것이 최선이며,
 메일링리스트에서 얻은 답변에 의존하는 것은 위험할 수 있다.
