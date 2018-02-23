@@ -214,7 +214,7 @@ blessings: before the advent of the linux-next tree, these conflicts often
 only turned up during the merge window and had to be addressed in a hurry.
 Now they can be resolved at leisure, before the merge window opens.
 또한, 이때 본인의 패치의 성격에 따라, 다른 사람이 작업한 내용과 충돌이 발생할
-수 도 있다.  ##가장 안 좋은 경우는, 규모가 큰 패치의 충돌이 어떤 작업을
+수 도 있다.  ##최악의 경우는, 규모가 큰 패치의 충돌이 어떤 작업을
 뒷전으로 밀리게 해서 그 남겨진 패치가 다시 수정되어 반영되는 것이다.  다른
 때에는, 충돌의 솔루션이 다른 개발자들의 작업으로 포함될 것이다.  ##그리고 모든
 것에 문제가 없는지 확인하기 위하여 몇몇 패치는 트리로 이동할 것이다.  이 작업은

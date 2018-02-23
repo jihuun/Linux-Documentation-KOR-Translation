@@ -5,7 +5,7 @@ development process		개발 프로세스
 process				프로세스  
 development community		커뮤니티 혹은 개발 커뮤니티  
 kernel community		커뮤니티  
-frustration			좌절, 두려움  
+frustration			답답함
 mainline			메인라인	메인 라인  
 merge				반영, 병합  
 merge window			Merge Window 그대로 명시  
